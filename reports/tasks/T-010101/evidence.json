@@ -1,0 +1,43 @@
+{
+  "task_id": "T-010101",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:467ae6cb9f3abedb39811c8837d8e9016bc58a6d9bdb9b4f8838a97fa505253b",
+  "created_at": "2026-10-19T03:19:39.891541+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010101/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/product_scope.md",
+      "sha256": "21faf27a6ebd475485e0e0957e63ea5bb651985c7b3a249a9e650bfae8117fcc"
+    },
+    {
+      "path": "reports/tasks/T-010101/review.md",
+      "sha256": "e34328cae9f94b0898772c46ab40e383ac3d1433a083c5c883586aba1fcb3384"
+    },
+    {
+      "path": "reports/tasks/T-010101/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "scope-v3",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "All v3 Must scope preserved; no invented scope delta",
+      "observed": "7 chapters,14 puzzles,7 memories,28 records,3 endings; save,VI/EN,Windows and quality boundaries preserved",
+      "result": "PASS",
+      "command": "python tools/validate_plan.py",
+      "log_path": "reports/tasks/T-010101/plan_validation.log",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Artifact review only; no game implementation/runtime verification in this task."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "task_id": "T-010103",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:af1061a79d1586ca491d166ee0af91e567d1ca1b011ac16165271f9f9a60cccb",
+  "created_at": "2026-10-19T03:22:48.598665+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010103/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "172103ae1b337538a862e8fe933dfe8a05b64d9187bcdd0cbc6fc8a351849ceb"
+    },
+    {
+      "path": "config/permissions.json",
+      "sha256": "005554a64825f0742e5dfbb6638c49b816821081f1f4a25e433acce576e74c14"
+    },
+    {
+      "path": "state/external_requests.json",
+      "sha256": "e066ff05517fe0591de5cd8ddf3b7cb35577d31a61b99a5f0412941ed3b88ed1"
+    },
+    {
+      "path": "tools/probe_capabilities.py",
+      "sha256": "9a083cb903c2b8c70d8394c618b8859d3e8bb089f2c9c271b0d43c297176e5e6"
+    },
+    {
+      "path": "tools/fetch_godot.py",
+      "sha256": "1398a05c795b84b44132966f18c359b394d9aad708a975336c5edc8fde4441d9"
+    },
+    {
+      "path": "reports/tasks/T-010103/probes.json",
+      "sha256": "b4028ee6d8b595fe4796f815445fa3d0f842f14d51fd03dab278bb35a7b1ad7e"
+    },
+    {
+      "path": "reports/tasks/T-010103/godot_release.json",
+      "sha256": "e83412a561164ee24ca6e77f1537d8d119269c09f745f194527afffaf44946ee"
+    },
+    {
+      "path": "reports/tasks/T-010103/godot_version.json",
+      "sha256": "474af5282fe30249cd67a7932357eb7ccd021eb706001b8d6b620768858dd919"
+    },
+    {
+      "path": ".tools/godot/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip.verified.json",
+      "sha256": "a963ce2c8c2725590abcc326fcb02a97609dcb1d258672ab38fbda9e3de9048f"
+    },
+    {
+      "path": "reports/tasks/T-010103/review.md",
+      "sha256": "3b65e6b63c41764f6b215df742c152a9bf2a8b02d6c2500c95d906336dec9724"
+    },
+    {
+      "path": "reports/tasks/T-010103/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "version-probes",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Actual bounded version attempts and distinct capability states",
+      "observed": "Raw logs record Python/Git/LFS available; Godot portable exact pin verified; Blender absent; render/pad/audio unknown",
+      "result": "PASS",
+      "command": "python tools/probe_capabilities.py; python tools/fetch_godot.py; pinned Godot --version",
+      "log_path": "reports/tasks/T-010103/probes.json",
+      "assertions": 0
+    },
+    {
+      "id": "permission-defaults",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "paid_spend_limit=0; publish_allowed=false; no assumed external rights",
+      "observed": "config/permissions.json preserves required restrictions and local task authorization",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "No game import/export/runtime yet; GPU/physical pad/audio acceptance not tested.",
+    "Portable tool acquisition is local and free."
+  ]
+}

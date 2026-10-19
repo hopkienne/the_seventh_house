@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "probe_timestamp": "2026-10-19T03:21:25.296650+00:00",
+  "tools": [
+    {
+      "name": "python",
+      "path": "C:\\Python314\\python.exe",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.160878+00:00",
+      "exit_code": 0,
+      "stdout": "Python 3.14.0\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "Python 3.14.0"
+    },
+    {
+      "name": "git",
+      "path": "C:\\Users\\kienth\\AppData\\Local\\Programs\\Git\\cmd\\git.EXE",
+      "command": [
+        "git",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.309527+00:00",
+      "exit_code": 0,
+      "stdout": "git version 2.45.1.windows.1\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "git version 2.45.1.windows.1"
+    },
+    {
+      "name": "godot",
+      "path": null,
+      "command": [
+        "godot",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.469598+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "godot4",
+      "path": null,
+      "command": [
+        "godot4",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.536930+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "blender",
+      "path": null,
+      "command": [
+        "blender",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.628302+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "git_lfs",
+      "path": "C:\\Users\\kienth\\AppData\\Local\\Programs\\Git\\cmd\\git.EXE",
+      "command": [
+        "git",
+        "lfs",
+        "version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.681798+00:00",
+      "exit_code": 0,
+      "stdout": "git-lfs/3.5.1 (GitHub; windows amd64; go 1.21.7; git e237bb3a)\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "git-lfs/3.5.1 (GitHub; windows amd64; go 1.21.7; git e237bb3a)"
+    },
+    {
+      "name": "gpu_inventory",
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion | ConvertTo-Json"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:23.086534+00:00",
+      "exit_code": 0,
+      "stdout": "{\n    \"Name\":  \"NVIDIA NVS 310\",\n    \"DriverVersion\":  \"10.18.13.5362\"\n}\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "{\n    \"Name\":  \"NVIDIA NVS 310\",\n    \"DriverVersion\":  \"10.18.13.5362\"\n}"
+    },
+    {
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": "",
+      "sha256": "c8f0a6bc45a19b33541501e57f6f7cd972ab18453743266339d495cbbe846643",
+      "probe_timestamp": "2026-10-19T03:22:16.122398+00:00",
+      "name": "godot_portable",
+      "path": "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+      "version": "4.7.2.stable.official.ed1daf0bf",
+      "available": true
+    }
+  ],
+  "native_os": "Windows",
+  "host": "Windows-10-10.0.19045-SP0",
+  "capabilities": {
+    "filesystem": true,
+    "python_cli": true,
+    "git_cli": true,
+    "godot_cli": true,
+    "blender_cli": false,
+    "native_windows": true,
+    "rendered_runtime": true,
+    "gpu": null,
+    "gui_automation": null,
+    "physical_gamepad": null,
+    "audio_playback_review": null,
+    "audio_capture": null,
+    "network_official_github_api": true,
+    "image_generation_tool_declared": true,
+    "image_generation_probed": false,
+    "subagent_tools_declared": true,
+    "subagent_execution_probed": false,
+    "software_forward_plus": true,
+    "hardware_forward_plus": false
+  },
+  "limitations": [
+    "Godot portable downloaded and hash-verified locally; Blender not found on PATH or inspected install directories.",
+    "GPU inventory: NVIDIA NVS 310 driver 10.18.13.5362; no Godot rendered runtime tested yet.",
+    "Windows host identification is not a native game smoke test.",
+    "GUI, physical gamepad, audible mix and image/subagent tools have not been exercised.",
+    "No paid API or public upload authorized. Sequential single-agent execution uses self_review=true.",
+    "NVS 310 native Forward+ probe fell back to Compatibility; process-scoped installed Chrome SwiftShader Vulkan ICD produced actual Forward+ capture. CPU rendering is not GPU performance acceptance."
+  ],
+  "fallbacks": {
+    "godot": "Download pinned free official portable binary and matching templates locally; verify hashes and --version before use.",
+    "blender": "Godot procedural mesh pipeline once Godot is verified; audit any Blender installation before use.",
+    "render": "Headless tests can cover logic only; rendered QA still required.",
+    "gamepad": "Synthetic focus/action tests only until a physical device is accessible."
+  },
+  "network_probe": {
+    "url": "https://api.github.com/repos/godotengine/godot-builds/releases/tags/4.7.2-stable",
+    "available": true,
+    "status": 200,
+    "error": null,
+    "tag": "4.7.2-stable",
+    "assets": [
+      {
+        "name": "Godot_v4.7.2-stable_export_templates.tpz",
+        "size": 1281349702,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz",
+        "digest": "sha256:f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_mono_export_templates.tpz",
+        "size": 1202598411,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_export_templates.tpz",
+        "digest": "sha256:92f8681e349ef1f90891b792da95e3b2b0bd1ed610b78018c58feb2d87e15a9d"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_mono_win64.zip",
+        "size": 116582061,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_win64.zip",
+        "digest": "sha256:a2a48473a7414c5f19fab690518caebb738c09ef9601f6bd2388676a7f53b3c0"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_win64.exe.zip",
+        "size": 86013866,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip",
+        "digest": "sha256:731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953"
+      },
+      {
+        "name": "SHA512-SUMS.txt",
+        "size": 5682,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/SHA512-SUMS.txt",
+        "digest": "sha256:b8bdff6704f833e7a021df16ec08e1478edd5a285c1f894929b91a7f74a5c7c0"
+      }
+    ]
+  },
+  "raw_log": "reports/tasks/T-010103/probes.json",
+  "render_probe": {
+    "path": "reports/tasks/T-010301/swiftshader_probe.json",
+    "adapter": "SwiftShader Device (Subzero)",
+    "method": "forward_plus",
+    "driver": "vulkan",
+    "software": true,
+    "physical_gpu_performance_verified": false
+  }
+}

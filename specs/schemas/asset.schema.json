@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "asset_id",
+    "category",
+    "phase",
+    "source_path",
+    "runtime_path",
+    "quality_state",
+    "provenance",
+    "sha256"
+  ],
+  "properties": {
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": [
+        "MODEL",
+        "MATERIAL",
+        "ANIMATION",
+        "VFX",
+        "AUDIO",
+        "UI"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "SHARED",
+        "REAL",
+        "ERASED"
+      ]
+    },
+    "source_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "runtime_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "quality_state": {
+      "enum": [
+        "BLOCKOUT",
+        "INTEGRATED",
+        "REVIEWED",
+        "FINAL"
+      ]
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": true
+}

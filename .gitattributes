@@ -1,0 +1,15 @@
+* text=auto
+*.gd text eol=lf
+*.godot text eol=lf
+*.tscn text eol=lf
+*.cfg text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.png binary
+*.wav binary
+*.glb binary
+*.blend binary
+*.xlsx binary
+# LFS CLI is available; no remote LFS host has been verified.
+# Binary artifacts stay ordinary files until a host audit or manifest workflow is established.

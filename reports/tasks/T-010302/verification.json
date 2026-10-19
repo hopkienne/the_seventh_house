@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "checks": [
+    {
+      "id": "scene_final",
+      "result": "PASS",
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "command_args": [
+        "--headless",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "scene"
+      ]
+    },
+    {
+      "id": "invalid_profile",
+      "result": "PASS",
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "command_args": [
+        "--headless",
+        "--",
+        "--qa-profile",
+        "MISSING",
+        "--qa-report",
+        "user://invalid.json"
+      ]
+    },
+    {
+      "id": "headless_render_rejected",
+      "result": "PASS",
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "command_args": [
+        "--headless",
+        "--",
+        "--qa-profile",
+        "BOOTSTRAP",
+        "--qa-report",
+        "user://invalid.json"
+      ]
+    },
+    {
+      "id": "invalid_report_path",
+      "result": "PASS",
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "command_args": [
+        "--rendering-method",
+        "forward_plus",
+        "--rendering-driver",
+        "vulkan",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--qa-profile",
+        "BOOTSTRAP",
+        "--qa-report",
+        "res://config/forbidden.json"
+      ]
+    }
+  ]
+}

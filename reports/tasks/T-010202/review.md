@@ -1,0 +1,4 @@
+# Review T-010202
+Result: PASS. Reviewer: codex-primary; self_review=true. Separate Story Bible comparison.
+
+Eight explicit questions distinguish production truth, Minh's belief and player reveal: initial trigger, pre-lantern memory, An aging/agency, phases, evidence persistence, seven recalls, village boundary, ending price/reset. All preserve the first-activator rule, maintenance without direct memory, record anchoring, and A/B accessibility. Checked failure mode: mother knowing someone is trapped could imply immunity; output explicitly derives knowledge from anchored evidence. An is adult at present and child only after B/C body reset. Keys/once flags are distinct from rewards and no early identity reveal is introduced. No unresolved artifact discrepancies. Runtime sequencing/skip/load not tested at this stage.

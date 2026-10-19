@@ -1,0 +1,58 @@
+[
+  {
+    "id": "SRC01",
+    "title": "Godot archive",
+    "url": "https://godotengine.org/download/archive/",
+    "checked_at": "2026-10-18",
+    "usage": "Pin 4.7.2 stable đã đối chiếu; không khẳng định binary đã có trong máy agent."
+  },
+  {
+    "id": "SRC02",
+    "title": "Available 3D formats",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_3d_scenes/available_formats.html",
+    "checked_at": "2026-10-18",
+    "usage": "GLB/glTF pipeline và source format."
+  },
+  {
+    "id": "SRC03",
+    "title": "Exporting projects",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_projects.html",
+    "checked_at": "2026-10-18",
+    "usage": "Export presets/templates/filters; agent kiểm lại theo pin."
+  },
+  {
+    "id": "SRC04",
+    "title": "Saving games",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/io/saving_games.html",
+    "checked_at": "2026-10-18",
+    "usage": "File/serialization cơ sở; atomic recovery/schema là contract dự án, phải tự test."
+  },
+  {
+    "id": "SRC05",
+    "title": "Internationalizing games",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html",
+    "checked_at": "2026-10-18",
+    "usage": "Localization keys/catalog; LQA là công việc dự án."
+  },
+  {
+    "id": "SRC06",
+    "title": "Steam release process",
+    "url": "https://partner.steamgames.com/doc/store/releasing",
+    "checked_at": "2026-10-18",
+    "usage": "Store/build review, Coming Soon và quyền release; recheck current account."
+  },
+  {
+    "id": "SRC07",
+    "title": "PhysicsDirectSpaceState3D",
+    "url": "https://docs.godotengine.org/en/stable/classes/class_physicsdirectspacestate3d.html",
+    "checked_at": "2026-10-18",
+    "usage": "Target-world physics query APIs; không chứng minh SwitchSafety implementation."
+  },
+  {
+    "id": "SRC08",
+    "title": "Godot command line tutorial",
+    "url": "https://docs.godotengine.org/en/stable/tutorials/editor/command_line_tutorial.html",
+    "checked_at": "2026-10-18",
+    "usage": "--import, --script, --export-release; --test không phải game test suite."
+  }
+]

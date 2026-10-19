@@ -1,0 +1,11 @@
+{
+  "gate_id": "G0",
+  "result": "NOT_TESTED",
+  "created_at": "REPLACE_WITH_ACTUAL_ISO_TIMESTAMP",
+  "review_file": "REPLACE_WITH_GATE_REVIEW",
+  "artifacts": [],
+  "checks": [],
+  "technical_status": "NOT_EVALUATED",
+  "public_status": "NOT_EVALUATED",
+  "authorization_ref": null
+}

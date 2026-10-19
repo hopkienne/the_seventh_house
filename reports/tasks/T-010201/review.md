@@ -1,0 +1,4 @@
+# Review T-010201
+Result: PASS. Reviewer: codex-primary; self_review=true, separate canon artifact review.
+
+Compared each timeline row to Story Bible and chapter catalog. Minh is first activator at age 9; mother subsequently stabilizes/maintains despite erased direct memory; An ages 6 to 21. Mark protects new erasures, lantern enables phase access/evidence fixation. CH1 does not reveal sibling identity; CH4/5/6 information remains staged. B/C reset bodies and use a 15-year new-history epilogue; A keeps the debt cost. Keys and once flags are unique; no memory grant embedded. Failure mode checked: counting both timelines as sequential biological aging or calling mother first activator; output explicitly prevents both. Runtime skip/load unavailable at this documentation stage and is not claimed tested. No unresolved canon discrepancy.

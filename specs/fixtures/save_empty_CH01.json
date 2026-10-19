@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "build_version": "fixture-not-a-built-game",
+  "slot_id": 1,
+  "chapter_id": "CH01",
+  "level_id": "CH01_STREET",
+  "checkpoint_id": "CH01_ENTRY",
+  "player": {
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "rotation_y": 0
+  },
+  "world_phase": "REAL",
+  "story_flags": {},
+  "inventory": [],
+  "journal_ids": [],
+  "puzzle_states": {},
+  "completed_cinematics": [],
+  "zone_states": {}
+}

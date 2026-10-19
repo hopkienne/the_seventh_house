@@ -1,0 +1,152 @@
+{
+  "probes": [
+    {
+      "name": "python",
+      "path": "C:\\Python314\\python.exe",
+      "command": [
+        "C:\\Python314\\python.exe",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.160878+00:00",
+      "exit_code": 0,
+      "stdout": "Python 3.14.0\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "Python 3.14.0"
+    },
+    {
+      "name": "git",
+      "path": "C:\\Users\\kienth\\AppData\\Local\\Programs\\Git\\cmd\\git.EXE",
+      "command": [
+        "git",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.309527+00:00",
+      "exit_code": 0,
+      "stdout": "git version 2.45.1.windows.1\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "git version 2.45.1.windows.1"
+    },
+    {
+      "name": "godot",
+      "path": null,
+      "command": [
+        "godot",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.469598+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "godot4",
+      "path": null,
+      "command": [
+        "godot4",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.536930+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "blender",
+      "path": null,
+      "command": [
+        "blender",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.628302+00:00",
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "[WinError 2] The system cannot find the file specified",
+      "available": false,
+      "timed_out": false,
+      "version": null
+    },
+    {
+      "name": "git_lfs",
+      "path": "C:\\Users\\kienth\\AppData\\Local\\Programs\\Git\\cmd\\git.EXE",
+      "command": [
+        "git",
+        "lfs",
+        "version"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:22.681798+00:00",
+      "exit_code": 0,
+      "stdout": "git-lfs/3.5.1 (GitHub; windows amd64; go 1.21.7; git e237bb3a)\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "git-lfs/3.5.1 (GitHub; windows amd64; go 1.21.7; git e237bb3a)"
+    },
+    {
+      "name": "gpu_inventory",
+      "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.EXE",
+      "command": [
+        "powershell",
+        "-NoProfile",
+        "-Command",
+        "Get-CimInstance Win32_VideoController | Select-Object Name,DriverVersion | ConvertTo-Json"
+      ],
+      "probe_timestamp": "2026-10-19T03:21:23.086534+00:00",
+      "exit_code": 0,
+      "stdout": "{\n    \"Name\":  \"NVIDIA NVS 310\",\n    \"DriverVersion\":  \"10.18.13.5362\"\n}\n",
+      "stderr": "",
+      "available": true,
+      "timed_out": false,
+      "version": "{\n    \"Name\":  \"NVIDIA NVS 310\",\n    \"DriverVersion\":  \"10.18.13.5362\"\n}"
+    }
+  ],
+  "network": {
+    "url": "https://api.github.com/repos/godotengine/godot-builds/releases/tags/4.7.2-stable",
+    "available": true,
+    "status": 200,
+    "error": null,
+    "tag": "4.7.2-stable",
+    "assets": [
+      {
+        "name": "Godot_v4.7.2-stable_export_templates.tpz",
+        "size": 1281349702,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_export_templates.tpz",
+        "digest": "sha256:f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_mono_export_templates.tpz",
+        "size": 1202598411,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_export_templates.tpz",
+        "digest": "sha256:92f8681e349ef1f90891b792da95e3b2b0bd1ed610b78018c58feb2d87e15a9d"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_mono_win64.zip",
+        "size": 116582061,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_mono_win64.zip",
+        "digest": "sha256:a2a48473a7414c5f19fab690518caebb738c09ef9601f6bd2388676a7f53b3c0"
+      },
+      {
+        "name": "Godot_v4.7.2-stable_win64.exe.zip",
+        "size": 86013866,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/Godot_v4.7.2-stable_win64.exe.zip",
+        "digest": "sha256:731980f9608d61333e5baf54a2ef17210acc7a538446c0cb9969f002aca1e953"
+      },
+      {
+        "name": "SHA512-SUMS.txt",
+        "size": 5682,
+        "browser_download_url": "https://github.com/godotengine/godot-builds/releases/download/4.7.2-stable/SHA512-SUMS.txt",
+        "digest": "sha256:b8bdff6704f833e7a021df16ec08e1478edd5a285c1f894929b91a7f74a5c7c0"
+      }
+    ]
+  },
+  "host": "Windows-10-10.0.19045-SP0"
+}

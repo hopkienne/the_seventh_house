@@ -1,0 +1,20 @@
+{
+  "command": [
+    "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+    "--path",
+    ".",
+    "--rendering-method",
+    "forward_plus",
+    "--rendering-driver",
+    "vulkan",
+    "--audio-driver",
+    "Dummy",
+    "--script",
+    "res://tests/fixtures/render_probe.gd"
+  ],
+  "exit_code": 0,
+  "icd_path": "C:\\Program Files\\Google\\Chrome\\Application\\155.0.8059.39\\vk_swiftshader_icd.json",
+  "icd_sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9",
+  "license_source": "https://github.com/google/swiftshader/blob/master/LICENSE.txt",
+  "test_only_software_renderer": true
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "T-010104",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:73a7c62ec702ca0d3e8b8ee6dd66ddedab631c7ff39782f9fc3027598039f40f",
+  "created_at": "2026-10-19T03:23:27.449011+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010104/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/decisions/ADR-000-scope.md",
+      "sha256": "b1c9fa572e4fbbe9eb3ed7f5e48771544db86e636ed41be6d3faaeb32849d34a"
+    },
+    {
+      "path": "reports/tasks/T-010104/review.md",
+      "sha256": "fe8946d8808f9d07e74f808b0ebf3daa299da2cffe7a1464301502d8aed41c2a"
+    },
+    {
+      "path": "reports/tasks/T-010104/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "baseline-authority",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "v3 adopted without unnecessary sign-off and with exact permission boundaries",
+      "observed": "ADR preserves scope, sequential ledger workflow, self-review, pinned Godot, technical/public separation and zero spend",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Governance decision only; game and release gates not evaluated."
+  ]
+}

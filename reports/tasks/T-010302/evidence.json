@@ -1,0 +1,138 @@
+{
+  "task_id": "T-010302",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:e85faf101ca6ae293a51473686455c45bd67b144fb1b4266a7e1dac4f01520fd",
+  "created_at": "2026-10-19T03:41:45.788646+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010302/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "4b250ebf00ac933e618cd1c7b84346a83fc139fea97aef4e5ff158de943e7713"
+    },
+    {
+      "path": "scripts/bootstrap/main.gd",
+      "sha256": "e4a9217aeed09b28ce7e17a97a4d729b17b08f45223ce9c17202059e8a434680"
+    },
+    {
+      "path": "project.godot",
+      "sha256": "c45061290b37e40fa1befad55a44d5aa173c69f650ddefa9ebce0b72976a953c"
+    },
+    {
+      "path": "tools/configure_input.gd",
+      "sha256": "c012ee8aede6253bc1de6ec6a8fa8472c5b04a63097327f4a24cd08786da3c38"
+    },
+    {
+      "path": "tests/unit/test_scene.gd",
+      "sha256": "9c63eae93da61ec23ed73af8765bf536ccaad5d8e3129ec9a87e768226ab4dc3"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "197af4c626e3266dcde1e6a73e19cb3a5d663efdfadcaaf9de14ce9938ae3aee"
+    },
+    {
+      "path": "tools/verify_bootstrap.py",
+      "sha256": "b62a7d747a5c23f84ab795d910283f0c971afafc24c0118ece5308ae025e0742"
+    },
+    {
+      "path": "reports/tasks/T-010302/verification.json",
+      "sha256": "d9a672af72ee51c2a79daf0568dddf828e0dd327ba739faaf9ca91c4a2a91d7e"
+    },
+    {
+      "path": "reports/tasks/T-010302/scene_final.stdout.log",
+      "sha256": "edb9f95a16229150a5e382462e9c77e3157ab4b97e839d61ea0e55ce05484212"
+    },
+    {
+      "path": "reports/tasks/T-010302/scene_final.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010302/invalid_profile.stdout.log",
+      "sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+    },
+    {
+      "path": "reports/tasks/T-010302/invalid_profile.stderr.log",
+      "sha256": "d200567d470f21d09d37512fb4e98ce839a75b8a432bdf5cdd77cba5e29e8d64"
+    },
+    {
+      "path": "reports/tasks/T-010302/headless_render_rejected.stderr.log",
+      "sha256": "5ce582808a9f09961ad1d6efb483aba692fefccd3cdd4c480ea879f91458dadc"
+    },
+    {
+      "path": "reports/tasks/T-010302/invalid_report_path.stderr.log",
+      "sha256": "0861c4fbd2a5a6aa61d5103432c793511ea1abc058532c8c181d63c94e824c33"
+    },
+    {
+      "path": "reports/tasks/T-010302/bootstrap_regression/verification.json",
+      "sha256": "f5eb55c507b6d8f4bc1d7e5ece6c94584250907c7bb56f6d8c611385918a24dc"
+    },
+    {
+      "path": "reports/tasks/T-010302/main_smoke.json",
+      "sha256": "f7174a314f4f9507a6ba75fde4f1df58f3301a3c594ec8208a968c8f1c17a18c"
+    },
+    {
+      "path": "reports/tasks/T-010302/main_smoke.png",
+      "sha256": "de27712f9053c7ffadc102b8b86aa6a2bed01e94a0c19df4c5b0e91979a1be85"
+    },
+    {
+      "path": "reports/tasks/T-010302/render.stdout.log",
+      "sha256": "5c032ca36aeddf58940106585cce69fbfefd573bd1420f58a47fa7d8bd6206b8"
+    },
+    {
+      "path": "reports/tasks/T-010302/render.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010302/review.md",
+      "sha256": "6ce1e62945ef7f127ddfd42876ec3a62a050dce4db4b21adfd6ccf4a64eaacf0"
+    },
+    {
+      "path": "reports/tasks/T-010302/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "scene-and-input",
+      "kind": "ENGINE_TEST",
+      "expected": "Real main scene, input event mappings and safe unload/reload",
+      "observed": "3 cases/57 assertions/0 failures/0 skips; bootstrap regression21 assertions and negative harness contracts also pass",
+      "result": "PASS",
+      "command": "Godot --headless --script res://tests/test_runner.gd -- --suite scene",
+      "log_path": "reports/tasks/T-010302/scene_final.stdout.log",
+      "assertions": 57
+    },
+    {
+      "id": "render-main",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Non-headless actual Forward+ main scene renders camera/lighting/3D;capture reviewed",
+      "observed": "Windows/SwiftShader Vulkan software,1280x720,5 assertions,14 colors; image manually inspected;exit0",
+      "result": "PASS",
+      "command": "Godot --rendering-method forward_plus --rendering-driver vulkan -- --qa-profile BOOTSTRAP --qa-report res://reports/tasks/T-010302/main_smoke.json",
+      "log_path": "reports/tasks/T-010302/render.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010302/main_smoke.png"
+      ],
+      "software": true,
+      "assertions": 5
+    },
+    {
+      "id": "source-and-capture-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Acceptance matched and QA rejection paths recorded",
+      "observed": "F5 main registered,11 actions,built-in UI retained; malformed/headless/path cases exit2; self-review and software limitation explicit",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Scene is bootstrap geometry only; gameplay, campaign, final art/audio and exported EXE are not yet implemented.",
+    "Software Forward+ functional render; no physical pad/input or GPU performance verification."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "task_id": "T-010102",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:ffe1a81ea7c942308b5c47c3ccea67e53f50153859cf0736f3deb757f3c981d7",
+  "created_at": "2026-10-19T03:20:27.556680+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010102/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/requirements.md",
+      "sha256": "a435de84558087aff0c36bea02206eb8ef57d65fe5e5de2f6f285663a870b5ac"
+    },
+    {
+      "path": "tools/write_requirements.py",
+      "sha256": "b5d01337d1eec7e9f646fb191f79c7325b4e0fa34f0833f480155817e1c112d9"
+    },
+    {
+      "path": "reports/tasks/T-010102/review.md",
+      "sha256": "b65e818dfe6440ab12e9d928815f315bd3e0410961df7aff58dc45506f2f8c7d"
+    },
+    {
+      "path": "reports/tasks/T-010102/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "R01-R18-traceability",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "18 canonical Must requirements with existing story links and correct gates; three endings Must",
+      "observed": "18 rows match canonical acceptance, stories and gates; R02 includes A/B/C and ending eligibility",
+      "result": "PASS",
+      "command": "python tools/write_requirements.py",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Document traceability only; requirements remain NOT_VERIFIED until game evidence exists."
+  ]
+}

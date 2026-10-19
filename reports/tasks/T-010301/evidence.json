@@ -1,0 +1,179 @@
+{
+  "task_id": "T-010301",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:806254f76cc3c8d8ab07c4d9e82a7943eff00148626265b43fb6a0b2d94fa22b",
+  "created_at": "2026-10-19T03:38:11.494563+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010301/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "project.godot",
+      "sha256": "c8be7582ce6742bff54a1321e84c59eef120f1f8553712dc96e72406a9a6c26c"
+    },
+    {
+      "path": "config/toolchain.lock.json",
+      "sha256": "cfb1de5b073584b7cbd0b0b6738a532177f3071b78b83dd2aeb0f79f596e0c78"
+    },
+    {
+      "path": "config/test_environment.json",
+      "sha256": "4b8fc40b387b1ec94d93db2d55efc5ff71f7ea709ed21fe8cb8521c00af14a9e"
+    },
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "a5eff16bbf081654a4339d40394370db2050b98bea59bcd3ac0c1924803b1922"
+    },
+    {
+      "path": "state/external_requests.json",
+      "sha256": "d8e96c2559b4ce6bcddb49b43cd54d1e8c5a3b89d5715604f013981c238c614e"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "ad4c01f4edc1921cf7365bc4f561e6b1cd14f512a8ceff4e50b4607ff8400fcd"
+    },
+    {
+      "path": "tests/fixtures/bootstrap_failure.gd",
+      "sha256": "b1ce571d7c5db95f19162a7c0f3264f1e8ee6c9f46749a8630a33ee1feeb0800"
+    },
+    {
+      "path": "tests/fixtures/version_probe.gd",
+      "sha256": "6cbeb811df3d4b8488c9b1416f9f455ca41a8a91286bdcc63b3cb3e8f80abd45"
+    },
+    {
+      "path": "tests/fixtures/render_probe.gd",
+      "sha256": "93149a1071fdb7dd2d026ad0750ff591aa3ca33d20f6ca6d4b309f15cf3b7967"
+    },
+    {
+      "path": "tools/fetch_godot.py",
+      "sha256": "9015ec79e9b205ea293b49d55d33a449c1ea28e0709ca3cb938817d218b71bd6"
+    },
+    {
+      "path": "tools/godot_process.py",
+      "sha256": "770bb1412b76c81072cfc5807007927ff5fc334e2e813c16b25428270afb82d1"
+    },
+    {
+      "path": "tools/verify_bootstrap.py",
+      "sha256": "2794f55516650611e11b2106a04f271a02e5486de06cc42b7b596ed6c27d73c3"
+    },
+    {
+      "path": "tools/test_agentctl.py",
+      "sha256": "2bc6b2faee3d2d330ab018556f4a84ec0f675f770f07f901ac5a23ca31136cd0"
+    },
+    {
+      "path": "docs/decisions/ADR-001-render-capability.md",
+      "sha256": "fe8119e0eaeb046b969d7d4772580103028ebdedfb738276d3c5eac96e365543"
+    },
+    {
+      "path": "reports/tasks/T-010301/templates_verified.json",
+      "sha256": "a84717a62d37a49e47421ab42227ff78f3894707dbd6650dc49fc5e693e9fe6c"
+    },
+    {
+      "path": "reports/tasks/T-010301/verification.json",
+      "sha256": "4698d5d5175b57c77ad41b26bd5d4d3134ce201ded1d83f65d7397645ea95438"
+    },
+    {
+      "path": "reports/tasks/T-010301/bootstrap.stdout.log",
+      "sha256": "6463ee773522895162643d553e6e35feb8170b7af6b58fc5eec7bc291afacac4"
+    },
+    {
+      "path": "reports/tasks/T-010301/bootstrap.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010301/negative_assertion.stdout.log",
+      "sha256": "036b789d6011239302c62d7dbc1ee1692227cfa0683d55d0c13c9ed02ebee8f4"
+    },
+    {
+      "path": "reports/tasks/T-010301/unknown_suite.stdout.log",
+      "sha256": "e76e989e6e71a061710516739f80ebf03d669012e841b616920856958bf9b8bb"
+    },
+    {
+      "path": "reports/tasks/T-010301/zero_tests.stdout.log",
+      "sha256": "1b67427da441173b42515d54cd57c6e047c287b363ab869dd8fa4a7ce3223a5e"
+    },
+    {
+      "path": "reports/tasks/T-010301/import.stdout.log",
+      "sha256": "97d3a98b638bde96129f72c0aa2c73756b531bcc790e7a75a73508fdf8f980e1"
+    },
+    {
+      "path": "reports/tasks/T-010301/import.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010301/ledger_regression_fixed.log",
+      "sha256": "1dd809fda7f416c822992334e8890700e168c709cab2c11f3cd96d549527512e"
+    },
+    {
+      "path": "reports/tasks/T-010301/software_render_verified.stdout.log",
+      "sha256": "4fe4be90c4e09c48414b0422682e8c92114ef621dfcd325d268d261de8b18f55"
+    },
+    {
+      "path": "reports/tasks/T-010301/software_render_verified.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010301/render_capability_software.png",
+      "sha256": "dbdf524b46c7463b44466879e56cc8dc7e28b4ca105f858b3ce6b4a911182be0"
+    },
+    {
+      "path": "reports/tasks/T-010301/render_fallback_guard.stdout.log",
+      "sha256": "c3e8428f29c71d7a9870fbbbf878b735aa304ea964a569cc25afbb710981be81"
+    },
+    {
+      "path": "reports/tasks/T-010301/render_fallback_guard.stderr.log",
+      "sha256": "c0a0eb0b601bff0134332283442542f9681138b69132461b9fb805edf6fe2252"
+    },
+    {
+      "path": "reports/tasks/T-010301/review.md",
+      "sha256": "426b1cfceec310f9993d7ec1be3d4da34e0ccfef5e54c3094e81c4150cb3241d"
+    },
+    {
+      "path": "reports/tasks/T-010301/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "bootstrap-contract",
+      "kind": "ENGINE_TEST",
+      "expected": "Exact pinned engine/project lock; positive tests >0; negative harness paths fail",
+      "observed": "2 cases,21 assertions PASS;6 expected-negative cases PASS in driver; actual templates version and official archive hash verified",
+      "result": "PASS",
+      "command": "python tools/verify_bootstrap.py",
+      "log_path": "reports/tasks/T-010301/bootstrap.stdout.log",
+      "assertions": 21
+    },
+    {
+      "id": "source-and-toolchain-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Actual binary/templates locks and separate self-review; renderer baseline preserved",
+      "observed": "Official digests match; Forward+ unchanged; actual engine commit and Windows template hashes recorded; no template/runtime assumption",
+      "result": "PASS",
+      "assertions": 0
+    },
+    {
+      "id": "software-render-capability",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Non-headless Forward+ Vulkan capture, with software renderer explicitly disclosed",
+      "observed": "Windows display, SwiftShader Device (Subzero), forward_plus/vulkan,1280x720 PNG;exit0,no stderr; native fallback guard exit1",
+      "result": "PASS",
+      "command": "Godot --rendering-method forward_plus --rendering-driver vulkan --script res://tests/fixtures/render_probe.gd with process-scoped SwiftShader ICD",
+      "log_path": "reports/tasks/T-010301/software_render_verified.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010301/render_capability_software.png"
+      ],
+      "software": true,
+      "assertions": 1
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Bootstrap/toolchain verification only; no main scene/game systems/export yet.",
+    "Rendered capability uses software CPU Vulkan; physical GPU performance, audio listening and physical gamepad not verified.",
+    "Planning CSV import warnings recorded; full retail package filters are not implemented yet."
+  ]
+}

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "CH01",
+    "house_id": "H01",
+    "title": "Họ đã từng ở đây",
+    "house_name": "Ngôi nhà đối diện",
+    "zone": "Đường làng / nhà Minh / H01",
+    "main_puzzles": [
+      "P01",
+      "P02"
+    ],
+    "memory_id": "M01",
+    "lore_id": "L01",
+    "essential_evidence": [
+      "E01",
+      "E02"
+    ],
+    "entry_condition": "new_game",
+    "exit_condition": "p01_solved AND p02_solved",
+    "reveal": "Ngôi nhà biến mất; vật chứng trái ngược lời người bán hàng.",
+    "greybox_sprint": "S07",
+    "complete_sprint": "S25"
+  },
+  {
+    "id": "CH02",
+    "house_id": "H02",
+    "title": "Bữa cơm thiếu một người",
+    "house_name": "Nhà bà Liên",
+    "zone": "H02 / sân chung / góc ký ức",
+    "main_puzzles": [
+      "P03",
+      "P04"
+    ],
+    "memory_id": "M02",
+    "lore_id": "L02",
+    "essential_evidence": [
+      "E03",
+      "E04"
+    ],
+    "entry_condition": "CH01_complete",
+    "exit_condition": "p03_solved AND p04_solved",
+    "reveal": "Bà Liên phủ nhận người con gái Hạnh nhưng thói quen dọn cơm vẫn còn.",
+    "greybox_sprint": "S13",
+    "complete_sprint": "S14"
+  },
+  {
+    "id": "CH03",
+    "house_id": "H03",
+    "title": "Dấu nước trên tường",
+    "house_name": "Nhà ông Phúc lái đò",
+    "zone": "H03 / bến sông / cầu gỗ",
+    "main_puzzles": [
+      "P05",
+      "P06"
+    ],
+    "memory_id": "M03",
+    "lore_id": "L03",
+    "essential_evidence": [
+      "E05",
+      "E06"
+    ],
+    "entry_condition": "CH02_complete",
+    "exit_condition": "p05_solved AND p06_solved",
+    "reveal": "Các dấu nước chứng minh trận lũ lớn từng đi qua nơi dân làng khẳng định chưa ngập.",
+    "greybox_sprint": "S15",
+    "complete_sprint": "S16"
+  },
+  {
+    "id": "CH04",
+    "house_id": "H04",
+    "title": "Ngôi trường không tồn tại",
+    "house_name": "Nhà bác Tư giữ trường",
+    "zone": "H04 / hành lang trường / phòng hồ sơ",
+    "main_puzzles": [
+      "P07",
+      "P08"
+    ],
+    "memory_id": "M04",
+    "lore_id": "L04",
+    "essential_evidence": [
+      "E07",
+      "E08"
+    ],
+    "entry_condition": "CH03_complete",
+    "exit_condition": "p07_solved AND p08_solved",
+    "reveal": "Hồ sơ cho thấy Hạ Vân đã bị phá hủy 15 năm trước; trường là khu phụ gắn với H04.",
+    "greybox_sprint": "S17",
+    "complete_sprint": "S18"
+  },
+  {
+    "id": "CH05",
+    "house_id": "H05",
+    "title": "Những trang mẹ giấu",
+    "house_name": "Nhà bà Hảo, bạn của mẹ",
+    "zone": "H05 / phòng nhật ký / sân ký ức",
+    "main_puzzles": [
+      "P09",
+      "P10"
+    ],
+    "memory_id": "M05",
+    "lore_id": "L05",
+    "essential_evidence": [
+      "E09",
+      "E10"
+    ],
+    "entry_condition": "CH04_complete",
+    "exit_condition": "p09_solved AND p10_solved",
+    "reveal": "Mẹ để lại cách hiểu thời gian vay mượn và dấu vết người đã ở lại; không đổ toàn bộ lore trong một đoạn đọc.",
+    "greybox_sprint": "S19",
+    "complete_sprint": "S20"
+  },
+  {
+    "id": "CH06",
+    "house_id": "H06",
+    "title": "Người mặc áo mưa vàng",
+    "house_name": "Nhà người giữ chuông",
+    "zone": "H06 / lối tháp / buồng chuông",
+    "main_puzzles": [
+      "P11",
+      "P12"
+    ],
+    "memory_id": "M06",
+    "lore_id": "L06",
+    "essential_evidence": [
+      "E11",
+      "E12"
+    ],
+    "entry_condition": "CH05_complete",
+    "exit_condition": "p11_solved AND p12_solved",
+    "reveal": "An là em gái Minh và là điểm neo; câu chuyện giải thích vì sao cô không thể đơn giản rời tháp.",
+    "greybox_sprint": "S21",
+    "complete_sprint": "S22"
+  },
+  {
+    "id": "CH07",
+    "house_id": "H07",
+    "title": "Cánh cửa thứ bảy",
+    "house_name": "Nhà Minh trong đêm lũ",
+    "zone": "H07 / tuyến sơ tán 3 cụm / đồi",
+    "main_puzzles": [
+      "P13",
+      "P14"
+    ],
+    "memory_id": "M07",
+    "lore_id": "L07",
+    "essential_evidence": [
+      "E13",
+      "E14"
+    ],
+    "entry_condition": "CH06_complete",
+    "exit_condition": "P14 resolution complete AND credits reachable",
+    "reveal": "Người chơi nhìn thấy cái giá của ba cách kết thúc và quyết định sau khi hiểu sự thật.",
+    "greybox_sprint": "S23",
+    "complete_sprint": "S24"
+  }
+]

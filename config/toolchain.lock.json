@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "godot_version": "4.7.2",
+  "channel": "stable",
+  "engine_commit": "ed1daf0bf001b61586d9930840f2f1394092c079",
+  "editor_path": ".tools/godot/4.7.2-stable/Godot_v4.7.2-stable_win64.exe",
+  "console_path": ".tools/godot/4.7.2-stable/Godot_v4.7.2-stable_win64_console.exe",
+  "editor_sha256": "ab1824f85bfd8e0e4128182c000c4003a3e042245b2967848d089b2a04b22424",
+  "console_sha256": "c8f0a6bc45a19b33541501e57f6f7cd972ab18453743266339d495cbbe846643",
+  "export_templates_version": "4.7.2.stable",
+  "templates_archive_sha256": "f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011",
+  "templates_expected_sha256": "f298490b8d44d934be425a5a65a51bf15f422428b229a06a6e11d9ffea248011",
+  "templates_verified": true,
+  "renderer": "forward_plus",
+  "release_target": "windows_x86_64",
+  "python_version": "3.14.0",
+  "git_version": "2.45.1.windows.1",
+  "templates_root": ".tools/godot/4.7.2-stable/templates",
+  "template_binaries": {
+    "windows_debug_x86_64.exe": "51498b72b3a237f882ebd7d1787f06a4bc1eaf0572daab93837adcfd3cfdc107",
+    "windows_release_x86_64.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  }
+}

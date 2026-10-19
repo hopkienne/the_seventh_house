@@ -1,0 +1,130 @@
+[
+  {
+    "id": "RK01",
+    "risk": "Agent chỉ làm prototype rồi dừng",
+    "trigger": "Kết thúc ở G1/G2 dù scope còn",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Next-task loop, full-game gates, explicit no-demo DoD",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK02",
+    "risk": "Thiếu Godot/render/Windows",
+    "trigger": "Probe thất bại hoặc chỉ headless",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Capability ledger; làm nhánh phù hợp, không giả runtime pass",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK03",
+    "risk": "Art procedural không đạt",
+    "trigger": "Silhouette/rig/lighting không đọc được",
+    "owner": "ART_AGENT",
+    "mitigation": "Golden sample trong game, rerender/review, giữ source có thể sửa",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK04",
+    "risk": "Audio/cue không kiểm thực",
+    "trigger": "Chỉ peak analysis, không mix capture",
+    "owner": "AUDIO_AGENT",
+    "mitigation": "Nghe/capture theo capability, captions, NOT_TESTED khi thiếu",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK05",
+    "risk": "Canon/puzzle thay mỗi phiên",
+    "trigger": "Tên/luật/đáp án tự đổi",
+    "owner": "NARRATIVE_AGENT",
+    "mitigation": "Canon+14 specs+stable IDs và ADR",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK06",
+    "risk": "False DONE / fake evidence",
+    "trigger": "Zero tests, template PASS, dummy artifact",
+    "owner": "REVIEWER_AGENT",
+    "mitigation": "Output/hash/checks + raw logs + explicit review, no fake harness",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK07",
+    "risk": "Mất tiến độ sau context reset",
+    "trigger": "Phiên mới rebuild từ đầu",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Ledger + handoff + working-tree verify",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK08",
+    "risk": "Concurrent agent conflict",
+    "trigger": "Nhiều writer shared files/ledger",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Sequential default, worktree file scope, ledger lock",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK09",
+    "risk": "Save/world softlock nhân rộng",
+    "trigger": "Switch unsafe hoặc state không persist",
+    "owner": "GAMEPLAY_AGENT",
+    "mitigation": "G1/G3 hard gates, golden saves, rollback tests",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK10",
+    "risk": "Asset license không rõ",
+    "trigger": "Nguồn chỉ ghi free/AI-generated",
+    "owner": "RELEASE_AGENT",
+    "mitigation": "Provenance/license audit; replace/block release",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK11",
+    "risk": "Vượt quyền/chi phí",
+    "trigger": "Tự dùng API, publish, khai identity",
+    "owner": "RELEASE_AGENT",
+    "mitigation": "Spend 0 default, owner authorization scoped",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK12",
+    "risk": "Headless FPS bị dùng làm GPU benchmark",
+    "trigger": "Thiếu render/hardware metadata",
+    "owner": "QA_AGENT",
+    "mitigation": "Performance native rendered only, fixed routes",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK13",
+    "risk": "Bot data giả feedback người chơi",
+    "trigger": "Báo tám người thử từ tám profiles",
+    "owner": "QA_AGENT",
+    "mitigation": "Scenario coverage label; HUMAN_USABILITY_NOT_ASSESSED",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK14",
+    "risk": "Generated views lệch canonical",
+    "trigger": "Excel được sửa như board thứ hai",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "State JSON authoritative; views regenerate/snapshot tag",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK15",
+    "risk": "Public blocker chặn sai phần local",
+    "trigger": "Chưa account nên dừng làm game",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Tách G7_TECH/G7_PUBLIC và external queue",
+    "status": "OPEN"
+  },
+  {
+    "id": "RK16",
+    "risk": "Chronological/calendar giả",
+    "trigger": "Dùng lại 72 tuần/2.958h cho AI",
+    "owner": "ORCHESTRATOR",
+    "mitigation": "Wave/complexity only; đo actual khi thật được cung cấp",
+    "status": "OPEN"
+  }
+]

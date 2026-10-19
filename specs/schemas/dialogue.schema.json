@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "chapter_id",
+    "lines"
+  ],
+  "properties": {
+    "chapter_id": {
+      "type": "string",
+      "pattern": "^CH0[1-7]$"
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "speaker",
+          "text_key",
+          "vi",
+          "en",
+          "conditions",
+          "events",
+          "once"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "speaker": {
+            "type": "string"
+          },
+          "text_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "vi": {
+            "type": "string",
+            "minLength": 1
+          },
+          "en": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions": {
+            "type": "object",
+            "properties": {
+              "all_flags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "none_flags": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "once": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

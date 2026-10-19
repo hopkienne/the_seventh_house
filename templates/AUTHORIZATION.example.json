@@ -1,0 +1,13 @@
+{
+  "authorization_id": "REPLACE_WITH_REAL_RECORD",
+  "approved": false,
+  "approved_by": null,
+  "record_path": null,
+  "allowed_operations": [],
+  "app_id": null,
+  "build_sha256": null,
+  "channel": null,
+  "spend_cap": 0,
+  "currency": null,
+  "expires_at": null
+}

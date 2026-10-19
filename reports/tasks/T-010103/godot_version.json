@@ -1,0 +1,11 @@
+{
+  "command": [
+    "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+    "--version"
+  ],
+  "exit_code": 0,
+  "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+  "stderr": "",
+  "sha256": "c8f0a6bc45a19b33541501e57f6f7cd972ab18453743266339d495cbbe846643",
+  "probe_timestamp": "2026-10-19T03:22:16.122398+00:00"
+}

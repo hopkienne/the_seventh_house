@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "requests": [
+    {
+      "request_id": "CAP-001",
+      "type": "BLOCKED_CAPABILITY",
+      "status": "OPEN",
+      "reason": "Native Forward+ hardware unavailable on NVS 310; physical gamepad and audible mix not verified. Blender absent.",
+      "attempted": "Native Forward+ probe fell back to OpenGL; regression guard rejects fallback. Explicit SwiftShader Vulkan software Forward+ successfully rendered and captured; headless engine runs.",
+      "needed": "Hardware Forward+ benchmark host and physical input/audio environment when those task gates require them.",
+      "affected_tasks": [],
+      "fallback": "Use test-only software Forward+ for functional rendered verification, headless for logic and procedural production. No GPU performance or physical device claim.",
+      "requires_owner_action_now": false,
+      "spend_cap": 0
+    }
+  ]
+}

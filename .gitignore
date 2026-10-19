@@ -1,0 +1,23 @@
+# Local tools, caches and generated builds
+.tools/
+.godot/
+.qa/
+builds/
+__pycache__/
+*.pyc
+# Godot-generated translations from planning CSV views
+data/*.translation
+data/*.csv.import
+templates/*.translation
+templates/*.csv.import
+# Credentials are never source artifacts
+.env
+.env.*
+!.env.example
+*.token
+*.dpapi
+*.pem
+*.pfx
+*.key
+export_credentials.cfg
+state/.agentctl.lock

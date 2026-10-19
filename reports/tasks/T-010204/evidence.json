@@ -1,0 +1,51 @@
+{
+  "task_id": "T-010204",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:2e7c01606ab45b6c6fdc7615a8d7c7e7839957d69f3596ce6d7daa6255bbfb10",
+  "created_at": "2026-10-19T03:26:07.808246+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010204/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/story/canon_review.md",
+      "sha256": "eaedbe68f492597faf0c42ad279b0d822cbb6943718c6ca55ff1601c5bee7d85"
+    },
+    {
+      "path": "tools/check_narrative_contract.py",
+      "sha256": "b161e416fdbe9aefe8dd17fe40f8e1f8e373ce232b66859b43c50e4eb42df58b"
+    },
+    {
+      "path": "reports/tasks/T-010204/narrative_checks.json",
+      "sha256": "1a97880a7b5aa5d184ed8a40dedd8422b7cb751a7ed273fbc8c230e8bae1e462"
+    },
+    {
+      "path": "reports/tasks/T-010204/review.md",
+      "sha256": "360d9390f3617f5a3393618df3e24dd51f0b0dcfde09977711d30fd272dc66f8"
+    },
+    {
+      "path": "reports/tasks/T-010204/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "canon-continuity",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Canon checked; reveal regression cases saved; no blocking contradictions",
+      "observed": "12 semantic review cases and 81 static authoring checks pass; runtime limitations explicitly retained",
+      "result": "PASS",
+      "command": "python tools/check_narrative_contract.py",
+      "log_path": "reports/tasks/T-010204/narrative_checks.json",
+      "assertions": 81
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "No cinematic, save, ending or game runtime tests yet; saved scenarios await implementation."
+  ]
+}

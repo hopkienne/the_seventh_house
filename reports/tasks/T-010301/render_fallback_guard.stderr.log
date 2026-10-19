@@ -1,0 +1,9 @@
+ERROR: D3D12CreateDevice failed with error 0x887a0004.
+   at: _initialize_device (drivers/d3d12/rendering_device_driver_d3d12.cpp:6025)
+ERROR: Condition "err != OK" is true. Returning: ERR_CANT_CREATE
+   at: initialize (drivers/d3d12/rendering_device_driver_d3d12.cpp:6399)
+ERROR: Failed to initialize driver for device.
+   at: initialize (servers/rendering/rendering_device.cpp:8376)
+WARNING: Your video card drivers seem not to support Direct3D 12 or Vulkan, switching to OpenGL 3.
+   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8136)
+Required Forward+ renderer unavailable; automatic fallback is not a passing capability probe

@@ -1,0 +1,76 @@
+# Migration v1/v2 → Agent Execution v3
+
+Mọi tài liệu đang thực thi đã chuyển sang agent. Không mang bản v1/v2 vào cây read-before để tránh agent đọc nhầm. V2 task IDs được giữ; không kế thừa DONE hoặc giả định code đã có. File lịch/capacity/budget người bị thay bằng dependency/permission/capability ledger, không bị lặng lẽ bỏ.
+
+| Tệp cũ | Xử lý | Tệp thay thế |
+| --- | --- | --- |
+| 01_MASTER_PRODUCTION_PLAN.md | REWRITTEN | 01_MASTER_PRODUCTION_PLAN.md |
+| 02_SPRINT_STORY_TASK_BACKLOG.md | REWRITTEN | 02_SPRINT_STORY_TASK_BACKLOG.md |
+| 03_CONTENT_AND_ASSET_PLAN.md | REWRITTEN | 03_CONTENT_AND_ASSET_PLAN.md |
+| 04_TECHNICAL_EXECUTION_CONTRACTS.md | REWRITTEN | 04_TECHNICAL_EXECUTION_CONTRACTS.md |
+| 05_QA_RELEASE_AND_HYPERCARE.md | REWRITTEN | 05_QA_RELEASE_AND_HYPERCARE.md |
+| 06_AGENT_DELIVERY_PROTOCOL.md | REWRITTEN | 06_AGENT_DELIVERY_PROTOCOL.md |
+| 07_SOURCES_AND_DECISIONS.md | REWRITTEN | 07_SOURCES_AND_DECISIONS.md |
+| 08_RISK_REGISTER.md | REWRITTEN | 08_RISK_REGISTER.md |
+| 09_PLAN_VALIDATION.md | REWRITTEN | 09_PLAN_VALIDATION.md |
+| MANIFEST.sha256 | REGENERATED_HASHES | MANIFEST.sha256 |
+| README.md | REWRITTEN | README.md |
+| THE_SEVENTH_HOUSE_FULL_PLAN.html | REBUILT_OFFLINE_INDEX | THE_SEVENTH_HOUSE_AGENT_HANDBOOK.html |
+| THE_SEVENTH_HOUSE_TRACKER.xlsx | REBUILT_AGENT_SNAPSHOT | THE_SEVENTH_HOUSE_AGENT_TRACKER.xlsx |
+| data/plan_validation.json | REGENERATED | data/plan_validation.json |
+| data/production_plan.json | REPLACED_SPLIT | plan/backlog.json + state/task_state.json |
+| data/qa_matrix.csv | REGENERATED_AGENT_VIEW | data/qa_matrix.csv |
+| data/requirements.csv | REGENERATED_AGENT_VIEW | data/requirements.csv |
+| data/sprints.csv | REGENERATED_AGENT_VIEW | data/sprints.csv |
+| data/stories.csv | REGENERATED_AGENT_VIEW | data/stories.csv |
+| data/task_slot_simulation.csv | RETIRED_HUMAN_SCHEDULING | tools/agentctl.py next |
+| data/tasks.csv | REGENERATED_AGENT_VIEW | data/tasks.csv |
+| reference/README.md | RETIRED_OLD_INSTRUCTION_TREE | MIGRATION_FROM_V2.md |
+| reference/preproduction_v1/01_GDD_v1.md | SUPERSEDED_NOT_ACTIVE | 13_GDD_AGENT_EDITION.md + 11_STORY_BIBLE.md |
+| reference/preproduction_v1/02_TECHNICAL_DESIGN_v1.md | SUPERSEDED_NOT_ACTIVE | 04_TECHNICAL_EXECUTION_CONTRACTS.md |
+| reference/preproduction_v1/03_PROTOTYPE_PLAN_v1.md | SUPERSEDED_NOT_ACTIVE | sprints/S01.md … sprints/S04.md + specs/puzzles/P01.md |
+| reference/preproduction_v1/04_CODING_AGENT_BRIEF.md | SUPERSEDED_NOT_ACTIVE | AGENTS.md + MASTER_AGENT_PROMPT.md |
+| reference/preproduction_v1/README.md | SUPERSEDED_NOT_ACTIVE | START_HERE.md |
+| sprints/S01.md | REWRITTEN | sprints/S01.md |
+| sprints/S02.md | REWRITTEN | sprints/S02.md |
+| sprints/S03.md | REWRITTEN | sprints/S03.md |
+| sprints/S04.md | REWRITTEN | sprints/S04.md |
+| sprints/S05.md | REWRITTEN | sprints/S05.md |
+| sprints/S06.md | REWRITTEN | sprints/S06.md |
+| sprints/S07.md | REWRITTEN | sprints/S07.md |
+| sprints/S08.md | REWRITTEN | sprints/S08.md |
+| sprints/S09.md | REWRITTEN | sprints/S09.md |
+| sprints/S10.md | REWRITTEN | sprints/S10.md |
+| sprints/S11.md | REWRITTEN | sprints/S11.md |
+| sprints/S12.md | REWRITTEN | sprints/S12.md |
+| sprints/S13.md | REWRITTEN | sprints/S13.md |
+| sprints/S14.md | REWRITTEN | sprints/S14.md |
+| sprints/S15.md | REWRITTEN | sprints/S15.md |
+| sprints/S16.md | REWRITTEN | sprints/S16.md |
+| sprints/S17.md | REWRITTEN | sprints/S17.md |
+| sprints/S18.md | REWRITTEN | sprints/S18.md |
+| sprints/S19.md | REWRITTEN | sprints/S19.md |
+| sprints/S20.md | REWRITTEN | sprints/S20.md |
+| sprints/S21.md | REWRITTEN | sprints/S21.md |
+| sprints/S22.md | REWRITTEN | sprints/S22.md |
+| sprints/S23.md | REWRITTEN | sprints/S23.md |
+| sprints/S24.md | REWRITTEN | sprints/S24.md |
+| sprints/S25.md | REWRITTEN | sprints/S25.md |
+| sprints/S26.md | REWRITTEN | sprints/S26.md |
+| sprints/S27.md | REWRITTEN | sprints/S27.md |
+| sprints/S28.md | REWRITTEN | sprints/S28.md |
+| sprints/S29.md | REWRITTEN | sprints/S29.md |
+| sprints/S30.md | REWRITTEN | sprints/S30.md |
+| sprints/S31.md | REWRITTEN | sprints/S31.md |
+| sprints/S32.md | REWRITTEN | sprints/S32.md |
+| sprints/S33.md | REWRITTEN | sprints/S33.md |
+| sprints/S34.md | REWRITTEN | sprints/S34.md |
+| sprints/S35.md | REWRITTEN | sprints/S35.md |
+| sprints/S36.md | REWRITTEN | sprints/S36.md |
+| templates/ASSET_MANIFEST_TEMPLATE.csv | REWRITTEN | templates/ASSET_MANIFEST_TEMPLATE.csv |
+| templates/CHANGE_REQUEST_TEMPLATE.md | REWRITTEN | templates/CHANGE_REQUEST_TEMPLATE.md |
+| templates/GATE_REVIEW_TEMPLATE.md | REWRITTEN | templates/GATE_REVIEW_TEMPLATE.md |
+| templates/SPRINT_REPORT_TEMPLATE.md | REWRITTEN | templates/SPRINT_REPORT_TEMPLATE.md |
+| templates/TICKET_TEMPLATE.md | REWRITTEN | templates/TASK_TEMPLATE.md |
+
+Thay đổi nội dung quan trọng: bot profiles không phải người thật; sprint không là tuần; technical/public complete tách riêng; canon mới giải rõ timeline/tuổi/ending; cả art/audio/QA/localization chuyển cho agent. Manifest/hash chỉ xác nhận gói tài liệu, không ký nghiệm thu game.

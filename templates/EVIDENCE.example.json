@@ -1,0 +1,33 @@
+{
+  "task_id": "REPLACE_WITH_TASK_ID",
+  "result": "NOT_TESTED",
+  "executor_id": "REPLACE_WITH_ACTUAL_EXECUTOR",
+  "revision": "REPLACE_WITH_COMMIT_OR_TREE_HASH",
+  "created_at": "REPLACE_WITH_ACTUAL_ISO_TIMESTAMP",
+  "review": {
+    "result": "NOT_TESTED",
+    "reviewer_id": "REPLACE_WITH_ACTUAL_REVIEWER",
+    "self_review": true,
+    "path": "reports/tasks/REPLACE/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "REPLACE_WITH_ACTUAL_OUTPUT",
+      "sha256": "REPLACE_WITH_COMPUTED_SHA256"
+    }
+  ],
+  "checks": [
+    {
+      "id": "REPLACE_WITH_AC_OR_CASE_ID",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "REPLACE_WITH_EXPECTATION",
+      "observed": "NOT_RUN",
+      "result": "NOT_TESTED",
+      "command": null,
+      "log_path": null,
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": []
+}

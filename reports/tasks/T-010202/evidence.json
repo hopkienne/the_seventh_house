@@ -1,0 +1,41 @@
+{
+  "task_id": "T-010202",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:889d58afed71203b0d7dd11d9199d44c37b002098b16205691bd675c420553b0",
+  "created_at": "2026-10-19T03:24:53.619387+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010202/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/story/world_rules.md",
+      "sha256": "d9490e8cc92e5d3c20418c6c034029f9455a98a071d83570fa6ddd9c4e034d56"
+    },
+    {
+      "path": "reports/tasks/T-010202/review.md",
+      "sha256": "8c3d7cf29bd9d05d06ad88721e87a67a61b090d1c78ce7573955acd1c0021d2c"
+    },
+    {
+      "path": "reports/tasks/T-010202/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "eight-canon-questions",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "8 canon answers separating truth, Minh belief and player knowledge",
+      "observed": "All eight questions answered with chapter boundaries and source-consistent costs/ages/evidence rules",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Production narrative artifact; no runtime cinematic/skip/load claim."
+  ]
+}

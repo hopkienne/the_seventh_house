@@ -1,0 +1,5 @@
+.tools/godot/example.exe
+.godot/cache.bin
+.env
+secret.dpapi
+builds/windows/example.exe

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+    "--path",
+    ".",
+    "--rendering-method",
+    "forward_plus",
+    "--rendering-driver",
+    "vulkan",
+    "--audio-driver",
+    "Dummy",
+    "--script",
+    "res://tests/fixtures/render_probe.gd"
+  ],
+  "exit_code": 0,
+  "result": "FAIL",
+  "timeout_seconds": 40,
+  "expected_method": "forward_plus",
+  "observed_method": "gl_compatibility",
+  "reason": "Automatic renderer fallback despite process exit 0; reviewed as capability failure."
+}

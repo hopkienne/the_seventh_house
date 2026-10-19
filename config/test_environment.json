@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "test_only": true,
+  "software_vulkan_icd": "C:\\Program Files\\Google\\Chrome\\Application\\155.0.8059.39\\vk_swiftshader_icd.json",
+  "icd_sha256": "32d83ff113fef532a9f97e0d2831f8656628ab1c99e9060f0332b1532839afd9",
+  "renderer": "forward_plus",
+  "driver": "vulkan",
+  "adapter": "SwiftShader Device (Subzero)",
+  "hardware_performance_verified": false
+}

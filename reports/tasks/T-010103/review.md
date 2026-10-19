@@ -1,0 +1,6 @@
+# Review T-010103
+Result: PASS. Reviewer: codex-primary; self_review=true. Separate artifact/probe review.
+
+Verified Python 3.14.0, Git 2.45.1, Git LFS 3.5.1 exit 0. Missing PATH Godot/Blender are recorded as failed attempts, not inferred installed. Downloaded official pinned portable Godot; archive SHA256 equals GitHub release digest and binary reports 4.7.2.stable.official.ed1daf0bf with exit 0. config true godot_cli corresponds to this explicit path. NVIDIA NVS 310 inventory does not establish Forward+ runtime: GPU/render remain null. Windows host is identified, not a game test. Image/subagent tool declarations are distinguished from actual execution. Permissions deny spend/public/external writes. CAP-001 tracks unverified capabilities without forcing owner asset production.
+
+Failure mode reviewed: initial shell GPU query returned no data but the subprocess PowerShell query returned an adapter. Corrected the capability limitation to the actual NVIDIA observation. No fabricated unavailable GPU claim remains. Export templates not downloaded yet; no export/runtime PASS claimed. Reusable fetch verifies official digest and retains partial downloads on mismatch. No unresolved acceptance issue for capability audit.

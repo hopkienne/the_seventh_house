@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 353.62 - Compatibility - Using Device: NVIDIA - NVS 310
+
+RENDER_PROBE {"adapter":"NVS 310","capture_error":0,"display":"Windows","driver":"opengl3","height":720,"method":"gl_compatibility","width":1280}

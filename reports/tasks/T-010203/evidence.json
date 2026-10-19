@@ -1,0 +1,41 @@
+{
+  "task_id": "T-010203",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:e81f793476a83b99613beb9c0c4edc840d94a3ffbbbf1d68f81cbf0edc342984",
+  "created_at": "2026-10-19T03:25:29.649853+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010203/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/story/reveal_ending_matrix.md",
+      "sha256": "a10cce00929a9efcfebbc458dc1ca1fdfa19ddd5cbe8bdf03a092d206bca3223"
+    },
+    {
+      "path": "reports/tasks/T-010203/review.md",
+      "sha256": "6913d2fac326577fb474504de140375a00d9011a7c0b1e8cf96988f7feb683eb"
+    },
+    {
+      "path": "reports/tasks/T-010203/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "reveal-ending-matrix",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "7 chapter reveal boundaries; at least two CH1–CH3 route foreshadows; no permanently missable essential clues",
+      "observed": "M01 sketch, M02 stitch and M03 assembly have conditions/keys/once flags; A/B/C requirements match P14; revisit and capture persistence explicit",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Eligibility matrix is a production contract, not gameplay execution; 1024 combinations are planned runtime checks, not reported passing."
+  ]
+}

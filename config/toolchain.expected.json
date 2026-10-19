@@ -1,0 +1,10 @@
+{
+  "godot_version": "4.7.2",
+  "channel": "stable",
+  "export_templates_must_match": true,
+  "renderer": "forward_plus",
+  "release_target": "windows_x86_64",
+  "python_version": "record-installed-version",
+  "blender_version": "record-installed-version",
+  "checksums": "must-be-computed-from-actual-binaries"
+}

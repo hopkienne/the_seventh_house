@@ -1,0 +1,8 @@
+# Review T-010303
+Result: PASS. Reviewer: codex-primary; self_review=true; separate pipeline/source/package review.
+
+Build entrypoint validates exact editor and Windows-template hashes/version, uses subprocess argument lists with cwd/timeouts and raw streams, runs import/bootstrap/scene before release export, checks nonempty EXE/PCK, mounts pack in empty project, and writes source/artifact hashes to new per-build directories. It never deletes/overwrites old builds or uploads. Actual final build 20261019T034511693111Z passes 21 bootstrap +57 scene assertions and contains runtime product JSON/main scene with no forbidden paths. PCK/source was inspected through engine mount, not just guessed from filter strings.
+
+Found and fixed real packaging failure modes: broad data/*.json/csv exclusion matched nested runtime data; replaced with explicit planning names. A later pack included an older build manifest and PACKAGE_CHECK.json; added build ignore/exclusions and mandatory pack-inspection gate. Saved initial missing-data and metadata-leak reproductions; final pack report PASS. Wrong binary CLI exits1; 5 process tests cover exit0 engine errors, missing/zero/skipped test reports, timeout logs, and valid report. No lowered validator or swallowed required failures.
+
+Git initialized locally on main. Cache/download/build/credential sample paths actually check-ignore correctly. No remote is configured and no LFS filter/pointer introduced; CLI availability is not remote-host support. Automation baseline commit will follow ledger closure. Runtime executable smoke/clean checkout is T-010304 and not claimed here. No unresolved acceptance issue.

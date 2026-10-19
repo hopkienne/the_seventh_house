@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SeventhHouseSaveV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "build_version",
+    "slot_id",
+    "chapter_id",
+    "level_id",
+    "checkpoint_id",
+    "player",
+    "world_phase",
+    "story_flags",
+    "inventory",
+    "journal_ids",
+    "puzzle_states",
+    "completed_cinematics",
+    "zone_states"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "build_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "slot_id": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 3
+    },
+    "chapter_id": {
+      "type": "string",
+      "pattern": "^CH0[1-7]$"
+    },
+    "level_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "player": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "position",
+        "rotation_y"
+      ],
+      "properties": {
+        "position": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        "rotation_y": {
+          "type": "number"
+        }
+      }
+    },
+    "world_phase": {
+      "enum": [
+        "REAL",
+        "ERASED"
+      ]
+    },
+    "story_flags": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "inventory": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "journal_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^(E(0[1-9]|1[0-4])|M0[1-7]|L0[1-7])$"
+      }
+    },
+    "puzzle_states": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^P(0[1-9]|1[0-4])$"
+      },
+      "additionalProperties": {
+        "type": "object"
+      }
+    },
+    "completed_cinematics": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "zone_states": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object"
+      }
+    }
+  }
+}

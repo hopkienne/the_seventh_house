@@ -1,0 +1,21 @@
+{
+  "result": "PASS",
+  "scope": "DOCUMENT_TRACKER_ONLY",
+  "sheet_count": 12,
+  "task_rows": 592,
+  "story_rows": 146,
+  "wave_rows": 36,
+  "snapshot_revision": 0,
+  "formula_error_scan_matches": 0,
+  "inspected_values": {
+    "Dashboard.total_tasks": 592,
+    "Dashboard.verified_done": 0,
+    "Dashboard.blocked": 0,
+    "Dashboard.percent_done": 0,
+    "Waves.S01.tasks": 16,
+    "Waves.S01.done": 0
+  },
+  "visual_review": "Dashboard rendered and visually reviewed",
+  "editor": "artifact_tool",
+  "note": "No game task executed. Workbook is a snapshot; no automatic JSON state synchronization."
+}

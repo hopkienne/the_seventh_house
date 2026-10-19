@@ -1,0 +1,41 @@
+{
+  "task_id": "T-010201",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:de3ef646891b27d6a4ec8c185eb98b2d2955c4ebb286aa1b7ae6f09a7b0ddfd1",
+  "created_at": "2026-10-19T03:24:11.275264+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010201/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/story/canon_timeline.md",
+      "sha256": "2c950d30d43265e55ecb150dac173a46b69114f11d29cd743ab647724e45a6f0"
+    },
+    {
+      "path": "reports/tasks/T-010201/review.md",
+      "sha256": "32fffbc33c0470466dc2383efc72270c48ab0ab661adfaaabca0b5b5f6fc1132"
+    },
+    {
+      "path": "reports/tasks/T-010201/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "timeline-canon",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Unambiguous initial activation and 15-year chronology with staged reveal",
+      "observed": "Timeline preserves Minh activation, mother maintenance, An 6→21, pre-lantern memory and all ending costs",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Authoring contract reviewed; cinematic trigger/skip/load runtime tests deferred to implementation tasks."
+  ]
+}

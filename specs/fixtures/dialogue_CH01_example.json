@@ -1,0 +1,20 @@
+{
+  "chapter_id": "CH01",
+  "lines": [
+    {
+      "id": "CH01_SHOP_DENIAL_01",
+      "speaker": "SHOPKEEPER",
+      "text_key": "dialogue.CH01.shop.denial.01",
+      "vi": "Bên kia đường vẫn là đất trống mà cháu.",
+      "en": "There has always been an empty lot across the road.",
+      "conditions": {
+        "all_flags": [
+          "CH01_house_erased"
+        ],
+        "none_flags": []
+      },
+      "events": [],
+      "once": false
+    }
+  ]
+}

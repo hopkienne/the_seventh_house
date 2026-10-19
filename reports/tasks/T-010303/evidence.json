@@ -1,0 +1,141 @@
+{
+  "task_id": "T-010303",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:09057556c2107133d1ca083604e46f473b247dda1401efdf93269f7a6fcb15d5",
+  "created_at": "2026-10-19T03:46:58.043378+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010303/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scripts/build_windows.py",
+      "sha256": "057ef570f6d3a37a0b67686fbb9bcde167f9035780e05c7be482fceaf3cff932"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "72f998db358a6fcc764f1a0e1223da117d44fb40753b29aaf1bbfe9dd3f788c9"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "3130a601b89c48654694c4f42de2f14722366b07694f1f25a9d4a42986d2bb02"
+    },
+    {
+      "path": "export_presets.cfg",
+      "sha256": "b1b1b8d56054aa66c6e20e13ba9641911afbec01f4b6ea023cdab36d8b8a521f"
+    },
+    {
+      "path": "builds/.gdignore",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "data/runtime/product.json",
+      "sha256": "a8831263d9589ada6f02d569feac91a32cef98521f9b6562f0a53235a2038553"
+    },
+    {
+      "path": "tests/test_build_windows.py",
+      "sha256": "de95542d872bba7e4761894c9c42a8d5d8c575c2466987905e27a788856f94d0"
+    },
+    {
+      "path": "tests/fixtures/inspect_pack.gd",
+      "sha256": "7ceb61e073f03b32d076f584d4da094cc33b33b2b3ce2cf6a990a4e96be03305"
+    },
+    {
+      "path": "docs/build.md",
+      "sha256": "b949998a34b53e10f2f9ba80ea6cda436f58156fef8080f2e7a1c96083f465e8"
+    },
+    {
+      "path": "reports/tasks/T-010303/build_unit.log",
+      "sha256": "c601405c2c8db146dea024a5d795de5641e711594d109dfaa44553b6919ad87a"
+    },
+    {
+      "path": "reports/tasks/T-010303/wrong_binary.log",
+      "sha256": "cbe6c66cd087be62fa67a162d440bb870e2f6730540da79d5aa3572a990a58cb"
+    },
+    {
+      "path": "reports/tasks/T-010303/git_ignore.log",
+      "sha256": "9409de3bfd38395b9a2d5aef3c283fe1f9fbccdcf40540826b370d2b77b873dd"
+    },
+    {
+      "path": "reports/tasks/T-010303/git_remote.log",
+      "sha256": "c5e88655e3e374c3e45e454a3424f0a6c59e492c96e79a34cec8e73e3c6aa7bc"
+    },
+    {
+      "path": "reports/tasks/T-010303/pack_metadata_regression.log",
+      "sha256": "0b90c7a7d81bfb5f871d2a6d095516d089b0227e2151e29a439c63e052da911d"
+    },
+    {
+      "path": "reports/tasks/T-010303/build_manifest.json",
+      "sha256": "b7c21a4f5a3522c47dcc5001b1cc71ad6a96f7c46cb1fae36283beffaf428ce1"
+    },
+    {
+      "path": "reports/builds/20261019T034511693111Z/bootstrap.stdout.log",
+      "sha256": "6463ee773522895162643d553e6e35feb8170b7af6b58fc5eec7bc291afacac4"
+    },
+    {
+      "path": "reports/builds/20261019T034511693111Z/scene.stdout.log",
+      "sha256": "edb9f95a16229150a5e382462e9c77e3157ab4b97e839d61ea0e55ce05484212"
+    },
+    {
+      "path": "reports/builds/20261019T034511693111Z/export.stdout.log",
+      "sha256": "3922f2963d78ebd16115a5eba9037ab3ef13c9f02de160a4d6d2848ea5338118"
+    },
+    {
+      "path": "reports/builds/20261019T034511693111Z/pack_contents.stdout.log",
+      "sha256": "66b79ae47a0e1c5bf11a60f820c451c7c024824b711b71156aa4858981002501"
+    },
+    {
+      "path": "builds/windows/20261019T034511693111Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T034511693111Z/TheSeventhHouse.pck",
+      "sha256": "1e21b048655e4fa1829517a7af9f210a0d42e35e93493445fc13219ceecda512"
+    },
+    {
+      "path": "reports/tasks/T-010303/review.md",
+      "sha256": "f3b6c928f66bc160a8ed7276215d2efa8353197acc7bb4241c81b854d40145d3"
+    },
+    {
+      "path": "reports/tasks/T-010303/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "engine-before-export",
+      "kind": "ENGINE_TEST",
+      "expected": "Pinned engine import and nonzero bootstrap/scene assertions before export",
+      "observed": "Final build executes bootstrap2cases/21assertions and scene3cases/57assertions;0failed/skipped; export and pack inspection pass",
+      "result": "PASS",
+      "command": "python scripts/build_windows.py",
+      "log_path": "reports/tasks/T-010303/build_manifest.json",
+      "assertions": 78
+    },
+    {
+      "id": "build-process-tests",
+      "kind": "TOOL_TEST",
+      "expected": "Failures/timeouts/zero tests cannot report build PASS",
+      "observed": "5 Python process tests pass;wrong binary rejected with exit1;initial defective PCK fails inspection and fixed pack passes",
+      "result": "PASS",
+      "command": "python tests/test_build_windows.py",
+      "log_path": "reports/tasks/T-010303/build_unit.log"
+    },
+    {
+      "id": "build-git-package-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Build outputs/hashes, correct resource filters, secrets/cache ignored and no unverified LFS",
+      "observed": "Actual EXE/PCK and manifest hashes;empty-project pack inspection;git check-ignore5 paths;no remotes or LFS filters",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Export only; native rendered EXE and clean source rebuild remain T-010304.",
+    "Bootstrap content, not finished game, retail release or published build."
+  ]
+}

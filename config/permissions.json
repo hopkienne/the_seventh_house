@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "local_repository_work": true,
+  "destructive_work": false,
+  "paid_spend_limit": 0,
+  "external_write": false,
+  "public_release": false,
+  "publish_allowed": false,
+  "authorization_records": [],
+  "basis": "Current user request authorizes local production/testing; AGENTS.md and 12_RELEASE_AND_PERMISSIONS.md restrict paid/legal/public actions."
+}

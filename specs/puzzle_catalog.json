@@ -1,0 +1,382 @@
+[
+  {
+    "id": "P01",
+    "chapter": "CH01",
+    "title": "Đèn, hàng rào và chiếc chìa",
+    "actions": [
+      "pickup_lantern",
+      "switch_at_anchor_a",
+      "cross_fence_erased",
+      "switch_real_anchor_b",
+      "collect_key",
+      "switch_erased_anchor_b",
+      "open_h01_door",
+      "inspect_photo"
+    ],
+    "solution": {
+      "key_id": "H01_DOOR_KEY",
+      "door_phase": "ERASED"
+    },
+    "reward_evidence_id": "E01",
+    "layout": "Lantern x=2; real fence x=8; safe anchors x=6 và x=10; REAL key x=11; ERASED door x=15; photo x=18. X từ 0–24m, Z từ -1.5 đến 1.5m; Shared ground.",
+    "negative_case": "Cửa chỉ mở với key; đi sâu Z không vòng hàng rào; switch cạnh vách không được teleport.",
+    "hints": [
+      "Hàng rào không có bóng ở lớp kia.",
+      "Qua hàng rào rồi tìm chỗ nền còn ở cả hai phía.",
+      "Lấy chìa ở REAL, trở lại ERASED để mở cửa."
+    ]
+  },
+  {
+    "id": "P02",
+    "chapter": "CH01",
+    "title": "Khung ảnh thiếu người",
+    "actions": [
+      "inspect_frame",
+      "collect_backing_marks",
+      "arrange_photo_tiles",
+      "confirm"
+    ],
+    "solution": {
+      "slot_order": [
+        "RIVER",
+        "TREE",
+        "TWO_SIBLINGS"
+      ]
+    },
+    "reward_evidence_id": "E02",
+    "layout": "Ba tile gắn cố định trên bàn, xoay/chọn bằng interact không kéo physics. Chữ và vết ghim mặt sau chỉ thứ tự trái→phải.",
+    "negative_case": "Không gọi tên An trong ảnh; đáp án tile sai trả feedback không reset P01.",
+    "hints": [
+      "Mặt sau khung ảnh có dấu ghim.",
+      "Các đường mép chỉ nối ở một thứ tự.",
+      "Bờ sông, cây, rồi hai đứa trẻ."
+    ]
+  },
+  {
+    "id": "P03",
+    "chapter": "CH02",
+    "title": "Chỗ ngồi thứ tư",
+    "actions": [
+      "inspect_real_table",
+      "inspect_erased_seats",
+      "set_four_slots",
+      "confirm"
+    ],
+    "solution": {
+      "north": "MOTHER",
+      "east": "SON_A",
+      "south": "HANH",
+      "west": "SON_B"
+    },
+    "reward_evidence_id": "E03",
+    "layout": "Bốn vị trí đánh dấu symbol tương ứng ở ERASED; REAL có bát/ghế. Rotation camera không đổi north/east/south/west slot IDs.",
+    "negative_case": "Không cần biết phong tục chỗ ngồi; clue hiển thị bằng symbol/text.",
+    "hints": [
+      "Có một chiếc bát không ai nhận.",
+      "Dấu ghế ở lớp kia cho biết ai ngồi đâu.",
+      "Mẹ phía bắc; hai con trai phía đông/tây; Hạnh phía nam."
+    ]
+  },
+  {
+    "id": "P04",
+    "chapter": "CH02",
+    "title": "Căn phòng không có cửa",
+    "actions": [
+      "enter_erased_door",
+      "switch_shared_pad",
+      "inspect_height_marks",
+      "select_cabinet_mark",
+      "open_cabinet"
+    ],
+    "solution": {
+      "cabinet_mark": "THIRD_MARK"
+    },
+    "reward_evidence_id": "E04",
+    "layout": "Phòng hai phase có shared pad ở trong; ba vạch chiều cao gắn icon hoa/chim/sao, vạch thứ ba có tên Hạnh mờ.",
+    "negative_case": "Không switch ở doorway mất floor; không inspect tủ xuyên vách; backtrack luôn có shared pad.",
+    "hints": [
+      "Dấu trên tường vẫn còn dù người bị quên.",
+      "Chiếc tủ có cùng dấu với vạch cuối.",
+      "Chọn vạch thứ ba rồi mở tủ."
+    ]
+  },
+  {
+    "id": "P05",
+    "chapter": "CH03",
+    "title": "Cây cầu thiếu hai nhịp",
+    "actions": [
+      "stand_a_real",
+      "switch_a_erased",
+      "cross_ab",
+      "switch_b_real",
+      "cross_bc",
+      "activate_exit"
+    ],
+    "solution": {
+      "anchor_phases": [
+        "ERASED",
+        "REAL"
+      ],
+      "anchors": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "reward_evidence_id": "E05",
+    "layout": "A/B/C shared platforms, AB chỉ ERASED, BC chỉ REAL. Shared rails/geometry không tạo bypass bên ngoài; không nhảy.",
+    "negative_case": "Q trên AB/BC bị reject nếu target thiếu support; load ở B an toàn; không tạo deadlock đường về.",
+    "hints": [
+      "Các bệ đá xuất hiện trong cả hai lớp.",
+      "Chỉ đổi lớp khi đang đứng trên bệ.",
+      "A sang ERASED qua AB, tại B sang REAL qua BC."
+    ]
+  },
+  {
+    "id": "P06",
+    "chapter": "CH03",
+    "title": "Vạch nước của đêm lũ",
+    "actions": [
+      "inspect_marks_both_phases",
+      "read_gauge_legend",
+      "set_valve",
+      "confirm"
+    ],
+    "solution": {
+      "valve_position": 2,
+      "positions": [
+        1,
+        2,
+        3
+      ]
+    },
+    "reward_evidence_id": "E06",
+    "layout": "Ba nấc van cố định, vạch nước được đánh số 1/2/3. Hồ sơ/mốc bùn trùng nấc 2; không sim nước.",
+    "negative_case": "Wrong choice reset van local; journal marks không mất; đáp án không đòi hiểu thủy văn.",
+    "hints": [
+      "Vết bùn cũ không trùng mặt nước hôm nay.",
+      "So dấu bùn với ba nấc trên bảng.",
+      "Đặt van ở nấc 2."
+    ]
+  },
+  {
+    "id": "P07",
+    "chapter": "CH04",
+    "title": "Tiết học cuối cùng",
+    "actions": [
+      "inspect_timetable",
+      "inspect_stopped_clock",
+      "set_locker_sequence",
+      "confirm"
+    ],
+    "solution": {
+      "sequence": [
+        "READING",
+        "DRAWING",
+        "MUSIC"
+      ]
+    },
+    "reward_evidence_id": "E07",
+    "layout": "Ba tủ có icon quyển sách/bút/nốt nhạc và text. Timetable dùng đúng ba tên ở VI/EN; clock chỉ hàng cuối cần đọc.",
+    "negative_case": "Không yêu cầu nghe cao độ; all permutations wrong trừ đáp án đúng; save partial sequence.",
+    "hints": [
+      "Chiếc đồng hồ chỉ vào buổi học cuối.",
+      "Đọc hàng được đánh dấu trong thời khóa biểu.",
+      "Mở tủ đọc sách, vẽ, rồi âm nhạc."
+    ]
+  },
+  {
+    "id": "P08",
+    "chapter": "CH04",
+    "title": "Hồ sơ dưới vết bùn",
+    "actions": [
+      "collect_page_warning",
+      "collect_page_break",
+      "collect_page_flood",
+      "order_pages",
+      "open_archive"
+    ],
+    "solution": {
+      "sequence": [
+        "WARNING",
+        "DAM_BREAK",
+        "VILLAGE_FLOOD"
+      ]
+    },
+    "reward_evidence_id": "E08",
+    "layout": "Ba trang thể hiện trước/sau bằng giờ và hình phù hợp canon; tuần tra quanh tủ, cover định sẵn; checkpoint trước encounter.",
+    "negative_case": "Capture giữ pages đã commit; không spawn enemy nhìn thẳng player sau load.",
+    "hints": [
+      "Các trang kể cùng một đêm.",
+      "Dấu giờ giúp xếp điều đã xảy ra trước.",
+      "Cảnh báo, vỡ đập, rồi lũ tới làng."
+    ]
+  },
+  {
+    "id": "P09",
+    "chapter": "CH05",
+    "title": "Ba ngày trên một lá thư",
+    "actions": [
+      "inspect_letter_flood",
+      "inspect_maintenance_log",
+      "inspect_lantern_note",
+      "order_records",
+      "confirm"
+    ],
+    "solution": {
+      "sequence": [
+        "FLOOD_NIGHT",
+        "MAINTENANCE_YEARS",
+        "LAST_LANTERN_NOTE"
+      ]
+    },
+    "reward_evidence_id": "E09",
+    "layout": "Ba mốc thời gian tương đối, không invent ngày lịch trái canon. Nội dung cụ thể VI/EN cùng event IDs.",
+    "negative_case": "Sai thứ tự có feedback theo mốc; không thêm người kích hoạt chuông thứ hai.",
+    "hints": [
+      "Những trang này không được viết cùng lúc.",
+      "Vết mực mới hơn nằm ở ghi chú về đèn.",
+      "Đêm lũ, những năm duy trì chuông, rồi ghi chú cuối."
+    ]
+  },
+  {
+    "id": "P10",
+    "chapter": "CH05",
+    "title": "Ánh đèn qua hai căn phòng",
+    "actions": [
+      "open_real_shutter",
+      "switch_shared_center",
+      "open_erased_shutter",
+      "inspect_revealed_page"
+    ],
+    "solution": {
+      "real_shutter": true,
+      "erased_shutter": true
+    },
+    "reward_evidence_id": "E10",
+    "layout": "Hai boolean shutters, beam dàn dựng bằng mesh/light có toggle, page reveal condition; không raytrace optics.",
+    "negative_case": "Load giữ shutter states; reduced effects vẫn hiện outline/text; không reset khi đổi phase.",
+    "hints": [
+      "Một vệt sáng dừng ở cửa chớp.",
+      "Hai lớp mỗi lớp che một đoạn.",
+      "Mở cửa chớp REAL, rồi cửa chớp ERASED tại bệ chung."
+    ]
+  },
+  {
+    "id": "P11",
+    "chapter": "CH06",
+    "title": "Lối đi dưới ba hồi chuông",
+    "actions": [
+      "inspect_counterweight_record",
+      "set_lever_one",
+      "set_lever_two",
+      "set_lever_three",
+      "confirm"
+    ],
+    "solution": {
+      "lever_values": [
+        1,
+        3,
+        2
+      ]
+    },
+    "reward_evidence_id": "E11",
+    "layout": "Ba cần gạt có 3 nấc; note ghi 1-3-2 bằng số/symbol, không rhythm timing; animation đối trọng trang trí.",
+    "negative_case": "Không dùng quá nhanh gây double trigger; mute audio vẫn suy ra đáp án; save giữ lever_values.",
+    "hints": [
+      "Ba dấu khắc không có cùng độ cao.",
+      "Bản ghi đặt chúng theo thứ tự của ba cần.",
+      "Chọn các nấc 1, 3, 2."
+    ]
+  },
+  {
+    "id": "P12",
+    "chapter": "CH06",
+    "title": "Người trong bức ảnh",
+    "actions": [
+      "inspect_family_photo",
+      "match_school_blank",
+      "match_lantern_diary",
+      "confirm_identity",
+      "finalize_reveal"
+    ],
+    "solution": {
+      "required_evidence": [
+        "E08",
+        "E10",
+        "E12"
+      ],
+      "identity": "AN"
+    },
+    "reward_evidence_id": "E12",
+    "layout": "Ảnh E12 được collect tại entry; E08/E10 thuộc main path trước; missing flags có chỉ dẫn revisit, không grant giả.",
+    "negative_case": "Skip reveal vẫn an_identity_revealed true; không tự grant memory M06; replay không double cinematic.",
+    "hints": [
+      "Dòng tên trống và bóng trong ảnh cùng chỉ một người.",
+      "Nhật ký đèn cho biết quan hệ với Minh.",
+      "Đối chiếu ảnh, hồ sơ trường và nhật ký để gọi tên An."
+    ]
+  },
+  {
+    "id": "P13",
+    "chapter": "CH07",
+    "title": "Tuyến đường của bảy ký ức",
+    "actions": [
+      "inspect_core_map",
+      "align_three_core_nodes",
+      "unlock_main_choice",
+      "optional_connect_seven_fragments",
+      "validate_route"
+    ],
+    "solution": {
+      "core_nodes": [
+        "HOUSE",
+        "BELL",
+        "HILL"
+      ],
+      "optional_memory_order": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M07"
+      ]
+    },
+    "reward_evidence_id": "E13",
+    "layout": "Main subgraph align ba core nodes bằng E13 để mở A/B mà không cần M. Optional full route nối bảy segment từ H07 lên đồi, chỉ accessible khi đủ fragments.",
+    "negative_case": "Không tất cả M thì main vẫn SOLVED; C flag không đặt từ core nodes; duplicate fragment không tăng count.",
+    "hints": [
+      "Bản đồ lõi vẫn có ba mốc chính.",
+      "Ba mốc mở lựa chọn thường; những mảnh ký ức mở đường khác.",
+      "Nối Nhà–Chuông–Đồi cho lõi; tuyến đầy đủ cần M01 đến M07 theo đầu nối."
+    ]
+  },
+  {
+    "id": "P14",
+    "chapter": "CH07",
+    "title": "Cơ chế trả lại thời gian",
+    "actions": [
+      "inspect_debt_mechanism",
+      "unlock_choice_panel",
+      "choose_A_B_or_C",
+      "confirm_consequence",
+      "play_resolution",
+      "credits"
+    ],
+    "solution": {
+      "A": "REPLACE_ANCHOR",
+      "B": "RETURN_TIME",
+      "C": "VALIDATED_EVACUATION_THEN_RETURN"
+    },
+    "reward_evidence_id": "E14",
+    "layout": "Checkpoint trước xác nhận; A/B unlocked bởi main_p13_solved + reveal. C còn all memories + route_validated; ba nhóm evacuation authored, flood beat states không simulation.",
+    "negative_case": "Cancel quay panel không mất checkpoint; fail route C retry, không forced B; final choice once, credits reachable.",
+    "hints": [
+      "Mỗi chốt có một cái giá khác nhau.",
+      "Chốt neo giữ lại; chốt trả thời gian kết thúc nhánh vay.",
+      "A thay neo, B trả thời gian, C chỉ mở với tuyến sơ tán đã kiểm chứng."
+    ]
+  }
+]

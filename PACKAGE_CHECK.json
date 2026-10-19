@@ -1,0 +1,36 @@
+{
+  "result": "PASS",
+  "scope": "DOCUMENT_PACKAGE_ONLY_NOT_GAME_QA",
+  "plan_version": "3.0",
+  "counts": {
+    "waves": 36,
+    "stories": 146,
+    "tasks": 592,
+    "chapters": 7,
+    "puzzles": 14,
+    "journal_records": 28,
+    "xlsx_sheets": 12
+  },
+  "helper_unit_tests": {
+    "run": 22,
+    "failures": 0,
+    "errors": 0
+  },
+  "checks": [
+    "acyclic_dependency_graph",
+    "unique_and_resolvable_ids",
+    "read_before_files_exist",
+    "task_outputs_and_acceptance_contracts_present",
+    "bootstrap_harness_order_reviewed",
+    "offline_html_search_filter_navigation_mobile",
+    "xlsx_formula_scan_and_visual_review",
+    "all_game_tasks_not_started",
+    "no_font_binaries"
+  ],
+  "canonical_state_revision": 0,
+  "game_source_included": false,
+  "game_runtime_tested": false,
+  "native_windows_game_tested": false,
+  "manifest": "MANIFEST.sha256",
+  "note": "Manifest proves package integrity only. Source/assets/build outputs in task cards still must be implemented and verified."
+}

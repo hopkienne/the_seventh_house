@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST_REPORT {"assertions":0,"failed":1,"failures":["Unknown suite: not_registered"],"result":"FAIL","skipped":0,"suite":"not_registered","tests":0}

@@ -1,0 +1,37 @@
+﻿id,title,phase,gate,task_count,done_count
+S01,Khóa phạm vi và khởi tạo dự án,Tiền sản xuất,G0 — Baseline được duyệt,16,0
+S02,"Greybox, movement và camera 2.5D",Prototype,,16,0
+S03,World Switching an toàn,Prototype,,16,0
+S04,Puzzle prototype hoàn chỉnh,Prototype,G1 — Technical Prototype,16,0
+S05,Nền tảng kể chuyện và save checkpoint,Vertical slice,,16,0
+S06,"Hội thoại, cinematic và hoạt ảnh",Vertical slice,,16,0
+S07,Dựng đêm đầu tiên và ngôn ngữ hình ảnh,Vertical slice,,16,0
+S08,Kẻ Gõ Cửa và stealth công bằng,Vertical slice,,16,0
+S09,Ghép vertical slice và UI cơ bản,Vertical slice,,16,0
+S10,Gate vertical slice và hiệu chỉnh kế hoạch,Vertical slice,G2 — Vertical Slice,16,0
+S11,Đưa hệ thống lên quy mô nhiều chương,Production foundations,,16,0
+S12,"Hub bảy đêm, journal và UX hoàn chỉnh",Production foundations,G3 — Production-ready systems,16,0
+S13,CH2 greybox — Bữa cơm thiếu một người,Sản xuất nội dung,,16,0
+S14,CH2 hoàn thiện — Bữa cơm thiếu một người,Sản xuất nội dung,,22,0
+S15,CH3 greybox — Dấu nước trên tường,Sản xuất nội dung,,16,0
+S16,CH3 hoàn thiện — Dấu nước trên tường,Sản xuất nội dung,,17,0
+S17,CH4 greybox — Ngôi trường không tồn tại,Sản xuất nội dung,,16,0
+S18,CH4 hoàn thiện — Ngôi trường không tồn tại,Sản xuất nội dung,,17,0
+S19,CH5 greybox — Những trang mẹ giấu,Sản xuất nội dung,,16,0
+S20,CH5 hoàn thiện — Những trang mẹ giấu,Sản xuất nội dung,,22,0
+S21,CH6 greybox — Người mặc áo mưa vàng,Sản xuất nội dung,,16,0
+S22,CH6 hoàn thiện — Người mặc áo mưa vàng,Sản xuất nội dung,,17,0
+S23,CH7 greybox — Cánh cửa thứ bảy,Sản xuất nội dung,,16,0
+S24,CH7 hoàn thiện — Cánh cửa thứ bảy,Sản xuất nội dung,,17,0
+S25,Ba ending và CH1 đầy đủ,Hoàn tất nội dung,,16,0
+S26,Content complete và duyệt toàn bộ chiến dịch,Hoàn tất nội dung,G4 — Content Complete,16,0
+S27,Alpha — sửa lỗi state và persistence,Alpha,,16,0
+S28,"Alpha — nhịp chơi, hint và trải nghiệm cảm xúc",Alpha,G5 — Alpha Exit,16,0
+S29,Beta — tiếng Anh và packaging quốc tế,Beta,,16,0
+S30,Beta — LQA toàn bộ và tương thích input,Beta,G6 — Beta Exit,16,0
+S31,Hiệu năng và ổn định trên máy mục tiêu,Release hardening,,16,0
+S32,"Store, bản quyền và gói bán",Release hardening,,16,0
+S33,Release Candidate 1 và diễn tập vận hành,Release candidate,,16,0
+S34,Release Candidate cuối và Go/No-Go,Release candidate,G7 — Release Ready,16,0
+S35,Phát hành 1.0,Launch,G8 — 1.0 Published,16,0
+S36,Ổn định sau phát hành và đóng dự án 1.0,Hypercare,G9 — Handover,16,0
