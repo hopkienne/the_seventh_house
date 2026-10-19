@@ -1,0 +1,49 @@
+{
+  "task_id": "T-010403",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:9e6818d6fcded9a61d990322b43bc37bf74bf734c69064f69dd9115bdd63bd30",
+  "created_at": "2026-10-19T04:03:00.404813+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010403/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/risks.md",
+      "sha256": "f7b3c487db18e79d811a467ab256642d7a846c35eba997a65e44ea1134c4bf1d"
+    },
+    {
+      "path": "docs/assets_execution.md",
+      "sha256": "842c2505103129851955d053be36b926eb09ac28a123339e9066b29655f6b29a"
+    },
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "175127b15f591b21dbf62df9cfd7654919c45bcd824b49c529850b2f4367cc57"
+    },
+    {
+      "path": "reports/tasks/T-010403/review.md",
+      "sha256": "4a0397b25cbe52b8833407dab4c5a46cdc7c37dbd6a330c3bfb89565a4685778"
+    },
+    {
+      "path": "reports/tasks/T-010403/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "agent-owned-pipelines",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Concrete art/audio production paths, real capability gaps/fallback and unchanged quality/rights boundaries",
+      "observed": "Proven static GLB recipe/import/render selected;future rig/audio checks staynull/NOT_TESTED;hardwareCAP001 retained;no outsourcing,spend or public assumption",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Documentation/capability mapping only; final art/audio/rig/custom shader/navigation not delivered by this task."
+  ]
+}

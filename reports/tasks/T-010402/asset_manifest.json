@@ -1,0 +1,14 @@
+{
+  "asset_id": "S01_STOOL_SPIKE",
+  "quality_state": "BLOCKOUT",
+  "before_sha256": "a2ac9541d19a1b862638b5a67f00568b462a7a5eddf56e56fe94369399735014",
+  "rebuilt_sha256": "a2ac9541d19a1b862638b5a67f00568b462a7a5eddf56e56fe94369399735014",
+  "byte_identical": true,
+  "bytes": 4468,
+  "seed": null,
+  "random_parameters": false,
+  "generator": "tools/art/build_stool_spike.gd",
+  "config": "tools/art/stool_spike.json",
+  "engine_version": "4.7.2.stable.official.ed1daf0bf",
+  "provenance": "Agent-authored mathematical primitive recipe; no external assets."
+}

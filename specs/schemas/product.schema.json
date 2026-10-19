@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["product_id", "build_version", "release_target", "content_stage"],
+  "properties": {
+    "product_id": {"const": "the_seventh_house"},
+    "build_version": {"type": "string", "minLength": 1},
+    "release_target": {"const": "windows_x86_64"},
+    "content_stage": {"enum": ["BOOTSTRAP", "PROTOTYPE", "VERTICAL_SLICE", "ALPHA", "BETA", "RC", "RELEASE"]}
+  },
+  "additionalProperties": false
+}

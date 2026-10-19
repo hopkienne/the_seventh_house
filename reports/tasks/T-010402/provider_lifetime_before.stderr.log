@@ -1,0 +1,4 @@
+SCRIPT ERROR: Attempt to call function 'null::_import_glb (Callable)' on a null instance.
+   at: _run (res://tests/test_runner.gd:62)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/test_runner.gd:62)

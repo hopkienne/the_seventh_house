@@ -1,0 +1,20 @@
+{
+	"adapter": "SwiftShader Device (Subzero)",
+	"assertions": 5,
+	"capture": "reports/native_smoke.png",
+	"display": "Windows",
+	"driver": "vulkan",
+	"engine": "4.7.2-stable (official)",
+	"failed": 0,
+	"failures": [],
+	"height": 720,
+	"input_mode": "scene_smoke_no_physical_input",
+	"native_os": "Windows",
+	"profile": "BOOTSTRAP",
+	"renderer": "forward_plus",
+	"result": "PASS",
+	"sample_colors": 14,
+	"skipped": 0,
+	"software": true,
+	"width": 1280
+}

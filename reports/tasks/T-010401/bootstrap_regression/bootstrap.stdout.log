@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE bootstrap/project_contract
+CASE bootstrap/toolchain_contract
+TEST_REPORT {"assertions":21,"executed":2,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities"],"result":"PASS","skipped":0,"suite":"bootstrap","tests":2}

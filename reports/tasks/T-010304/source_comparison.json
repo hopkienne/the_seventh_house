@@ -1,0 +1,17 @@
+{
+  "differences": [
+    {
+      "path": "config/toolchain.lock.json",
+      "only_newlines": true,
+      "original_bytes": 1197,
+      "clean_bytes": 1174
+    },
+    {
+      "path": "scripts/bootstrap/main.gd.uid",
+      "only_newlines": true,
+      "original_bytes": 20,
+      "clean_bytes": 21
+    }
+  ],
+  "explanation": "Git .gitattributes normalizes tracked text to LF on clean checkout. No semantic source edits if every only_newlines=true."
+}

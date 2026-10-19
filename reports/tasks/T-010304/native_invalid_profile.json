@@ -1,0 +1,21 @@
+{
+  "command": [
+    "G:\\zalo_mini_app\\the_seventh_house\\.qa\\native_smoke\\20261019T034749875677Z\\TheSeventhHouse.exe",
+    "--rendering-method",
+    "forward_plus",
+    "--rendering-driver",
+    "vulkan",
+    "--audio-driver",
+    "Dummy",
+    "--",
+    "--qa-profile",
+    "MISSING",
+    "--qa-report",
+    "res://reports/native_smoke.json"
+  ],
+  "expected_exit": 2,
+  "observed_exit": 2,
+  "result": "PASS",
+  "exe_sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497",
+  "pck_sha256": "75c3f57ec6ed4c6ffe9eb885014996e7f1680dd8ee0ccd980032a46f469829f3"
+}

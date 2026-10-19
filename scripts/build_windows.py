@@ -96,7 +96,15 @@ def main(argv=None):
         base = [str(engine), '--headless', '--path', str(ROOT)]
         record, _ = run_step('import', base + ['--import'], logs, args.timeout)
         manifest['steps'].append(record)
-        for suite in ['bootstrap', 'scene']:
+        record, stdout = run_step('suite_registry', base + ['--script', 'res://tests/test_runner.gd', '--', '--list-suites'], logs, args.timeout)
+        registry = re.findall(r'^SUITE_REGISTRY (.+)$', stdout, re.MULTILINE)
+        if len(registry) != 1:
+            raise BuildFailure('Test suite registry missing or ambiguous')
+        suites = json.loads(registry[0])
+        if not isinstance(suites, list) or 'bootstrap' not in suites or not all(isinstance(s, str) and re.fullmatch(r'[a-z][a-z0-9_]*', s) for s in suites):
+            raise BuildFailure('Invalid/empty suite registry')
+        manifest['steps'].append(record)
+        for suite in suites:
             if not (ROOT / 'tests/test_runner.gd').is_file():
                 raise BuildFailure('Test runner absent: NOT_TESTED')
             record, stdout = run_step(suite, base + ['--script', 'res://tests/test_runner.gd', '--', '--suite', suite], logs, args.timeout)

@@ -1,0 +1,282 @@
+{
+  "result": "PASS",
+  "cases": [
+    {
+      "id": "import",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--import"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "result": "PASS",
+      "report": null,
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/import.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/import.stderr.log"
+    },
+    {
+      "id": "bootstrap",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "bootstrap"
+      ],
+      "expected_exit": 0,
+      "observed_exit": 0,
+      "result": "PASS",
+      "report": {
+        "assertions": 21,
+        "executed": 2,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "bootstrap",
+        "tests": 2
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/bootstrap.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/bootstrap.stderr.log"
+    },
+    {
+      "id": "negative_assertion",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "bootstrap",
+        "--fixture",
+        "res://tests/fixtures/bootstrap_failure.gd"
+      ],
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "result": "PASS",
+      "report": {
+        "assertions": 1,
+        "executed": 1,
+        "failed": 1,
+        "failures": [
+          "negative fixture must fail"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "bootstrap",
+        "tests": 1
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/negative_assertion.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/negative_assertion.stderr.log"
+    },
+    {
+      "id": "unknown_suite",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "not_registered"
+      ],
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "result": "PASS",
+      "report": {
+        "assertions": 0,
+        "executed": 0,
+        "failed": 1,
+        "failures": [
+          "Unknown suite: not_registered"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "not_registered",
+        "tests": 0
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/unknown_suite.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/unknown_suite.stderr.log"
+    },
+    {
+      "id": "zero_tests",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "bootstrap",
+        "--filter",
+        "not_registered"
+      ],
+      "expected_exit": 1,
+      "observed_exit": 1,
+      "result": "PASS",
+      "report": {
+        "assertions": 0,
+        "executed": 0,
+        "failed": 1,
+        "failures": [
+          "Zero tests/assertions cannot pass"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "bootstrap",
+        "tests": 0
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/zero_tests.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/zero_tests.stderr.log"
+    },
+    {
+      "id": "missing_argument",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite"
+      ],
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "result": "PASS",
+      "report": {
+        "assertions": 0,
+        "executed": 0,
+        "failed": 1,
+        "failures": [
+          "Invalid runner argument: --suite"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "",
+        "tests": 0
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/missing_argument.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/missing_argument.stderr.log"
+    },
+    {
+      "id": "unknown_argument",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--no-such-option"
+      ],
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "result": "PASS",
+      "report": {
+        "assertions": 0,
+        "executed": 0,
+        "failed": 1,
+        "failures": [
+          "Invalid runner argument: --no-such-option"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "",
+        "tests": 0
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/unknown_argument.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/unknown_argument.stderr.log"
+    },
+    {
+      "id": "fixture_outside_allowlist",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "bootstrap",
+        "--fixture",
+        "res://project.godot"
+      ],
+      "expected_exit": 2,
+      "observed_exit": 2,
+      "result": "PASS",
+      "report": {
+        "assertions": 0,
+        "executed": 0,
+        "failed": 1,
+        "failures": [
+          "Invalid fixture path: res://project.godot"
+        ],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import"
+        ],
+        "result": "FAIL",
+        "skipped": 0,
+        "suite": "bootstrap",
+        "tests": 0
+      },
+      "stdout": "reports/tasks/T-010402/bootstrap_regression/fixture_outside_allowlist.stdout.log",
+      "stderr": "reports/tasks/T-010402/bootstrap_regression/fixture_outside_allowlist.stderr.log"
+    }
+  ]
+}

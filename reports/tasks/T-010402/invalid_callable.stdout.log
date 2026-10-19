@@ -1,0 +1,4 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE bootstrap/invalid_callable
+TEST_REPORT {"assertions":0,"executed":1,"failed":2,"failures":["Invalid case callable: invalid_callable","Zero tests/assertions cannot pass"],"registered_suites":["bootstrap","scene","utilities","asset_import"],"result":"FAIL","skipped":0,"suite":"bootstrap","tests":1}

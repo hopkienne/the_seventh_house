@@ -1,0 +1,149 @@
+{
+  "task_id": "T-010304",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:fecd84424970ca639bc9a917ede1ada44cfa9abd9be845dc56bc9b9f399947a5",
+  "created_at": "2026-10-19T03:50:52.679893+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010304/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "reports/S01/build_smoke.md",
+      "sha256": "bb80b9f8f036bf7ed08fef50a66b66a418ffe180441c46900e01e6a597e5f963"
+    },
+    {
+      "path": "reports/tasks/T-010304/clean_build.json",
+      "sha256": "54a998e55b9134bcc5780badf0831241d327ae39887a61447df952a2ede9d688"
+    },
+    {
+      "path": "reports/tasks/T-010304/clean_manifest.json",
+      "sha256": "91f17d2e391c954d11d9bcf31b6be6309411bad353a6e47697648a8e8792b05e"
+    },
+    {
+      "path": "reports/tasks/T-010304/clone.log",
+      "sha256": "bbc9e1c37f4ee8f4e48b38a631995708836b1259522990eaba97516938449045"
+    },
+    {
+      "path": "reports/tasks/T-010304/clean_source_diff.log",
+      "sha256": "ce8a6b63e61c22d680a231525e6f20a1a7bad3ffad2d0fc86c06d86b0b34b4dc"
+    },
+    {
+      "path": "reports/tasks/T-010304/source_comparison.json",
+      "sha256": "38bc5b0f4242afcaa477288a161294fc34aa8c7475acd948b87b7df33ce233e4"
+    },
+    {
+      "path": "reports/tasks/T-010304/native_verification.json",
+      "sha256": "0be2ac6c395ca2a1e3174b813de33ebb7ff1713cf0eddbe89fea35f4b7a6c0de"
+    },
+    {
+      "path": "reports/tasks/T-010304/native_smoke.json",
+      "sha256": "f0cb66d09c56573ef2b70446448968ac1ceee407e5e5495e057b03e8f4b634d1"
+    },
+    {
+      "path": "reports/tasks/T-010304/native_smoke.png",
+      "sha256": "de27712f9053c7ffadc102b8b86aa6a2bed01e94a0c19df4c5b0e91979a1be85"
+    },
+    {
+      "path": "reports/tasks/T-010304/native.stdout.log",
+      "sha256": "5b4b796c69ce355b09364bf7d89fc81278435643b89803df59af5dfc3fe84292"
+    },
+    {
+      "path": "reports/tasks/T-010304/native.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010304/native_invalid_profile.json",
+      "sha256": "69258cec2b155f79209111a9ee238eb814141c5309456adc3bd0be8743630b48"
+    },
+    {
+      "path": "reports/tasks/T-010304/native_invalid_profile.stderr.log",
+      "sha256": "d200567d470f21d09d37512fb4e98ce839a75b8a432bdf5cdd77cba5e29e8d64"
+    },
+    {
+      "path": ".qa/clean_source/74e110fbf5fd/reports/builds/20261019T034749875677Z/bootstrap.stdout.log",
+      "sha256": "6463ee773522895162643d553e6e35feb8170b7af6b58fc5eec7bc291afacac4"
+    },
+    {
+      "path": ".qa/clean_source/74e110fbf5fd/reports/builds/20261019T034749875677Z/scene.stdout.log",
+      "sha256": "edb9f95a16229150a5e382462e9c77e3157ab4b97e839d61ea0e55ce05484212"
+    },
+    {
+      "path": ".qa/clean_source/74e110fbf5fd/reports/builds/20261019T034749875677Z/pack_contents.stdout.log",
+      "sha256": "66b79ae47a0e1c5bf11a60f820c451c7c024824b711b71156aa4858981002501"
+    },
+    {
+      "path": ".qa/clean_source/74e110fbf5fd/builds/windows/20261019T034749875677Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": ".qa/clean_source/74e110fbf5fd/builds/windows/20261019T034749875677Z/TheSeventhHouse.pck",
+      "sha256": "75c3f57ec6ed4c6ffe9eb885014996e7f1680dd8ee0ccd980032a46f469829f3"
+    },
+    {
+      "path": "reports/tasks/T-010304/review.md",
+      "sha256": "cd7e1115b4c956def527518d326a897a86a7d86e23f0511e7225185c4282d55e"
+    },
+    {
+      "path": "reports/tasks/T-010304/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "clean-engine-build",
+      "kind": "ENGINE_TEST",
+      "expected": "Clean source import/test/export using actual pinned binary/templates",
+      "observed": "Clean commit,cache absent,tracked runtime diff0;bootstrap21+scene57 assertions and PCK inspection pass",
+      "result": "PASS",
+      "command": "python scripts/build_windows.py --godot <verified portable console> from clean clone",
+      "log_path": "reports/tasks/T-010304/clean_manifest.json",
+      "assertions": 78
+    },
+    {
+      "id": "native-windows-exe",
+      "kind": "WINDOWS_RUNTIME",
+      "expected": "Exported EXE runs outside editor on Windows and records actual frame",
+      "observed": "Direct clean EXE/PCK launch,Windows,Forward+ Vulkan software,5 assertions,1280x720,exit0;unknown profileexit2",
+      "result": "PASS",
+      "command": "TheSeventhHouse.exe --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy -- --qa-profile BOOTSTRAP --qa-report res://reports/native_smoke.json",
+      "log_path": "reports/tasks/T-010304/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010304/native_smoke.png"
+      ],
+      "native_os": "Windows",
+      "software": true,
+      "assertions": 5
+    },
+    {
+      "id": "rendered-frame",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Actual non-headless frame with visible scene and correct renderer",
+      "observed": "Windows display,software Forward+/vulkan,14 sampled colors;PNG hash matches viewed source capture",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-010304/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010304/native_smoke.png"
+      ],
+      "software": true,
+      "assertions": 5
+    },
+    {
+      "id": "build-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Hash/log provenance and limitations clear",
+      "observed": "Source commit,EXE/PCK/capture hashes and raw reports retained;no bit identity or full-game/hardware claim",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Bootstrap only; full campaign/gameplay/final assets not implemented.",
+    "Software CPU Vulkan render; physical input/audio and hardware performance not tested.",
+    "Functional clean rebuild verified; PCK bit-for-bit reproducibility not established."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "commit": "74e110fbf5fd6177364f9ab5629f6df0fa5f6ff2",
+  "native_os": "Windows",
+  "software": true,
+  "binary_path": "G:\\zalo_mini_app\\the_seventh_house\\.qa\\native_smoke\\20261019T034749875677Z\\TheSeventhHouse.exe",
+  "exe_sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497",
+  "pck_sha256": "75c3f57ec6ed4c6ffe9eb885014996e7f1680dd8ee0ccd980032a46f469829f3",
+  "command": [
+    "G:\\zalo_mini_app\\the_seventh_house\\.qa\\native_smoke\\20261019T034749875677Z\\TheSeventhHouse.exe",
+    "--rendering-method",
+    "forward_plus",
+    "--rendering-driver",
+    "vulkan",
+    "--audio-driver",
+    "Dummy",
+    "--",
+    "--qa-profile",
+    "BOOTSTRAP",
+    "--qa-report",
+    "res://reports/native_smoke.json"
+  ],
+  "exit_code": 0,
+  "source_sha256": "805802baa0dfd4482852453110d90882d558faf2a3b5c18a6b56320f64986108",
+  "report": "reports/tasks/T-010304/native_smoke.json",
+  "capture": "reports/tasks/T-010304/native_smoke.png",
+  "not_tested": [
+    "physical keyboard/gamepad",
+    "audio listening",
+    "hardware Forward+ performance",
+    "game campaign"
+  ]
+}

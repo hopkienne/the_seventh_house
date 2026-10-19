@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+TEST_REPORT {"assertions":0,"executed":0,"failed":1,"failures":["Zero tests/assertions cannot pass"],"registered_suites":["bootstrap","scene","utilities","asset_import"],"result":"FAIL","skipped":0,"suite":"bootstrap","tests":0}

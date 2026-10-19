@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "probe_timestamp": "2026-10-19T03:21:25.296650+00:00",
+  "probe_timestamp": "2026-10-19T04:02:59.478196+00:00",
   "tools": [
     {
       "name": "python",
@@ -147,7 +147,13 @@
     "subagent_tools_declared": true,
     "subagent_execution_probed": false,
     "software_forward_plus": true,
-    "hardware_forward_plus": false
+    "hardware_forward_plus": false,
+    "godot_procedural_static_glb": true,
+    "godot_glb_import": true,
+    "character_rig_pipeline": null,
+    "custom_shader_pipeline": null,
+    "navigation_pipeline": null,
+    "audio_synthesis_pipeline": null
   },
   "limitations": [
     "Godot portable downloaded and hash-verified locally; Blender not found on PATH or inspected install directories.",
@@ -210,5 +216,16 @@
     "driver": "vulkan",
     "software": true,
     "physical_gpu_performance_verified": false
+  },
+  "asset_pipeline_probe": {
+    "generator": "tools/art/build_stool_spike.gd",
+    "version": "Godot4.7.2.stable.official.ed1daf0bf",
+    "export_exit": 0,
+    "import_exit": 0,
+    "suite": "asset_import",
+    "assertions": 29,
+    "render_capture": "reports/tasks/T-010402/stool.png",
+    "quality_state": "BLOCKOUT",
+    "rebuild_manifest": "reports/tasks/T-010402/asset_manifest.json"
   }
 }

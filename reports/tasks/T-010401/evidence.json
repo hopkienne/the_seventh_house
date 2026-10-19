@@ -1,0 +1,128 @@
+{
+  "task_id": "T-010401",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:baff88e452fd7f125492b5d120466622b4e6ce552b2e46964dc9ba8f51168d5d",
+  "created_at": "2026-10-19T03:55:09.164855+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010401/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "docs/workflow.md",
+      "sha256": "178e482448fca92bb106aab58c49cdeaff7dbb24e359a3dcc22b4f91ae75f740"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "3babc0212f3b3d78370efd525d9fef5b142d11d562d67c0082bdecdea61ff925"
+    },
+    {
+      "path": "tools/validate_game_data.py",
+      "sha256": "8ce37c944e065edf4c83173835edd1d974ae27ce09ef47de2663e07753215062"
+    },
+    {
+      "path": "tests/test_validate_game_data.py",
+      "sha256": "9f5de4c018aa3a3c1a3cca7dde9f0c2850936f5074fc1ce7db11bf7f82de3ff6"
+    },
+    {
+      "path": "scripts/core/json_reader.gd",
+      "sha256": "dd0883b57e1dcb7460bfb67554b7df912f4adc2162bd29302402c8d17d78f79f"
+    },
+    {
+      "path": "tests/unit/test_utility.gd",
+      "sha256": "a1ce0b180bae486536957f234b1cda076cfcb1db35c672bb81da666e7b3c4ad1"
+    },
+    {
+      "path": "tests/fixtures/malformed_json.txt",
+      "sha256": "2e2043bb9cc6252533af1fcf927ce83c4e343c35aea075a81f404459e3a476c9"
+    },
+    {
+      "path": "tests/fixtures/array_json.txt",
+      "sha256": "e58caaa467d0dc7cc6214f5774a185169613dc0bdbaa5595adf1dca2c1124734"
+    },
+    {
+      "path": "specs/schemas/product.schema.json",
+      "sha256": "8b5d078caa59062101dbc115449d585759865444d47a47f0e9a32981a191d2a3"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "sha256": "44ff0dc2f1e40311b8239e83146749ab9d9cee2a650e699f5464755d552ee20d"
+    },
+    {
+      "path": "reports/tasks/T-010401/data_unit.log",
+      "sha256": "71ca39a7bf528ad852fad495468b784ca54a7f42b167dba062d39cc70739c88e"
+    },
+    {
+      "path": "reports/tasks/T-010401/data_coverage.log",
+      "sha256": "5aaa419b5cde8e93a4fbd6dfa5e22df935acfe6687d91ec6f6da593937c2ba4e"
+    },
+    {
+      "path": "reports/tasks/T-010401/data_complete_negative.log",
+      "sha256": "dfd14baeadc53baae37f5cab9ebf1c463dd044ebe363d02904df456634a979e8"
+    },
+    {
+      "path": "reports/tasks/T-010401/ledger.log",
+      "sha256": "446121385f2b561f70ad418a56c884611cbfd7dc9e0b317f6b76a5e223c4353a"
+    },
+    {
+      "path": "reports/tasks/T-010401/bootstrap_regression/verification.json",
+      "sha256": "50276f6a2b1b907de018a0121dbf48044bbfeaece4974feedc90c68da6f941e3"
+    },
+    {
+      "path": "reports/tasks/T-010401/utilities.stdout.log",
+      "sha256": "f62293d392afaece25f14cf9fc9f257a82cfd5d6734250cc0f46a3d9a3603d74"
+    },
+    {
+      "path": "reports/tasks/T-010401/utilities.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010401/scene.stdout.log",
+      "sha256": "57e2acbba1531887e5d03d818f6a45b9081c6672f8dfc37ca56f809c8f9d1f4f"
+    },
+    {
+      "path": "reports/tasks/T-010401/review.md",
+      "sha256": "2cf8392a15339638861d9ff32d4c52f378cc4ed9842a73906799ac54fee968d8"
+    },
+    {
+      "path": "reports/tasks/T-010401/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "runner-registry-utility",
+      "kind": "ENGINE_TEST",
+      "expected": "Actual utility assertions plus preserved registered suites/negative failure behavior",
+      "observed": "utilities4cases/6assertions;scene3cases/57;bootstrap2cases/21;all0fail/skips and negative harness checks pass",
+      "result": "PASS",
+      "command": "Godot --headless --script res://tests/test_runner.gd -- --suite utilities",
+      "log_path": "reports/tasks/T-010401/utilities.stdout.log",
+      "assertions": 6
+    },
+    {
+      "id": "validator-regressions",
+      "kind": "TOOL_TEST",
+      "expected": "Invalid/absent/incomplete runtime data cannot become a complete content PASS",
+      "observed": "6 Python tests pass;actual validator PARTIAL1 file,strictmodeFAILexit1;ledger22pass",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-010401/data_unit.log"
+    },
+    {
+      "id": "workflow-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Canonical status, evidence/review/resume instructions and truthful data coverage",
+      "observed": "workflow documents real commands/registry/limitations;no external board,paid or public rights inferred;reports remain immutable",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Runtime campaign data absent; PARTIAL expected and strict completeness fails.",
+    "Runtime flag/event allowlists and script string references not yet checked; no game quality claim."
+  ]
+}

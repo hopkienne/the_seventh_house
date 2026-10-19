@@ -1,0 +1,6 @@
+# Review T-010403
+Result: PASS. Reviewer: codex-primary; self_review=true. Separate plan/capability/raw-evidence comparison.
+
+Selected actually proven Godot procedural GLB path with fallback local free Blender bootstrap if rig workflow needs it; assigned art/audio/code production to agent modes, not freelancers/owner. Audio synthesis choice is a future production path and is explicitly not probed/audibly verified yet. Scope/golden sample/in-game rubric, stable asset states/source/config/provenance and phase/save contracts preserved. Hardware render/performance, physical input/audio, rig/custom shader/navigation gaps match prior probes. Config now records only confirmed static GLB capability with29 assertions and actual capture; untested pipelines null. CAP-001 remains open for hardware-specific checks, while legitimate software/headless work proceeds. Paid/public defaults not changed.
+
+Failure mode reviewed: treating procedural generation or waveform metrics as final visual/audio acceptance. Both docs explicitly reject that inference and require actual in-game review/playback/capture. No paid service/unknown license assumptions, no owner-production request, no task gate weakened. No unresolved acceptance issue for pipeline/risk documentation; future asset/audio tasks remain unimplemented.

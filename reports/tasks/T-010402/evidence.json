@@ -1,0 +1,157 @@
+{
+  "task_id": "T-010402",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:cc67eb34259b4a8fe8c9fb1629869d9ef0a1aea37a311c136f39f05d840c4b16",
+  "created_at": "2026-10-19T04:02:29.984286+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010402/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "reports/S01/skill_spike.md",
+      "sha256": "078cc9742aa17a4e8db13f943af4725f93ddbc4d01981f30d3b8dc1cb3b85bfd"
+    },
+    {
+      "path": "tools/art/stool_spike.json",
+      "sha256": "342c0fc8c135ed49193d01cebc046af88c245c701a96d86839fec02a2c2b7fa4"
+    },
+    {
+      "path": "tools/art/build_stool_spike.gd",
+      "sha256": "5e9a3d249c1b9604de5042ac7b5c48faac66fc86269488f49da2d44089ea82ef"
+    },
+    {
+      "path": "tests/fixtures/art/stool_spike.glb",
+      "sha256": "a2ac9541d19a1b862638b5a67f00568b462a7a5eddf56e56fe94369399735014"
+    },
+    {
+      "path": "tests/fixtures/art/render_stool.gd",
+      "sha256": "ffcbc95c37bd4856a3c9791931c97e0ce7d8193ed3b378b01bedbd71c47ba252"
+    },
+    {
+      "path": "tests/unit/test_asset_import.gd",
+      "sha256": "07b021ba7ed36f934c7f9e1eaf11a542ff706870d074c355187c6dbfde21a858"
+    },
+    {
+      "path": "tests/fixtures/invalid_callable.gd",
+      "sha256": "20a16afaf25a96d8e551c10397d7f151d1f6f67e3c588bb177c8ae18f50b69ee"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "6750c26bef01e9f0a89ec43ce5b966ecbf52fb4c5d4c6d21575d5e08f4cc9d66"
+    },
+    {
+      "path": "scripts/build_windows.py",
+      "sha256": "d31698ca2d4b6c56d15130bdc90b712e9488b8904be1d68f0c9b97546c9e446e"
+    },
+    {
+      "path": "docs/build.md",
+      "sha256": "031c9ddfd05acec96ba9a7d9d17fb2375687cc86a9193b4d1318b055e7d3ffde"
+    },
+    {
+      "path": "docs/workflow.md",
+      "sha256": "9d160e0f7bd6f51c161c69c88b5ba0c5cce46bd8d449448a41f787fcfc85555a"
+    },
+    {
+      "path": "reports/tasks/T-010402/asset_manifest.json",
+      "sha256": "e334280a584458b9678d588a38448d0e28a647c276dc12593be533e30b1c80f5"
+    },
+    {
+      "path": "reports/tasks/T-010402/generate.stdout.log",
+      "sha256": "7b4c75c76c31d8598eeeb2e9d09c9a536612da81ba1a7ab407af78fe3c40c6cb"
+    },
+    {
+      "path": "reports/tasks/T-010402/import.stdout.log",
+      "sha256": "92985f57cffbf542c50961eee5072ee6727b5cfed21069ee5165bc7c271f13b5"
+    },
+    {
+      "path": "reports/tasks/T-010402/asset_import.stdout.log",
+      "sha256": "bc4eb8069e1c23d8d699bcec98d92766b1a5955a97218f4acd7845c37efc7959"
+    },
+    {
+      "path": "reports/tasks/T-010402/invalid_callable.stdout.log",
+      "sha256": "48b5a9a67a34f7b44780baf4b654e87d64748d57b3a11cd1bb1af4f4ced14de6"
+    },
+    {
+      "path": "reports/tasks/T-010402/provider_lifetime_before.stdout.log",
+      "sha256": "271b61f51423978bd7fd163bea771eb4c6c7f90d8cc420e29ee9004d94c9a132"
+    },
+    {
+      "path": "reports/tasks/T-010402/provider_lifetime_before.stderr.log",
+      "sha256": "1cd5a6b1d8fa68e84540cd71fc38829553876879311801b5191435da7508c4f5"
+    },
+    {
+      "path": "reports/tasks/T-010402/provider_lifetime_before.json",
+      "sha256": "5df794ca810385f8c271b2d9b75565d6e03ad91ddd387414e79803bff3181ca1"
+    },
+    {
+      "path": "reports/tasks/T-010402/render.stdout.log",
+      "sha256": "6483f5d84da39565e4c89edc60a7097b8b3456857891a04bdf749c7c5ac3114a"
+    },
+    {
+      "path": "reports/tasks/T-010402/stool.png",
+      "sha256": "2e7288756a9029ab32eac89e2bcbd890a67b359e975fbbab4ac2168246a135e6"
+    },
+    {
+      "path": "reports/tasks/T-010402/build_manifest.json",
+      "sha256": "2ecd42db8bf88a4b11feceb3135ba7ca368d9e9ef1e3209a327a307d0911a56a"
+    },
+    {
+      "path": "reports/tasks/T-010402/build_unit.log",
+      "sha256": "6b4731813066b7a4ea698ef773d33f49a4b92f47279ddad8bfd7a940b6ed7745"
+    },
+    {
+      "path": "reports/tasks/T-010402/bootstrap_regression/verification.json",
+      "sha256": "ed9d5c6966d3260515e26fc66860f0334b0a14899cc8ea6511091d49c27289cb"
+    },
+    {
+      "path": "reports/tasks/T-010402/review.md",
+      "sha256": "308549956def403cf0392f007a2cb8e7d9ac6887f07d80d5c0360464696e33d6"
+    },
+    {
+      "path": "reports/tasks/T-010402/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "actual-glb-import",
+      "kind": "ENGINE_TEST",
+      "expected": "Owned sample GLB imports with real assertions and invalid path rejection",
+      "observed": "4468-byte GLB rebuilt identically;asset_import2cases/29assertions;missing GLB rejected;all4 suites113assertions in build pass",
+      "result": "PASS",
+      "command": "Godot --headless --import; Godot --headless --script res://tests/test_runner.gd -- --suite asset_import",
+      "log_path": "reports/tasks/T-010402/asset_import.stdout.log",
+      "assertions": 29
+    },
+    {
+      "id": "render-model",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Imported GLB visibly integrates into scene with actual Forward+ renderer",
+      "observed": "Windows display,Forward+/Vulkan SwiftShader CPU,1280x720;stool/seat/legs/shadow visually reviewed;BLOCKOUT only",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-010402/render.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010402/stool.png"
+      ],
+      "software": true,
+      "assertions": 1
+    },
+    {
+      "id": "pipeline-gap-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Actual sample/provenance/rebuild proof and rig/shader/navigation/profiling gaps truthful",
+      "observed": "Recipe/generator/hash/raw import/rebuild/capture retained;gaps mapped and no final-asset claim;runner provider regression fixed",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Static BLOCKOUT prop fixture, not final art or character rig/animation.",
+    "Software render is not hardware GPU performance; physical pad/audio not tested."
+  ]
+}

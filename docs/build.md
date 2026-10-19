@@ -6,7 +6,7 @@
 
 1. `python tools/fetch_godot.py` tải portable editor đúng 4.7.2 stable và kiểm SHA256 từ official release API.
 2. `python tools/fetch_godot.py --templates` tải matching templates; nếu bị ngắt, kiểm partial rồi dùng `--templates --resume`. Dữ liệu tải nằm trong `.tools/`, không đưa vào Git.
-3. `python scripts/build_windows.py` kiểm hash editor/templates và version, chạy headless import → bootstrap → scene → export-release preset `Windows Desktop` → inspect PCK trong project rỗng.
+3. `python scripts/build_windows.py` kiểm hash editor/templates và version, chạy headless import → discover registry → tất cả suites đã implement → export-release preset `Windows Desktop` → inspect PCK trong project rỗng.
 4. Kết quả mới ở `builds/windows/<build_id>/`, log riêng từng step và manifest ở `reports/builds/<build_id>/`. Có EXE/PCK, hashes, source hash, assertions và limitations. Mỗi build tạo thư mục mới, không xóa/ghi đè build trước.
 
 Có thể truyền `--godot <verified-console-or-editor.exe> --preset "Windows Desktop" --output-dir builds/<name> --timeout 180`. Binary phải đúng hash trong lock, cùng thư mục với editor chính; không dùng tên PATH để vượt pin. Output chỉ trong `builds/`. Không gọi suite world chưa được implement. Runner thiếu, zero tests/assertions, skipped, timeout, engine ERROR dù exit 0, export thiếu EXE/PCK hoặc pack inspection fail đều dừng build và giữ failure manifest/log.

@@ -4,6 +4,8 @@ extends SceneTree
 var assertions: int = 0
 var failures: Array[String] = []
 var cases_run: int = 0
+const SUITES: Dictionary = {"bootstrap": "", "scene": "res://tests/unit/test_scene.gd",
+	"utilities": "res://tests/unit/test_utility.gd", "asset_import": "res://tests/unit/test_asset_import.gd"}
 
 
 func _init() -> void:
@@ -19,6 +21,10 @@ func check(condition: bool, message: String) -> void:
 
 func _run() -> void:
 	var args: PackedStringArray = OS.get_cmdline_user_args()
+	if args == PackedStringArray(["--list-suites"]):
+		print("SUITE_REGISTRY ", JSON.stringify(SUITES.keys()))
+		quit(0)
+		return
 	var suite: String = ""
 	var filter: String = ""
 	var fixture: String = ""
@@ -35,14 +41,17 @@ func _run() -> void:
 			"--filter": filter = args[index]
 			"--fixture": fixture = args[index]
 		index += 1
-	if suite not in ["bootstrap", "scene"]:
+	if not SUITES.has(suite):
 		failures.append("Unknown suite: " + suite)
 		_finish(suite, 2)
 		return
 	var cases: Dictionary = {"project_contract": _test_project, "toolchain_contract": _test_toolchain}
-	if suite == "scene":
-		var scene_tests: RefCounted = load("res://tests/unit/test_scene.gd").new()
-		cases = scene_tests.get_cases(self)
+	# Callables hold weak object references. Keep providers alive through execution.
+	var providers: Array[RefCounted] = []
+	if not str(SUITES[suite]).is_empty():
+		var provider: RefCounted = load(SUITES[suite]).new()
+		providers.append(provider)
+		cases = provider.get_cases(self)
 	if not fixture.is_empty():
 		if not fixture.begins_with("res://tests/fixtures/") or not ResourceLoader.exists(fixture):
 			failures.append("Invalid fixture path: " + fixture)
@@ -50,6 +59,7 @@ func _run() -> void:
 			return
 		var script: Script = load(fixture)
 		var provider: RefCounted = script.new()
+		providers.append(provider)
 		cases = provider.get_cases(self)
 	for case_id: String in cases:
 		if not filter.is_empty() and case_id != filter:
@@ -57,6 +67,9 @@ func _run() -> void:
 		cases_run += 1
 		print("CASE ", suite, "/", case_id)
 		var execute: Callable = cases[case_id]
+		if not execute.is_valid():
+			failures.append("Invalid case callable: " + case_id)
+			continue
 		execute.call()
 	if cases_run == 0 or assertions == 0:
 		failures.append("Zero tests/assertions cannot pass")
@@ -99,6 +112,7 @@ func _test_toolchain() -> void:
 
 func _finish(suite: String, code: int) -> void:
 	print("TEST_REPORT ", JSON.stringify({"suite": suite, "tests": cases_run,
+		"registered_suites": SUITES.keys(), "executed": cases_run,
 		"assertions": assertions, "failed": failures.size(), "skipped": 0,
 		"failures": failures, "result": "PASS" if code == 0 else "FAIL"}))
 	quit(code)
