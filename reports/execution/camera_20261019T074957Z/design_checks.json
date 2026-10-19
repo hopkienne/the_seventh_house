@@ -1,0 +1,67 @@
+{
+  "validate_plan": {
+    "exit_code": 0,
+    "report": {
+      "result": "PASS",
+      "scope": "DOCUMENT_PACKAGE_ONLY_NOT_GAME_QA",
+      "counts": {
+        "sprints": 36,
+        "stories": 146,
+        "tasks": 602,
+        "chapters": 7,
+        "puzzles": 28,
+        "journal_records": 28
+      },
+      "checks": [
+        "unique_ids",
+        "parent_references",
+        "task_fields",
+        "no_active_staffing_hours",
+        "dependency_exists",
+        "dependency_acyclic",
+        "no_future_wave_dependency",
+        "read_before_paths",
+        "task_story_sprint_cards",
+        "state_id_sets",
+        "content_counts",
+        "puzzle_solutions_hints",
+        "route_connectivity",
+        "json_parse"
+      ],
+      "errors": [],
+      "topological_first_tasks": [
+        "T-010101",
+        "T-010102",
+        "T-010103",
+        "T-010104",
+        "T-010201",
+        "T-010202",
+        "T-010203",
+        "T-010204"
+      ]
+    }
+  },
+  "validate_puzzle_design": {
+    "exit_code": 0,
+    "report": {
+      "result": "PASS",
+      "scope": "STATIC_DESIGN_CONSISTENCY_NOT_RUNTIME_OR_HUMAN_PLAYTEST",
+      "checks_count": 278,
+      "errors": [],
+      "puzzles": 28,
+      "main_required": 21,
+      "human_usability": "HUMAN_USABILITY_NOT_ASSESSED"
+    }
+  },
+  "validate_puzzle_depth": {
+    "exit_code": 0,
+    "report": {
+      "result": "PASS",
+      "scope": "STATIC_DESIGN_DEPTH_NOT_RUNTIME",
+      "checks_count": 587,
+      "errors": [],
+      "valid_evacuation_plans": 8,
+      "human_usability": "HUMAN_USABILITY_NOT_ASSESSED"
+    }
+  }
+}

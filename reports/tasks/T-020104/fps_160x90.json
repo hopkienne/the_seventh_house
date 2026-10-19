@@ -1,0 +1,48 @@
+{
+  "adapter": "SwiftShader Device (Subzero)",
+  "input_mode": "synthetic_actions",
+  "physics_ticks_per_second": 60,
+  "relative_distance_spread": 0.0,
+  "renderer": "forward_plus",
+  "resolution": "(160, 90)",
+  "result": "PASS",
+  "samples": [
+    {
+      "capture_error": 0,
+      "distance_m": 10.8166770935059,
+      "drawn_frames": 150,
+      "elapsed_seconds": 4.999939,
+      "final_position": "(5.950011, 0.000038, 0.0)",
+      "grounded": true,
+      "held_physics_ticks": 300,
+      "observed_draw_fps": 30.0003660044653,
+      "requested_fps": 30,
+      "target_achieved": true
+    },
+    {
+      "capture_error": 0,
+      "distance_m": 10.8166770935059,
+      "drawn_frames": 300,
+      "elapsed_seconds": 4.999815,
+      "final_position": "(5.950011, 0.000038, 0.0)",
+      "grounded": true,
+      "held_physics_ticks": 300,
+      "observed_draw_fps": 60.002220082143,
+      "requested_fps": 60,
+      "target_achieved": true
+    },
+    {
+      "capture_error": 0,
+      "distance_m": 10.8166770935059,
+      "drawn_frames": 600,
+      "elapsed_seconds": 5.008347,
+      "final_position": "(5.950011, 0.000038, 0.0)",
+      "grounded": true,
+      "held_physics_ticks": 300,
+      "observed_draw_fps": 119.8000058702,
+      "requested_fps": 120,
+      "target_achieved": true
+    }
+  ],
+  "scope": "QA_course_only_not_campaign_or_hardware_benchmark"
+}

@@ -35,3 +35,10 @@ Art/audio/code do agent làm. Chủ dự án chỉ phải cung cấp quyền/tà
 
 ## End of every execution session
 Ghi `state/session_handoff.md`: task ID, commit/tree hash, working tree, files, tests thực đã chạy, lỗi còn lại, blocker, quyết định, lệnh tiếp theo. Phiên tiếp theo kiểm tra facts trên disk trước khi tin handoff. Không đánh DONE để xóa việc đang dở.
+
+## Gameplay revision 3.1 — ADR-002
+Yêu cầu chủ dự án ngày19/10/2026 thay gameplay tương ứng của v3: đọc `14_PUZZLE_DESIGN_BIBLE.md`, ADR-002 và catalogs mới. Có28puzzle(14CORE+7SUPPORTbắtbuộc+7SECRET),21main-required;28journalIDsgiữriêng. M01..06từsecret,M07từP25. P27chỉroute_plan_ready,P28mớivalidate3nhóm. G2yêucầuCH01P01–P04hoànchỉnhtrướcnhânrộng; S25audit/polish. Không dùngIDPxxv3đểsuyrasavecompatible. Cácquyền/gate/evidencecũgiữnguyên.
+
+
+## Gameplay revision3.2 — ADR-003
+Gameplay hiện hành bổ sung suy luận/nhánh điều tra/knowledge callbacks/tension theo `docs/decisions/ADR-003-reasoning-and-tension.md` và catalog reasoning3.2. Giữ28puzzle và28journal IDs; có602task. Bốn task mới NOT_STARTED, không thay tiến độ cũ. Card phải triển khai thought_path, hai observation_routes, feedback theo quan hệ và payoff; không28proofboards hoặc hidden-read gate. P06không cần chìaP05; P09/P11cùngbờA trướcP10; P17/P19trướcP18; P25/P26độc lập nhưngP28cần cảhai. P16có gallerycao; P28có8planhợp lệ theo beat, preview trước commit. Không suy gameplay hấp dẫn từ static PASS hoặc bot biết đáp án.

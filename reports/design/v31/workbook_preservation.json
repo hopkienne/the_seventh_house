@@ -1,0 +1,18 @@
+{
+  "sheet_names_preserved": true,
+  "native_feature_counts_preserved": true,
+  "table_ranges": {
+    "AgentGuideTable": "A4:B16",
+    "AgentWavesTable": "A4:I40",
+    "AgentStoriesTable": "A4:I150",
+    "AgentTasksTable": "A4:M602",
+    "AgentGatesTable": "A4:G14",
+    "AgentRequirementsTable": "A4:F22",
+    "AgentContentTable": "A4:J11",
+    "AgentQATable": "A4:H47",
+    "AgentRisksTable": "A4:F20",
+    "AgentPermissionsTable": "A4:E12",
+    "AgentSourcesTable": "A4:E12"
+  },
+  "native_excel": "NOT_TESTED"
+}

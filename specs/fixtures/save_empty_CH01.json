@@ -19,5 +19,6 @@
   "journal_ids": [],
   "puzzle_states": {},
   "completed_cinematics": [],
-  "zone_states": {}
+  "zone_states": {},
+  "design_version": "3.2"
 }

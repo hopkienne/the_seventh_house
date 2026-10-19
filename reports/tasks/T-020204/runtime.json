@@ -1,0 +1,147 @@
+{
+  "adapter": "SwiftShader Device (Subzero)",
+  "assertions": 50,
+  "failures": [],
+  "input_mode": "synthetic_actions_actual_triggers",
+  "profiles": [
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x720_0_west",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(849.0901, 627.4055)",
+        "(843.8455, 396.114)",
+        "(1275.706, 568.2007)",
+        "(1331.338, 503.5337)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 720)",
+      "zone": "WEST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x720_0_east",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(1082.43, 656.1757)",
+        "(1088.658, 450.9506)",
+        "(782.3278, 490.1315)",
+        "(814.1934, 441.4345)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 720)",
+      "zone": "EAST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x800_2_west",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(849.0901, 627.4055)",
+        "(843.8455, 396.114)",
+        "(1275.706, 568.2007)",
+        "(1331.338, 503.5337)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 800)",
+      "zone": "WEST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x800_2_east",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(1082.43, 656.1757)",
+        "(1088.658, 450.9506)",
+        "(782.3278, 490.1315)",
+        "(814.1934, 441.4345)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 800)",
+      "zone": "EAST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1680x720_4_west",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(849.0901, 627.4055)",
+        "(843.8455, 396.114)",
+        "(1275.706, 568.2007)",
+        "(1331.338, 503.5337)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1680, 720)",
+      "zone": "WEST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1680x720_4_east",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(1082.431, 656.1757)",
+        "(1088.658, 450.9506)",
+        "(782.3278, 490.1315)",
+        "(814.1934, 441.4345)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1680, 720)",
+      "zone": "EAST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x720_6_west",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(849.0901, 627.4055)",
+        "(843.8455, 396.114)",
+        "(1275.706, 568.2007)",
+        "(1331.338, 503.5337)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 720)",
+      "zone": "WEST"
+    },
+    {
+      "content_scale_aspect": 1,
+      "content_scale_size": "(1920, 1080)",
+      "image_size": "(1280, 720)",
+      "name": "1280x720_6_east",
+      "safe_rect": "[P: (96.0, 54.0), S: (1728.0, 972.0)]",
+      "target_points": [
+        "(1082.431, 656.1757)",
+        "(1088.658, 450.9506)",
+        "(782.3278, 490.1315)",
+        "(814.1934, 441.4345)"
+      ],
+      "ui_rect": "[P: (96.0, 493.0), S: (1728.0, 93.0)]",
+      "viewport_rect": "[P: (0.0, 0.0), S: (1920.0, 1080.0)]",
+      "window_size": "(1280, 720)",
+      "zone": "EAST"
+    }
+  ],
+  "renderer": "forward_plus",
+  "result": "PASS",
+  "ui_scope": "reusable_safe_frame_with_QA_labels_not_full_menu_or_localization_acceptance"
+}

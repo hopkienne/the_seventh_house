@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CameraPreset" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/camera/camera_preset.gd" id="1_preset"]
+
+[resource]
+script = ExtResource("1_preset")
+fov_degrees = 38.0
+offset = Vector3(9, 7, 13.5)
+look_offset = Vector3(0, 1.4, -2.3)
+near_distance = 0.05
+far_distance = 200.0

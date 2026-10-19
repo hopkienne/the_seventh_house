@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "records": 838,
+  "task_cards": 598,
+  "state_revision": 60,
+  "rewritten": [
+    "Markdown views",
+    "CSV snapshots",
+    "offline HTML"
+  ],
+  "unchanged": [
+    "canonical plan",
+    "canonical state",
+    "XLSX snapshot"
+  ],
+  "scope": "DOCUMENT_VIEWS_ONLY"
+}

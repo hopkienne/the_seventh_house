@@ -4,6 +4,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 spec = importlib.util.spec_from_file_location('build_windows', Path(__file__).resolve().parents[1] / 'scripts/build_windows.py')
@@ -12,6 +13,21 @@ spec.loader.exec_module(build)
 
 
 class BuildTests(unittest.TestCase):
+    def test_runtime_asset_changes_invalidate_candidate_source_hash(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            for name in ['project.godot', 'export_presets.cfg', 'config/toolchain.lock.json']:
+                path = root/name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('fixture', encoding='utf-8')
+            asset = root/'art/export/street.glb'
+            asset.parent.mkdir(parents=True)
+            asset.write_bytes(b'original runtime mesh')
+            with patch.object(build, 'ROOT', root):
+                before = build.source_hash()
+                asset.write_bytes(b'changed geometry at same path')
+                self.assertNotEqual(before, build.source_hash())
+
     def test_valid_report(self):
         report = dict(result='PASS', tests=2, assertions=3, failed=0, skipped=0)
         self.assertEqual(build.test_report('TEST_REPORT '+json.dumps(report)), report)

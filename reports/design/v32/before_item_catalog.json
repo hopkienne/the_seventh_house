@@ -1,0 +1,176 @@
+{
+  "design_version": "3.1",
+  "status": "DESIGN_ONLY",
+  "items": [
+    {
+      "id": "LANTERN_LENS",
+      "source_location": "CH01.mother_room.clock_cabinet",
+      "source_puzzle": "P01",
+      "recovery": "ONE_SHOT_RECIPE_INPUT",
+      "unique": true
+    },
+    {
+      "id": "LANTERN",
+      "source_location": "CH01.mother_room.lantern_table",
+      "source_puzzle": "P01",
+      "recovery": "REUSABLE_RETRIEVE_AFTER_P26",
+      "unique": true
+    },
+    {
+      "id": "H01_DOOR_KEY",
+      "source_location": "CH01.yard.well_brick_REAL",
+      "source_puzzle": "P02",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "PHOTO_TILES",
+      "source_location": "CH01.workshop.open_bench_drawer",
+      "source_puzzle": "P03",
+      "recovery": "LOCAL_SLOTS_RETAINED",
+      "unique": true
+    },
+    {
+      "id": "WOODEN_TOP",
+      "source_location": "CH01.workshop.open_tool_basket",
+      "source_puzzle": "P04",
+      "recovery": "COMBINE_TO_RECHARGEABLE_DECOY",
+      "unique": true
+    },
+    {
+      "id": "WORKSHOP_SPRING",
+      "source_location": "CH01.workshop.clock_case",
+      "source_puzzle": "P04",
+      "recovery": "COMBINE_TO_RECHARGEABLE_DECOY",
+      "unique": true
+    },
+    {
+      "id": "WOUND_TOP",
+      "source_location": "RECIPE.WOUND_TOP",
+      "source_puzzle": "P04",
+      "recovery": "RECHARGE_RESET_SAFE_CHECKPOINT",
+      "unique": true
+    },
+    {
+      "id": "H02_INNER_KEY",
+      "source_location": "CH02.dining.table_hidden_drawer",
+      "source_puzzle": "P05",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "HANH_NOTEBOOK",
+      "source_location": "CH02.hanh_room.wardrobe",
+      "source_puzzle": "P06",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "PHOTO_OVERLAYS",
+      "source_location": "CH02.hanh_room.open_envelope",
+      "source_puzzle": "P07",
+      "recovery": "LOCAL_SLOTS_RETAINED",
+      "unique": true
+    },
+    {
+      "id": "DOCK_CRANK",
+      "source_location": "CH03.dock.boat_open_toolbox_BEFORE_BRIDGE",
+      "source_puzzle": "P09",
+      "recovery": "INSTALLED_PERSISTENT",
+      "unique": true
+    },
+    {
+      "id": "INSULATED_WIRE",
+      "source_location": "CH03.dock.store_open_shelf_BEFORE_BRIDGE",
+      "source_puzzle": "P09",
+      "recovery": "INSTALLED_PERSISTENT",
+      "unique": true
+    },
+    {
+      "id": "LAST_TIMETABLE",
+      "source_location": "CH04.class3a.assembled_timetable",
+      "source_puzzle": "P13",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "PAINTING_STRIP",
+      "source_location": "CH04.class3a.bookcase",
+      "source_puzzle": "P14",
+      "recovery": "INSTALLED_PERSISTENT",
+      "unique": true
+    },
+    {
+      "id": "MUSIC_DISC",
+      "source_location": "CH04.art_room.canvas_rear",
+      "source_puzzle": "P14",
+      "recovery": "INSTALLED_PERSISTENT",
+      "unique": true
+    },
+    {
+      "id": "MOTHER_ROOM_NOTE",
+      "source_location": "CH05.letter_room.authentic_letter_sequence",
+      "source_puzzle": "P17",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "REFLECTOR",
+      "source_location": "CH05.mother_study.note_drawer",
+      "source_puzzle": "P18",
+      "recovery": "REUSABLE_RETRIEVE_FOR_P20",
+      "unique": true
+    },
+    {
+      "id": "COUNTERWEIGHT_KEY",
+      "source_location": "CH06.mechanics.training_bells_drawer",
+      "source_puzzle": "P21",
+      "recovery": "RETAINED_UNIQUE",
+      "unique": true
+    },
+    {
+      "id": "SCHOOL_EXIT_KEY",
+      "source_location": "CH04.school.map_board_secret_hatch",
+      "source_puzzle": "P16",
+      "recovery": "RETAINED_RECORD_COPY_FOR_P28_C_TRIAL",
+      "unique": true
+    }
+  ],
+  "recipes": [
+    {
+      "id": "FIT_LENS",
+      "inputs": [
+        "LANTERN_LENS"
+      ],
+      "outputs": [],
+      "world_target": "CH01.mother_room.lantern_table",
+      "commit_state": "lantern_ready",
+      "consume_on_commit": true
+    },
+    {
+      "id": "WOUND_TOP",
+      "inputs": [
+        "WOODEN_TOP",
+        "WORKSHOP_SPRING"
+      ],
+      "outputs": [
+        "WOUND_TOP"
+      ],
+      "world_target": null,
+      "commit_state": "decoy_combined",
+      "consume_on_commit": true
+    },
+    {
+      "id": "BEACON_REPAIR",
+      "inputs": [
+        "DOCK_CRANK",
+        "INSULATED_WIRE"
+      ],
+      "outputs": [],
+      "world_target": "CH03.dock.beacon",
+      "commit_state": "beacon_repaired",
+      "consume_on_commit": true
+    }
+  ],
+  "transaction_policy": "Validate target/phase/range, commit consume+output+state atomically. Retry/reload idempotent. Wrong-use consumes nothing. Quest-record props P25 are local puzzle slots, not inventory prerequisite from P04."
+}

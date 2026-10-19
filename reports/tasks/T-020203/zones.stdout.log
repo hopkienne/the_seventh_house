@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE camera_zones/blend_interruption_and_restore
+CASE camera_zones/physical_zone_traversal
+TEST_REPORT {"assertions":15,"executed":2,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion","corridor","movement_qa","camera_preset","camera_follow","camera_zones"],"result":"PASS","skipped":0,"suite":"camera_zones","tests":2}

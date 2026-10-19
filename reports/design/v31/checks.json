@@ -1,0 +1,64 @@
+[
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_puzzle_design.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/check_1.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_validate_game_data.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/check_2.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/test_agentctl.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/check_3.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/check_narrative_contract.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/check_4.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/validate_game_data.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/check_5.log"
+  }
+]

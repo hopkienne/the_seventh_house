@@ -1,0 +1,13 @@
+# T-020203 — separate self-review
+
+PASS, reviewer/executor codex-primary; self_review=true.
+
+New two-zone playable scenes/tests/camera_corridor.tscn has real Player, Shared floor/bounds, Area3D layer32/mask8 volumes WEST/EAST and observable clue marker. CameraZoneTrigger filters target identity, ignores prop/enemy entries, and handles reversed motion while capsule overlaps both volumes via fallback on exit. Physical overlap regression stopped atx0.109998 with both areas overlapping, then reversed to WEST without requiring WEST re-entry.
+
+CameraDirector now smoothly blends current displayed framing and authored anchor bounds over0.6seconds, smoothstep progress by delta. Interruption snapshots displayed state; repeated same-zone entry does not restart. Invalid IDs reject without mutation; restore cancels blend and applies destination immediately. FOV/offset/look-target interpolation remains on same positive-Z side. CameraRig snapshot reads actual camera values, not stale authored preset. Resource duplicate_deep(DEEP_DUPLICATE_ALL) freezes external framing too; Context7 Godot4.7 docs identify duplicate(true) external-resource semantics since4.5. Test fixture explicitly clones nested framing before editing. These are new203 capabilities; no old evidence rewritten.
+
+Test-first4failures retained: missing continuous blend/fixture plus one QA aliasing expectation, fixed by new implementation and independent nested test Resource. Final camera_zones4cases25assertions including interrupted/reverse/restore/unknown/outsider/overlap and30/60/120 delta schedules. FOV at0.2s =39.037036895752 for each schedule; not a measuredFPS claim. Full candidate31cases239assertions failed0/skipped0; import/export/pack PASS. New scenes/tests exclusion and pack guard enforce QA scene not shipped.
+
+Actual Windows Forward+/Vulkan SwiftShader replay15checks passed. Input held110physics ticks in each direction; renderer observer captures intermediate frames without awaiting render inside held-input loop. Captures west_start/right_blend/right_end/left_blend/left_end opened; player/clue remain visible and screen-right basis dotworldRIGHT>0.5 throughout. Intermediate FOV38.547314 towardEAST and41.523750 towardWEST; roundtrip player returnsx-3,y0,grounded. Initial replay with render await during held loop retained under initial_render but acceptance uses observer-driven final replay.
+
+No production bug from a closed task required RW; cross-zone transition is added under203, camera-only changes preserve player/world/story/save. Baseline3.2 plan/design278/depth587 PASS remains static evidence only. Hardware performance/physical input/audio/human usability NOT_TESTED. Safe-frame/aspect contract belongs204, not claimed here. No gate advanced.

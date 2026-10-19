@@ -1,0 +1,5 @@
+MODULAR_SOURCE_REVIEW {"result": "PASS", "source": "door_open_2m.blend", "meshes": 6, "bounds_min": [0.0, 0.0, -0.625], "bounds_max": [2.0, 3.0, 0.14000000059604645], "pivot": [0, 0, 0], "sockets": [[0, 0, 0], [2, 0, 0]], "all_scales_identity": true, "external_images": 0, "external_libraries": 0, "door_frame_clear_width": 1.25, "door_frame_clear_height": 2.25}
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:33:33)
+Read blend: "G:\zalo_mini_app\the_seventh_house\art\source\modular\door_open_2m.blend"
+
+Blender quit

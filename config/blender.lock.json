@@ -1,0 +1,14 @@
+{
+  "version": "4.5.3",
+  "binary_path": ".tools/blender/blender-4.5.3-windows-x64/blender.exe",
+  "binary_sha256": "bd9d0d31051b9c54c7651ae65d97bb3cd443624ea8e0691497df591b34805510",
+  "archive_sha256": "6b657c8bdd3a7b65b07b9e1ae17eb4be7dd4aa23121da7f3d3354fc2551330a7",
+  "archive_bytes": 400100678,
+  "download_url": "https://mirrors.dotsrc.org/blender/release/Blender4.5/blender-4.5.3-windows-x64.zip",
+  "checksum_sources": [
+    "https://mirrors.dotsrc.org/blender/release/Blender4.5/blender-4.5.3.sha256",
+    "https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.5/blender-4.5.3.sha256"
+  ],
+  "license": "GPL-3.0-or-later",
+  "scope": "local_portable_asset_authoring_tool_not_bundled_in_game"
+}

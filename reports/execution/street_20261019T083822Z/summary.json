@@ -1,0 +1,13 @@
+{
+  "task_id": "T-020301",
+  "status": "DONE",
+  "ledger_revision": 78,
+  "counts": {
+    "DONE": 25,
+    "NOT_STARTED": 577
+  },
+  "all_75_evidence_artifact_hashes_revalidated": true,
+  "next_task": "T-020302",
+  "candidate_build": "20261019T083122484670Z",
+  "background_jobs_remaining": false
+}

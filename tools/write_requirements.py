@@ -29,7 +29,7 @@ def render():
     lines += [
         '', '## Quy tắc xác nhận', '',
         '- R02 gồm cả ba ending A/B/C, playable resolution, credits và checkpoint trước lựa chọn; cả 128 tổ hợp memory không khóa A/B. C cần đầy đủ memory cùng tuyến sơ tán đúng. Không thay bằng cinematic mô tả hoặc một ending duy nhất.',
-        '- R06/R07 có 14 puzzle + 7 memory và 28 journal IDs (14 E + 7 L + 7 M). Save/load, negative input và revisit là phần nghiệm thu.',
+        '- R06/R07 có 28 puzzle (14 CORE + 7 SUPPORT + 7 SECRET) + 7 memory và 28 journal IDs (14 E + 7 L + 7 M). Save/load, negative input và revisit là phần nghiệm thu.',
         '- R14 cần số đo trên benchmark đã khóa và exported Windows runtime. Headless logic PASS không xác nhận GPU, art, audio hay gamepad vật lý.',
         '- Evidence task gồm outputs có hash, raw logs/captures đúng loại, expected/observed/result và reviewer. Single-agent review khai self_review=true; document review không xác nhận game chạy.',
         '- G7_TECH và G7_PUBLIC tách biệt. Public release cần quyền theo đúng build/channel; chưa có quyền giữ BLOCKED_EXTERNAL. G8 chỉ PASS sau tải/cài/smoke public build thật.',

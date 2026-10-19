@@ -1,0 +1,79 @@
+{
+  "asset_id": "ENV_WALL_2M_01",
+  "category": "MODEL",
+  "chapter_ids": [
+    "CH01"
+  ],
+  "phase": "SHARED",
+  "quality_state": "BLOCKOUT",
+  "source_path": "art/source/modular/wall_2m.blend",
+  "runtime_path": "art/export/blockout/wall_2m.glb",
+  "sha256": "ac145103d88ba77d1cd8a52516c229aaebb5e5a8e071db7c0dbb9598ec7ac951",
+  "source_sha256": "a9416c48994fbd445f804fbabe53a90663c6a6dd0549631565a0ae202ccd940e",
+  "generator_path": "tools/art/build_modular_blender.py",
+  "config": "tools/art/modular_kit.json",
+  "seed": 7302,
+  "generator_version": 1,
+  "tool_lock": "config/blender.lock.json",
+  "tool_version": "4.5.3 LTS",
+  "semantic_sha256": "cbbc08cf1319d38697a184367977c3e3e4b06fe970471c798ddccd356032e35d",
+  "measurements": {
+    "width_m": 2.0,
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "triangles": 12,
+    "meshes": 1,
+    "collision_meshes": 1
+  },
+  "dependencies": [
+    "tools/art/street_blockout.json",
+    "scripts/art/street_blockout.gd"
+  ],
+  "prefab": "scenes/environment/modules/wall_2m.tscn",
+  "integration_scene": "scenes/environment/modular_kit_scene.tscn",
+  "provenance": {
+    "created_by": "codex-primary",
+    "created_at": "2026-10-19T09:26:41.363739+00:00",
+    "method": "Original parameterized local mesh/UV geometry and shared project PBR colors; no external mesh/texture/animation inputs.",
+    "external_asset_dependencies": [],
+    "asset_license": "Original project production asset; public release rights review remains a separate gate.",
+    "tool_license": "GPL-3.0-or-later",
+    "tool_license_files": ".tools/blender/blender-4.5.3-windows-x64/license/",
+    "tool_not_bundled": true
+  },
+  "animation": {
+    "status": "STATIC_VARIANT_NO_RIG",
+    "clips": []
+  },
+  "limitations": [
+    "BLOCKOUT, not FINAL.",
+    "Open/closed are static placement variants, no interaction/save state implied.",
+    "REAL/ERASED material preview only; no WorldController switching.",
+    "Rotate to face direction; do not mirror or nonuniformly scale colliders."
+  ],
+  "captures": [
+    "reports/tasks/T-020302/REAL_gameplay.png",
+    "reports/tasks/T-020302/REAL_front.png",
+    "reports/tasks/T-020302/REAL_wide.png",
+    "reports/tasks/T-020302/ERASED_gameplay.png",
+    "reports/tasks/T-020302/ERASED_front.png",
+    "reports/tasks/T-020302/ERASED_wide.png"
+  ],
+  "review_path": "reports/tasks/T-020302/review.md"
+}

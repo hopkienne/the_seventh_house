@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE camera_follow/deadzone_bounds_stability
+CASE camera_follow/delta_and_rejection
+CAMERA_DELTA_METRICS {"positions_after_one_second":["(0.999665, 0.0, 0.0)","(0.999665, 0.0, 0.0)","(0.999665, 0.0, 0.0)"],"scope":"deterministic_delta_schedules_not_measured_render_FPS"}
+TEST_REPORT {"assertions":15,"executed":2,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion","corridor","movement_qa","camera_preset","camera_follow"],"result":"PASS","skipped":0,"suite":"camera_follow","tests":2}

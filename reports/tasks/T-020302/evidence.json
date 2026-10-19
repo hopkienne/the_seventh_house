@@ -1,0 +1,408 @@
+{
+  "task_id": "T-020302",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T09:32:56.478754+00:00",
+  "revision": "artifact-tree-sha256:133f264038621391313fdfc51c8fa4b749d81217833c381732137cfe42f72299",
+  "build_id": "20261019T092854243879Z",
+  "runtime_source_sha256": "f1d5f95572c01cb7aea281436479ee76f1c066f0b2bd89c7388d361195c1be14",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020302/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "art/export/blockout/door_closed_2m.glb",
+      "sha256": "3d0afd0b8ea607ef3e44a979656a4cb9f6b16b6f3faeb403029d041dcc3a29f4"
+    },
+    {
+      "path": "art/export/blockout/door_closed_2m.glb.import",
+      "sha256": "01a7244a14790b9a231c1baa7661a216f3fa54cc007ecd29325240120a53b128"
+    },
+    {
+      "path": "art/export/blockout/door_open_2m.glb",
+      "sha256": "ca90dad65b940b615bef755c95d347cdc141e191695b901e28c77156f544e026"
+    },
+    {
+      "path": "art/export/blockout/door_open_2m.glb.import",
+      "sha256": "d0e9383d588fee5566366dd6f102082fbe0de804b360eea3c984be8a44a88a8a"
+    },
+    {
+      "path": "art/export/blockout/fence_2m.glb",
+      "sha256": "819aeb9fbafce8c99f546f3702b81fbab3a497e0e58a44c1e31935024f34f85e"
+    },
+    {
+      "path": "art/export/blockout/fence_2m.glb.import",
+      "sha256": "438968481754331cde3a15a8dd4db565d2c7c57e91dbc6e378c9150770b83ba4"
+    },
+    {
+      "path": "art/export/blockout/modular_kit.metrics.json",
+      "sha256": "0ebe49c37106bec4820b906f9c96db5cd56c0786c7cbe76cb16e7c2835bbf3b1"
+    },
+    {
+      "path": "art/export/blockout/wall_2m.glb",
+      "sha256": "ac145103d88ba77d1cd8a52516c229aaebb5e5a8e071db7c0dbb9598ec7ac951"
+    },
+    {
+      "path": "art/export/blockout/wall_2m.glb.import",
+      "sha256": "a520938e4907ea123d264feab27fc766fcf2357033a7e59045d1a5df845eb7b6"
+    },
+    {
+      "path": "art/manifest/modular/door_closed_2m.asset.json",
+      "sha256": "55a50b5ce4c35f3decc8e2c98b887060503072a52eb10f726371af441ec14fc1"
+    },
+    {
+      "path": "art/manifest/modular/door_open_2m.asset.json",
+      "sha256": "27f6455d829715a5b30fcfff1be88b4aec2d646822f3b2beb3caba12f5cdb27b"
+    },
+    {
+      "path": "art/manifest/modular/fence_2m.asset.json",
+      "sha256": "c48574bb13ec6659e828387b5543c982b77fc433983ab2c10fba08f8cd3e7cec"
+    },
+    {
+      "path": "art/manifest/modular/wall_2m.asset.json",
+      "sha256": "3a5ac21acb80ad73ce8f03f68b0de0b6b0100d52eab968e554659658a4eb595e"
+    },
+    {
+      "path": "art/source/.gdignore",
+      "sha256": "92c5a85faf59ac3b0adbadf46082465baf951f124c91370e12ab871535154ba2"
+    },
+    {
+      "path": "art/source/modular/door_closed_2m.blend",
+      "sha256": "baa2309870fb9cbbf38b02f443b1db5f8e33f778a11270f606b4e41a65d63c10"
+    },
+    {
+      "path": "art/source/modular/door_open_2m.blend",
+      "sha256": "f3014b2feada44375c3926bfdae7ca92f4105037d8eba18f973dd6289983ece0"
+    },
+    {
+      "path": "art/source/modular/fence_2m.blend",
+      "sha256": "7c2b6e7319b2aed20e6eac8543695d1ec43ba167e8e71ddcdbca095815086996"
+    },
+    {
+      "path": "art/source/modular/wall_2m.blend",
+      "sha256": "a9416c48994fbd445f804fbabe53a90663c6a6dd0549631565a0ae202ccd940e"
+    },
+    {
+      "path": "builds/windows/20261019T092854243879Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T092854243879Z/TheSeventhHouse.pck",
+      "sha256": "21f02a04e3e27dc1814f3e2cba027a7645111d467979063a6f5f795add496d08"
+    },
+    {
+      "path": "config/blender.lock.json",
+      "sha256": "0d0e097e372131523d5c95ca5ede32791f2a9b701413cea1fff94fb3c7be47e9"
+    },
+    {
+      "path": "config/toolchain.lock.json",
+      "sha256": "cfb1de5b073584b7cbd0b0b6738a532177f3071b78b83dd2aeb0f79f596e0c78"
+    },
+    {
+      "path": "config/tuning/camera_modular_kit.tres",
+      "sha256": "936a31be9b7118ebc056d79c410495c1cb414c6e9411f8c055c11885c235ee32"
+    },
+    {
+      "path": "docs/assets/modular_kit.md",
+      "sha256": "27a7c9c67b406936991f2070fb1bdebd8a3bc5f2377795a209e815849592f420"
+    },
+    {
+      "path": "reports/builds/20261019T092854243879Z/manifest.json",
+      "sha256": "78fcc854da2b4e23a7f613d7e28a1dbd25333ec8c832e18968f93715aa256d93"
+    },
+    {
+      "path": "reports/tasks/T-020302/ERASED_front.png",
+      "sha256": "8a8ca805e94a70c8d897f8fb529b4c15975a5bd04c49901d4d0b669761bcbab0"
+    },
+    {
+      "path": "reports/tasks/T-020302/ERASED_gameplay.png",
+      "sha256": "2108d571963ce8d2bb739388ad1f4533b22e2975672d1cba568c57811d2deef4"
+    },
+    {
+      "path": "reports/tasks/T-020302/ERASED_wide.png",
+      "sha256": "f198efbe91a59b6327d5b7ec738c5e0a8afef5765a9d9136cf34901fe5069359"
+    },
+    {
+      "path": "reports/tasks/T-020302/REAL_front.png",
+      "sha256": "49520db7182d4b93538384dc597eaeeb3c55192883fd7fa930b9b962ddd4a57e"
+    },
+    {
+      "path": "reports/tasks/T-020302/REAL_gameplay.png",
+      "sha256": "add34e4789cf75c6f11471d0e70a46eeffbd7d8e564295094a48b20ab42a7a27"
+    },
+    {
+      "path": "reports/tasks/T-020302/REAL_wide.png",
+      "sha256": "478d2c455d2fe6d091c1818d6c90e75a00a4b6d3b7c7a8423982e6b844b40d9b"
+    },
+    {
+      "path": "reports/tasks/T-020302/before.stderr.log",
+      "sha256": "8019d435f98c365b08a6767652870f0c471acaeb0fccf8c1c0561d8e46f3c41a"
+    },
+    {
+      "path": "reports/tasks/T-020302/before.stdout.log",
+      "sha256": "3378f334fa62b815f4e4b60434ee4d3868384a05e4270f1f49c4291dd399a425"
+    },
+    {
+      "path": "reports/tasks/T-020302/blender_version.log",
+      "sha256": "3ca79c10cefb315ecbd1fc05f71934027307c49b0832c51d004e312e2fcbf2bc"
+    },
+    {
+      "path": "reports/tasks/T-020302/build_a.stdout.log",
+      "sha256": "3113384896062e7869b8ef499ebb41339f05d8fd5d18c3b0d38ed426e9ba86d3"
+    },
+    {
+      "path": "reports/tasks/T-020302/build_b.stdout.log",
+      "sha256": "3306b068841f420f609edf26ab36670af872923187aeea522f92d6024e500f18"
+    },
+    {
+      "path": "reports/tasks/T-020302/design_and_build_checks.json",
+      "sha256": "5dc06c0e5b46aeead87295738e55a2cdc5694da8e83825947eb170c569d8dd75"
+    },
+    {
+      "path": "reports/tasks/T-020302/door_closed_2m.source.stdout.log",
+      "sha256": "ca4b21c1b72cd789d209bff9c546ac395c5e47a05574269835bab502b4711062"
+    },
+    {
+      "path": "reports/tasks/T-020302/door_open_2m.source.stdout.log",
+      "sha256": "0c0752f8386b48d60747a68fd4e6e70a791d81156fe5985e876508192dee3b73"
+    },
+    {
+      "path": "reports/tasks/T-020302/door_passed.png",
+      "sha256": "aee0ddb941a24f80f27d0c582a164c10bd72590e0eb78dbeb2b14a7a7eda94e0"
+    },
+    {
+      "path": "reports/tasks/T-020302/entry_diff.patch",
+      "sha256": "8c24133a536473b0348bd83d8aa3a39f363d5d473a810e21ad87a8d4daa31cd4"
+    },
+    {
+      "path": "reports/tasks/T-020302/entry_diff.patch.stderr.log",
+      "sha256": "3bd2d7cf619e6e7395110d1fa708c4b27f0db19dbaa3627efbd22cd1c9b92fe1"
+    },
+    {
+      "path": "reports/tasks/T-020302/entry_worktree.txt",
+      "sha256": "ac99be9cdcf3f514152d6f74b0ef8f0d7d6375e25402f1f3db6a5d2e91669096"
+    },
+    {
+      "path": "reports/tasks/T-020302/fence_2m.source.stdout.log",
+      "sha256": "4c2c6079762c356ec385456028cf0375de7b524507c1807ca7e5f89b514f931d"
+    },
+    {
+      "path": "reports/tasks/T-020302/final_build_summary.json",
+      "sha256": "84b80b2b1ba8ea548972775022a246939553fef6141b0a44a27ee285b268cb04"
+    },
+    {
+      "path": "reports/tasks/T-020302/final_diff_stat.txt",
+      "sha256": "8768b2b20b1a05997add3f84aebd8762256e89d9439a02a861a9540c8dfc0315"
+    },
+    {
+      "path": "reports/tasks/T-020302/final_diff_stat.txt.stderr.log",
+      "sha256": "3bd2d7cf619e6e7395110d1fa708c4b27f0db19dbaa3627efbd22cd1c9b92fe1"
+    },
+    {
+      "path": "reports/tasks/T-020302/final_worktree.txt",
+      "sha256": "2baffc58bb6118868a7b1e6c10ea3338b004bbe729e22264e637daf4a96da1b8"
+    },
+    {
+      "path": "reports/tasks/T-020302/godot_version.log",
+      "sha256": "bf8803022b574250bb04dea65053a46b7c58570725316c1f7fe2aa6735706498"
+    },
+    {
+      "path": "reports/tasks/T-020302/import.stdout.log",
+      "sha256": "cef063a8e64e63f619b102113a113589c413d4d506a1fcb593961c8b4fa5d68a"
+    },
+    {
+      "path": "reports/tasks/T-020302/integration_diff.patch",
+      "sha256": "09a9df6f2c085edf090d85d1f9964f0bae4ea9413578abff8e988fc623526098"
+    },
+    {
+      "path": "reports/tasks/T-020302/integration_diff.stderr.log",
+      "sha256": "e508482e9c0c375684c5517f69adb12241fd785791bd67712b7c8d56d1cd7c14"
+    },
+    {
+      "path": "reports/tasks/T-020302/manifest_verification.json",
+      "sha256": "96f49e2a57abc82b2b016233d08fa4ed65926e7e41da406c234b8f97b35b174f"
+    },
+    {
+      "path": "reports/tasks/T-020302/modules.stdout.log",
+      "sha256": "d44bbb4c05fb14f73d8d06533dd865c1176ab02f62d242fa33e536f1f663a07f"
+    },
+    {
+      "path": "reports/tasks/T-020302/native.json",
+      "sha256": "46e1cbb3c8883f409c12ad9c0965235ef412c733e2ee4b74886b92d8e07c12d5"
+    },
+    {
+      "path": "reports/tasks/T-020302/native.png",
+      "sha256": "2a1c28f3b695a44f42e124e26c710f70285833cf179c7f5b7abead28ab095534"
+    },
+    {
+      "path": "reports/tasks/T-020302/native.stdout.log",
+      "sha256": "5def800b7e9f0b54fdd00a8a134160ec910c2a464e85f7aa923831acacf1a302"
+    },
+    {
+      "path": "reports/tasks/T-020302/rebuild_comparison.json",
+      "sha256": "0a640a0cc7c562758f46052054b11f1e8a554d082937cf4f365fee203f844a14"
+    },
+    {
+      "path": "reports/tasks/T-020302/review.md",
+      "sha256": "8c8cd7a9ecd0b445eb1cd00ac832af74062afe356c1dab11273ef7292459dea4"
+    },
+    {
+      "path": "reports/tasks/T-020302/runtime.json",
+      "sha256": "1aa85da4789083e6bfedec3bc7f57a5849ca186bd72bd2ec093de1b24f644856"
+    },
+    {
+      "path": "reports/tasks/T-020302/runtime.stdout.log",
+      "sha256": "e7c5d8cb5ef464a9ce26f3c35699558c338d4fa6a3284a9497404c2fe2f51b8a"
+    },
+    {
+      "path": "reports/tasks/T-020302/test_build_windows.stderr.log",
+      "sha256": "f0004b386e9480dc932de68e1204f3fc816a20333edb0fb9ab99674b76988c36"
+    },
+    {
+      "path": "reports/tasks/T-020302/validate_plan.stdout.log",
+      "sha256": "3f3650c086dd06b9e3e3fd3bfb7fb1922b5693fcca6f8d09033161d3428b5483"
+    },
+    {
+      "path": "reports/tasks/T-020302/validate_puzzle_depth.stdout.log",
+      "sha256": "6f1f4f1cc3caeea855fdd7f8b9100daa9769ce28ca93162311af1c7dff3569a9"
+    },
+    {
+      "path": "reports/tasks/T-020302/validate_puzzle_design.stdout.log",
+      "sha256": "b8adc780c71937f6670cf9905502c8bbdacc6fd4afa0f029e0143571c819c7a6"
+    },
+    {
+      "path": "reports/tasks/T-020302/wall_2m.source.stdout.log",
+      "sha256": "c8e3928b50bc41b94532a81ab14a1b52a90fc71e03c186948087f43d6857ea13"
+    },
+    {
+      "path": "scenes/environment/modular_kit_scene.tscn",
+      "sha256": "4b700129ae349c83ab00612c27cd5b27795435fc90d0d91da0713d66acb32601"
+    },
+    {
+      "path": "scenes/environment/modules/door_closed_2m.tscn",
+      "sha256": "2bd536f44c3a7334c3b6e5164f3894c3b1bbe7a6491606721553a71e7d7f8d59"
+    },
+    {
+      "path": "scenes/environment/modules/door_open_2m.tscn",
+      "sha256": "644fd4bff3e069a55a437d79891871540d34d312a9568087305256bfc6ae6eb1"
+    },
+    {
+      "path": "scenes/environment/modules/fence_2m.tscn",
+      "sha256": "d0535217bcc7b79b3b88f4f8c70f0ba0fba1884d3005c3f95ad99c54c7af9604"
+    },
+    {
+      "path": "scenes/environment/modules/wall_2m.tscn",
+      "sha256": "83f6dd4a20f0e0c7c96d2ba196b0fa1c03985ee36b3146fc25da66f0c6cf1fcf"
+    },
+    {
+      "path": "scripts/art/street_blockout.gd",
+      "sha256": "7d3ffccf21359f5f91bd1878b8dc35fa84adc5b34733f1d4191cd4bc8f037235"
+    },
+    {
+      "path": "tests/fixtures/inspect_pack.gd",
+      "sha256": "d0aa2348a39bed41766e88243a625cb3c48167f613253c5d05daba7535a964a4"
+    },
+    {
+      "path": "tests/replays/modular_kit.gd",
+      "sha256": "81f91ab9461fddf672438d8d0c73bd2297c42dcdd6b65c97e5f3580acab54d10"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "6bf7391fdf5ddeb355f43ae08864ac4e8cf074ae637b72913379cbef0125dc24"
+    },
+    {
+      "path": "tests/unit/test_modular_kit.gd",
+      "sha256": "c59abde04b42e816ec5e2a2e13cf85b69dfab85c7bab4d2d384c7488bd86ca6d"
+    },
+    {
+      "path": "tools/art/build_modular_blender.py",
+      "sha256": "d0e4af606f44e556fe09e7291b7a78d5a887dff8b3d87d19a0d2cf60f3229213"
+    },
+    {
+      "path": "tools/art/modular_kit.json",
+      "sha256": "cc858673c62b3482db6f25f0d9156fda89e8d4e19651a1575a0e8cde6984a8cb"
+    },
+    {
+      "path": "tools/art/rebuild_modular.py",
+      "sha256": "e1497aaa19dac857a071acd13bbf5af1fcf5cd65aa9cc60a0785776b22d330bb"
+    },
+    {
+      "path": "tools/art/verify_modular_blend.py",
+      "sha256": "6f3c30a0686e087f42c6bdc34000e948a0d7dd34a271877db27e31b0a1c922be"
+    }
+  ],
+  "checks": [
+    {
+      "id": "source_pivots_rebuild_and_provenance",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Four genuine reusable source/GLB/prefab assets; ground-left grid pivots; positive unit scales; independently repeatable export; source/provenance/hash records.",
+      "observed": "All4saved sources reopened in pinned Blender: metric1.0,2m span,root(0,0,0),socketX0/2,allsource object scales1 and positive determinants; no external libraries/images. Two independent runs have equal semantic metrics and byte-identical GLB. Canonical install exercised.4manifests source/runtime hashes and required fields/enums verified;26meshes312triangles24authored collision meshes.",
+      "result": "PASS",
+      "assertions": 0,
+      "command": "python -X utf8 tools/art/rebuild_modular.py --output-root .qa/T-020302/rebuild_a --install; second rebuild_b; pinned Blender verify_modular_blend.py for4sources",
+      "log_path": "reports/tasks/T-020302/rebuild_comparison.json"
+    },
+    {
+      "id": "module_physics_and_full_regression",
+      "kind": "ENGINE_TEST",
+      "expected": "Grid sockets align; 0/90/180/270degree collision matches transformed visuals; straight/corner joints have no collision slit; real capsule passes open door and is blocked by closed door; prior regression remains passing.",
+      "observed": "modular_kit4cases170assertions PASS; open capsuleZ-3.349998m,closedZ-0.679863m,bothgroundedY0.000182m. Full40cases643assertions failed0/skipped0, import/export/empty-project PCK PASS with4module GLBs/prefabs/scene included.6Python build guard tests pass.",
+      "result": "PASS",
+      "assertions": 643,
+      "command": "python -X utf8 scripts/build_windows.py; python -X utf8 tests/test_build_windows.py",
+      "log_path": "reports/builds/20261019T092854243879Z/manifest.json"
+    },
+    {
+      "id": "actual_module_render",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Inspect actual assembled module REAL/ERASED gameplay/front/wide and input-driven doorway passage in Forward+.",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 26, \"captures\": [\"res://reports/tasks/T-020302/REAL_gameplay.png\", \"res://reports/tasks/T-020302/REAL_front.png\", \"res://reports/tasks/T-020302/REAL_wide.png\", \"res://reports/tasks/T-020302/ERASED_gameplay.png\", \"res://reports/tasks/T-020302/ERASED_front.png\", \"res://reports/tasks/T-020302/ERASED_wide.png\", \"res://reports/tasks/T-020302/door_passed.png\"], \"failures\": [], \"input_mode\": \"synthetic_actions_real_controller\", \"phase_scope\": \"Shared geometry with REAL/ERASED material previews, not WorldController phase switching\", \"player_after_entry\": \"(0.0, 0.0, -4.313332)\", \"quality_state\": \"BLOCKOUT\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"software\": true}",
+      "result": "PASS",
+      "assertions": 26,
+      "command": "tools.godot_process.run --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --script res://tests/replays/modular_kit.gd, software=True",
+      "log_path": "reports/tasks/T-020302/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020302/REAL_gameplay.png",
+        "reports/tasks/T-020302/REAL_front.png",
+        "reports/tasks/T-020302/REAL_wide.png",
+        "reports/tasks/T-020302/ERASED_gameplay.png",
+        "reports/tasks/T-020302/ERASED_front.png",
+        "reports/tasks/T-020302/ERASED_wide.png",
+        "reports/tasks/T-020302/door_passed.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "native_candidate_bootstrap",
+      "kind": "WINDOWS_RUNTIME",
+      "expected": "Final hash-matched Windows EXE/PCK renders from a clean directory without editor/source.",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 5, \"authored_viewport\": \"(1920, 1080)\", \"capture\": \"reports/native.png\", \"content_scale_aspect\": 1, \"display\": \"Windows\", \"driver\": \"vulkan\", \"engine\": \"4.7.2-stable (official)\", \"failed\": 0, \"failures\": [], \"height\": 720, \"input_mode\": \"scene_smoke_no_physical_input\", \"native_os\": \"Windows\", \"profile\": \"BOOTSTRAP\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"sample_colors\": 23, \"skipped\": 0, \"software\": true, \"width\": 1280, \"window_height\": 720, \"window_width\": 1280}",
+      "result": "PASS",
+      "assertions": 5,
+      "command": ".qa/T-020302/native/TheSeventhHouse.exe --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy -- --qa-profile BOOTSTRAP --qa-report res://reports/native.json",
+      "log_path": "reports/tasks/T-020302/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020302/native.png"
+      ],
+      "native_os": "Windows",
+      "software": true
+    },
+    {
+      "id": "visual_and_baseline_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Review source and shared-module diff; all required views; accurate quality/design limits.",
+      "observed": "All7module images and native image opened; repeated joins/readability/materials reviewed. No runtime contract changes to StreetBlockout, baseline catalogs or main scene. Static plan/design278/depth587 PASS only for static design. Self-review=true, static door variants and BLOCKOUT scope explicit.",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Static BLOCKOUT modules, not FINAL art or a completed chapter. Open/closed are placement variants; no interact-to-open, animation, inventory lock or door save state.",
+    "REAL/ERASED views are shared-geometry palette previews, not WorldController switching.",
+    "CPU SwiftShader Forward+ functional rendering; hardware1080pGPU performance remains CAP-001; physical pad/audio/human appeal/usability not tested.",
+    "Source Windows Godot runtime renders modules; native EXE smoke covers bootstrap. No campaign/save/puzzle/ending/gate/public release claim."
+  ]
+}

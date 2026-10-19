@@ -1,0 +1,13 @@
+{
+  "adapter": "SwiftShader Device (Subzero)",
+  "anchor": "(1.0, 0.0, 0.0)",
+  "assertions": 7,
+  "axis_preserved": true,
+  "bound_idle_drift_m": 0.0,
+  "capture_error": 0,
+  "grounded": true,
+  "input_mode": "synthetic_actions",
+  "player": "(4.619882, 0.0, 0.0)",
+  "renderer": "forward_plus",
+  "result": "PASS"
+}

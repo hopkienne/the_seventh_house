@@ -7,7 +7,14 @@ var cases_run: int = 0
 const SUITES: Dictionary = {"bootstrap": "", "scene": "res://tests/unit/test_scene.gd",
 	"utilities": "res://tests/unit/test_utility.gd", "asset_import": "res://tests/unit/test_asset_import.gd",
 	"player_physics": "res://tests/unit/test_player_physics.gd",
-	"locomotion": "res://tests/unit/test_locomotion.gd", "corridor": "res://tests/unit/test_corridor.gd"}
+	"locomotion": "res://tests/unit/test_locomotion.gd", "corridor": "res://tests/unit/test_corridor.gd",
+	"movement_qa": "res://tests/unit/test_movement_qa.gd",
+	"camera_preset": "res://tests/unit/test_camera_preset.gd",
+	"camera_follow": "res://tests/unit/test_camera_follow.gd",
+	"camera_zones": "res://tests/unit/test_camera_zones.gd",
+	"safe_frame": "res://tests/unit/test_safe_frame.gd",
+	"street_blockout": "res://tests/unit/test_street_blockout.gd",
+	"modular_kit": "res://tests/unit/test_modular_kit.gd"}
 
 
 func _init() -> void:

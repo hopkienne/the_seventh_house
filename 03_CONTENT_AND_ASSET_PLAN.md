@@ -4,7 +4,7 @@
 Agent tạo **file nội dung thực dùng trong game**: model/rig/animation/material, cue/soundscape/music, dialogue/translation, UI, cinematic. Không giao đầu ra cho freelancer, không đánh DONE với brief/prompt/render mockup. Công cụ sinh tài nguyên có thể hỗ trợ nhưng không được giả định sẵn; kiểm capability trước. Không cần tạo tất cả assets trước prototype; sản xuất theo chapter và golden sample.
 
 ## Inventory đã khóa
-7 chapter specs `specs/chapters/CH01.md`…`CH07.md`; 14 puzzle specs; 28 journal records trong `specs/evidence_catalog.json`. Main characters: Minh, An, Knocker; NPC phụ dùng chung base rig và biến thể silhouette/outfit. Một street kit + 7 layout nhà + bến/trường/tháp/đồi, không 7 kit hoàn toàn riêng. Mẹ chủ yếu qua ảnh/nhật ký/âm thanh; flashback trẻ dùng silhouette có chủ đích, không bỏ cảnh cần thiết.
+7 chapter specs `specs/chapters/CH01.md`…`CH07.md`; 28 puzzle specs; 28 journal records trong `specs/evidence_catalog.json`. Main characters: Minh, An, Knocker; NPC phụ dùng chung base rig và biến thể silhouette/outfit. Một street kit + 7 layout nhà + bến/trường/tháp/đồi, không 7 kit hoàn toàn riêng. Mẹ chủ yếu qua ảnh/nhật ký/âm thanh; flashback trẻ dùng silhouette có chủ đích, không bỏ cảnh cần thiết.
 
 ## Art direction và recipe bắt buộc
 | Loại | Cách agent thực hiện | Kiểm chứng |

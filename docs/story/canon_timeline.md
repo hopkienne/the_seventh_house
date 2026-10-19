@@ -35,4 +35,4 @@ Skip và xem hết phải commit cùng once flag ở boundary của đoạn; loa
 
 ## Kiểm tra continuity
 
-Minh luôn kích hoạt trước, mẹ luôn ổn định/duy trì sau. Minh 9→24, An 6→21 trong nhánh vay mượn và epilogue mới. Không nhầm hai khoảng 15 năm là cộng tuổi thành 39/36. Mẹ không cần nhớ trực tiếp An để duy trì, vì còn vật chứng neo. Rời làng không xóa dấu/nợ; biên gấp vòng khi thu hồi bắt đầu. Capture không được xóa clue đã commit. Canon chưa xác định chi tiết ngày/giờ; không bịa thêm để lấp lịch.
+Minh luôn kích hoạt trước, mẹ luôn ổn định/duy trì sau. Minh 9→24, An 6→21 trong nhánh vay mượn và epilogue mới. Không nhầm hai khoảng 15 năm là cộng tuổi thành 39/36. Mẹ không cần nhớ trực tiếp An để duy trì, vì còn vật chứng neo. Rời làng không xóa dấu/nợ; biên gấp vòng khi thu hồi bắt đầu. Capture không được xóa clue đã commit. ADR-002 bổ sung giờ hư cấu của đêmT−15:01:48 cảnh báo,02:05 vỡ đập,02:17 Minh kích hoạt chuông đầu. Nước tới từng đoạn có giờ riêng. Chưa khóa năm lịch2011/2026 trong thế giới game; không suy năm từ ngày phát triển.

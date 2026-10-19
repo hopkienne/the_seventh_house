@@ -15,7 +15,7 @@ Không biến bot scenario thành người dùng; số profile là coverage củ
 ## Acceptance suites
 Build: clean checkout/import/export, runtime data include, no editor cache/secrets/debug unlocks. Movement: straight/diagonal, wall/slope/depth bounds, FPS delta. Camera: zones/cuts/focus/aspect/large-text occlusion. Switch: body overlap + support, inactive colliders query, reject invariants, spam/pause/load/capture. Interaction: range/LOS/phase/priority/idempotency. Puzzle: đúng/sai/action order/all persistent states/reset/revisit. Save: 3 slots, corrupt main→backup, both corrupt, unknown schema, write failure, migration/rollback, no duplicate rewards. Cinematic: skip từng beat/focus loss/save request; final flags same. AI: perception/phase/hide/search/return/capture safe. UI/LOC: key parity, Unicode Vietnamese, captions, 100/125/150%, keyboard/pad focus. Content: 7/14/7/28/3 inventory và end-to-end. Release: native Windows + RC hashes + real permissions.
 
-P01–P14 mỗi puzzle cần happy-path, wrong-input, replay/reload và exploit test ghi trong spec. Ending unit suite enumerate toàn bộ 128 memory masks: A/B vẫn accessible sau main route, C iff đủ 7 + reveal + route validated; không cho optional lore thay memory. Sau đó ba full rendered runs từ checkpoint hợp lệ và ít nhất một campaign run New Game→credits không set flags giả.
+P01–P28 mỗi puzzle cần happy-path, wrong-input, replay/reload và exploit test ghi trong spec. Ending unit suite enumerate toàn bộ 128 memory masks: A/B vẫn accessible sau main route, C iff đủ 7 + reveal + route validated; không cho optional lore thay memory. Sau đó ba full rendered runs từ checkpoint hợp lệ và ít nhất một campaign run New Game→credits không set flags giả.
 
 ## Test runner và reports
 T-010401 triển khai game test runner. RUN-TEST lệnh dự kiến chỉ hợp lệ khi file đó tồn tại; không có runner thì NOT_TESTED. Explicit exit code, discovered/executed/passed/failed/skipped counts; suite không tồn tại/0 tests là FAIL. Timeout/crash logs giữ lại. Screenshots/clip/log có timestamp/build/hash và profile ID. Tool control nội bộ của game chỉ được dùng trong test build, không retail.
@@ -33,3 +33,22 @@ Tạo routes cố định đo 1080p Medium trên CPU/GPU/RAM/OS/driver ghi thậ
 
 ## Hypercare agent-only
 Intake theo phiên: đọc report được quyền → deduplicate → reproducer → severity → fix→tests→release candidate→authorize external patch. Không có report thật thì ghi NO_ISSUE_REPORTED, không tạo issue giả. Conditional hotfix tasks NOT_APPLICABLE có report/review nếu không cần; don't bypass main feature. Không theo dõi nền hoặc trực 24/7 trừ hạ tầng scheduler đã thật sự được cấu hình/được cấp quyền. Maintenance backlog tách khỏi Full Game 1.0, giữ source/save compatibility policy.
+
+
+## Gameplay3.1 — phạm vi kiểm bổ sung
+
+28puzzle=14CORE+7SUPPORTbắtbuộc+7SECRET. Main21 không cầnsecret. G2 phải chơi CH01P01–P04hoànchỉnh; G1fixtureP02không chứng minh onboardingP01. M01..M06từsecret,M07từP25. Kiểm nguồn reward và ghi chú nhỏ không làm tăng28journalIDs.
+
+Mỗi puzzle phải kiểm wrong/order/partialreload/revisit; closeup range/LOS/phase, lockcleanup, mouse/keyboard/pad tương đương, no pixel hunting, không capture khi inspect tại safezone; Warn/Chase không mở view để đóng băng miễn phí. Recipe consume+grant nguyên tử, wrongusekhôngconsume, kínhP18→P20vàđènP26lấylại, mồiP04retryđược.
+
+Ending: A/B theo main_ready; Ctrial theo đủM+identity+P27plan, finalC thêm3nhóman toàn+P28validation. P27khôngsetvalidated, không cầnP28solvedđểvàoP28. Nước không tăng khi đọc/journal/pause/focusloss. Snapshot trước/sau mỗi decision, sai khôngforcedB. Kiểm128memorymasks×identity×mechanismready×plan×validated×8groupmasks; có16.384 tổ hợp contract, không gọi đây là16.384 người chơi hoặc fullcampaignruns.
+
+Staticvalidator/finitefixture chỉ chứng minh tính nhất quán thiết kế. HUMAN_USABILITY_NOT_ASSESSED giữ nguyên đến khi có dữ liệu người thật. Đo pacing/hint/stuck theo build; tổngtarget320phút không là observedplaytime.
+
+## Gameplay3.2 — suy luận và nhiều lộ trình hợp lệ
+
+Mỗi puzzle có REASON/ROUTES/FEEDBACK/TENSION: thử giả thuyết với nguồn thật, hai hướng quan sát đi tới được, feedback không per-slot oracle, cue/commit/recovery nhất quán. Chấp nhận lời giải sớm đúng luật; không giả điều kiện đã đọc hoặc knowledge-collected làm khóa. Main có cách học luật ở main, secret không khóa A/B.
+
+CH02 kiểm P06 trướcP05 không cần chìa; CH03 kiểm P09/P11 từbờA và P10 sớm đúng luật; CH05 kiểmP19trướcP17, nguồn kính từhộcP19, P18cần hai vậtđiềukiện thật; CH07 kiểmP26trướcP25. P04 cảhai mồi/cover; P16 cảhai tuyến cửa sau. P28 kiểm sáu thứtự nhóm, tám kết hợp route hợp lệ; thưviện tạibeat0, gallery tại0/1/2; preview không làm tăngbeat, crossingcommitmớităng. Wrongroutekhôngxóanhómđãsafe, earlyRETURNreject, cổngsânkhôngtrảlõi.
+
+Finite Python models là authoring checks, không phải implement GDScript hoặc renderedruns. Humanprotocol quan sát người chưa biết đáp án, ghi giảthuyết/lýdo/hint, không đếmđápán đúng thay hiểu biết. Khôngtạo quota/người chơi/phản hồi giả từ nghiên cứu thamchiếu.

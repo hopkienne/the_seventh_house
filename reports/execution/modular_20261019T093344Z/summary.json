@@ -1,0 +1,15 @@
+{
+  "task_id": "T-020302",
+  "status": "DONE",
+  "ledger_revision": 81,
+  "counts": {
+    "DONE": 26,
+    "NOT_STARTED": 576
+  },
+  "all_80_artifact_hashes_revalidated": true,
+  "next_task": "T-020303",
+  "build_id": "20261019T092854243879Z",
+  "head": "2498ad4bd768b3b6d5c252ecf851fa0b211d30ea",
+  "tree": "db905bb35db12a0373354d27bb70fb361f2b70e1",
+  "background_jobs_remaining": false
+}

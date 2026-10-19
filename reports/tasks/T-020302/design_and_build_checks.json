@@ -1,0 +1,26 @@
+[
+  {
+    "command": "tools/validate_plan.py",
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"PASS\",\n  \"scope\": \"DOCUMENT_PACKAGE_ONLY_NOT_GAME_QA\",\n  \"counts\": {\n    \"sprints\": 36,\n    \"stories\": 146,\n    \"tasks\": 602,\n    \"chapters\": 7,\n    \"puzzles\": 28,\n    \"journal_records\": 28\n  },\n  \"checks\": [\n    \"unique_ids\",\n    \"parent_references\",\n    \"task_fields\",\n    \"no_active_staffing_hours\",\n    \"dependency_exists\",\n    \"dependency_acyclic\",\n    \"no_future_wave_dependency\",\n    \"read_before_paths\",\n    \"task_story_sprint_cards\",\n    \"state_id_sets\",\n    \"content_counts\",\n    \"puzzle_solutions_hints\",\n    \"route_connectivity\",\n    \"json_parse\"\n  ],\n  \"errors\": [],\n  \"topological_first_tasks\": [\n    \"T-010101\",\n    \"T-010102\",\n    \"T-010103\",\n    \"T-010104\",\n    \"T-010201\",\n    \"T-010202\",\n    \"T-010203\",\n    \"T-010204\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "tools/validate_puzzle_design.py",
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"PASS\",\n  \"scope\": \"STATIC_DESIGN_CONSISTENCY_NOT_RUNTIME_OR_HUMAN_PLAYTEST\",\n  \"checks_count\": 278,\n  \"errors\": [],\n  \"puzzles\": 28,\n  \"main_required\": 21,\n  \"human_usability\": \"HUMAN_USABILITY_NOT_ASSESSED\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "tools/validate_puzzle_depth.py",
+    "exit_code": 0,
+    "stdout": "{\n  \"result\": \"PASS\",\n  \"scope\": \"STATIC_DESIGN_DEPTH_NOT_RUNTIME\",\n  \"checks_count\": 587,\n  \"errors\": [],\n  \"valid_evacuation_plans\": 8,\n  \"human_usability\": \"HUMAN_USABILITY_NOT_ASSESSED\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": "tests/test_build_windows.py",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_exit_zero_engine_error_fails (__main__.BuildTests.test_exit_zero_engine_error_fails) ... ok\ntest_missing_report_cannot_pass (__main__.BuildTests.test_missing_report_cannot_pass) ... ok\ntest_runtime_asset_changes_invalidate_candidate_source_hash (__main__.BuildTests.test_runtime_asset_changes_invalidate_candidate_source_hash) ... ok\ntest_timeout_fails_and_logs (__main__.BuildTests.test_timeout_fails_and_logs) ... ok\ntest_valid_report (__main__.BuildTests.test_valid_report) ... ok\ntest_zero_and_skipped_cannot_pass (__main__.BuildTests.test_zero_and_skipped_cannot_pass) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.197s\n\nOK\n"
+  }
+]

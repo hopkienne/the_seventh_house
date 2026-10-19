@@ -135,6 +135,7 @@ def main():
         records=[]
         paths=[x for x in sorted(root.glob('*.md')) if x.name!='02_SPRINT_STORY_TASK_BACKLOG.md']
         paths+=[*sorted((root/'specs/chapters').glob('*.md')),*sorted((root/'specs/puzzles').glob('*.md')),*sorted((root/'sprints').glob('*.md')),*sorted((root/'stories').glob('*.md')),*sorted((root/'tasks').glob('*.md'))]
+        paths += [*sorted((root/'docs/design').glob('*.md')), *sorted((root/'docs/decisions').glob('*.md'))]
         for f in paths:
             rel=f.relative_to(root).as_posix();text=f.read_text(encoding='utf-8');typ={'tasks':'task','stories':'story','sprints':'wave'}.get(rel.split('/')[0],'doc')
             if rel.startswith('specs/chapters'):typ='chapter'
@@ -144,6 +145,8 @@ def main():
             records.append({'id':rel,'title':text.splitlines()[0].lstrip('# '),'type':typ,'wave':wave,'mode':task.get('mode',''),'status':state['tasks'].get(tid,{}).get('status',''),'search':text.lower(),'html':markdown(text)})
         payload=json.dumps({'records':records,'revision':state['revision'],'tasks':len(td),'stories':len(sd),'waves':len(plan['sprints']),'done':sum(t['status']=='DONE' for t in state['tasks'].values())},ensure_ascii=False).replace('</',r'<\/')
         page=HTML_TEMPLATE.replace('__PAYLOAD__',payload)
+        version=plan['meta']['version']
+        page=page.replace('Agent Execution v3','Agent Execution '+version).replace('Agent execution handbook / v3','Agent execution handbook / '+version)
         write('THE_SEVENTH_HOUSE_AGENT_HANDBOOK.html',page)
         print(json.dumps({'result':'PASS','records':len(records),'task_cards':len(td),'state_revision':state['revision'],'rewritten':['Markdown views','CSV snapshots','offline HTML'],'unchanged':['canonical plan','canonical state','XLSX snapshot'],'scope':'DOCUMENT_VIEWS_ONLY'},ensure_ascii=False,indent=2));return 0
     except (OSError,KeyError,ValueError,TypeError) as e:print(f'View generation failed: {e}',file=sys.stderr);return 1

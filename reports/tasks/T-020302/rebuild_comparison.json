@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "modules": [
+    {
+      "id": "fence_2m",
+      "semantic_equal": true,
+      "glb_byte_equal": true,
+      "glb_sha256": "819aeb9fbafce8c99f546f3702b81fbab3a497e0e58a44c1e31935024f34f85e",
+      "semantic_sha256": "8ac83a4bf723aa703aa3d493694383b6e824b8c0374fefef5995dd2daee44d0f"
+    },
+    {
+      "id": "wall_2m",
+      "semantic_equal": true,
+      "glb_byte_equal": true,
+      "glb_sha256": "ac145103d88ba77d1cd8a52516c229aaebb5e5a8e071db7c0dbb9598ec7ac951",
+      "semantic_sha256": "cbbc08cf1319d38697a184367977c3e3e4b06fe970471c798ddccd356032e35d"
+    },
+    {
+      "id": "door_open_2m",
+      "semantic_equal": true,
+      "glb_byte_equal": true,
+      "glb_sha256": "ca90dad65b940b615bef755c95d347cdc141e191695b901e28c77156f544e026",
+      "semantic_sha256": "d9b70aae6932a511f5f82c6b7dee90f6b66bfee45c30cb3141be9378acf79a1d"
+    },
+    {
+      "id": "door_closed_2m",
+      "semantic_equal": true,
+      "glb_byte_equal": true,
+      "glb_sha256": "3d0afd0b8ea607ef3e44a979656a4cb9f6b16b6f3faeb403029d041dcc3a29f4",
+      "semantic_sha256": "da9f82c4b3cf1712eb2fa0a734aa1860b48e6467a6413a6bef9804563e9c44f0"
+    }
+  ]
+}

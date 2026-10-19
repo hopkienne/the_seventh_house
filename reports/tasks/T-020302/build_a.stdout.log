@@ -1,0 +1,73 @@
+Info: Saved as "fence_2m.blend"
+INFO Draco mesh compression is available, use library at G:\zalo_mini_app\the_seventh_house\.tools\blender\blender-4.5.3-windows-x64\4.5\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+16:24:22 | INFO: Starting glTF 2.0 export
+16:24:22 | INFO: Extracting primitive: Picket00_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket01_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket02_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket03_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket04_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket05_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Picket06_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Post00_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Post01_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Rail00_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Rail01_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Finished glTF 2.0 export in 0.05699729919433594 s
+
+Info: Saved as "wall_2m.blend"
+16:24:22 | INFO: Starting glTF 2.0 export
+16:24:22 | INFO: Extracting primitive: PlasterPanel_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Finished glTF 2.0 export in 0.008994340896606445 s
+
+Info: Saved as "door_open_2m.blend"
+16:24:22 | INFO: Starting glTF 2.0 export
+16:24:22 | INFO: Extracting primitive: FoldedLeafLeft_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: FoldedLeafRight_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: HeaderTrim_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: JambLeft_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: JambRight_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Lintel_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Finished glTF 2.0 export in 0.01699995994567871 s
+
+Info: Saved as "door_closed_2m.blend"
+16:24:22 | INFO: Starting glTF 2.0 export
+16:24:22 | INFO: Extracting primitive: ClosedLeafLeft_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: ClosedLeafRight_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: HandleLeft_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: HandleRight_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: HeaderTrim_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: JambLeft_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: JambRight_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Extracting primitive: Lintel_Mesh
+16:24:22 | INFO: Primitives created: 1
+16:24:22 | INFO: Finished glTF 2.0 export in 0.020999431610107422 s
+
+MODULAR_EXPORT {"result": "PASS", "modules": 4, "triangles": 312}
+Blender 4.5.3 LTS (hash 67807e1800cc built 2025-09-09 01:33:33)
+
+Blender quit

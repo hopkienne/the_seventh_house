@@ -1,0 +1,22 @@
+{
+  "adapter": "SwiftShader Device (Subzero)",
+  "assertions": 18,
+  "captures": [
+    "res://reports/tasks/T-020301/REAL_gameplay.png",
+    "res://reports/tasks/T-020301/REAL_front.png",
+    "res://reports/tasks/T-020301/REAL_wide.png",
+    "res://reports/tasks/T-020301/ERASED_gameplay.png",
+    "res://reports/tasks/T-020301/ERASED_front.png",
+    "res://reports/tasks/T-020301/ERASED_wide.png",
+    "res://reports/tasks/T-020301/door_entered.png",
+    "res://reports/tasks/T-020301/door_entered_front.png"
+  ],
+  "failures": [],
+  "input_mode": "synthetic_actions_real_controller",
+  "phase_scope": "REAL_ERASED_material_previews_shared_geometry_NOT_WorldController_switch",
+  "player_after_entry": "(0.000002, 0.000841, -4.313339)",
+  "quality_state": "BLOCKOUT",
+  "renderer": "forward_plus",
+  "result": "PASS",
+  "software": true
+}

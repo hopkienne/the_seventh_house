@@ -1,0 +1,77 @@
+{
+  "route_id": "FULL_EVACUATION",
+  "segments": [
+    {
+      "memory_id": "M01",
+      "from": "H07_FRONT",
+      "to": "H01_LANE",
+      "printed_north_degrees": 0,
+      "from_port_label": "H07_FRONT",
+      "to_port_label": "H01_LANE"
+    },
+    {
+      "memory_id": "M02",
+      "from": "H01_LANE",
+      "to": "H02_COURTYARD",
+      "printed_north_degrees": 270,
+      "from_port_label": "H01_LANE",
+      "to_port_label": "H02_COURTYARD"
+    },
+    {
+      "memory_id": "M03",
+      "from": "H02_COURTYARD",
+      "to": "H03_DOCK_RAMP",
+      "printed_north_degrees": 180,
+      "from_port_label": "H02_COURTYARD",
+      "to_port_label": "H03_DOCK_RAMP"
+    },
+    {
+      "memory_id": "M04",
+      "from": "H03_DOCK_RAMP",
+      "to": "H04_SCHOOL_REAR",
+      "printed_north_degrees": 90,
+      "from_port_label": "H03_DOCK_RAMP",
+      "to_port_label": "H04_SCHOOL_REAR"
+    },
+    {
+      "memory_id": "M05",
+      "from": "H04_SCHOOL_REAR",
+      "to": "H05_BACKYARD",
+      "printed_north_degrees": 0,
+      "from_port_label": "H04_SCHOOL_REAR",
+      "to_port_label": "H05_BACKYARD"
+    },
+    {
+      "memory_id": "M06",
+      "from": "H05_BACKYARD",
+      "to": "H06_TOWER_WALK",
+      "printed_north_degrees": 270,
+      "from_port_label": "H05_BACKYARD",
+      "to_port_label": "H06_TOWER_WALK"
+    },
+    {
+      "memory_id": "M07",
+      "from": "H06_TOWER_WALK",
+      "to": "HILL",
+      "printed_north_degrees": 180,
+      "from_port_label": "H06_TOWER_WALK",
+      "to_port_label": "HILL"
+    }
+  ],
+  "start": "H07_FRONT",
+  "end": "HILL",
+  "required_memory_count": 7,
+  "groups": [
+    "GROUP_FAMILIES",
+    "GROUP_SCHOOL",
+    "GROUP_RIVERSIDE"
+  ],
+  "water_model": "authored_beat_states_not_fluid_simulation",
+  "on_failure": "reload_pre_route_checkpoint_without_losing_memories",
+  "plan_puzzle": "P27",
+  "execution_puzzle": "P28",
+  "plan_flag": "route_plan_ready",
+  "validation_flag": "evacuation_route_validated",
+  "validation_condition": "P28_THREE_GROUPS_SAFE",
+  "water_progress": "DECISION_BEATS_ONLY"
+}

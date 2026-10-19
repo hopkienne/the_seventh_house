@@ -1,0 +1,14 @@
+{
+  "adapter": "SwiftShader Device (Subzero)",
+  "assertions": 6,
+  "captures_ok": true,
+  "custom_applied": true,
+  "fov": 45.0,
+  "input_mode": "synthetic_mouse_motion",
+  "offset": "(4.0, 3.5, 9.0)",
+  "opposite_side_rejected": true,
+  "perspective": true,
+  "rejection_and_mouse_preserve_transform": true,
+  "renderer": "forward_plus",
+  "result": "PASS"
+}

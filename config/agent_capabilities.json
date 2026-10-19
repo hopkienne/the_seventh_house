@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "probe_timestamp": "2026-10-19T04:05:53.852782+00:00",
+  "probe_timestamp": "2026-10-19T08:13:18.353472+00:00",
   "tools": [
     {
       "name": "python",
@@ -124,6 +124,21 @@
       "path": "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
       "version": "4.7.2.stable.official.ed1daf0bf",
       "available": true
+    },
+    {
+      "name": "blender_portable",
+      "path": "G:\\zalo_mini_app\\the_seventh_house\\.tools\\blender\\blender-4.5.3-windows-x64\\blender.exe",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\blender\\blender-4.5.3-windows-x64\\blender.exe",
+        "--version"
+      ],
+      "probe_timestamp": "2026-10-19T08:13:18.353472+00:00",
+      "exit_code": 0,
+      "stdout": "Blender 4.5.3 LTS\n\tbuild date: 2025-09-09\n\tbuild time: 01:33:33\n\tbuild commit date: 2025-09-08\n\tbuild commit time: 12:46\n\tbuild hash: 67807e1800cc\n\tbuild branch: blender-v4.5-release\n\tbuild platform: Windows\n\tbuild type: Release\n\tbuild c flags: /W3 /w34062 /w34100 /w34115 /w34189 /w35038 /wd4018 /wd4146 /wd4065 /wd4127 /wd4181 /wd4200 /wd4244 /wd4267 /wd4305 /wd4800 /wd4828 /wd4996 /wd4661 /wd4848 /we4013 /we4133 /we4431 /we4033 /DWIN32 /D_WINDOWS /W3 /nologo /J /Gd /MP /bigobj /Zc:inline  \n\tbuild c++ flags: /W3 /w34062 /w34100 /w34115 /w34189 /w35038 /wd4018 /wd4146 /wd4065 /wd4127 /wd4181 /wd4200 /wd4244 /wd4267 /wd4305 /wd4800 /wd4828 /wd4996 /wd4661 /wd4848 /we4013 /we4133 /we4431 /we4033 /DWIN32 /D_WINDOWS /W3  /EHsc /nologo /J /Gd /MP /EHsc /bigobj /permissive- /Zc:__cplusplus /Zc:inline  \n\tbuild link flags: /MACHINE:X64  /SUBSYSTEM:CONSOLE /STACK:2097152 /ignore:4049 /ignore:4217 /ignore:4221\n\tbuild system: CMake\n",
+      "stderr": "",
+      "available": true,
+      "version": "4.5.3 LTS",
+      "sha256": "bd9d0d31051b9c54c7651ae65d97bb3cd443624ea8e0691497df591b34805510"
     }
   ],
   "native_os": "Windows",
@@ -133,7 +148,7 @@
     "python_cli": true,
     "git_cli": true,
     "godot_cli": true,
-    "blender_cli": false,
+    "blender_cli": true,
     "native_windows": true,
     "rendered_runtime": true,
     "gpu": null,
@@ -255,5 +270,14 @@
     "exit_code": 0,
     "capture": "reports/tasks/T-010404/native_smoke.png",
     "assertions": 113
+  },
+  "blender_asset_pipeline_probe": {
+    "task_id": "T-020301",
+    "source": "art/source/blockout_street.blend",
+    "source_sha256": "596d64d99e2b6506465b9a60fd465d7526ddbc64daf0db97d7c03bbaa6acc7c8",
+    "lock": "config/blender.lock.json",
+    "rebuild": "reports/tasks/T-020301/final_rebuild_comparison.json",
+    "source_reopen": "reports/tasks/T-020301/blend_source.stdout.log",
+    "note": "Historical PATH probes and limitations retained; local portable Blender now verified. Static geometry only, rig pipeline still unprobed."
   }
 }

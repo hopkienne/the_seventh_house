@@ -1,0 +1,25 @@
+{
+  "from_version": "3.0",
+  "to_version": "3.1",
+  "mapping": {
+    "P01": "P02",
+    "P02": "P03",
+    "P03": "P05",
+    "P04": "P06",
+    "P05": "P10",
+    "P06": "P11",
+    "P07": "P14",
+    "P08": "P15",
+    "P09": "P17",
+    "P10": "P18",
+    "P11": "P22",
+    "P12": "P23",
+    "P13": "P27",
+    "P14": "P28"
+  },
+  "retired_semantics": [
+    "P13 main core branch is replaced by mandatory P25/P26; only its optional map branch maps to P27"
+  ],
+  "policy": "Never infer save compatibility from matching Pxx strings. No produced runtime puzzle/save campaign exists at migration. Future old-save import must validate design_version and replay/restore explicitly; never blindly rename solved flags.",
+  "owner_source_sha256": "2e96b6aea11f5a078d55a8a1e0e1c40a6747b0b777c1f77f6ae1c4155d9a3c44"
+}

@@ -1,11 +1,11 @@
 # Reveal và ba ending — production contract
 
-Nguồn: Story Bible v3, chapter/evidence catalogs, `specs/evacuation_route.json` và P14. Bảng định nghĩa nội dung cần phát; chưa tuyên bố đã tích hợp cinematic runtime.
+Nguồn: Story Bible v3, chapter/evidence catalogs, `specs/evacuation_route.json` và P28. Bảng định nghĩa nội dung cần phát; chưa tuyên bố đã tích hợp cinematic runtime.
 
 | Chương | Được reveal | Cấm reveal sớm | Điều kiện/đoạn phát |
 | --- | --- | --- | --- |
 | CH01 | Nhà/người bị quên, vật chứng còn; Minh nhớ trước đèn; áo vàng xa. M01 là nét route đầu tiên. | Không gọi An là em, không nói cô 21 tuổi hay giải máy chuông. | E01/E02 trong route chính; M01 chỉ khi thật sự thu. |
-| CH02 | Tình thân còn trong thói quen; M02 chỉ đường qua sân bà Liên. | Không giải cơ chế chuông hoặc điểm neo. | P03/P04 và quan sát bát/vết chiều cao; M02 optional. |
+| CH02 | Tình thân còn trong thói quen; M02 chỉ đường qua sân bà Liên. | Không giải cơ chế chuông hoặc điểm neo. | P05/P06/P07 và quan sát bát/vết chiều cao; M02 optional. |
 | CH03 | Nước từng tới làng; M03 có điểm tập kết lên đồi. | Không xác nhận ai là điểm neo. | E05/E06 và M03 khi thu; không bắt thu M03 để qua chương. |
 | CH04 | Làng bị hủy 15 năm trước, danh sách lớp có chỗ trống; nghi chuông. | Không giải hết vai trò mẹ/Minh/An. | E07/E08; trường là khu phụ H04. |
 | CH05 | Mẹ duy trì thời gian vay; có một người ở lại. | Chưa xác nhận khuôn mặt/tuổi An. | E09/E10 và nhật ký đã đọc; mẹ suy ra từ records, không miễn nhiễm. |
@@ -22,29 +22,34 @@ Nguồn: Story Bible v3, chapter/evidence catalogs, `specs/evacuation_route.json
 
 Nếu M02/M03 thu trước M01, journal vẫn giữ từng đoạn; khi revisit/thu đoạn còn lại, điều kiện nối được đánh giá lại để phát gợi ý còn thiếu đúng một lần. Không chặn main nếu thiếu gợi ý. M01 tự báo một phần tuyến, M02/M03 cho ít nhất hai dấu cụ thể về đường nối/sơ tán; không tiết lộ người neo hoặc toàn bộ lời giải. Text mô tả cạnh đã có trong catalog, không tạo cơ chế mới.
 
-## Ma trận lựa chọn
+## Ma trận lựa chọn 3.1
 
-Trong bảng này, “main xong” nghĩa là `main_p13_solved=true` và reveal CH6 đã được commit, đủ mở panel P14; không yêu cầu `p14_solved` hoặc credits trước khi được chọn ending. Đây là boundary trước resolution, tránh dependency vòng.
+`mechanism_ready = p25_solved AND p26_solved`; `main_ready = mechanism_ready AND an_identity_revealed`. Panel P28 không cần P28 solved hoặc credits trước khi mở.
 
-| Điều kiện tại final decision | A | B | C |
+| Điều kiện | A/B | Thử tuyến C | Xác nhận kết thúc C |
 | --- | --- | --- | --- |
-| Main route chưa xong | Chưa chọn | Chưa chọn | Chưa chọn |
-| Main xong; thiếu bất kỳ M01–M07 | Có | Có | Chưa; chỉ rõ fragment còn thiếu, cho quay lại |
-| Đủ M; chưa identity reveal hoặc chưa validate route | Có | Có | Chưa; hoàn thành điều kiện còn thiếu |
-| Main xong; đủ M; an_identity_revealed=true; evacuation_route_validated=true | Có | Có | Có |
+| Chưa main_ready | Chưa | Chưa | Chưa |
+| Main_ready, thiếu M hoặc P27 chưa giải | Có | Chưa; chỉ rõ điều còn thiếu và cho revisit | Chưa |
+| Main_ready, đủ7M, P27 tạo route_plan_ready | Có | Có, vào bản ghi trước return-time | Chưa |
+| Ba nhóm an toàn, evacuation_route_validated sau P28 trial | Có trước final confirmation | Có thể xem/kiểm lại | Có |
 
-Main route đã bao gồm reveal CH6; hàng identity=false vẫn là negative case cần bảo vệ khi load/debug. C không chỉ kiểm memory count: phải đúng tập ID và route validated. Unknown IDs hoặc duplicate không được bù memory thiếu. Route lưu đúng cạnh/trình tự theo `specs/evacuation_route.json`, không dùng teleport. P14 phải đưa ba nhóm đại diện qua route, có checkpoint/retry. Lỗi thao tác route C không tự chọn B, không xóa memory.
+P27 là ghép kế hoạch; không đặt evacuation_route_validated. P28 trial vận dụng M03 chọn HIGH_RAMP, M04 chọn thư viện/cổng sau với chìa record, M02/M05 chọn sân cao và cơ cấu cổng1→3→2. Nước tăng theo quyết định có cue, không khi đọc hoặc pause. Sai trả checkpoint trước quyết định, giữ M/E và không forcedB. Ba nhóm phải tới đồi rồi mới cho finalconfirmC.
 
 | Ending | Resolution phải chơi | Hậu quả | Credits/checkpoint |
 | --- | --- | --- | --- |
-| A — Điểm neo mới | Minh thay An bằng dấu khởi động | An 21, Minh bị quên, chu kỳ mới; ảnh trống/đèn sáng, nợ chưa hết | Checkpoint trước confirmation; credits reachable |
-| B — Trả lại thời gian | Giải thể chuông, quay về đêm lũ | Cơ thể Minh 9/An 6 giữ ký ức; tuyến mặc định làm một nhóm không kịp; epilogue 15 năm mới ở 24/21, tưởng niệm | Cùng boundary lựa chọn; không hiện cứu tất cả của C |
-| C — Bình minh thật sự | Đóng chốt đúng trình tự, đưa ba nhóm qua tuyến từ 7 memory rồi trả thời gian | Cứu các nhóm của làng; epilogue 24/21 nhìn bình minh; không hứa mẹ bất tử | Route failure retry checkpoint; credits sau resolution |
+| A — Điểm neo mới | Minh dùng dấu khởi động thay An | An21tuổi; Minh bị quên; chu kỳ mới, món nợ còn | Checkpoint trước confirmation; credits reachable |
+| B — Trả lại thời gian | Giải thể chuông và dùng tuyến mặc định | Minh9/An6 giữ ký ức; có nhóm không thoát; epilogue15năm sau24/21 tưởng niệm | Không tự phát cảnh cứu tất cả của C |
+| C — Bình minh thật sự | Lập kế hoạch, kiểm chứng ba nhóm, xác nhận trả thời gian | Minh9/An6 và các nhóm trở về đêm lũ theo tuyến đã chuẩn bị; epilogue24/21; không hứa mẹ bất tử | Trial có retry, credits sau resolution |
+
+Đưa nhóm trong trial là thao tác với record trước khi trả thời gian, không đưa người trưởng thành vào lịch sử thực. Chỉ finalcommit mới đổi lịch sử và cơ thể. Unknown/duplicate memory IDs không bù fragment thiếu. C không phải một nút thưởng khi đủ7mảnh.
 
 ## Persist, skip và chống miss vĩnh viễn
 
-- E01–E14 là essential, commit theo puzzle route chính, idempotent. Capture không xóa records; checkpoint không rollback kiến thức đã commit.
-- M01–M07 optional cho A/B, không permanently missable; trước final confirmation phải có đường trở lại các fragment đã mở. L01–L07 không bị tính nhầm thành memory eligibility.
-- View/skip cinematic phải đặt cùng final flags; không tự đánh M collected hoặc route validated. Once flags là presentation, không thay gameplay eligibility.
-- Save/load trước/sau choice, identity reveal và từng group checkpoint phải giữ cùng trạng thái. Cần test runtime ở task hệ thống tương ứng; document review hiện tại chỉ kiểm contract.
-- 128 tập con memory × identity false/true × route false/true × main false/true là 1.024 tổ hợp eligibility phải kiểm: A/B chỉ theo main; C theo conjunction đủ điều kiện. Final QA còn cần run/capture từng ending thật.
+- E01–E14 commit từ các puzzle chính theo source_puzzle trong catalog; P23 thu E12 tại entry trước xác nhận, không tự phụ thuộc reward sau solve.
+- M01..M06 từ SECRET sáu chương đầu; M07 từ P25 main. Thiếu secret không khóa A/B; trước final confirmation có revisit, không reset puzzle đã giải.
+- View/skip chỉ commit presentation và identity flags bắt buộc tương đương xem hết. Không auto-grant M, route plan hoặc route validation.
+- Save giữ slots/angles/links, plan, selected ending, group decisions, safe groups và confirmation; reload không duplicate/replay unsafe.
+- Kiểm128memory masks cùng identity/mechanism_ready/plan/validated và8group masks, gồm các state không thể tới bằng main để kiểm corrupt/debug guards. Chỉ khi đủ mọi điều kiện mới finalC. Static table không thay ba full rendered ending runs.
+
+## Gameplay3.2 / ADR-003
+P28 chấp nhận mọi thứtự ba nhóm khi tuyến phùhợp beat: trường qua thưviện ởbeat0 hoặc gallerycao ởbeat0/1/2, tổngtámplan. Preview trước crossing; reading/pause không tăngnước; sai giữnhómđãsafe. GIỮ/MỞ/TRẢ của lõi khác cần1/3/2 ởcổngsân. P27chỉplan;3nhóm+validationrồimớifinalC. MainreadyvẫnP25/P26+identity; A/Bkhôngcầnsecret. Các lối khác nhau không thêmending/nhà hoặc đổi tuổi/canon.

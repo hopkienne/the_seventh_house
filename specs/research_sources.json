@@ -1,0 +1,55 @@
+{
+  "checked_date": "2026-10-19",
+  "method": "WEB_TEXT_READ_NOT_PLAYTEST",
+  "sources": [
+    {
+      "id": "RS01",
+      "title": "Paper Bride2 / HeartBeat Plus",
+      "url": "https://store.steampowered.com/app/1879380/Paper_Bride_2_Zangling_Village/",
+      "type": "DEVELOPER_PRODUCT_DESCRIPTION",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS02",
+      "title": "The Room / Fireproof Games",
+      "url": "https://www.fireproofgames.com/games/the-room",
+      "type": "DEVELOPER_PRODUCT_DESCRIPTION",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS03",
+      "title": "The Past Within — Devlog3 / Rusty Lake",
+      "url": "https://blog.rustylake.com/the-past-within-devlog-3/",
+      "type": "DEVELOPER_DEVLOG",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS04",
+      "title": "The Intentionality of Wandering / Alex Beachum",
+      "url": "https://www.mobiusdigitalgames.com/news/the-intentionality-of-wandering",
+      "type": "DEVELOPER_INTERVIEW_ON_STUDIO_SITE",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS05",
+      "title": "Pursuing the Aha moment / Andrejs Klavins",
+      "url": "https://www.gamedeveloper.com/design/case-of-the-golden-idol",
+      "type": "FIRST_PERSON_DEVELOPER_INTERVIEW",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS06",
+      "title": "Lucas Pope / Return of the Obra Dinn",
+      "url": "https://www.gamedeveloper.com/design/for-lucas-pope-i-return-of-the-obra-dinn-i-was-a-bunch-of-appealing-design-problems",
+      "type": "FIRST_PERSON_DEVELOPER_INTERVIEW",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    },
+    {
+      "id": "RS07",
+      "title": "9Years9Lessons / Thomas Grip",
+      "url": "https://frictionalgames.com/2019-10-9-years-9-lessons-on-horror/",
+      "type": "DEVELOPER_DESIGN_ESSAY",
+      "scope": "Only claims stated in cited text; project applications are inferences, not source-game reproduction."
+    }
+  ]
+}

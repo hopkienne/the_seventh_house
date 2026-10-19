@@ -3,7 +3,6 @@ extends Node3D
 
 
 func _ready() -> void:
-	$Camera3D.look_at(Vector3(0, 0.85, 0))
 	var args: PackedStringArray = OS.get_cmdline_user_args()
 	if not args.has("--qa-profile") and not args.has("--qa-report"):
 		return
@@ -32,7 +31,7 @@ func _smoke(report_path: String) -> void:
 	var method: String = RenderingServer.get_current_rendering_method()
 	if method != "forward_plus":
 		failures.append("Required Forward+ renderer unavailable: " + method)
-	if not $Camera3D.current:
+	if not $CameraRig/Camera3D.current:
 		failures.append("Main camera is inactive")
 	if capture.is_empty() or capture.get_width() < 640 or capture.get_height() < 360:
 		failures.append("Viewport image missing/too small")
@@ -60,6 +59,9 @@ func _smoke(report_path: String) -> void:
 		"adapter": RenderingServer.get_video_adapter_name(), "native_os": OS.get_name(),
 		"input_mode": "scene_smoke_no_physical_input", "capture": capture_path,
 		"width": capture.get_width(), "height": capture.get_height(), "sample_colors": colors.size(),
+		"window_width": get_window().size.x, "window_height": get_window().size.y,
+		"content_scale_aspect": get_window().content_scale_aspect,
+		"authored_viewport": str(get_window().content_scale_size),
 		"engine": Engine.get_version_info().string,
 		"software": RenderingServer.get_video_adapter_name().contains("SwiftShader")}
 	var file: FileAccess = FileAccess.open(absolute, FileAccess.WRITE)

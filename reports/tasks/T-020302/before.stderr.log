@@ -1,0 +1,4 @@
+ASSERTION FAILED: fence_2m real GLB imported
+ASSERTION FAILED: wall_2m real GLB imported
+ASSERTION FAILED: door_open_2m real GLB imported
+ASSERTION FAILED: door_closed_2m real GLB imported

@@ -1,0 +1,8 @@
+{
+  "result": "FAIL",
+  "scope": "STATIC_DESIGN_DEPTH_NOT_RUNTIME",
+  "checks_count": 1,
+  "errors": [
+    "Missing gameplay3.2 reasoning catalog"
+  ]
+}

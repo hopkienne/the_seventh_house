@@ -1,0 +1,37 @@
+# T-020302 — reusable fence/wall/door modules
+
+Reviewer: codex-primary; `self_review=true`. Separate review after implementation, raw log/source/diff inspection and opening all seven actual runtime images. Baseline3.2; task302 and parent ST-0203 acceptance. Result: PASS for reusable blockout modules with grid pivots and positive-scale collision; not FINAL art or whole-story acceptance.
+
+## Concrete output and integration
+
+Four original GLBs under `art/export/blockout/`, each with genuine editable source in `art/source/modular/`, a prefab in `scenes/environment/modules/` and a hashed provenance record in `art/manifest/modular/`:
+
+| Module | Asset ID | Meshes / triangles / colliders |
+|---|---|---|
+| fence_2m | ENV_FENCE_2M_01 | 11 /132 /11 |
+| wall_2m | ENV_WALL_2M_01 | 1 /12 /1 |
+| door_open_2m | ENV_DOOR_OPEN_2M_01 | 6 /72 /6 |
+| door_closed_2m | ENV_DOOR_CLOSED_2M_01 | 8 /96 /6 |
+
+Total26meshes/312triangles/24authored collision meshes. All geometry is SHARED, static BLOCKOUT, metre scale, using existing project Wood/Plaster colors. The fence collision follows individual wood parts; decorative closed-door handles do not create extra colliders. Door opening is1.25m wide ×2.25m high, consistent with task301 and the1.70m/0.56m player capsule.
+
+Root/pivot is ground-left `(0,0,0)`. Explicit start/end sockets atX0/2m lie on a0.25m placement grid. Four saved sources were independently reopened with `--disable-autoexec`, measured from world-space bounds and checked for unit object scales/positive determinants, complete source UV/materials, zero external libraries/images, metre unit and socket positions. Godot independently verifies imported bounds2m frompivot, groundY0, normals/UV/materials and positive transformed collider bases. Mesh vertices/detail dimensions need not snap to the placement grid.
+
+`scenes/environment/modular_kit_scene.tscn` assembles10instances including repeated adjacent fences, wall/open-door/wall,90degree wall return, closed-door variant and180degree reversed fence. It integrates the actual Player and38degree CameraRig. No negative or nonuniform scales are used. Existing bootstrap main and StreetBlockout runtime behavior stay unchanged. Reuse `StreetBlockout` only for exact-ID mesh-derived collision, Shared layer1/mask8 and material previews. Marker3D prefab sockets avoid relying on imported empty-node editor semantics.
+
+## Verification and findings
+
+1. Before assets existed, the focused test failed four explicit missing-GLB assertions; raw logs preserved. This is test-first work, not a closed production defect. No fabricated REWORK ticket.
+2. Two independent pinned Blender runs produce identical complete semantic manifests and byte-identical GLB for all four assets; exact per-module hashes are in `rebuild_comparison.json` and asset manifests. Blender serialization metadata may vary: no byte-determinism claim for `.blend`. The explicit canonical `--install` path was exercised. SocketEnd generation uses manifest socket coordinates, retaining the2m recipe endpoints.
+3. Runtime suite `modular_kit`:4cases/170assertions, failed0/skipped0. Four quarter-turn orientations at a translated location verify solid panels/closed leaves/fence wood block rays and open-door centers remain clear while jambs remain solid. Tests check that the hit belongs to the rotated module. Adjacent2m sockets meet; rays atX1.99/2.00/2.01m find collision on both wall and fence joints.90degree corner joints remain queryable. Small wall volumes may overlap inside corner thickness; no traversable joint slit is introduced. Source geometry and placement use positive unit scale, rather than compensating mirrored collision.
+4. Actual capsule physics with held forward input and no teleport passes the open module: Z=-3.349998m; the closed variant stops atZ=-0.679863m. Both remain grounded atY0.000182m. Initial fixture placement only. Each uses a fresh scene; no state leaks between variants.
+5. Actual Windows Forward+/Vulkan replay:26checks,7captures, no failures. All REAL/ERASED gameplay/front/wide frames plus door-passed image opened and inspected. Repeated fences/walls join without visible cracks; open/closed variants read distinctly; material colors remain consistent with task301; player is readable and visibly fits through the assembled doorway. Integration replay endsZ=-4.313332m,Y0grounded. Frontal closeup is inspection-only, intentionally cropping distant fence ends; full gameplay/front/wide views cover the complete assembly. No rig, animation or textures are missing dependencies because these are intentionally static, color-material blockout assets.
+6. Shared integration changes are limited to one suite registration and strengthening PCK inspection to require all4module GLBs/prefabs and the integration scene, retaining prior exclusions. Final build `20261019T092854243879Z`: all40cases/643assertions, failed0/skipped0, import/export/clean-PCK inspection PASS. Hash-matched EXE/PCK launched in clean `.qa/T-020302/native` without editor/source: actual Windows BOOTSTRAP5checks PASS, image opened. The bootstrap image is separate from module render evidence. Python build guards6tests PASS. Static plan/design278/depth587 checks PASS, only static consistency (28puzzles/21main-required/7secret/8evacuationplans). Exact candidate hashes and raw logs are pinned in `evidence.json`. No engine pin, save, phase state, baseline design catalog, owner changes, quality gate or retail main scene was changed.
+
+## Reproduce and review limits
+
+See `docs/assets/modular_kit.md` for placement, rotations, static variant scope and commands. Use `python -X utf8 tools/art/rebuild_modular.py --output-root .qa/modular_NEW_ID` for a new independent export; add explicit `--install` to replace generator-owned files only, then refresh source/runtime manifest hashes and reverify. Pinned Blender source verification: `--background art/source/modular/MODULE.blend --disable-autoexec --python-exit-code 1 --python tools/art/verify_modular_blend.py`. Pinned Godot runs `tests/test_runner.gd -- --suite modular_kit`; `scripts/build_windows.py` runs the full nonzero registry and clean-project PCK audit. `tests/replays/modular_kit.gd` uses the process-scoped verified SwiftShader ICD through `tools.godot_process.run(..., software=True)`.
+
+Blender4.5.3LTS and Godot4.7.2stable were probed before new API work; Blender binary checksum is verified by the wrapper and Godot pin/templates by the build pipeline. Original model/UV geometry and existing project colors, no third-party asset inputs; GPL authoring tool remains local, publication rights review separate. Manifests include source/runtime hashes, recipe/seed/tool lock/dependency paths, measurements, provenance and captures.
+
+REAL/ERASED are material review views over shared geometry; they do not implement WorldController switching. Open/closed are static art variants, not an interactive door controller, animation, inventory lock or saved door state. Source render exercises the assembled modules; native executable smoke covers exported bootstrap, and PCK inspection verifies module resources included. Software Forward+ does not verify GPU1080p performance, physical gamepad, audible mix, human appeal/usability, final house interiors or complete campaign. CAP-001 remains. Asset quality BLOCKOUT, task IMPLEMENTED/VERIFIED/DONE is scoped to this card; no gate promoted. Prior uncommitted changes and all earlier closed evidence remain preserved.

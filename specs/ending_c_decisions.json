@@ -1,0 +1,51 @@
+{
+  "design_version": "3.2",
+  "scope": "AUTHORED_DECISION_MODEL_NOT_RUNTIME",
+  "groups": [
+    "GROUP_FAMILIES",
+    "GROUP_SCHOOL",
+    "GROUP_RIVERSIDE"
+  ],
+  "water_beats": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "advance_event": "GROUP_CROSS_COMMITTED",
+  "advances_while_reading": false,
+  "school_routes": {
+    "LIBRARY": {
+      "path": [
+        "CLASS3A",
+        "LIBRARY",
+        "REAR_GATE"
+      ],
+      "safe_at_beats": [
+        0
+      ]
+    },
+    "UPPER_GALLERY": {
+      "path": [
+        "CLASS3A",
+        "UPPER_GALLERY",
+        "REAR_GATE"
+      ],
+      "safe_at_beats": [
+        0,
+        1,
+        2
+      ]
+    }
+  },
+  "gate_preparation": [
+    "HOLD",
+    "OPEN"
+  ],
+  "gate_finish": "RETURN",
+  "valid_plan_count": 8,
+  "preview": "Show current and next beat, route closure, waiting groups and reversible decisions before committing. No real-time countdown.",
+  "on_wrong": "Restore pre-decision checkpoint, retain already safe groups/E/M and give reason. Never force endingB.",
+  "final_c": "main_ready AND all_memories AND route_plan_ready AND exactly_three_unique_groups_safe AND evacuation_route_validated AND explicit_return_confirmation",
+  "a_b": "main_ready; neither optional plan nor trial completion required"
+}

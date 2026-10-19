@@ -1,0 +1,89 @@
+diff --git a/scripts/build_windows.py b/scripts/build_windows.py
+index 6ca140b..4afdfe5 100644
+--- a/scripts/build_windows.py
++++ b/scripts/build_windows.py
+@@ -54,7 +54,7 @@ def run_step(name, command, log_dir, timeout):
+ 
+ def source_hash():
+     files = [ROOT / 'project.godot', ROOT / 'export_presets.cfg', ROOT / 'config/toolchain.lock.json']
+-    for directory in ['scenes', 'scripts', 'config/tuning', 'data/runtime', 'data/chapters', 'data/puzzles', 'data/dialogue', 'data/clues', 'data/localization']:
++    for directory in ['scenes', 'scripts', 'config/tuning', 'art/export', 'art/materials', 'data/runtime', 'data/chapters', 'data/puzzles', 'data/dialogue', 'data/clues', 'data/localization']:
+         files += [p for p in (ROOT / directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
+     return hashlib.sha256('\n'.join(f'{p.relative_to(ROOT).as_posix()} {sha(p)}' for p in sorted(files)).encode()).hexdigest()
+ 
+diff --git a/tests/fixtures/inspect_pack.gd b/tests/fixtures/inspect_pack.gd
+index 575178e..ab22ac5 100644
+--- a/tests/fixtures/inspect_pack.gd
++++ b/tests/fixtures/inspect_pack.gd
+@@ -12,14 +12,16 @@ func _init() -> void:
+ 	_walk("res://", files)
+ 	var forbidden: Array[String] = []
+ 	for path in files:
+-		for prefix in ["res://builds/", "res://build_manifest/", "res://PACKAGE_CHECK.json", "res://tests/", "res://tools/", "res://reports/", "res://plan/", "res://state/", "res://specs/", "res://art/source/", "res://audio/source/", "res://config/test_environment", "res://config/agent_capabilities", "res://config/permissions", "res://config/toolchain"]:
++		for prefix in ["res://scenes/tests/", "res://builds/", "res://build_manifest/", "res://PACKAGE_CHECK.json", "res://tests/", "res://tools/", "res://reports/", "res://plan/", "res://state/", "res://specs/", "res://art/source/", "res://audio/source/", "res://config/test_environment", "res://config/agent_capabilities", "res://config/permissions", "res://config/toolchain"]:
+ 			if path.begins_with(prefix):
+ 				forbidden.append(path)
+ 	var runtime_data: bool = FileAccess.file_exists("res://data/runtime/product.json")
+ 	var scene: bool = ResourceLoader.exists("res://scenes/main.tscn")
++	var street: bool = ResourceLoader.exists("res://art/export/blockout_street.glb") and ResourceLoader.exists("res://scenes/environment/street_blockout.tscn") and ResourceLoader.exists("res://scenes/environment/street_scale_scene.tscn")
+ 	var result: Dictionary = {"files": files, "forbidden": forbidden,
+ 		"runtime_data_included": runtime_data, "main_scene_included": scene,
+-		"result": "PASS" if forbidden.is_empty() and runtime_data and scene else "FAIL"}
++		"street_art_included": street,
++		"result": "PASS" if forbidden.is_empty() and runtime_data and scene and street else "FAIL"}
+ 	print("PACK_REPORT ", JSON.stringify(result))
+ 	quit(0 if result.result == "PASS" else 1)
+ 
+diff --git a/tests/test_build_windows.py b/tests/test_build_windows.py
+index c441650..413688c 100644
+--- a/tests/test_build_windows.py
++++ b/tests/test_build_windows.py
+@@ -4,6 +4,7 @@ import json
+ import sys
+ import tempfile
+ import unittest
++from unittest.mock import patch
+ from pathlib import Path
+ 
+ spec = importlib.util.spec_from_file_location('build_windows', Path(__file__).resolve().parents[1] / 'scripts/build_windows.py')
+@@ -12,6 +13,21 @@ spec.loader.exec_module(build)
+ 
+ 
+ class BuildTests(unittest.TestCase):
++    def test_runtime_asset_changes_invalidate_candidate_source_hash(self):
++        with tempfile.TemporaryDirectory() as temp:
++            root = Path(temp)
++            for name in ['project.godot', 'export_presets.cfg', 'config/toolchain.lock.json']:
++                path = root/name
++                path.parent.mkdir(parents=True, exist_ok=True)
++                path.write_text('fixture', encoding='utf-8')
++            asset = root/'art/export/street.glb'
++            asset.parent.mkdir(parents=True)
++            asset.write_bytes(b'original runtime mesh')
++            with patch.object(build, 'ROOT', root):
++                before = build.source_hash()
++                asset.write_bytes(b'changed geometry at same path')
++                self.assertNotEqual(before, build.source_hash())
++
+     def test_valid_report(self):
+         report = dict(result='PASS', tests=2, assertions=3, failed=0, skipped=0)
+         self.assertEqual(build.test_report('TEST_REPORT '+json.dumps(report)), report)
+diff --git a/tests/test_runner.gd b/tests/test_runner.gd
+index 2b6a9a0..de3305c 100644
+--- a/tests/test_runner.gd
++++ b/tests/test_runner.gd
+@@ -7,7 +7,13 @@ var cases_run: int = 0
+ const SUITES: Dictionary = {"bootstrap": "", "scene": "res://tests/unit/test_scene.gd",
+ 	"utilities": "res://tests/unit/test_utility.gd", "asset_import": "res://tests/unit/test_asset_import.gd",
+ 	"player_physics": "res://tests/unit/test_player_physics.gd",
+-	"locomotion": "res://tests/unit/test_locomotion.gd", "corridor": "res://tests/unit/test_corridor.gd"}
++	"locomotion": "res://tests/unit/test_locomotion.gd", "corridor": "res://tests/unit/test_corridor.gd",
++	"movement_qa": "res://tests/unit/test_movement_qa.gd",
++	"camera_preset": "res://tests/unit/test_camera_preset.gd",
++	"camera_follow": "res://tests/unit/test_camera_follow.gd",
++	"camera_zones": "res://tests/unit/test_camera_zones.gd",
++	"safe_frame": "res://tests/unit/test_safe_frame.gd",
++	"street_blockout": "res://tests/unit/test_street_blockout.gd"}
+ 
+ 
+ func _init() -> void:

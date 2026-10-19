@@ -1,0 +1,349 @@
+{
+  "result": "PASS",
+  "scope": "STATIC_AUTHORING_CONTRACT_NOT_GAMEPLAY",
+  "checks_count": 81,
+  "translation_keys": [
+    "story.timeline.ch01.remember_house",
+    "story.timeline.ch04.flood_record",
+    "story.timeline.ch05.maintenance",
+    "story.timeline.ch06.first_pull",
+    "story.rules.ch01.edge",
+    "story.rules.ch02.habit",
+    "story.rules.ch05.records",
+    "story.rules.ch06.age",
+    "story.route.ch01.sketch",
+    "story.route.ch02.stitch",
+    "story.route.ch03.assembly"
+  ],
+  "early_foreshadows": [
+    "story.route.ch01.sketch",
+    "story.route.ch02.stitch",
+    "story.route.ch03.assembly"
+  ],
+  "checks": [
+    {
+      "id": "canon_timeline.md:utf8",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch01.remember_house:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch01.remember_house:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch01.remember_house:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch01.remember_house:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch01.remember_house:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch04.flood_record:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch04.flood_record:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch04.flood_record:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch04.flood_record:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch04.flood_record:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch05.maintenance:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch05.maintenance:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch05.maintenance:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch05.maintenance:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch05.maintenance:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch06.first_pull:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch06.first_pull:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch06.first_pull:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.timeline.ch06.first_pull:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "world_rules.md:utf8",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch01.edge:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch01.edge:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch01.edge:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch01.edge:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch01.edge:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch02.habit:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch02.habit:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch02.habit:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch02.habit:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch02.habit:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch05.records:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch05.records:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch05.records:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch05.records:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch05.records:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch06.age:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch06.age:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch06.age:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.rules.ch06.age:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "reveal_ending_matrix.md:utf8",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch01.sketch:earned",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch02.stitch:earned",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:fields",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:key",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:once",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:chapter",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:no_identity_spoiler",
+      "result": "PASS"
+    },
+    {
+      "id": "story.route.ch03.assembly:earned",
+      "result": "PASS"
+    },
+    {
+      "id": "translation_keys_unique",
+      "result": "PASS"
+    },
+    {
+      "id": "once_flags_unique",
+      "result": "PASS"
+    },
+    {
+      "id": "at_least_two_early_route_foreshadows",
+      "result": "PASS"
+    },
+    {
+      "id": "seven_unique_houses",
+      "result": "PASS"
+    },
+    {
+      "id": "memory_route_bijection",
+      "result": "PASS"
+    },
+    {
+      "id": "no_permanently_missable_records",
+      "result": "PASS"
+    },
+    {
+      "id": "only_essential_records_gate_main",
+      "result": "PASS"
+    },
+    {
+      "id": "M01:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M01:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M02:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M02:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M03:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M03:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M04:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M04:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M05:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M05:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M06:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M06:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "M07:connected",
+      "result": "PASS"
+    },
+    {
+      "id": "M07:catalog_edge",
+      "result": "PASS"
+    },
+    {
+      "id": "route_reaches_hill",
+      "result": "PASS"
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "task_id": "T-020301",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T08:37:35.032461+00:00",
+  "revision": "artifact-tree-sha256:81a2cd53bd757f2af7cab05f98ca06cb28b9b2d998e3cdc5ebb3bfb047ab60d4",
+  "build_id": "20261019T083122484670Z",
+  "runtime_source_sha256": "a57470f387382c859f376faad7640d9898a5cf9d6b6730f047ab5998877a4413",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020301/review.md"
+  },
+  "artifacts": [
+    {
+      "path": ".qa/T-020301/rebuild_helper/blockout_street.metrics.json",
+      "sha256": "d49240569e9c03ab3ede1abb8a3cfd2a653d7584b44407b4fa82dc4a534256f7"
+    },
+    {
+      "path": ".qa/T-020301/rebuild_helper/build.stdout.log",
+      "sha256": "04350a66879076e3cd7d405ca5be755efa08397d5644e2c26d9178be5e2960d7"
+    },
+    {
+      "path": "art/export/blockout_street.glb",
+      "sha256": "bfab705624fc0fc676e270370854423769c24cb7b5cdb342b1410255364311d3"
+    },
+    {
+      "path": "art/export/blockout_street.glb.import",
+      "sha256": "ac0763ac8987355053c66998c63a7641960ed524abc3236f4bc4aa502bc7c4c7"
+    },
+    {
+      "path": "art/export/blockout_street.metrics.json",
+      "sha256": "d49240569e9c03ab3ede1abb8a3cfd2a653d7584b44407b4fa82dc4a534256f7"
+    },
+    {
+      "path": "art/manifest/blockout_street.asset.json",
+      "sha256": "ef6f330603cbbf2567aea252ac63716b7095c8f350e6a179a4749548a95b83d7"
+    },
+    {
+      "path": "art/source/.gdignore",
+      "sha256": "92c5a85faf59ac3b0adbadf46082465baf951f124c91370e12ab871535154ba2"
+    },
+    {
+      "path": "art/source/blockout_street.blend",
+      "sha256": "596d64d99e2b6506465b9a60fd465d7526ddbc64daf0db97d7c03bbaa6acc7c8"
+    },
+    {
+      "path": "builds/windows/20261019T083122484670Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T083122484670Z/TheSeventhHouse.pck",
+      "sha256": "e13e026f6b558318ac88bd736793d7470ea4500b374e1136d160dedff0243cb3"
+    },
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "25fa4d4b0ee623aeb1c1ed6225a3504b55bda5279d0f58531f412603eda700ad"
+    },
+    {
+      "path": "config/blender.lock.json",
+      "sha256": "0d0e097e372131523d5c95ca5ede32791f2a9b701413cea1fff94fb3c7be47e9"
+    },
+    {
+      "path": "config/tuning/camera_street_blockout.tres",
+      "sha256": "ad2b161374b38f8759e94de89a7523a4b90ce3801d42ad30f0f5c1ea5afced55"
+    },
+    {
+      "path": "docs/assets_execution.md",
+      "sha256": "8ab2a6c134a9e0210f72e27dd9fcfb9bf1b80845e6a11843c9ac33b9efc2ab58"
+    },
+    {
+      "path": "reports/builds/20261019T083122484670Z/manifest.json",
+      "sha256": "e8ffa8238dede210823fc4bef0d079350f77d2c7a6d461a7ce1f900dee81fb4e"
+    },
+    {
+      "path": "reports/tasks/T-020301/ERASED_front.png",
+      "sha256": "2c6a900cba942fc068f22a7ec2d7df1b257e5999e8b8501b1560fc20ecb30f9e"
+    },
+    {
+      "path": "reports/tasks/T-020301/ERASED_gameplay.png",
+      "sha256": "0e3599aeabe9ab7dec95973d3baa8c0a8bdcad275b8c918e6848fb65a74ddbb0"
+    },
+    {
+      "path": "reports/tasks/T-020301/ERASED_wide.png",
+      "sha256": "390f8776bf7e1dae6b71a8182c8e01aeaebfdacb766114217520a7e4b6938bee"
+    },
+    {
+      "path": "reports/tasks/T-020301/REAL_front.png",
+      "sha256": "1febacfef700f14ad11353d6182b06dac8a2d377b00ff24fe837728463c55aca"
+    },
+    {
+      "path": "reports/tasks/T-020301/REAL_gameplay.png",
+      "sha256": "9506f440e83e4984e4c854439ab20db46ec776e28d593e0039150bb816b126d0"
+    },
+    {
+      "path": "reports/tasks/T-020301/REAL_wide.png",
+      "sha256": "686e055684fa8f47ffae831c192bd4980cd6cfb0fcfdd5b2c3ee9bc2dc0de275"
+    },
+    {
+      "path": "reports/tasks/T-020301/before.stderr.log",
+      "sha256": "dfeae55432e839ef3d41cab142efd78d636a196be75125f6de308005047d4bfa"
+    },
+    {
+      "path": "reports/tasks/T-020301/before.stdout.log",
+      "sha256": "cf289956858e320c47407f618c1dd869143201de98205682e40f5abd48315fb2"
+    },
+    {
+      "path": "reports/tasks/T-020301/blend_source.stdout.log",
+      "sha256": "410ad44391b98cb116ca596733ba592d3f66c5bccb7356267c8bba194a9b5feb"
+    },
+    {
+      "path": "reports/tasks/T-020301/blender_dotsrc.sha256",
+      "sha256": "45ee01350376e7aa2fa141b5675d4a6576942f6a54e8fd0d5f0d021e873ab2dd"
+    },
+    {
+      "path": "reports/tasks/T-020301/blender_halifax.sha256",
+      "sha256": "45ee01350376e7aa2fa141b5675d4a6576942f6a54e8fd0d5f0d021e873ab2dd"
+    },
+    {
+      "path": "reports/tasks/T-020301/blender_version.log",
+      "sha256": "3ca79c10cefb315ecbd1fc05f71934027307c49b0832c51d004e312e2fcbf2bc"
+    },
+    {
+      "path": "reports/tasks/T-020301/build_a.stdout.log",
+      "sha256": "4e305dfca62793b5d0bf5efdfb51f3661fa5de8c30af2a31de9bd554927adc20"
+    },
+    {
+      "path": "reports/tasks/T-020301/build_b.stdout.log",
+      "sha256": "f52e024fbdb41adec2ae339d0954c90801dbee4ede8c4227a0d4b938db61d9e2"
+    },
+    {
+      "path": "reports/tasks/T-020301/build_c.stdout.log",
+      "sha256": "059b30f48b6bf206d4ef7151dc142651e82204d120ff9a0dd6ff972627f91035"
+    },
+    {
+      "path": "reports/tasks/T-020301/build_d.stdout.log",
+      "sha256": "3d964725cc33d71f3c1fc1c2a50e3e33f8aff14c66bbc2e5d8089de499ff005a"
+    },
+    {
+      "path": "reports/tasks/T-020301/collision_id_failure.stderr.log",
+      "sha256": "cb286e6d3e1e7f8c6fd28a773e2518e1a9b7da27af41abfe2ca8fb62cd0769a5"
+    },
+    {
+      "path": "reports/tasks/T-020301/collision_id_failure.stdout.log",
+      "sha256": "d8764eaddac11da6fde15dc5897a84c6b55b6c141d46ca69577cb759f9fc63fe"
+    },
+    {
+      "path": "reports/tasks/T-020301/design_and_build_checks.json",
+      "sha256": "ab1e99931b33e9e2d99f1f47eaa6f62407d1216ff9c33aafd93e8e4b1233cc45"
+    },
+    {
+      "path": "reports/tasks/T-020301/door_entered.png",
+      "sha256": "ad9261e6d910523fdc37ef06423b2f9d39740aae3edc427a82cfe61038692c8b"
+    },
+    {
+      "path": "reports/tasks/T-020301/door_entered_front.png",
+      "sha256": "8559f8be1bda6053bfb55699aecca8976379b55f832dcb7d8d00ddbf98ed6ec6"
+    },
+    {
+      "path": "reports/tasks/T-020301/entry_diff.patch",
+      "sha256": "6b14677c7bd0de43132cbcb6774bc658cc4f16bc79202fd18bbaf197363722ae"
+    },
+    {
+      "path": "reports/tasks/T-020301/entry_worktree.txt",
+      "sha256": "cb4e3dc0112a646c124d4996514f9d4e545fa8f7d56d191c3e1f98bf39d75227"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_build_summary.json",
+      "sha256": "78b4367126f5d6d48cff61f2db9231b1a04549ad703f5a498f1915724c209a8e"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_diff_stat.txt",
+      "sha256": "46141bd80b979a5cb076ba6c283224333b565ac09ff1d3f6296cc1998af59db0"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_diff_stat.txt.stderr.log",
+      "sha256": "3bd2d7cf619e6e7395110d1fa708c4b27f0db19dbaa3627efbd22cd1c9b92fe1"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_import.stdout.log",
+      "sha256": "f411ae4c0d19af256464fa2c9b90b14ee63e12453bb6db5866af6cc766f771f9"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_rebuild_comparison.json",
+      "sha256": "e81017aaea2640326c90e23f9a021082eb35103f71838730f33e31d71a22bce6"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_street.stdout.log",
+      "sha256": "868588cd7fb8c6d5f4e7e6c7eeee93afdd6a18549ba8f1f42d6fcbca931aaf1a"
+    },
+    {
+      "path": "reports/tasks/T-020301/final_worktree.txt",
+      "sha256": "ac99be9cdcf3f514152d6f74b0ef8f0d7d6375e25402f1f3db6a5d2e91669096"
+    },
+    {
+      "path": "reports/tasks/T-020301/import.stdout.log",
+      "sha256": "56c862feec1365d35cf4a9dfd0dafc2f976aac42b517550cef3fb2d270eb8732"
+    },
+    {
+      "path": "reports/tasks/T-020301/integration_diff.patch",
+      "sha256": "425fdf5f047a2878d9431bdd9f70a1cb4ea3013a74d5a3250dc7dead266eabd6"
+    },
+    {
+      "path": "reports/tasks/T-020301/integration_diff.patch.stderr.log",
+      "sha256": "e508482e9c0c375684c5517f69adb12241fd785791bd67712b7c8d56d1cd7c14"
+    },
+    {
+      "path": "reports/tasks/T-020301/manifest_verification.json",
+      "sha256": "4b3afc0901e08667c9249bba08f129a2557103f28134bc0085904969e48394f3"
+    },
+    {
+      "path": "reports/tasks/T-020301/native.json",
+      "sha256": "46e1cbb3c8883f409c12ad9c0965235ef412c733e2ee4b74886b92d8e07c12d5"
+    },
+    {
+      "path": "reports/tasks/T-020301/native.png",
+      "sha256": "2a1c28f3b695a44f42e124e26c710f70285833cf179c7f5b7abead28ab095534"
+    },
+    {
+      "path": "reports/tasks/T-020301/native.stdout.log",
+      "sha256": "5def800b7e9f0b54fdd00a8a134160ec910c2a464e85f7aa923831acacf1a302"
+    },
+    {
+      "path": "reports/tasks/T-020301/rebuild_comparison.json",
+      "sha256": "4d8e6764a519a7acc29c65eb5f993ac1a8b73eeab2f18eb8339c9799a79ac75c"
+    },
+    {
+      "path": "reports/tasks/T-020301/review.md",
+      "sha256": "d1db8c12e2a2883a7c8f7888e11fd7c89ca44ff269e202ee51e2721eda5ba342"
+    },
+    {
+      "path": "reports/tasks/T-020301/runtime.json",
+      "sha256": "3e11c18146e8d8069ba519525e021eefeabba1f605064912042ba1e33444a7d7"
+    },
+    {
+      "path": "reports/tasks/T-020301/runtime.stdout.log",
+      "sha256": "e0087f45ed35a07e18690d838b0d7180799bbfc5a5232bf17cde8313a421f34c"
+    },
+    {
+      "path": "reports/tasks/T-020301/street.stderr.log",
+      "sha256": "4096bd56bafe0403d3592291169cc5d25134f859d31c4476aecb090e0a71a106"
+    },
+    {
+      "path": "reports/tasks/T-020301/street.stdout.log",
+      "sha256": "561270a7847165c1aa2d98da5fb445bb8ef59ecd315d0ca6327e4f24be94a368"
+    },
+    {
+      "path": "reports/tasks/T-020301/test_build_windows.stderr.log",
+      "sha256": "89678b8ffb98b339ff274ae0f8f70559bba566bf25b8625b938e9ae7c9774fb8"
+    },
+    {
+      "path": "reports/tasks/T-020301/validate_plan.stdout.log",
+      "sha256": "3f3650c086dd06b9e3e3fd3bfb7fb1922b5693fcca6f8d09033161d3428b5483"
+    },
+    {
+      "path": "reports/tasks/T-020301/validate_puzzle_depth.stdout.log",
+      "sha256": "6f1f4f1cc3caeea855fdd7f8b9100daa9769ce28ca93162311af1c7dff3569a9"
+    },
+    {
+      "path": "reports/tasks/T-020301/validate_puzzle_design.stdout.log",
+      "sha256": "b8adc780c71937f6670cf9905502c8bbdacc6fd4afa0f029e0143571c819c7a6"
+    },
+    {
+      "path": "scenes/environment/street_blockout.tscn",
+      "sha256": "de29a71e1ba0289ccfff7b8bfc219a23b0e52db03111bcaf3db1035e03abdf8a"
+    },
+    {
+      "path": "scenes/environment/street_scale_scene.tscn",
+      "sha256": "579cba06a23a90bc68a3771408afb91253b8c79563f28bad9c513e40ff54e3a3"
+    },
+    {
+      "path": "scripts/art/street_blockout.gd",
+      "sha256": "7d3ffccf21359f5f91bd1878b8dc35fa84adc5b34733f1d4191cd4bc8f037235"
+    },
+    {
+      "path": "scripts/build_windows.py",
+      "sha256": "baf7fbedf153a2583ae393154584228718a1ada1e89992794b6861ff5d4e65be"
+    },
+    {
+      "path": "tests/fixtures/inspect_pack.gd",
+      "sha256": "7ddf418bb4f5e7ae8c10c4921cd93960891814f3a2b57f109354df3a69668864"
+    },
+    {
+      "path": "tests/replays/street_blockout.gd",
+      "sha256": "fb1775b7e1b762cedc8a18e0c5b8d0d05682d08d40a8ab6dafdbb40e24160ce8"
+    },
+    {
+      "path": "tests/test_build_windows.py",
+      "sha256": "7eff6c6ec0e3a49576344c3527424a05d7aa70b2a300a5db5ba2db2ca0815f9c"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "91d0d7b3b1cbaac0ae529082bb34b27a7097843c9782b3e997891ea89ebe17be"
+    },
+    {
+      "path": "tests/unit/test_street_blockout.gd",
+      "sha256": "47e746964739775bcb0e2bd3e5d80531ce27b4768d29bd6708872c051f4f0b55"
+    },
+    {
+      "path": "tools/art/build_street_blender.py",
+      "sha256": "827676d559a1140dc234c189eadba937db851241b8fd82f41e66f17e7d05db17"
+    },
+    {
+      "path": "tools/art/rebuild_street.py",
+      "sha256": "4fbae0014471f2b8d4cf8348478aeeeb89effa5f507b72d75024921db23f8467"
+    },
+    {
+      "path": "tools/art/street_blockout.json",
+      "sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac"
+    },
+    {
+      "path": "tools/art/verify_street_blend.py",
+      "sha256": "82fd9a64c4a350e7a0c507128ed4f810e4947ab276b0aac21a5be6d6617fc056"
+    }
+  ],
+  "checks": [
+    {
+      "id": "source_scale_and_rebuild",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "True editable Blender source; metre-scale4m corridor;1.25x2.25m door; deterministic two-run export; original provenance and pinned tool.",
+      "observed": "Source reopened:56meshes, no external libraries/images, metric1.0, independent bounds4.0/1.25/2.25m; rebuild_c/d equal semantic manifests and byte-identical GLB; wrapper rebuild matches; source/runtime hash and manifest required fields/enums checked.",
+      "result": "PASS",
+      "assertions": 0,
+      "command": "Pinned Blender generation twice and verify_street_blend.py; python tools/art/rebuild_street.py --output-root .qa/T-020301/rebuild_helper",
+      "log_path": "reports/tasks/T-020301/blend_source.stdout.log"
+    },
+    {
+      "id": "integrated_physics_and_regression",
+      "kind": "ENGINE_TEST",
+      "expected": "Actual capsule passes center door, is blocked by jamb; three4m corridor lanes clear; complete colliders/normals/UV/materials; all prior suites pass.",
+      "observed": "street_blockout3cases227assertions; all36cases473assertions, failed0/skipped0. Full import/export/PCK PASS, street GLB+prefab+scene included and authoring/QA exclusions retained. Runtime art changes invalidate candidate hash;6 Python build guard tests pass.",
+      "result": "PASS",
+      "assertions": 473,
+      "command": "python -X utf8 scripts/build_windows.py; python -X utf8 tests/test_build_windows.py",
+      "log_path": "reports/builds/20261019T083122484670Z/manifest.json"
+    },
+    {
+      "id": "actual_street_render",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Review REAL/ERASED gameplay/front/wide; real controller enters door; inspect visible shape and clearances.",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 18, \"captures\": [\"res://reports/tasks/T-020301/REAL_gameplay.png\", \"res://reports/tasks/T-020301/REAL_front.png\", \"res://reports/tasks/T-020301/REAL_wide.png\", \"res://reports/tasks/T-020301/ERASED_gameplay.png\", \"res://reports/tasks/T-020301/ERASED_front.png\", \"res://reports/tasks/T-020301/ERASED_wide.png\", \"res://reports/tasks/T-020301/door_entered.png\", \"res://reports/tasks/T-020301/door_entered_front.png\"], \"failures\": [], \"input_mode\": \"synthetic_actions_real_controller\", \"phase_scope\": \"REAL_ERASED_material_previews_shared_geometry_NOT_WorldController_switch\", \"player_after_entry\": \"(0.000002, 0.000841, -4.313339)\", \"quality_state\": \"BLOCKOUT\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"software\": true}",
+      "result": "PASS",
+      "assertions": 18,
+      "command": "tools.godot_process.run --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy --script res://tests/replays/street_blockout.gd, software=True",
+      "log_path": "reports/tasks/T-020301/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020301/REAL_gameplay.png",
+        "reports/tasks/T-020301/REAL_front.png",
+        "reports/tasks/T-020301/REAL_wide.png",
+        "reports/tasks/T-020301/ERASED_gameplay.png",
+        "reports/tasks/T-020301/ERASED_front.png",
+        "reports/tasks/T-020301/ERASED_wide.png",
+        "reports/tasks/T-020301/door_entered.png",
+        "reports/tasks/T-020301/door_entered_front.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "native_candidate_smoke",
+      "kind": "WINDOWS_RUNTIME",
+      "expected": "Hash-matched final EXE/PCK starts and renders in clean Windows directory without editor/source.",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 5, \"authored_viewport\": \"(1920, 1080)\", \"capture\": \"reports/native.png\", \"content_scale_aspect\": 1, \"display\": \"Windows\", \"driver\": \"vulkan\", \"engine\": \"4.7.2-stable (official)\", \"failed\": 0, \"failures\": [], \"height\": 720, \"input_mode\": \"scene_smoke_no_physical_input\", \"native_os\": \"Windows\", \"profile\": \"BOOTSTRAP\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"sample_colors\": 23, \"skipped\": 0, \"software\": true, \"width\": 1280, \"window_height\": 720, \"window_width\": 1280}",
+      "result": "PASS",
+      "assertions": 5,
+      "command": ".qa/T-020301/native_final/TheSeventhHouse.exe --rendering-method forward_plus --rendering-driver vulkan --audio-driver Dummy -- --qa-profile BOOTSTRAP --qa-report res://reports/native.json",
+      "log_path": "reports/tasks/T-020301/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020301/native.png"
+      ],
+      "native_os": "Windows",
+      "software": true
+    },
+    {
+      "id": "visual_and_design_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Inspect final images and relevant diff; preserve failures; baseline3.2 design consistency maintained.",
+      "observed": "All8 final street images plus native image opened. Corrected missing bench colliders and invalid ambient SKY source; earlier failures/images preserved. Static plan/design278/depth587 checks PASS only for design. Self-review, BLOCKOUT scope and occlusion limits explicit.",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "BLOCKOUT static asset only; no FINAL art/chapter/world-phase/save/puzzle/ending claim.",
+    "CPU SwiftShader Forward+ functional rendering; CAP-001 hardware GPU performance remains blocked; physical gamepad/audio/human usability not assessed.",
+    "Opaque roof/walls occlude interior from exterior oblique camera; frontal QA view verifies capsule through door, interior camera/cutaway remains later integration.",
+    "Native smoke covers exported bootstrap; street rendering and real physics run in the verified Windows Godot runtime from source. No public release or new gate."
+  ]
+}

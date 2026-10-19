@@ -1,0 +1,27 @@
+test_01_next_respects_dependency (__main__.AgentCtlTests.test_01_next_respects_dependency) ... ok
+test_02_full_lifecycle (__main__.AgentCtlTests.test_02_full_lifecycle) ... ok
+test_03_cannot_start_missing_dependency (__main__.AgentCtlTests.test_03_cannot_start_missing_dependency) ... ok
+test_04_finish_needs_review (__main__.AgentCtlTests.test_04_finish_needs_review) ... ok
+test_05_hash_mismatch (__main__.AgentCtlTests.test_05_hash_mismatch) ... ok
+test_06_missing_output (__main__.AgentCtlTests.test_06_missing_output) ... ok
+test_07_not_tested_not_pass (__main__.AgentCtlTests.test_07_not_tested_not_pass) ... ok
+test_08_mandatory_cannot_skip (__main__.AgentCtlTests.test_08_mandatory_cannot_skip) ... ok
+test_09_conditional_can_skip_with_evidence (__main__.AgentCtlTests.test_09_conditional_can_skip_with_evidence) ... ok
+test_10_zero_assertions_fail (__main__.AgentCtlTests.test_10_zero_assertions_fail) ... ok
+test_11_native_windows_not_emulated (__main__.AgentCtlTests.test_11_native_windows_not_emulated) ... ok
+test_12_path_escape (__main__.AgentCtlTests.test_12_path_escape) ... ok
+test_13_required_kind_missing (__main__.AgentCtlTests.test_13_required_kind_missing) ... ok
+test_14_external_requires_auth (__main__.AgentCtlTests.test_14_external_requires_auth) ... ok
+test_15_block_and_resume (__main__.AgentCtlTests.test_15_block_and_resume) ... ok
+test_16_wip_limit (__main__.AgentCtlTests.test_16_wip_limit) ... ok
+test_17_hard_gate (__main__.AgentCtlTests.test_17_hard_gate) ... ok
+test_18_active_task_first (__main__.AgentCtlTests.test_18_active_task_first) ... ok
+test_19_lock_exclusion (__main__.AgentCtlTests.test_19_lock_exclusion) ... ok
+test_20_placeholder_evidence_rejected (__main__.AgentCtlTests.test_20_placeholder_evidence_rejected) ... ok
+test_21_external_scope_checked (__main__.AgentCtlTests.test_21_external_scope_checked) ... ok
+test_22_terminal_immutable (__main__.AgentCtlTests.test_22_terminal_immutable) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.479s
+
+OK

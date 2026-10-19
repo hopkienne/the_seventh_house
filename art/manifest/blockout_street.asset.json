@@ -1,0 +1,61 @@
+{
+  "asset_id": "ENV_STREET_BLOCKOUT_01",
+  "category": "MODEL",
+  "chapter_ids": [
+    "CH01"
+  ],
+  "phase": "SHARED",
+  "source_path": "art/source/blockout_street.blend",
+  "runtime_path": "art/export/blockout_street.glb",
+  "quality_state": "BLOCKOUT",
+  "sha256": "bfab705624fc0fc676e270370854423769c24cb7b5cdb342b1410255364311d3",
+  "source_sha256": "596d64d99e2b6506465b9a60fd465d7526ddbc64daf0db97d7c03bbaa6acc7c8",
+  "generator": "tools/art/build_street_blender.py",
+  "generator_version": 1,
+  "config": "tools/art/street_blockout.json",
+  "config_sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac",
+  "seed": 7301,
+  "semantic_sha256": "ea2d5b048731d8764077e804da242216e19864d19edae85322a111b8e082cded",
+  "tool_lock": "config/blender.lock.json",
+  "tool_version": "4.5.3 LTS",
+  "measurements": {
+    "corridor_width": 4.0,
+    "door_clear_width": 1.25,
+    "door_clear_height": 2.25,
+    "player_capsule_height": 1.7,
+    "player_capsule_diameter": 0.56
+  },
+  "metrics": {
+    "meshes": 56,
+    "triangles": 732,
+    "collision_meshes": 45,
+    "materials": 8
+  },
+  "provenance": {
+    "created_by": "codex-primary",
+    "method": "Original parameterized geometry, UVs and PBR colors authored locally for this repository; no external mesh, texture, font or animation input.",
+    "created_at": "2026-10-19T08:13:18.353472+00:00",
+    "external_asset_dependencies": [],
+    "asset_license": "Original project production asset; no third-party attribution obligations introduced. Publication/rights clearance remains release workflow.",
+    "tool_license": "GPL-3.0-or-later",
+    "tool_not_bundled": true,
+    "tool_license_files": ".tools/blender/blender-4.5.3-windows-x64/license/",
+    "tool_sources": [
+      "https://mirrors.dotsrc.org/blender/release/Blender4.5/blender-4.5.3.sha256",
+      "https://ftp.halifax.rwth-aachen.de/blender/release/Blender4.5/blender-4.5.3.sha256"
+    ]
+  },
+  "animation": {
+    "status": "STATIC_NO_RIG",
+    "clips": []
+  },
+  "prefab": "scenes/environment/street_blockout.tscn",
+  "integration_scene": "scenes/environment/street_scale_scene.tscn",
+  "review": "reports/tasks/T-020301/review.md",
+  "limitations": [
+    "Blockout only; not FINAL art or complete chapter.",
+    "ERASED is material review on shared geometry, not a WorldController phase switch.",
+    "Opaque roof/walls occlude the player after entry from the exterior gameplay camera; interior cutaway/camera design remains future integration.",
+    "Software Forward+ functional render only; hardware GPU performance and human appeal not assessed."
+  ]
+}

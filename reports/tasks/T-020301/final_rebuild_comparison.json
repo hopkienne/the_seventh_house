@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "semantic_equal": true,
+  "glb_byte_equal": true,
+  "semantic_sha256": "ea2d5b048731d8764077e804da242216e19864d19edae85322a111b8e082cded",
+  "glb_sha256": "bfab705624fc0fc676e270370854423769c24cb7b5cdb342b1410255364311d3",
+  "meshes": 56,
+  "triangles": 732
+}

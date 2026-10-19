@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "required_fields_present": true,
+  "enums_valid": true,
+  "source_and_runtime_hashes_match": true,
+  "helper_rebuild_matches_final_manifest": true,
+  "semantic_sha256": "ea2d5b048731d8764077e804da242216e19864d19edae85322a111b8e082cded",
+  "runtime_source_sha256": "a57470f387382c859f376faad7640d9898a5cf9d6b6730f047ab5998877a4413"
+}

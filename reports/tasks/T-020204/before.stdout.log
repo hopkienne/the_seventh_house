@@ -1,0 +1,5 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE safe_frame/aspect_policy
+CASE safe_frame/safe_ui_and_rejection
+TEST_REPORT {"assertions":3,"executed":2,"failed":1,"failures":["reusable safe-frame container exists"],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion","corridor","movement_qa","camera_preset","camera_follow","camera_zones","safe_frame"],"result":"FAIL","skipped":0,"suite":"safe_frame","tests":2}

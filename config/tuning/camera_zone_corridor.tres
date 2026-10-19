@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CameraZone" load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/camera/camera_zone.gd" id="1_zone"]
+[ext_resource type="Resource" path="res://config/tuning/camera_corridor.tres" id="2_framing"]
+
+[resource]
+script = ExtResource("1_zone")
+zone_id = &"CORRIDOR"
+framing = ExtResource("2_framing")
+dead_zone = Vector2(0.6, 0.3)
+minimum = Vector2(-1, -0.25)
+maximum = Vector2(1, 0.25)
+smoothing_speed = 8.0

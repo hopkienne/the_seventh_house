@@ -1,0 +1,795 @@
+{
+  "result": "PASS",
+  "scope": "XLSX_PACKAGE_AND_FORMULAS_NOT_NATIVE_EXCEL",
+  "checks": {
+    "sheet_names_order_preserved": true,
+    "native_table_names_preserved": true,
+    "native_table_styles_preserved": true,
+    "merge_freeze_conditional_validation_features_preserved": true,
+    "task_table_covers_602_rows": true,
+    "qa_table_covers_47_rows": true,
+    "dashboard_total_602": true,
+    "dashboard_done_19": true
+  },
+  "before": {
+    "sheets": [
+      "Dashboard",
+      "Guide",
+      "Waves",
+      "Stories",
+      "Tasks",
+      "Gates",
+      "Requirements",
+      "Content",
+      "QA",
+      "Risks",
+      "Permissions",
+      "Sources"
+    ],
+    "tables": [
+      {
+        "name": "AgentContentTable",
+        "ref": "A4:J11",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentGatesTable",
+        "ref": "A4:G14",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentGuideTable",
+        "ref": "A4:B16",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentPermissionsTable",
+        "ref": "A4:E12",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentQATable",
+        "ref": "A4:H47",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentRequirementsTable",
+        "ref": "A4:F22",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentRisksTable",
+        "ref": "A4:F20",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentSourcesTable",
+        "ref": "A4:E12",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentStoriesTable",
+        "ref": "A4:I150",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentTasksTable",
+        "ref": "A4:M602",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentWavesTable",
+        "ref": "A4:I40",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      }
+    ],
+    "sheet_features": [
+      {
+        "part": "xl/worksheets/sheet1.xml",
+        "merged": [
+          "A1:H2",
+          "A3:H3",
+          "A5:B5",
+          "A6:B7",
+          "C5:D5",
+          "C6:D7",
+          "E5:F5",
+          "E6:F7",
+          "G5:H5",
+          "G6:H7",
+          "A9:H9",
+          "A11:D11",
+          "E11:H11",
+          "A12:D12",
+          "E12:H12",
+          "A13:D13",
+          "E13:H13",
+          "A14:D14",
+          "E14:H14",
+          "A15:D15",
+          "E15:H15",
+          "A16:D16",
+          "E16:H16",
+          "A17:D17",
+          "E17:H17",
+          "A18:D18",
+          "E18:H18",
+          "A20:H20",
+          "A22:H23"
+        ],
+        "panes": [
+          {
+            "ySplit": "3",
+            "topLeftCell": "A4",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet10.xml",
+        "merged": [
+          "A1:F1",
+          "A2:F2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet11.xml",
+        "merged": [
+          "A1:E1",
+          "A2:E2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet12.xml",
+        "merged": [
+          "A1:E1",
+          "A2:E2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet2.xml",
+        "merged": [
+          "A1:B1",
+          "A2:B2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet3.xml",
+        "merged": [
+          "A1:I1",
+          "A2:I2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet4.xml",
+        "merged": [
+          "A1:I1",
+          "A2:I2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet5.xml",
+        "merged": [
+          "A1:M1",
+          "A2:M2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 1,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet6.xml",
+        "merged": [
+          "A1:G1",
+          "A2:G2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet7.xml",
+        "merged": [
+          "A1:F1",
+          "A2:F2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet8.xml",
+        "merged": [
+          "A1:J1",
+          "A2:J2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet9.xml",
+        "merged": [
+          "A1:H1",
+          "A2:H2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      }
+    ],
+    "dashboard": {
+      "A6": {
+        "formula": "COUNTA(Tasks!A5:A602)",
+        "cached": "598"
+      },
+      "C6": {
+        "formula": "COUNTIF(Tasks!F5:F602,\"DONE\")",
+        "cached": "19"
+      },
+      "E6": {
+        "formula": "COUNTIF(Tasks!F5:F602,\"BLOCKED*\")",
+        "cached": "0"
+      },
+      "G6": {
+        "formula": "IFERROR(C6/A6,0)",
+        "cached": "0.03177257525083612"
+      }
+    }
+  },
+  "after": {
+    "sheets": [
+      "Dashboard",
+      "Guide",
+      "Waves",
+      "Stories",
+      "Tasks",
+      "Gates",
+      "Requirements",
+      "Content",
+      "QA",
+      "Risks",
+      "Permissions",
+      "Sources"
+    ],
+    "tables": [
+      {
+        "name": "AgentContentTable",
+        "ref": "A4:J11",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentGatesTable",
+        "ref": "A4:G14",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentGuideTable",
+        "ref": "A4:B16",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentPermissionsTable",
+        "ref": "A4:E12",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentQATable",
+        "ref": "A4:H51",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentRequirementsTable",
+        "ref": "A4:F22",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentRisksTable",
+        "ref": "A4:F20",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentSourcesTable",
+        "ref": "A4:E12",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentStoriesTable",
+        "ref": "A4:I150",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentTasksTable",
+        "ref": "A4:M606",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      },
+      {
+        "name": "AgentWavesTable",
+        "ref": "A4:I40",
+        "style": {
+          "name": "TableStyleMedium2",
+          "showFirstColumn": "0",
+          "showLastColumn": "0",
+          "showRowStripes": "1",
+          "showColumnStripes": "0"
+        }
+      }
+    ],
+    "sheet_features": [
+      {
+        "part": "xl/worksheets/sheet1.xml",
+        "merged": [
+          "A1:H2",
+          "A3:H3",
+          "A5:B5",
+          "A6:B7",
+          "C5:D5",
+          "C6:D7",
+          "E5:F5",
+          "E6:F7",
+          "G5:H5",
+          "G6:H7",
+          "A9:H9",
+          "A11:D11",
+          "E11:H11",
+          "A12:D12",
+          "E12:H12",
+          "A13:D13",
+          "E13:H13",
+          "A14:D14",
+          "E14:H14",
+          "A15:D15",
+          "E15:H15",
+          "A16:D16",
+          "E16:H16",
+          "A17:D17",
+          "E17:H17",
+          "A18:D18",
+          "E18:H18",
+          "A20:H20",
+          "A22:H23"
+        ],
+        "panes": [
+          {
+            "ySplit": "3",
+            "topLeftCell": "A4",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet10.xml",
+        "merged": [
+          "A1:F1",
+          "A2:F2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet11.xml",
+        "merged": [
+          "A1:E1",
+          "A2:E2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet12.xml",
+        "merged": [
+          "A1:E1",
+          "A2:E2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet2.xml",
+        "merged": [
+          "A1:B1",
+          "A2:B2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet3.xml",
+        "merged": [
+          "A1:I1",
+          "A2:I2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet4.xml",
+        "merged": [
+          "A1:I1",
+          "A2:I2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet5.xml",
+        "merged": [
+          "A1:M1",
+          "A2:M2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 1,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet6.xml",
+        "merged": [
+          "A1:G1",
+          "A2:G2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet7.xml",
+        "merged": [
+          "A1:F1",
+          "A2:F2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet8.xml",
+        "merged": [
+          "A1:J1",
+          "A2:J2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      },
+      {
+        "part": "xl/worksheets/sheet9.xml",
+        "merged": [
+          "A1:H1",
+          "A2:H2"
+        ],
+        "panes": [
+          {
+            "ySplit": "4",
+            "topLeftCell": "A5",
+            "activePane": "bottomLeft",
+            "state": "frozen"
+          }
+        ],
+        "conditional_formats": 0,
+        "data_validations": 0
+      }
+    ],
+    "dashboard": {
+      "A6": {
+        "formula": "COUNTA(Tasks!A5:A606)",
+        "cached": "602"
+      },
+      "C6": {
+        "formula": "COUNTIF(Tasks!F5:F606,\"DONE\")",
+        "cached": "19"
+      },
+      "E6": {
+        "formula": "COUNTIF(Tasks!F5:F606,\"BLOCKED*\")",
+        "cached": "0"
+      },
+      "G6": {
+        "formula": "IFERROR(C6/A6,0)",
+        "cached": "0.03156146179401993"
+      }
+    }
+  },
+  "native_excel": "NOT_TESTED"
+}

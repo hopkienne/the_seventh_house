@@ -1348,12 +1348,12 @@ Team có tỷ lệ người/cửa/nhà thống nhất trước khi sản xuất 
 
 ---
 
-# T-020301 — Dựng blockout nhà Việt và hành lang 4m
+# T-020301 — Dựng blockout nhà Việt và hành lang 4 m
 
 **Wave:** S02 · **Story:** ST-0203 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Đúng tỷ lệ 1 unit = 1m theo quy ước dự án; cửa đủ capsule đi qua.
+Đúng tỷ lệ 1 unit = 1 m theo quy ước dự án; cửa đủ capsule đi qua.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -1371,14 +1371,14 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng blockout nhà Việt và hành lang 4m. Kết quả bắt buộc: Đúng tỷ lệ 1 unit = 1m theo quy ước dự án; cửa đủ capsule đi qua.
+2. Đầu ra cụ thể cần hiện thực: Dựng blockout nhà Việt và hành lang 4 m. Kết quả bắt buộc: Đúng tỷ lệ 1 unit = 1 m theo quy ước dự án; cửa đủ capsule đi qua.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
 
 ## Acceptance criteria
-- Đúng tỷ lệ 1 unit = 1m theo quy ước dự án; cửa đủ capsule đi qua.
+- Đúng tỷ lệ 1 unit = 1 m theo quy ước dự án; cửa đủ capsule đi qua.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -1573,7 +1573,7 @@ Agent xác định được camera/movement có đủ tốt để đầu tư cơ
 **Wave:** S02 · **Story:** ST-0204 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Street 20–25m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
+Street 20–25 m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -1592,14 +1592,14 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Ghép P0_StreetHouse và đường kiểm thử. Kết quả bắt buộc: Street 20–25m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
+2. Đầu ra cụ thể cần hiện thực: Ghép P0_StreetHouse và đường kiểm thử. Kết quả bắt buộc: Street 20–25 m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
 
 ## Acceptance criteria
-- Street 20–25m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
+- Street 20–25 m, rào, vị trí key/door/photo đánh dấu rõ trong editor.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -2690,6 +2690,8 @@ is_available/get_prompt/interact có contract và ID ổn định.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0401.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2738,12 +2740,14 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S04 · **Story:** ST-0401 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Khoảng cách 1.8m có tuning; chỉ target đúng world hiện prompt.
+Khoảng cách 1.8 m có tuning; chỉ target đúng world hiện prompt.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0401.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2756,14 +2760,14 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Cài range, hướng nhìn và LOS filtering. Kết quả bắt buộc: Khoảng cách 1.8m có tuning; chỉ target đúng world hiện prompt.
+2. Đầu ra cụ thể cần hiện thực: Cài range, hướng nhìn và LOS filtering. Kết quả bắt buộc: Khoảng cách 1.8 m có tuning; chỉ target đúng world hiện prompt.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Khoảng cách 1.8m có tuning; chỉ target đúng world hiện prompt.
+- Khoảng cách 1.8 m có tuning; chỉ target đúng world hiện prompt.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -2787,17 +2791,19 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-040103 — Implement lantern/key/door/photo adapters
+# T-040103 — Implement lantern/key/door/trace adapters
 
 **Wave:** S04 · **Story:** ST-0401 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Interact idempotent; E hai lần không nhân đôi item.
+Interact idempotent; fixture P02 có sẵn đèn để kiểm thuật; không grant ảnh P03 hoặc chứng minh onboarding P01.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0401.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2810,14 +2816,14 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement lantern/key/door/photo adapters. Kết quả bắt buộc: Interact idempotent; E hai lần không nhân đôi item.
+2. Interact idempotent; fixture P02 có sẵn đèn để kiểm thuật; không grant ảnh P03 hoặc chứng minh onboarding P01.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Interact idempotent; E hai lần không nhân đôi item.
+- Interact idempotent; fixture P02 có sẵn đèn để kiểm thuật; không grant ảnh P03 hoặc chứng minh onboarding P01.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -2852,6 +2858,8 @@ Mục tiêu bị rào che không dùng được dù nằm gần player.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0401.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2911,6 +2919,8 @@ Không khởi tạo quest framework lớn; tập trung 4 flags và reset.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0402.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2954,17 +2964,19 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-040202 — Ghép vị trí key, door, photo và route safe switch
+# T-040202 — Ghép key/door/trace và route safe switch của fixture P02
 
 **Wave:** S04 · **Story:** ST-0402 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Không lấy ảnh trước khi vào nhà; không thể bypass bằng đi sâu Z.
+Fixture G1 có đèn sẵn, key REAL và cửa ERASED; không bypass Z; trace E01 khác ảnh P03/E02. NewGame qua sửa đèn chỉ được kiểm ở G2.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0402.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -2977,14 +2989,14 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép vị trí key, door, photo và route safe switch. Kết quả bắt buộc: Không lấy ảnh trước khi vào nhà; không thể bypass bằng đi sâu Z.
+2. Fixture G1 có đèn sẵn, key REAL và cửa ERASED; không bypass Z; trace E01 khác ảnh P03/E02. NewGame qua sửa đèn chỉ được kiểm ở G2.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Không lấy ảnh trước khi vào nhà; không thể bypass bằng đi sâu Z.
+- Fixture G1 có đèn sẵn, key REAL và cửa ERASED; không bypass Z; trace E01 khác ảnh P03/E02. NewGame qua sửa đèn chỉ được kiểm ở G2.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -3019,6 +3031,8 @@ Hint không khóa cứng đường hợp lệ khác; chưa có chìa thì cửa 
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0402.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3073,6 +3087,8 @@ Chơi lại ba lượt từ cold start không state leak.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0402.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3131,6 +3147,8 @@ Phát hiện softlock và lỗi hiểu cue qua agent runtime review, không gi�
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-0403.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3187,6 +3205,8 @@ Ghi profile_id, build hash, thời gian thực, retry, hint, stuck và clip; kh�
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0403.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3241,6 +3261,8 @@ PASS/FAIL/NOT TESTED kèm version/hash và evidence.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0403.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3295,6 +3317,8 @@ Không dùng tỷ lệ mẫu nhỏ làm dự báo thị trường; chốt ba v�
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0403.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3353,6 +3377,8 @@ Không còn lỗi chặn đường hoàn tất prototype.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0404.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3408,6 +3434,8 @@ Ghi hardware và scene; không công bố cấu hình tối thiểu chưa kiểm
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-0404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3462,6 +3490,8 @@ So sánh estimate với actual theo GAMEPLAY_AGENT; agent hours không coi như 
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0404.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -3516,6 +3546,8 @@ Thiếu evidence = gate chưa đạt; ORCHESTRATOR phê duyệt quyết định 
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-0404.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -4567,7 +4599,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S06 · **Story:** ST-0601 · **Mode:** NARRATIVE_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Nhánh sau chỉ mở khi house01_erased; không tiết lộ An quá sớm.
+Nhánh sau chỉ mở khi house 01_erased; không tiết lộ An quá sớm.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -4585,14 +4617,14 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc canon và reveal của đúng chương; phân biệt sự thật với điều NPC/Minh được biết tại thời điểm đó.
-2. Đầu ra cụ thể cần hiện thực: Nhập hội thoại người bán hàng trước/sau biến mất. Kết quả bắt buộc: Nhánh sau chỉ mở khi house01_erased; không tiết lộ An quá sớm.
+2. Đầu ra cụ thể cần hiện thực: Nhập hội thoại người bán hàng trước/sau biến mất. Kết quả bắt buộc: Nhánh sau chỉ mở khi house 01_erased; không tiết lộ An quá sớm.
 3. Viết nội dung cụ thể bằng tiếng Việt, translation key ổn định; quy định condition/event/once flag cho từng đoạn.
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
 
 ## Acceptance criteria
-- Nhánh sau chỉ mở khi house01_erased; không tiết lộ An quá sớm.
+- Nhánh sau chỉ mở khi house 01_erased; không tiết lộ An quá sớm.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -4899,7 +4931,7 @@ Nhân vật có chuyển động đủ tin cậy cho demo cinematic.
 **Wave:** S06 · **Story:** ST-0603 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Seam loop mượt; step timing phù hợp 3.1m/s ban đầu.
+Seam loop mượt; step timing phù hợp 3.1 m/s ban đầu.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -4917,14 +4949,14 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Tạo idle và walk loop. Kết quả bắt buộc: Seam loop mượt; step timing phù hợp 3.1m/s ban đầu.
+2. Đầu ra cụ thể cần hiện thực: Tạo idle và walk loop. Kết quả bắt buộc: Seam loop mượt; step timing phù hợp 3.1 m/s ban đầu.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
 
 ## Acceptance criteria
-- Seam loop mượt; step timing phù hợp 3.1m/s ban đầu.
+- Seam loop mượt; step timing phù hợp 3.1 m/s ban đầu.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -5338,18 +5370,22 @@ Người chơi trở về, chứng kiến mất nhà, điều tra và thấy bó
 
 ---
 
-# T-070101 — Khóa beat sheet và camera blocking CH1 slice
+# T-070101 — Khóa beat sheet và camera cho CH01 hoàn chỉnh
 
 **Wave:** S07 · **Story:** ST-0701 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Phân biệt slice 10–15 phút với CH1 đầy đủ 30–40 phút.
+CH01 gồm P01–P04, mục tiêu 35 phút chưa đo; G2 kiểm đủ, không lấy đoạn 10–15 phút thay chapter.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0701.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5362,14 +5398,15 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Khóa beat sheet và camera blocking CH1 slice. Kết quả bắt buộc: Phân biệt slice 10–15 phút với CH1 đầy đủ 30–40 phút.
+2. CH01 gồm P01–P04, mục tiêu 35 phút chưa đo; G2 kiểm đủ, không lấy đoạn 10–15 phút thay chapter.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Phân biệt slice 10–15 phút với CH1 đầy đủ 30–40 phút.
+- CH01 gồm P01–P04, mục tiêu 35 phút chưa đo; G2 kiểm đủ, không lấy đoạn 10–15 phút thay chapter.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5405,6 +5442,10 @@ Có checkpoint, safe switching và các điểm dẫn ánh sáng.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0701.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5425,6 +5466,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có checkpoint, safe switching và các điểm dẫn ánh sáng.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5460,6 +5502,10 @@ Không tiết lộ mặt An hoặc timeline chuông đầy đủ.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0701.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5480,6 +5526,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không tiết lộ mặt An hoặc timeline chuông đầy đủ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5515,6 +5562,10 @@ Mỗi beat có thời gian thực đo; lỗi dẫn đường được ghi riêng
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0701.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5535,6 +5586,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Mỗi beat có thời gian thực đo; lỗi dẫn đường được ghi riêng.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5556,9 +5608,376 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-0702 — Puzzle H01 có ý nghĩa điều tra
+## STORY ST-0702 — CH01 giải đố quan sát–suy luận với closeup và inventory
 
-Người chơi tìm bằng chứng gia đình từng tồn tại, không chỉ mở khóa vô nghĩa.
+Người chơi giải P01/P02/P03 bằng manh mối trong nhiều phòng; P04 được tích hợp encounter S08, toàn CH01 qua G2 trước nhân rộng.
+
+---
+
+# T-070205 — InspectableObject và giao diện kiểm tra cận cảnh
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Range/LOS/phase check trước mở; zoom/flip/rotate có nút keyboard/pad tương đương; lock có owner, journal/menu/focus/close không rò lock; closeup an toàn không capture.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070104`, `T-040104`, `T-050204`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/interaction/inspectable_object.gd`
+- `scenes/ui/inspection_view.tscn`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Range/LOS/phase check trước mở; zoom/flip/rotate có nút keyboard/pad tương đương; lock có owner, journal/menu/focus/close không rò lock; closeup an toàn không capture.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Range/LOS/phase check trước mở; zoom/flip/rotate có nút keyboard/pad tương đương; lock có owner, journal/menu/focus/close không rò lock; closeup an toàn không capture.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070205/evidence.json` và `reports/tasks/T-070205/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070205` rồi `python tools/agentctl.py finish T-070205 --evidence reports/tasks/T-070205/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070206 — Inventory quest và recipe giao dịch nguyên tử
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Inspect/combine/use bằng stable IDs; recipe FIT_LENS/WOUND_TOP; use sai không tiêu hao; reload giữa combine không duplicate/lost items; reused reflector/lantern/decoy luôn có recovery.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070205`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/inventory/inventory_manager.gd`
+- `data/items/`
+- `data/recipes/`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Inspect/combine/use bằng stable IDs; recipe FIT_LENS/WOUND_TOP; use sai không tiêu hao; reload giữa combine không duplicate/lost items; reused reflector/lantern/decoy luôn có recovery.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Inspect/combine/use bằng stable IDs; recipe FIT_LENS/WOUND_TOP; use sai không tiêu hao; reload giữa combine không duplicate/lost items; reused reflector/lantern/decoy luôn có recovery.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070206/evidence.json` và `reports/tasks/T-070206/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070206` rồi `python tools/agentctl.py finish T-070206 --evidence reports/tasks/T-070206/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070207 — PuzzleManager và partial-state persistence
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Catalogv 3.1 IDs; dependency DAG; apply_action/snapshot/restore/reset; SOLVED monotonic; callbacks không tự sửa WorldController/save; mọi slot/rotation/recipe stage lưu qua registry.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070206`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/puzzles/puzzle_manager.gd`
+- `tests/puzzles/`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Catalogv 3.1 IDs; dependency DAG; apply_action/snapshot/restore/reset; SOLVED monotonic; callbacks không tự sửa WorldController/save; mọi slot/rotation/recipe stage lưu qua registry.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Catalogv 3.1 IDs; dependency DAG; apply_action/snapshot/restore/reset; SOLVED monotonic; callbacks không tự sửa WorldController/save; mọi slot/rotation/recipe stage lưu qua registry.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070207/evidence.json` và `reports/tasks/T-070207/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070207` rồi `python tools/agentctl.py finish T-070207 --evidence reports/tasks/T-070207/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070208 — Journal ghim manh mối và liên kết chứng cứ
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+28 record IDs giữ nguyên; note IDs không tự tăng journal count; ghim đúng những gì đã inspect, không spoiler/answer auto-fill; P23 link+relation phải do người chơi chọn.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070207`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/evidence/journal_service.gd`
+- `scenes/ui/clue_pins.tscn`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. 28 record IDs giữ nguyên; note IDs không tự tăng journal count; ghim đúng những gì đã inspect, không spoiler/answer auto-fill; P23 link+relation phải do người chơi chọn.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- 28 record IDs giữ nguyên; note IDs không tự tăng journal count; ghim đúng những gì đã inspect, không spoiler/answer auto-fill; P23 link+relation phải do người chơi chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070208/evidence.json` và `reports/tasks/T-070208/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070208` rồi `python tools/agentctl.py finish T-070208 --evidence reports/tasks/T-070208/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070209 — HintManager ba cấp theo trạng thái và input tương đương
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+H/menu tự nguyện, không timer/ads; cấp 1 attention,cấp 2 relation,cấp 3 explicit; VI/EN keys, mute/reduced effects/150%text/keyboard/pad; không đánh solved hoặc tự kéo slot.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070208`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/puzzles/hint_manager.gd`
+- `data/hints/CH01.json`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. H/menu tự nguyện, không timer/ads; cấp 1 attention,cấp 2 relation,cấp 3 explicit; VI/EN keys, mute/reduced effects/150%text/keyboard/pad; không đánh solved hoặc tự kéo slot.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- H/menu tự nguyện, không timer/ads; cấp 1 attention,cấp 2 relation,cấp 3 explicit; VI/EN keys, mute/reduced effects/150%text/keyboard/pad; không đánh solved hoặc tự kéo slot.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070209/evidence.json` và `reports/tasks/T-070209/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070209` rồi `python tools/agentctl.py finish T-070209 --evidence reports/tasks/T-070209/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070210 — Tích hợp và kiểm thử các hệ puzzle trước authoring CH01
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Dùng actions thật inspect→combine→use→snapshot→restore→hint, wrong target/focus loss/unsafe Q; engine+rendered, không fake solve; evidence riêng capabilities. Sau đó T-070201 author nội dung P01..P03, S08 thêm P04.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `specs/chapters/CH01.md`
+- `stories/ST-0702.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070209`, `T-070212`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `tests/integration/puzzle_systems/`
+- `reports/S07/puzzle_systems.md`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Dùng actions thật inspect→combine→use→snapshot→restore→hint, wrong target/focus loss/unsafe Q; engine+rendered, không fake solve; evidence riêng capabilities. Sau đó T-070201 author nội dung P01..P03, S08 thêm P04.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Dùng actions thật inspect→combine→use→snapshot→restore→hint, wrong target/focus loss/unsafe Q; engine+rendered, không fake solve; evidence riêng capabilities. Sau đó T-070201 author nội dung P01..P03, S08 thêm P04.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070210/evidence.json` và `reports/tasks/T-070210/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070210` rồi `python tools/agentctl.py finish T-070210 --evidence reports/tasks/T-070210/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
 ---
 
@@ -5567,33 +5986,40 @@ Người chơi tìm bằng chứng gia đình từng tồn tại, không chỉ m
 **Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Thông tin ảnh hỗ trợ lời NPC mâu thuẫn; không lộ twist sau này.
+Author P01 đồng hồ/đèn, P02 hàng rào, P03 khung ảnh theo v3.1; không dùng đáp án cạnh khóa hoặc debug grants.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0702.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
-Dependencies đã expand: `T-070101`, `T-070102`, `T-070103`, `T-070104`
+Dependencies đã expand: `T-070101`, `T-070102`, `T-070103`, `T-070104`, `T-070210`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/evidence/H01_E01.tres`
+- `data/puzzles/P01.json`
+- `data/puzzles/P02.json`
+- `data/puzzles/P03.json`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Thay key/photo placeholder bằng manh mối có ngữ cảnh. Kết quả bắt buộc: Thông tin ảnh hỗ trợ lời NPC mâu thuẫn; không lộ twist sau này.
+2. Author P01 đồng hồ/đèn, P02 hàng rào, P03 khung ảnh theo v3.1; không dùng đáp án cạnh khóa hoặc debug grants.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Thông tin ảnh hỗ trợ lời NPC mâu thuẫn; không lộ twist sau này.
+- Author P01 đồng hồ/đèn, P02 hàng rào, P03 khung ảnh theo v3.1; không dùng đáp án cạnh khóa hoặc debug grants.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5629,6 +6055,10 @@ Người chơi thấy mục tiêu trước khi thử đổi phase.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0702.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5649,6 +6079,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Người chơi thấy mục tiêu trước khi thử đổi phase.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5672,18 +6103,22 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-070203 — Thêm hint hai tầng theo hành vi mắc kẹt
+# T-070203 — Thêm ba tầng hint tự nguyện cho CH01
 
 **Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Hint có thể bật tự nguyện; không tự giải ngay lần thử đầu.
+Ba tầng hint tự nguyện, không tự bật đáp án hoặc chặn lời giải hợp lệ.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0702.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5696,14 +6131,15 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Thêm hint hai tầng theo hành vi mắc kẹt. Kết quả bắt buộc: Hint có thể bật tự nguyện; không tự giải ngay lần thử đầu.
+2. Ba tầng hint tự nguyện, không tự bật đáp án hoặc chặn lời giải hợp lệ.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Hint có thể bật tự nguyện; không tự giải ngay lần thử đầu.
+- Ba tầng hint tự nguyện, không tự bật đáp án hoặc chặn lời giải hợp lệ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -5740,6 +6176,10 @@ Không mất chìa/ảnh; không có đường bypass ngoài khung hình.
 - `stories/ST-0702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5760,6 +6200,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không mất chìa/ảnh; không có đường bypass ngoài khung hình.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -5771,6 +6212,126 @@ Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIM
 Lưu `reports/tasks/T-070204/evidence.json` và `reports/tasks/T-070204/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
 `Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
 Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070204` rồi `python tools/agentctl.py finish T-070204 --evidence reports/tasks/T-070204/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070211 — Provenance và giả thuyết có liên kết giới hạn
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+P07/P15/P17/P19/P23 nhận draft/typed links có nguồn; không NLP và không 28 proofboards. Feedback theo nhóm mâu thuẫn, không per-slot oracle; đúng đáp án không bị hidden-read gate; save/reload draft và chapter spoiler guard.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+- `specs/ending_c_decisions.json`
+- `stories/ST-0702.md`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070209`
+Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/evidence/hypothesis_controller.gd`
+- `tests/evidence/hypothesis/`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. P07/P15/P17/P19/P23 nhận draft/typed links có nguồn; không NLP và không 28 proofboards. Feedback theo nhóm mâu thuẫn, không per-slot oracle; đúng đáp án không bị hidden-read gate; save/reload draft và chapter spoiler guard.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- P07/P15/P17/P19/P23 nhận draft/typed links có nguồn; không NLP và không 28 proofboards. Feedback theo nhóm mâu thuẫn, không per-slot oracle; đúng đáp án không bị hidden-read gate; save/reload draft và chapter spoiler guard.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070211/evidence.json` và `reports/tasks/T-070211/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070211` rồi `python tools/agentctl.py finish T-070211 --evidence reports/tasks/T-070211/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-070212 — Nhánh khảo sát có mục tiêu và preview thao tác
+
+**Wave:** S07 · **Story:** ST-0702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Theo thought_path/observation_routes từngcard; cluepins cho hỏi/so/đọc lại, không auto-solve. Hai đường quan sát hợp lệ và alternate valid actions không bị ép walkthrough; range/phase/LOS vẫn bắt buộc; branch leads và shortcut nhìn thấy được.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+- `specs/ending_c_decisions.json`
+- `stories/ST-0702.md`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-070211`
+Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `scripts/interaction/action_preview.gd`
+- `tests/integration/inquiry_routes/`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Theo thought_path/observation_routes từngcard; cluepins cho hỏi/so/đọc lại, không auto-solve. Hai đường quan sát hợp lệ và alternate valid actions không bị ép walkthrough; range/phase/LOS vẫn bắt buộc; branch leads và shortcut nhìn thấy được.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Theo thought_path/observation_routes từngcard; cluepins cho hỏi/so/đọc lại, không auto-solve. Hai đường quan sát hợp lệ và alternate valid actions không bị ép walkthrough; range/phase/LOS vẫn bắt buộc; branch leads và shortcut nhìn thấy được.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-070212/evidence.json` và `reports/tasks/T-070212/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-070212` rồi `python tools/agentctl.py finish T-070212 --evidence reports/tasks/T-070212/evidence.json`.
 
 ## Blocked / resume
 Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
@@ -5799,6 +6360,10 @@ Chụp đối chiếu cả hai phase; texture không trùng nội dung vô ích.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0703.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5819,6 +6384,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Chụp đối chiếu cả hai phase; texture không trùng nội dung vô ích.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -5854,6 +6420,10 @@ Props quan trọng có ID/collision khác trang trí.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0703.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5874,6 +6444,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Props quan trọng có ID/collision khác trang trí.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -5909,6 +6480,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0703.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5929,6 +6504,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Áo vàng đọc được ở khoảng cách scene, không giống người lớn thu nhỏ tùy tiện.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -5964,6 +6540,10 @@ Art thay greybox không thu hẹp lối đi hoặc che key.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0703.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -5984,6 +6564,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Art thay greybox không thu hẹp lối đi hoặc che key.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6023,10 +6604,14 @@ Loop không pop; file source và provenance đầy đủ.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0704.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
-Dependencies đã expand: `T-070201`, `T-070202`, `T-070203`, `T-070204`, `T-070301`, `T-070302`, `T-070303`, `T-070304`
+Dependencies đã expand: `T-070201`, `T-070202`, `T-070203`, `T-070204`, `T-070301`, `T-070302`, `T-070303`, `T-070304`, `T-070205`, `T-070206`, `T-070207`, `T-070208`, `T-070209`, `T-070210`, `T-070211`, `T-070212`
 Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_analysis. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
@@ -6043,6 +6628,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Loop không pop; file source và provenance đầy đủ.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -6078,6 +6664,10 @@ Phân tách ambience, SFX, music để mute độc lập.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0704.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6098,6 +6688,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Phân tách ambience, SFX, music để mute độc lập.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -6134,6 +6725,10 @@ Tín hiệu cần thiết còn caption; pause không tạo tiếng loop nhân đ
 - `stories/ST-0704.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6155,6 +6750,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Tín hiệu cần thiết còn caption; pause không tạo tiếng loop nhân đôi.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6190,6 +6786,10 @@ Chốt danh sách thay đổi cho enemy encounter, không kéo dài chapter tùy
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-0704.md`
 - `specs/chapters/CH01.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6210,6 +6810,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Chốt danh sách thay đổi cho enemy encounter, không kéo dài chapter tùy hứng.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -6252,6 +6853,11 @@ Chỉ một archetype; không học máy hoặc behavior tree framework lớn.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0801.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6272,6 +6878,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Chỉ một archetype; không học máy hoặc behavior tree framework lớn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6306,6 +6913,11 @@ Route hợp lệ, AI không lạc ra ngoài arena hoặc kẹt góc.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0801.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6326,6 +6938,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Route hợp lệ, AI không lạc ra ngoài arena hoặc kẹt góc.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6360,6 +6973,11 @@ Tường hợp lệ che player; vật thể world khác không làm che nhầm.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0801.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6380,6 +6998,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Tường hợp lệ che player; vật thể world khác không làm che nhầm.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6414,6 +7033,11 @@ Chase → reset về checkpoint không giữ detection cũ.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0801.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6434,6 +7058,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Chase → reset về checkpoint không giữ detection cũ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -6472,6 +7097,11 @@ Không cần crouch mechanic mới; nấp sau geometry và run đủ cho 1.0.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6492,6 +7122,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không cần crouch mechanic mới; nấp sau geometry và run đủ cho 1.0.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6526,6 +7157,11 @@ Run có tradeoff tiếng động; không cần stamina UI.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6546,6 +7182,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Run có tradeoff tiếng động; không cần stamina UI.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6580,6 +7217,11 @@ Không nhận input sau chết; player được đặt vào checkpoint an toàn.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6600,6 +7242,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không nhận input sau chết; player được đặt vào checkpoint an toàn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6634,6 +7277,11 @@ Không lưu trạng thái chết vào checkpoint; không double reload.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6654,6 +7302,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không lưu trạng thái chết vào checkpoint; không double reload.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6692,6 +7341,11 @@ Khác Minh/An về silhouette; không copy creature của game tham khảo.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6712,6 +7366,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Khác Minh/An về silhouette; không copy creature của game tham khảo.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -6746,6 +7401,11 @@ Knock có cue marker đồng bộ SFX.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6766,6 +7426,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Knock có cue marker đồng bộ SFX.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -6800,6 +7461,11 @@ Không gore, không cần cinematic mới nhiều camera.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6820,6 +7486,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Không gore, không cần cinematic mới nhiều camera.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -6854,6 +7521,11 @@ Logic detection không phụ thuộc frame animation chính xác.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6874,6 +7546,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Logic detection không phụ thuộc frame animation chính xác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -6912,6 +7585,11 @@ Có mức cảnh báo tăng dần; caption mô tả hướng khi cần.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-0804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6932,6 +7610,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Có mức cảnh báo tăng dần; caption mô tả hướng khi cần.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -6966,6 +7645,11 @@ AI không chặn cinematic đích hoặc truy đuổi trong safe hub.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-0804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -6986,6 +7670,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - AI không chặn cinematic đích hoặc truy đuổi trong safe hub.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -7020,6 +7705,11 @@ Test ở hai phase, pause, load, bị bắt giữa switch.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-0804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -7040,6 +7730,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Test ở hai phase, pause, load, bị bắt giữa switch.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -7074,6 +7765,11 @@ Thêm enemy loại mới bị loại scope; chỉ biến thể route/tốc độ
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-0804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `specs/puzzles/P04.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -7094,6 +7790,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Thêm enemy loại mới bị loại scope; chỉ biến thể route/tốc độ.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -7105,6 +7802,67 @@ Verification kinds bắt buộc: **ARTIFACT_REVIEW**. Lệnh RUN-* và prerequis
 Lưu `reports/tasks/T-080404/evidence.json` và `reports/tasks/T-080404/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
 `Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
 Sau khi evidence thực có, chạy `python tools/agentctl.py review T-080404` rồi `python tools/agentctl.py finish T-080404 --evidence reports/tasks/T-080404/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+---
+
+# T-080405 — Kiểm chứng anticipation và hai tuyến mồi P04
+
+**Wave:** S08 · **Story:** ST-0804 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+P04FAR_TABLE/LOFT_POST đều khả dụng qua cover thực; NEAR_HATCH sai có recovery. Cue trướcWarn, perception không xuyên phase; closeup safe boundary và Chasereject; mộtscarekhônglặp. Ghi rendered route/state/caption, không dùng staticmodel thaynav.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+- `specs/ending_c_decisions.json`
+- `stories/ST-0804.md`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-080404`
+Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `data/encounters/CH01.json`
+- `reports/S08/tension_routes.md`
+- `tests/encounters/`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. P04FAR_TABLE/LOFT_POST đều khả dụng qua cover thực; NEAR_HATCH sai có recovery. Cue trướcWarn, perception không xuyên phase; closeup safe boundary và Chasereject; mộtscarekhônglặp. Ghi rendered route/state/caption, không dùng staticmodel thaynav.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- P04FAR_TABLE/LOFT_POST đều khả dụng qua cover thực; NEAR_HATCH sai có recovery. Cue trướcWarn, perception không xuyên phase; closeup safe boundary và Chasereject; mộtscarekhônglặp. Ghi rendered route/state/caption, không dùng staticmodel thaynav.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-080405/evidence.json` và `reports/tasks/T-080405/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-080405` rồi `python tools/agentctl.py finish T-080405 --evidence reports/tasks/T-080405/evidence.json`.
 
 ## Blocked / resume
 Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
@@ -7139,7 +7897,7 @@ Có New/Continue/Settings/Quit, focus ban đầu xác định.
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
-Dependencies đã expand: `T-080401`, `T-080402`, `T-080403`, `T-080404`
+Dependencies đã expand: `T-080401`, `T-080402`, `T-080403`, `T-080404`, `T-080405`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
@@ -8003,7 +8761,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 # WAVE S10 — Gate vertical slice và hiệu chỉnh kế hoạch
 
-Demo chứng minh được trải nghiệm, chất lượng hình ảnh và tốc độ sản xuất thực tế.
+Nghiệm thu CH01 P01–P04 hoàn chỉnh, closeup/inventory/recipes/hints/save/stealth/art/audio và8profile trước nhân rộng.
 
 ## STORY ST-1001 — Đánh giá vertical slice bằng tám profile của agent
 
@@ -8022,6 +8780,10 @@ Tám profile riêng: first-route, optional, no-audio, large-text, pad-synthetic,
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8042,6 +8804,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Tám profile riêng: first-route, optional, no-audio, large-text, pad-synthetic, interruption, stealth-failure, replay; chỉ số ghi là agent scenario coverage, không usability nghiên cứu người thật.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -8076,6 +8839,10 @@ QA_AGENT chạy bản có render; ghi completion/hints/checkpoint retries/readab
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8096,6 +8863,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - QA_AGENT chạy bản có render; ghi completion/hints/checkpoint retries/readability; nhu cầu chơi tiếp của người thật ghi NOT_ASSESSED, không suy ra từ bot.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -8130,6 +8898,10 @@ Mỗi test có build/hash và PASS/FAIL; không coi feedback là QA thay thế.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8150,6 +8922,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Mỗi test có build/hash và PASS/FAIL; không coi feedback là QA thay thế.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -8184,6 +8957,10 @@ Tỷ lệ là ngưỡng quyết định nội bộ của mẫu nhỏ, không d�
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8204,6 +8981,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Tỷ lệ là ngưỡng quyết định nội bộ của mẫu nhỏ, không dự báo doanh thu.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -8242,6 +9020,10 @@ Phân biệt camera, readability, state bug và thiếu tutorial.
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-1002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8262,6 +9044,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Phân biệt camera, readability, state bug và thiếu tutorial.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -8296,6 +9079,10 @@ Issue được liên kết testcase cụ thể.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8317,6 +9104,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Issue được liên kết testcase cụ thể.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -8352,6 +9140,10 @@ Tuning có trước/sau; không giảm thành puzzle tự giải.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1002.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8373,6 +9165,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Tuning có trước/sau; không giảm thành puzzle tự giải.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -8407,6 +9200,10 @@ Không còn regression blocker; nêu rõ hạn chế mẫu test.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8427,6 +9224,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không còn regression blocker; nêu rõ hạn chế mẫu test.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -8465,6 +9263,10 @@ Không còn props che lối hoặc door không khớp collision.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8485,6 +9287,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Không còn props che lối hoặc door không khớp collision.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -8519,6 +9322,10 @@ Có ảnh từ build thật, thông số texture/material/light.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8539,6 +9346,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Có ảnh từ build thật, thông số texture/material/light.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -8573,6 +9381,10 @@ Thoại dạng text/caption không cần full voice-over; không clipping ở ma
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8593,6 +9405,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Thoại dạng text/caption không cần full voice-over; không clipping ở master.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -8627,6 +9440,10 @@ Ghi tool versions, seed, script, số lần sửa, thời gian/cost đo được
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8647,6 +9464,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Ghi tool versions, seed, script, số lần sửa, thời gian/cost đo được; source/license đầy đủ; kiểm tra rendered gameplay, không có vendor estimate.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -8686,6 +9504,10 @@ Dùng actual per role; không tính thêm throughput chỉ vì dùng nhiều age
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-1004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8706,6 +9528,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Dùng actual per role; không tính thêm throughput chỉ vì dùng nhiều agent.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -8740,6 +9563,10 @@ Recipe có input/output/schema/camera sample, tool cần dùng, lệnh và fallb
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8760,6 +9587,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Recipe có input/output/schema/camera sample, tool cần dùng, lệnh và fallback; một agent có thể chạy tuần tự toàn bộ không cần thuê người.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -8788,12 +9616,16 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S10 · **Story:** ST-1004 · **Mode:** ORCHESTRATOR · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lách gate.
+GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lá ch gate.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-1004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8806,14 +9638,15 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc baseline v3, ledger và evidence của dependency; không khởi động lại kế hoạch từ đầu hoặc đợi họp với con người.
-2. Đầu ra cụ thể cần hiện thực: Duyệt đường găng và kế hoạch S11–S14. Kết quả bắt buộc: GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lách gate.
+2. Đầu ra cụ thể cần hiện thực: Duyệt đường găng và kế hoạch S11–S14. Kết quả bắt buộc: GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lá ch gate.
 3. Tạo đúng artifact của task từ dữ liệu thật; unknown giữ null/NOT_TESTED; quyết định nhỏ dùng default trong hợp đồng.
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
 
 ## Acceptance criteria
-- GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lách gate.
+- GO/REWORK có chữ ký ORCHESTRATOR; có thể dùng RS02, không xóa một ending để lá ch gate.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -8848,6 +9681,10 @@ Build test và source tag truy ngược được; không xóa prototype regressi
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-1004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -8868,6 +9705,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Build test và source tag truy ngược được; không xóa prototype regression.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -9568,7 +10406,7 @@ Owner chủ động điều kiện thương mại trong khi game tiếp tục s�
 **Wave:** S11 · **Story:** ST-1104 · **Mode:** RELEASE_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh toán.
+Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh to án.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -9586,14 +10424,14 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc permissions và release runbook; phân biệt chuẩn bị local/draft với ghi lên dịch vụ ngoài hoặc public.
-2. Đầu ra cụ thể cần hiện thực: Lập checklist Steamworks onboarding và quyền owner. Kết quả bắt buộc: Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh toán.
+2. Đầu ra cụ thể cần hiện thực: Lập checklist Steamworks onboarding và quyền owner. Kết quả bắt buộc: Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh to án.
 3. Chuẩn bị manifest/copy/build đúng task; đối chiếu source platform hiện hành và trạng thái tài khoản nếu được truy cập.
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
 
 ## Acceptance criteria
-- Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh toán.
+- Chủ dự án tự hoàn tất tài khoản/phí/thông tin pháp lý; agent không tự gửi hay thanh to án.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -9801,6 +10639,10 @@ Mỗi house ID xuất hiện đúng đêm; school/tower không bị tính thành
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -9822,6 +10664,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Mỗi house ID xuất hiện đúng đêm; school/tower không bị tính thành nhà thứ tám.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -9856,6 +10699,10 @@ Quay lại ký ức chưa thu không reset các puzzle đã làm.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1201.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -9876,6 +10723,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Quay lại ký ức chưa thu không reset các puzzle đã làm.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -9911,6 +10759,10 @@ Mỗi chapter có entry/exit checkpoint và mục tiêu đọc được.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -9931,6 +10783,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Mỗi chapter có entry/exit checkpoint và mục tiêu đọc được.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -9965,6 +10818,10 @@ Không cho nhảy qua reveal bắt buộc; debug chapter select không đi vào 
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1201.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -9985,6 +10842,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không cho nhảy qua reveal bắt buộc; debug chapter select không đi vào retail.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -10023,6 +10881,10 @@ Phân loại 14 chính, 7 route fragment, 7 lore phụ; không đếm trùng.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1202.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10044,6 +10906,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Phân loại 14 chính, 7 route fragment, 7 lore phụ; không đếm trùng.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10078,6 +10941,10 @@ Có đọc lại, thứ tự có ý nghĩa, chuột/pad focus và font scale.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1202.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10098,6 +10965,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có đọc lại, thứ tự có ý nghĩa, chuột/pad focus và font scale.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10132,6 +11000,10 @@ Thu 2 lần không nhân đôi; fragment eligibility dựa stable IDs.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1202.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10152,6 +11024,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Thu 2 lần không nhân đôi; fragment eligibility dựa stable IDs.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10186,6 +11059,10 @@ Không hiện spoiler trước khi thu; có đường quay lại trước quyế
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1202.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10206,6 +11083,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không hiện spoiler trước khi thu; có đường quay lại trước quyết định cuối.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -10244,6 +11122,10 @@ Không rebind mất cả confirm/back mà không có recovery.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1203.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10264,6 +11146,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không rebind mất cả confirm/back mà không có recovery.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10298,6 +11181,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1203.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10319,6 +11206,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Đổi thiết bị đang chơi không làm mất prompt hoặc focus.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10353,6 +11241,10 @@ Font có quyền sử dụng và glyph tiếng Việt; icon không chỉ khác m
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1203.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10373,6 +11265,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Font có quyền sử dụng và glyph tiếng Việt; icon không chỉ khác màu.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -10407,6 +11300,10 @@ Keyboard-only/gamepad-only/mute/large text/reduce motion có test.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1203.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10427,6 +11324,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Keyboard-only/gamepad-only/mute/large text/reduce motion có test.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -10466,6 +11364,10 @@ Missing evidence ID/exit/checkpoint/camera zone bị báo.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10487,6 +11389,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Missing evidence ID/exit/checkpoint/camera zone bị báo.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10522,6 +11425,10 @@ World safety, AI phase, cinematic skip và save schema đều được bao phủ
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10542,6 +11449,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - World safety, AI phase, cinematic skip và save schema đều được bao phủ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -10576,6 +11484,10 @@ Chương chỉ cấu hình/data, không sửa player/world manager nếu không 
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1204.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10596,6 +11508,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Chương chỉ cấu hình/data, không sửa player/world manager nếu không có change request.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10631,6 +11544,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-1204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10651,6 +11568,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Đã có đầy đủ template, pipelines và lịch art/audio được xác nhận.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -10695,6 +11613,10 @@ Giữ nhịp 30–45 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-1301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10712,9 +11634,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 30–45 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10751,6 +11675,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-1301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10768,9 +11696,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10807,6 +11737,10 @@ H02 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-1301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10824,9 +11758,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H02 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10863,6 +11799,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-1301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10880,9 +11820,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -10904,13 +11846,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1302 — P03 — Chỗ ngồi thứ tư
+## STORY ST-1302 — P05 — Chỗ ngồi thứ tư
 
 Người chơi giải câu đố: Đối chiếu vị trí bát/ghế ở REAL với dấu người ngồi trong ERASED để mở ngăn bàn.
 
 ---
 
-# T-130201 — Đặc tả state graph và hint của P03
+# T-130201 — Đặc tả state graph và hint của P05
 
 **Wave:** S13 · **Story:** ST-1302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -10922,8 +11864,12 @@ Ghi input, state, reset, fail-safe, evidence reward. Bốn hotspot bàn ăn, tri
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P03.md`
+- `specs/puzzles/P05.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10931,19 +11877,21 @@ Dependencies đã expand: `T-130101`, `T-130102`, `T-130103`, `T-130104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P03.md`
+- `docs/puzzles/P05.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P03. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Bốn hotspot bàn ăn, trigger xác nhận theo bố cục; không cần mô phỏng vật lý bát đũa.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P05. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Bốn hotspot bàn ăn, trigger xác nhận theo bố cục; không cần mô phỏng vật lý bát đũa.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi input, state, reset, fail-safe, evidence reward. Bốn hotspot bàn ăn, trigger xác nhận theo bố cục; không cần mô phỏng vật lý bát đũa.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -10967,7 +11915,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-130202 — Implement tương tác và điều kiện P03
+# T-130202 — Implement tương tác và điều kiện P05
 
 **Wave:** S13 · **Story:** ST-1302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -10979,8 +11927,12 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P03.md`
+- `specs/puzzles/P05.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -10988,20 +11940,22 @@ Dependencies đã expand: `T-130101`, `T-130102`, `T-130103`, `T-130104`, `T-130
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P03.tres`
-- `scenes/puzzles/P03.tscn`
+- `data/puzzles/P05.tres`
+- `scenes/puzzles/P05.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P03. Kết quả bắt buộc: Đối chiếu vị trí bát/ghế ở REAL với dấu người ngồi trong ERASED để mở ngăn bàn.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P05. Kết quả bắt buộc: Đối chiếu vị trí bát/ghế ở REAL với dấu người ngồi trong ERASED để mở ngăn bàn.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đối chiếu vị trí bát/ghế ở REAL với dấu người ngồi trong ERASED để mở ngăn bàn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11025,7 +11979,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-130203 — Ghép clue/reward và feedback của P03
+# T-130203 — Ghép clue/reward và feedback của P05
 
 **Wave:** S13 · **Story:** ST-1302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -11037,8 +11991,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P03.md`
+- `specs/puzzles/P05.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11052,14 +12010,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P03. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P05. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11083,7 +12043,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-130204 — Test lời giải sai/đúng/reload P03
+# T-130204 — Test lời giải sai/đúng/reload P05
 
 **Wave:** S13 · **Story:** ST-1302 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -11095,8 +12055,12 @@ Wrong arrangement trả phản hồi và reset cục bộ, không reset chapter.
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P03.md`
+- `specs/puzzles/P05.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11104,19 +12068,21 @@ Dependencies đã expand: `T-130101`, `T-130102`, `T-130103`, `T-130104`, `T-130
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S13/P03_tests.md`
+- `reports/S13/P05_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P03. Kết quả bắt buộc: Wrong arrangement trả phản hồi và reset cục bộ, không reset chapter.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P05. Kết quả bắt buộc: Wrong arrangement trả phản hồi và reset cục bộ, không reset chapter.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Wrong arrangement trả phản hồi và reset cục bộ, không reset chapter.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -11156,6 +12122,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1303.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11173,9 +12143,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -11199,7 +12171,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-130302 — Dựng nhóm prop puzzle P03/P04
+# T-130302 — Dựng nhóm prop puzzle P05/P06
 
 **Wave:** S13 · **Story:** ST-1303 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -11210,9 +12182,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1303.md`
-- `specs/puzzles/P03.md`
-- `specs/puzzles/P04.md`
+- `specs/puzzles/P05.md`
+- `specs/puzzles/P06.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11225,14 +12201,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P03/P04. Kết quả bắt buộc: Ưu tiên Bàn bốn chỗ, tủ áo, bảng đo chiều cao và NPC bà Liên biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P05/P06. Kết quả bắt buộc: Ưu tiên Bàn bốn chỗ, tủ áo, bảng đo chiều cao và NPC bà Liên biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Bàn bốn chỗ, tủ áo, bảng đo chiều cao và NPC bà Liên biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -11268,6 +12246,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1303.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11285,9 +12267,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -11324,6 +12308,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-1303.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11341,9 +12329,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -11365,13 +12355,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1304 — P04 và ký ức tùy chọn của H02
+## STORY ST-1304 — P06 và ký ức tùy chọn của H02
 
 Người chơi hoàn tất chương qua Căn phòng không có cửa và có thể tìm thêm M02 — Nét thêu chỉ đường qua sân bà Liên.
 
 ---
 
-# T-130401 — Implement state graph và tương tác P04
+# T-130401 — Implement state graph và tương tác P06
 
 **Wave:** S13 · **Story:** ST-1304 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -11383,8 +12373,12 @@ Người chơi hoàn tất chương qua Căn phòng không có cửa và có th�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P04.md`
+- `specs/puzzles/P06.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11392,20 +12386,22 @@ Dependencies đã expand: `T-130201`, `T-130202`, `T-130203`, `T-130204`, `T-130
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P04.md`
-- `data/puzzles/P04.tres`
+- `docs/puzzles/P06.md`
+- `data/puzzles/P06.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P04. Kết quả bắt buộc: Đi qua cửa chỉ tồn tại ở ERASED, chuyển tại vùng sàn chung rồi tìm dấu chiều cao trong REAL để mở tủ kỷ vật. Tái sử dụng WorldController, khóa 2 bước và evidence inspect.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P06. Kết quả bắt buộc: Đi qua cửa chỉ tồn tại ở ERASED, chuyển tại vùng sàn chung rồi tìm dấu chiều cao trong REAL để mở tủ kỷ vật. Tái sử dụng WorldController, khóa 2 bước và evidence inspect.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đi qua cửa chỉ tồn tại ở ERASED, chuyển tại vùng sàn chung rồi tìm dấu chiều cao trong REAL để mở tủ kỷ vật. Tái sử dụng WorldController, khóa 2 bước và evidence inspect.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11442,6 +12438,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-1304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11460,9 +12460,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11499,6 +12501,10 @@ Clues của chương: H02_E03 ảnh sinh nhật; H02_E04 dấu chiều cao; H02_
 - `stories/ST-1304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11516,9 +12522,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H02_E03 ảnh sinh nhật; H02_E04 dấu chiều cao; H02_L02 váy của Hạnh; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11555,6 +12563,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11572,9 +12584,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đảo thứ tự xem ảnh/dấu chiều cao; save giữa hai phần bàn ăn; revisit sau CH3. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -11619,6 +12633,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-1401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11637,9 +12655,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -11676,6 +12696,10 @@ Hội thoại bà Liên trước/sau mở tủ; lời gọi tên Hạnh vô th�
 - `stories/ST-1401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11694,9 +12718,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Hội thoại bà Liên trước/sau mở tủ; lời gọi tên Hạnh vô thức chỉ phát một lần.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11733,6 +12759,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-1401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11750,9 +12780,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11789,6 +12821,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-1401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11806,9 +12842,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -11848,6 +12886,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1402.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11865,9 +12907,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -11903,6 +12947,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1402.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11921,9 +12969,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -11959,6 +13009,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1402.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -11976,9 +13030,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -12015,6 +13071,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-1402.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12032,9 +13092,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -12074,6 +13136,10 @@ Tiếng bát đặt xuống thừa một nhịp; ambience sân nhà, không enco
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1403.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12092,9 +13158,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Tiếng bát đặt xuống thừa một nhịp; ambience sân nhà, không encounter
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -12130,6 +13198,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1403.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12148,9 +13220,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -12187,6 +13261,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-1403.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12205,9 +13283,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -12244,6 +13324,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-1403.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12261,9 +13345,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -12304,6 +13390,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-1404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12321,9 +13411,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -12360,6 +13452,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12377,9 +13473,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -12416,6 +13514,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-1404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12433,9 +13535,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -12472,6 +13576,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-1404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12489,9 +13597,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -12515,7 +13625,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-140405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-140405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S14 · **Story:** ST-1404 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -12528,6 +13638,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-1404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12540,14 +13654,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -12588,6 +13704,10 @@ Không gọi demo là full game, không quảng cáo multiplayer/voice-over ngo�
 - `stories/ST-1405.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12605,9 +13725,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không gọi demo là full game, không quảng cáo multiplayer/voice-over ngoài scope.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -12643,6 +13765,10 @@ Có source và quyền sử dụng; kiểm tra yêu cầu kích thước store t
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1405.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12660,9 +13786,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có source và quyền sử dụng; kiểm tra yêu cầu kích thước store tại thời điểm nộp.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -12699,6 +13827,10 @@ Screenshot từ build thật, không ảnh concept giả gameplay.
 - `stories/ST-1405.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12716,9 +13848,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Screenshot từ build thật, không ảnh concept giả gameplay.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -12755,6 +13889,10 @@ Không phụ thuộc bản dịch full game; dịch tóm tắt được người
 - `stories/ST-1405.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12772,9 +13910,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không phụ thuộc bản dịch full game; dịch tóm tắt được người có năng lực đọc lại.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -12811,6 +13951,10 @@ Ghi trạng thái thực, ngày trang live nếu đã duyệt; không giả đ�
 - `stories/ST-1405.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12828,9 +13972,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P05, P06, P07, P08; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi trạng thái thực, ngày trang live nếu đã duyệt; không giả định nền tảng đã chấp thuận.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -12875,6 +14021,10 @@ Giữ nhịp 35–50 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-1501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12892,9 +14042,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 35–50 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -12931,6 +14083,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-1501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -12948,9 +14104,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -12987,6 +14145,10 @@ H03 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-1501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13004,9 +14166,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H03 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13043,6 +14207,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-1501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13060,9 +14228,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -13084,13 +14254,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1502 — P05 — Cây cầu thiếu hai nhịp
+## STORY ST-1502 — P10 — Cây cầu thiếu hai nhịp
 
 Người chơi giải câu đố: Chọn thứ tự chuyển phase tại hai bệ an toàn để đi qua các nhịp cầu tồn tại lệch nhau.
 
 ---
 
-# T-150201 — Đặc tả state graph và hint của P05
+# T-150201 — Đặc tả state graph và hint của P10
 
 **Wave:** S15 · **Story:** ST-1502 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -13102,8 +14272,12 @@ Ghi input, state, reset, fail-safe, evidence reward. Ba anchor, hai đoạn cầ
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P05.md`
+- `specs/puzzles/P10.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13111,19 +14285,21 @@ Dependencies đã expand: `T-150101`, `T-150102`, `T-150103`, `T-150104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P05.md`
+- `docs/puzzles/P10.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P05. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba anchor, hai đoạn cầu và gate switch-safety; không jump, không platform chuyển động.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P10. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba anchor, hai đoạn cầu và gate switch-safety; không jump, không platform chuyển động.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi input, state, reset, fail-safe, evidence reward. Ba anchor, hai đoạn cầu và gate switch-safety; không jump, không platform chuyển động.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13147,7 +14323,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-150202 — Implement tương tác và điều kiện P05
+# T-150202 — Implement tương tác và điều kiện P10
 
 **Wave:** S15 · **Story:** ST-1502 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -13159,8 +14335,12 @@ Chọn thứ tự chuyển phase tại hai bệ an toàn để đi qua các nh�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P05.md`
+- `specs/puzzles/P10.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13168,20 +14348,22 @@ Dependencies đã expand: `T-150101`, `T-150102`, `T-150103`, `T-150104`, `T-150
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P05.tres`
-- `scenes/puzzles/P05.tscn`
+- `data/puzzles/P10.tres`
+- `scenes/puzzles/P10.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P05. Kết quả bắt buộc: Chọn thứ tự chuyển phase tại hai bệ an toàn để đi qua các nhịp cầu tồn tại lệch nhau.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P10. Kết quả bắt buộc: Chọn thứ tự chuyển phase tại hai bệ an toàn để đi qua các nhịp cầu tồn tại lệch nhau.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chọn thứ tự chuyển phase tại hai bệ an toàn để đi qua các nhịp cầu tồn tại lệch nhau.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13205,7 +14387,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-150203 — Ghép clue/reward và feedback của P05
+# T-150203 — Ghép clue/reward và feedback của P10
 
 **Wave:** S15 · **Story:** ST-1502 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -13217,8 +14399,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P05.md`
+- `specs/puzzles/P10.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13232,14 +14418,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P05. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P10. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13263,7 +14451,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-150204 — Test lời giải sai/đúng/reload P05
+# T-150204 — Test lời giải sai/đúng/reload P10
 
 **Wave:** S15 · **Story:** ST-1502 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -13275,8 +14463,12 @@ Switch trên nhịp cầu sẽ biến mất phải bị từ chối, camera luô
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P05.md`
+- `specs/puzzles/P10.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13284,19 +14476,21 @@ Dependencies đã expand: `T-150101`, `T-150102`, `T-150103`, `T-150104`, `T-150
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S15/P05_tests.md`
+- `reports/S15/P10_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P05. Kết quả bắt buộc: Switch trên nhịp cầu sẽ biến mất phải bị từ chối, camera luôn chỉ bệ an toàn tiếp theo.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P10. Kết quả bắt buộc: Switch trên nhịp cầu sẽ biến mất phải bị từ chối, camera luôn chỉ bệ an toàn tiếp theo.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch trên nhịp cầu sẽ biến mất phải bị từ chối, camera luôn chỉ bệ an toàn tiếp theo.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -13336,6 +14530,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1503.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13353,9 +14551,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -13379,7 +14579,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-150302 — Dựng nhóm prop puzzle P05/P06
+# T-150302 — Dựng nhóm prop puzzle P10/P11
 
 **Wave:** S15 · **Story:** ST-1503 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -13390,9 +14590,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1503.md`
-- `specs/puzzles/P05.md`
-- `specs/puzzles/P06.md`
+- `specs/puzzles/P10.md`
+- `specs/puzzles/P11.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13405,14 +14609,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P05/P06. Kết quả bắt buộc: Ưu tiên Cầu gỗ modular, cọc bến, van, vạch nước và ông Phúc biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P10/P11. Kết quả bắt buộc: Ưu tiên Cầu gỗ modular, cọc bến, van, vạch nước và ông Phúc biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Cầu gỗ modular, cọc bến, van, vạch nước và ông Phúc biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -13448,6 +14654,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1503.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13465,9 +14675,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -13504,6 +14716,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-1503.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13521,9 +14737,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -13545,13 +14763,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1504 — P06 và ký ức tùy chọn của H03
+## STORY ST-1504 — P11 và ký ức tùy chọn của H03
 
 Người chơi hoàn tất chương qua Vạch nước của đêm lũ và có thể tìm thêm M03 — Sổ bến đánh dấu điểm tập kết lên đồi.
 
 ---
 
-# T-150401 — Implement state graph và tương tác P06
+# T-150401 — Implement state graph và tương tác P11
 
 **Wave:** S15 · **Story:** ST-1504 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -13563,8 +14781,12 @@ So vạch nước ở hai phase với ba mốc cửa van rồi chọn mốc đú
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P06.md`
+- `specs/puzzles/P11.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13572,20 +14794,22 @@ Dependencies đã expand: `T-150201`, `T-150202`, `T-150203`, `T-150204`, `T-150
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P06.md`
-- `data/puzzles/P06.tres`
+- `docs/puzzles/P11.md`
+- `data/puzzles/P11.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P06. Kết quả bắt buộc: So vạch nước ở hai phase với ba mốc cửa van rồi chọn mốc đúng để mở ngăn sổ bến. Van ba trạng thái cố định, evidence matching; không fluid simulation.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P11. Kết quả bắt buộc: So vạch nước ở hai phase với ba mốc cửa van rồi chọn mốc đúng để mở ngăn sổ bến. Van ba trạng thái cố định, evidence matching; không fluid simulation.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So vạch nước ở hai phase với ba mốc cửa van rồi chọn mốc đúng để mở ngăn sổ bến. Van ba trạng thái cố định, evidence matching; không fluid simulation.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13622,6 +14846,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-1504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13640,9 +14868,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13679,6 +14909,10 @@ Clues của chương: H03_E05 vết lũ; H03_E06 sổ bến; H03_L03 tên chuy�
 - `stories/ST-1504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13696,9 +14930,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H03_E05 vết lũ; H03_E06 sổ bến; H03_L03 tên chuyến đò cuối; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13735,6 +14971,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13752,9 +14992,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đứng sát cạnh cầu đổi phase; save tại bệ giữa; quay lại lấy M03 sau khi đã mở van. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -13799,6 +15041,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-1601.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13817,9 +15063,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -13856,6 +15104,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1601.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13874,9 +15126,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ông Phúc nhận ra sợi dây quen thuộc nhưng không nhớ từng cứu ai; lời thoại không giải chuông.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13913,6 +15167,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-1601.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13930,9 +15188,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -13969,6 +15229,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-1601.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -13986,9 +15250,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14028,6 +15294,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1602.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14045,9 +15315,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -14083,6 +15355,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1602.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14101,9 +15377,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -14139,6 +15417,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1602.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14156,9 +15438,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -14195,6 +15479,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-1602.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14212,9 +15500,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14254,6 +15544,10 @@ Nước xa/gỗ kẽo kẹt, nhịp im lặng khi nhìn vạch lũ; không enemy
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1603.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14272,9 +15566,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nước xa/gỗ kẽo kẹt, nhịp im lặng khi nhìn vạch lũ; không enemy mới
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -14310,6 +15606,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1603.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14328,9 +15628,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -14367,6 +15669,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-1603.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14385,9 +15691,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14424,6 +15732,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-1603.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14441,9 +15753,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14484,6 +15798,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-1604.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14501,9 +15819,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14540,6 +15860,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1604.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14557,9 +15881,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14596,6 +15922,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-1604.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14613,9 +15943,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14652,6 +15984,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-1604.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14669,9 +16005,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14695,7 +16033,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-160405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-160405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S16 · **Story:** ST-1604 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -14708,6 +16046,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-1604.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14720,14 +16062,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P09, P10, P11, P12; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14772,6 +16116,10 @@ Giữ nhịp 40–55 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-1701.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14789,9 +16137,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 40–55 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14828,6 +16178,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-1701.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14845,9 +16199,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14884,6 +16240,10 @@ H04 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-1701.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14901,9 +16261,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H04 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -14940,6 +16302,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-1701.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -14957,9 +16323,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -14981,13 +16349,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1702 — P07 — Tiết học cuối cùng
+## STORY ST-1702 — P14 — Tiết học cuối cùng
 
 Người chơi giải câu đố: Ghép thời khóa biểu và đồng hồ dừng ở hai phase để xác định thứ tự mở ba tủ lớp.
 
 ---
 
-# T-170201 — Đặc tả state graph và hint của P07
+# T-170201 — Đặc tả state graph và hint của P14
 
 **Wave:** S17 · **Story:** ST-1702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -14999,8 +16367,12 @@ Ghi input, state, reset, fail-safe, evidence reward. Ba slot/symbol và conditio
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P07.md`
+- `specs/puzzles/P14.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15008,19 +16380,21 @@ Dependencies đã expand: `T-170101`, `T-170102`, `T-170103`, `T-170104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P07.md`
+- `docs/puzzles/P14.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P07. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba slot/symbol và condition resource; cue chuông luôn có bản tương đương bằng hình/text.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P14. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba slot/symbol và condition resource; cue chuông luôn có bản tương đương bằng hình/text.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi input, state, reset, fail-safe, evidence reward. Ba slot/symbol và condition resource; cue chuông luôn có bản tương đương bằng hình/text.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15044,7 +16418,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-170202 — Implement tương tác và điều kiện P07
+# T-170202 — Implement tương tác và điều kiện P14
 
 **Wave:** S17 · **Story:** ST-1702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -15056,8 +16430,12 @@ Ghép thời khóa biểu và đồng hồ dừng ở hai phase để xác đị
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P07.md`
+- `specs/puzzles/P14.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15065,20 +16443,22 @@ Dependencies đã expand: `T-170101`, `T-170102`, `T-170103`, `T-170104`, `T-170
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P07.tres`
-- `scenes/puzzles/P07.tscn`
+- `data/puzzles/P14.tres`
+- `scenes/puzzles/P14.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P07. Kết quả bắt buộc: Ghép thời khóa biểu và đồng hồ dừng ở hai phase để xác định thứ tự mở ba tủ lớp.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P14. Kết quả bắt buộc: Ghép thời khóa biểu và đồng hồ dừng ở hai phase để xác định thứ tự mở ba tủ lớp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghép thời khóa biểu và đồng hồ dừng ở hai phase để xác định thứ tự mở ba tủ lớp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15102,7 +16482,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-170203 — Ghép clue/reward và feedback của P07
+# T-170203 — Ghép clue/reward và feedback của P14
 
 **Wave:** S17 · **Story:** ST-1702 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -15114,8 +16494,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P07.md`
+- `specs/puzzles/P14.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15129,14 +16513,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P07. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P14. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15160,7 +16546,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-170204 — Test lời giải sai/đúng/reload P07
+# T-170204 — Test lời giải sai/đúng/reload P14
 
 **Wave:** S17 · **Story:** ST-1702 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -15172,8 +16558,12 @@ Không bắt người khiếm thính nghe cao độ; đáp án suy ra từ dữ 
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P07.md`
+- `specs/puzzles/P14.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15181,19 +16571,21 @@ Dependencies đã expand: `T-170101`, `T-170102`, `T-170103`, `T-170104`, `T-170
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S17/P07_tests.md`
+- `reports/S17/P14_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P07. Kết quả bắt buộc: Không bắt người khiếm thính nghe cao độ; đáp án suy ra từ dữ liệu trong trường.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P14. Kết quả bắt buộc: Không bắt người khiếm thính nghe cao độ; đáp án suy ra từ dữ liệu trong trường.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không bắt người khiếm thính nghe cao độ; đáp án suy ra từ dữ liệu trong trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -15233,6 +16625,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1703.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15250,9 +16646,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -15276,7 +16674,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-170302 — Dựng nhóm prop puzzle P07/P08
+# T-170302 — Dựng nhóm prop puzzle P14/P15
 
 **Wave:** S17 · **Story:** ST-1703 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -15287,9 +16685,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1703.md`
-- `specs/puzzles/P07.md`
-- `specs/puzzles/P08.md`
+- `specs/puzzles/P14.md`
+- `specs/puzzles/P15.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15302,14 +16704,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P07/P08. Kết quả bắt buộc: Ưu tiên Bảng lớp, tủ hồ sơ, vết bùn, giấy tờ dễ đọc và bác Tư biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P14/P15. Kết quả bắt buộc: Ưu tiên Bảng lớp, tủ hồ sơ, vết bùn, giấy tờ dễ đọc và bác Tư biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Bảng lớp, tủ hồ sơ, vết bùn, giấy tờ dễ đọc và bác Tư biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -15345,6 +16749,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1703.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15362,9 +16770,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -15401,6 +16811,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-1703.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15418,9 +16832,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -15442,13 +16858,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1704 — P08 và ký ức tùy chọn của H04
+## STORY ST-1704 — P15 và ký ức tùy chọn của H04
 
 Người chơi hoàn tất chương qua Hồ sơ dưới vết bùn và có thể tìm thêm M04 — Sơ đồ cửa sau trường hướng lên đồi.
 
 ---
 
-# T-170401 — Implement state graph và tương tác P08
+# T-170401 — Implement state graph và tương tác P15
 
 **Wave:** S17 · **Story:** ST-1704 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -15460,8 +16876,12 @@ Khôi phục thứ tự ba trang hồ sơ lũ rồi mở hòm lưu trữ trong l
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1704.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P08.md`
+- `specs/puzzles/P15.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15469,20 +16889,22 @@ Dependencies đã expand: `T-170201`, `T-170202`, `T-170203`, `T-170204`, `T-170
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P08.md`
-- `data/puzzles/P08.tres`
+- `docs/puzzles/P15.md`
+- `data/puzzles/P15.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P08. Kết quả bắt buộc: Khôi phục thứ tự ba trang hồ sơ lũ rồi mở hòm lưu trữ trong lúc tránh một tuyến tuần tra. Evidence-slot component và Knocker FSM đã có; bổ sung route/cover, không thêm loại AI.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P15. Kết quả bắt buộc: Khôi phục thứ tự ba trang hồ sơ lũ rồi mở hòm lưu trữ trong lúc tránh một tuyến tuần tra. Evidence-slot component và Knocker FSM đã có; bổ sung route/cover, không thêm loại AI.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khôi phục thứ tự ba trang hồ sơ lũ rồi mở hòm lưu trữ trong lúc tránh một tuyến tuần tra. Evidence-slot component và Knocker FSM đã có; bổ sung route/cover, không thêm loại AI.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15519,6 +16941,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-1704.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15537,9 +16963,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15576,6 +17004,10 @@ Clues của chương: H04_E07 lịch lớp; H04_E08 biên bản lũ; H04_L04 dan
 - `stories/ST-1704.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15593,9 +17025,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H04_E07 lịch lớp; H04_E08 biên bản lũ; H04_L04 danh sách học sinh; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15632,6 +17066,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1704.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15649,9 +17087,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đọc hồ sơ rồi bị bắt; load khi AI đang Investigate; switch làm đổi tuyến đi phải reset nav an toàn. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -15696,6 +17136,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-1801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15714,9 +17158,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -15753,6 +17199,10 @@ Bác Tư phủ nhận có trường ở cuối đường; nhật ký lớp chứ
 - `stories/ST-1801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15771,9 +17221,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Bác Tư phủ nhận có trường ở cuối đường; nhật ký lớp chứa một khoảng trống ở dòng tên An.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15810,6 +17262,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-1801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15827,9 +17283,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15866,6 +17324,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-1801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15883,9 +17345,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -15925,6 +17389,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1802.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15942,9 +17410,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -15980,6 +17450,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1802.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -15998,9 +17472,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -16036,6 +17512,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1802.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16053,9 +17533,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -16092,6 +17574,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-1802.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16109,9 +17595,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16151,6 +17639,10 @@ Chuông lớp méo, bước chân hành lang, cue knock phù hợp góc camera v
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1803.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16169,9 +17661,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chuông lớp méo, bước chân hành lang, cue knock phù hợp góc camera và captions
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -16207,6 +17701,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1803.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16225,9 +17723,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -16264,6 +17764,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-1803.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16282,9 +17786,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16321,6 +17827,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-1803.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16338,9 +17848,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16381,6 +17893,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-1804.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16398,9 +17914,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16437,6 +17955,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-1804.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16454,9 +17976,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16493,6 +18017,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-1804.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16510,9 +18038,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16549,6 +18079,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-1804.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16566,9 +18100,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16592,7 +18128,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-180405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-180405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S18 · **Story:** ST-1804 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -16605,6 +18141,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-1804.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH04.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16617,14 +18157,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P13, P14, P15, P16; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16669,6 +18211,10 @@ Giữ nhịp 30–45 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-1901.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16686,9 +18232,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 30–45 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16725,6 +18273,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-1901.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16742,9 +18294,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -16781,6 +18335,10 @@ H05 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-1901.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16798,9 +18356,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H05 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16837,6 +18397,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-1901.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16854,9 +18418,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -16878,28 +18444,32 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1902 — P09 — Ba ngày trên một lá thư
+## STORY ST-1902 — P17 — Ba ngày trên một lá thư
 
 Người chơi giải câu đố: Ghép ba mốc thư/nhật ký theo dấu môi trường để phân biệt trận lũ, lần giữ chuông và lần mẹ chuẩn bị đèn.
 
 ---
 
-# T-190201 — Đặc tả state graph và hint của P09
+# T-190201 — Đặc tả state graph và hint của P17
 
 **Wave:** S19 · **Story:** ST-1902 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P07/P08.
+Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P14/P15.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1902.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P07.md`
-- `specs/puzzles/P08.md`
-- `specs/puzzles/P09.md`
+- `specs/puzzles/P14.md`
+- `specs/puzzles/P15.md`
+- `specs/puzzles/P17.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16907,19 +18477,21 @@ Dependencies đã expand: `T-190101`, `T-190102`, `T-190103`, `T-190104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P09.md`
+- `docs/puzzles/P17.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P09. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P07/P08.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P17. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P14/P15.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
-- Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P07/P08.
+- Ghi input, state, reset, fail-safe, evidence reward. Ba evidence slots với feedback theo mốc; dùng component P14/P15.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -16943,7 +18515,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-190202 — Implement tương tác và điều kiện P09
+# T-190202 — Implement tương tác và điều kiện P17
 
 **Wave:** S19 · **Story:** ST-1902 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -16955,8 +18527,12 @@ Ghép ba mốc thư/nhật ký theo dấu môi trường để phân biệt tr�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1902.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P09.md`
+- `specs/puzzles/P17.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -16964,20 +18540,22 @@ Dependencies đã expand: `T-190101`, `T-190102`, `T-190103`, `T-190104`, `T-190
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P09.tres`
-- `scenes/puzzles/P09.tscn`
+- `data/puzzles/P17.tres`
+- `scenes/puzzles/P17.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P09. Kết quả bắt buộc: Ghép ba mốc thư/nhật ký theo dấu môi trường để phân biệt trận lũ, lần giữ chuông và lần mẹ chuẩn bị đèn.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P17. Kết quả bắt buộc: Ghép ba mốc thư/nhật ký theo dấu môi trường để phân biệt trận lũ, lần giữ chuông và lần mẹ chuẩn bị đèn.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghép ba mốc thư/nhật ký theo dấu môi trường để phân biệt trận lũ, lần giữ chuông và lần mẹ chuẩn bị đèn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17001,7 +18579,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-190203 — Ghép clue/reward và feedback của P09
+# T-190203 — Ghép clue/reward và feedback của P17
 
 **Wave:** S19 · **Story:** ST-1902 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -17013,8 +18591,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1902.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P09.md`
+- `specs/puzzles/P17.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17028,14 +18610,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P09. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P17. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17059,7 +18643,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-190204 — Test lời giải sai/đúng/reload P09
+# T-190204 — Test lời giải sai/đúng/reload P17
 
 **Wave:** S19 · **Story:** ST-1902 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -17071,8 +18655,12 @@ Không có hai lời giải hợp lệ do ngày mơ hồ; mọi ngày tháng kh�
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-1902.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P09.md`
+- `specs/puzzles/P17.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17080,19 +18668,21 @@ Dependencies đã expand: `T-190101`, `T-190102`, `T-190103`, `T-190104`, `T-190
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S19/P09_tests.md`
+- `reports/S19/P17_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P09. Kết quả bắt buộc: Không có hai lời giải hợp lệ do ngày mơ hồ; mọi ngày tháng khớp canon S01.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P17. Kết quả bắt buộc: Không có hai lời giải hợp lệ do ngày mơ hồ; mọi ngày tháng khớp canon S01.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không có hai lời giải hợp lệ do ngày mơ hồ; mọi ngày tháng khớp canon S01.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -17132,6 +18722,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1903.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17149,9 +18743,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17175,7 +18771,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-190302 — Dựng nhóm prop puzzle P09/P10
+# T-190302 — Dựng nhóm prop puzzle P17/P18
 
 **Wave:** S19 · **Story:** ST-1903 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -17186,9 +18782,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1903.md`
-- `specs/puzzles/P09.md`
-- `specs/puzzles/P10.md`
+- `specs/puzzles/P17.md`
+- `specs/puzzles/P18.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17201,14 +18801,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P09/P10. Kết quả bắt buộc: Ưu tiên Nhật ký, cửa chớp, đèn cũ, chân dung mẹ 2D và bà Hảo biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P17/P18. Kết quả bắt buộc: Ưu tiên Nhật ký, cửa chớp, đèn cũ, chân dung mẹ 2D và bà Hảo biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Nhật ký, cửa chớp, đèn cũ, chân dung mẹ 2D và bà Hảo biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17244,6 +18846,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-1903.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17261,9 +18867,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17300,6 +18908,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-1903.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17317,9 +18929,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -17341,13 +18955,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-1904 — P10 và ký ức tùy chọn của H05
+## STORY ST-1904 — P18 và ký ức tùy chọn của H05
 
 Người chơi hoàn tất chương qua Ánh đèn qua hai căn phòng và có thể tìm thêm M05 — Ghi chú mẹ về đoạn đường vượt sân sau.
 
 ---
 
-# T-190401 — Implement state graph và tương tác P10
+# T-190401 — Implement state graph và tương tác P18
 
 **Wave:** S19 · **Story:** ST-1904 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -17359,8 +18973,12 @@ Mở lần lượt hai cửa chớp ở đúng phase để lộ trang nhật ký
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-1904.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P10.md`
+- `specs/puzzles/P18.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17368,20 +18986,22 @@ Dependencies đã expand: `T-190201`, `T-190202`, `T-190203`, `T-190204`, `T-190
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P10.md`
-- `data/puzzles/P10.tres`
+- `docs/puzzles/P18.md`
+- `data/puzzles/P18.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P10. Kết quả bắt buộc: Mở lần lượt hai cửa chớp ở đúng phase để lộ trang nhật ký sau một vách vốn bị che. Boolean shutters và reveal trigger; dùng ánh sáng dàn dựng, không raytraced optical simulation.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P18. Kết quả bắt buộc: Mở lần lượt hai cửa chớp ở đúng phase để lộ trang nhật ký sau một vách vốn bị che. Boolean shutters và reveal trigger; dùng ánh sáng dàn dựng, không raytraced optical simulation.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mở lần lượt hai cửa chớp ở đúng phase để lộ trang nhật ký sau một vách vốn bị che. Boolean shutters và reveal trigger; dùng ánh sáng dàn dựng, không raytraced optical simulation.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17418,6 +19038,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-1904.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17436,9 +19060,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17475,6 +19101,10 @@ Clues của chương: H05_E09 thư mẹ; H05_E10 nhật ký đèn; H05_L05 vật
 - `stories/ST-1904.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17492,9 +19122,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H05_E09 thư mẹ; H05_E10 nhật ký đèn; H05_L05 vật nhỏ mẹ giữ; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17531,6 +19163,10 @@ Thử thư theo mọi thứ tự; tắt visual effects vẫn thấy clue; load k
 - `stories/ST-1904.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17548,9 +19184,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Thử thư theo mọi thứ tự; tắt visual effects vẫn thấy clue; load khi cả hai cửa chớp mở. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -17595,6 +19233,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-2001.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17613,9 +19255,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -17652,6 +19296,10 @@ Bà Hảo đưa vật mẹ gửi; Minh bắt đầu nhận ra nỗi sợ của m
 - `stories/ST-2001.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17670,9 +19318,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Bà Hảo đưa vật mẹ gửi; Minh bắt đầu nhận ra nỗi sợ của mẹ chứ chưa biết mặt người neo.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17709,6 +19359,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-2001.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17726,9 +19380,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17765,6 +19421,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-2001.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17782,9 +19442,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -17824,6 +19486,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2002.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17841,9 +19507,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17879,6 +19547,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2002.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17897,9 +19569,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17935,6 +19609,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2002.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -17952,9 +19630,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -17991,6 +19671,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-2002.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18008,9 +19692,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18050,6 +19736,10 @@ Chương nghỉ nhịp: gió nhẹ, giấy, motif mẹ; không chase hoặc jump
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2003.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18068,9 +19758,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chương nghỉ nhịp: gió nhẹ, giấy, motif mẹ; không chase hoặc jumpscare chèn thêm
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -18106,6 +19798,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2003.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18124,9 +19820,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -18163,6 +19861,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-2003.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18181,9 +19883,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18220,6 +19924,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-2003.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18237,9 +19945,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -18280,6 +19990,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-2004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18297,9 +20011,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -18336,6 +20052,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-2004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18353,9 +20073,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -18392,6 +20114,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-2004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18409,9 +20135,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -18448,6 +20176,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-2004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18465,9 +20197,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -18491,7 +20225,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-200405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-200405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S20 · **Story:** ST-2004 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -18504,6 +20238,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-2004.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18516,14 +20254,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18564,6 +20304,10 @@ Tập trung switch/puzzle/không khí, không lộ danh tính An.
 - `stories/ST-2005.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18581,9 +20325,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Tập trung switch/puzzle/không khí, không lộ danh tính An.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -18619,6 +20365,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2005.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18636,9 +20386,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Âm thanh/nhạc được phép dùng cho marketing, không chỉ trong game.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -18675,6 +20427,10 @@ Thời lượng/gamepad/ngôn ngữ chỉ ghi phạm vi đã được phê duy�
 - `stories/ST-2005.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18692,9 +20448,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.
 6. Lưu build hash, lệnh/sự kiện thực, redacted evidence và rollback; chưa public giữ READY_FOR_RELEASE thay vì PUBLISHED.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Thời lượng/gamepad/ngôn ngữ chỉ ghi phạm vi đã được phê duyệt.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -18731,6 +20489,10 @@ Owner approve trước publish; feedback được phân loại không tự tạo
 - `stories/ST-2005.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18748,9 +20510,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Owner approve trước publish; feedback được phân loại không tự tạo scope.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -18787,6 +20551,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-2005.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH05.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18804,9 +20572,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P17, P18, P19, P20; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Để trống khi chưa có dữ liệu; không thay bằng số giả.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18851,6 +20621,10 @@ Giữ nhịp 35–50 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-2101.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18868,9 +20642,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 35–50 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18907,6 +20683,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-2101.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18924,9 +20704,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -18963,6 +20745,10 @@ H06 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-2101.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -18980,9 +20766,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H06 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19019,6 +20807,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-2101.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19036,9 +20828,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -19060,13 +20854,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-2102 — P11 — Lối đi dưới ba hồi chuông
+## STORY ST-2102 — P22 — Lối đi dưới ba hồi chuông
 
 Người chơi giải câu đố: Chốt ba đòn đối trọng theo dấu ký ức để mở lối quanh tháp qua hai phase.
 
 ---
 
-# T-210201 — Đặc tả state graph và hint của P11
+# T-210201 — Đặc tả state graph và hint của P22
 
 **Wave:** S21 · **Story:** ST-2102 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -19078,8 +20872,12 @@ Ghi input, state, reset, fail-safe, evidence reward. Lever ba trạng thái và 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2102.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P11.md`
+- `specs/puzzles/P22.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19087,19 +20885,21 @@ Dependencies đã expand: `T-210101`, `T-210102`, `T-210103`, `T-210104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P11.md`
+- `docs/puzzles/P22.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P11. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Lever ba trạng thái và route gating; chuyển động trang trí không tạo physics puzzle mới.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P22. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Lever ba trạng thái và route gating; chuyển động trang trí không tạo physics puzzle mới.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi input, state, reset, fail-safe, evidence reward. Lever ba trạng thái và route gating; chuyển động trang trí không tạo physics puzzle mới.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19123,7 +20923,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-210202 — Implement tương tác và điều kiện P11
+# T-210202 — Implement tương tác và điều kiện P22
 
 **Wave:** S21 · **Story:** ST-2102 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -19135,8 +20935,12 @@ Chốt ba đòn đối trọng theo dấu ký ức để mở lối quanh tháp 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2102.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P11.md`
+- `specs/puzzles/P22.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19144,20 +20948,22 @@ Dependencies đã expand: `T-210101`, `T-210102`, `T-210103`, `T-210104`, `T-210
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P11.tres`
-- `scenes/puzzles/P11.tscn`
+- `data/puzzles/P22.tres`
+- `scenes/puzzles/P22.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P11. Kết quả bắt buộc: Chốt ba đòn đối trọng theo dấu ký ức để mở lối quanh tháp qua hai phase.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P22. Kết quả bắt buộc: Chốt ba đòn đối trọng theo dấu ký ức để mở lối quanh tháp qua hai phase.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chốt ba đòn đối trọng theo dấu ký ức để mở lối quanh tháp qua hai phase.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19181,7 +20987,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-210203 — Ghép clue/reward và feedback của P11
+# T-210203 — Ghép clue/reward và feedback của P22
 
 **Wave:** S21 · **Story:** ST-2102 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -19193,8 +20999,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2102.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P11.md`
+- `specs/puzzles/P22.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19208,14 +21018,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P11. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P22. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19239,7 +21051,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-210204 — Test lời giải sai/đúng/reload P11
+# T-210204 — Test lời giải sai/đúng/reload P22
 
 **Wave:** S21 · **Story:** ST-2102 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -19251,8 +21063,12 @@ Không yêu cầu thao tác đúng nhịp âm thanh; lever có feedback hình/te
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2102.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P11.md`
+- `specs/puzzles/P22.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19260,19 +21076,21 @@ Dependencies đã expand: `T-210101`, `T-210102`, `T-210103`, `T-210104`, `T-210
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S21/P11_tests.md`
+- `reports/S21/P22_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P11. Kết quả bắt buộc: Không yêu cầu thao tác đúng nhịp âm thanh; lever có feedback hình/text.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P22. Kết quả bắt buộc: Không yêu cầu thao tác đúng nhịp âm thanh; lever có feedback hình/text.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không yêu cầu thao tác đúng nhịp âm thanh; lever có feedback hình/text.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -19312,6 +21130,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2103.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19329,9 +21151,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -19355,7 +21179,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-210302 — Dựng nhóm prop puzzle P11/P12
+# T-210302 — Dựng nhóm prop puzzle P22/P23
 
 **Wave:** S21 · **Story:** ST-2103 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -19366,9 +21190,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2103.md`
-- `specs/puzzles/P11.md`
-- `specs/puzzles/P12.md`
+- `specs/puzzles/P22.md`
+- `specs/puzzles/P23.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19381,14 +21209,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P11/P12. Kết quả bắt buộc: Ưu tiên Chuông, đối trọng, cầu tháp, model An hoàn thiện và người giữ chuông biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P22/P23. Kết quả bắt buộc: Ưu tiên Chuông, đối trọng, cầu tháp, model An hoàn thiện và người giữ chuông biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Chuông, đối trọng, cầu tháp, model An hoàn thiện và người giữ chuông biến thể rig chung; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -19424,6 +21254,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2103.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19441,9 +21275,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -19480,6 +21316,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-2103.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19497,9 +21337,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -19521,13 +21363,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-2104 — P12 và ký ức tùy chọn của H06
+## STORY ST-2104 — P23 và ký ức tùy chọn của H06
 
 Người chơi hoàn tất chương qua Người trong bức ảnh và có thể tìm thêm M06 — Bản ghi đối trọng chỉ tuyến thoát từ tháp.
 
 ---
 
-# T-210401 — Implement state graph và tương tác P12
+# T-210401 — Implement state graph và tương tác P23
 
 **Wave:** S21 · **Story:** ST-2104 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -19539,8 +21381,12 @@ Người chơi hoàn tất chương qua Người trong bức ảnh và có thể
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2104.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P12.md`
+- `specs/puzzles/P23.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19548,20 +21394,22 @@ Dependencies đã expand: `T-210201`, `T-210202`, `T-210203`, `T-210204`, `T-210
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P12.md`
-- `data/puzzles/P12.tres`
+- `docs/puzzles/P23.md`
+- `data/puzzles/P23.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P12. Kết quả bắt buộc: Đối chiếu ảnh gia đình, tên bị bỏ trống và nhật ký để nhận dạng An rồi mở cảnh đối diện. Ba evidence references đều thuộc critical path; identity flag mở cinematic.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P23. Kết quả bắt buộc: Đối chiếu ảnh gia đình, tên bị bỏ trống và nhật ký để nhận dạng An rồi mở cảnh đối diện. Ba evidence references đều thuộc critical path; identity flag mở cinematic.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Đối chiếu ảnh gia đình, tên bị bỏ trống và nhật ký để nhận dạng An rồi mở cảnh đối diện. Ba evidence references đều thuộc critical path; identity flag mở cinematic.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19598,6 +21446,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-2104.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19616,9 +21468,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19655,6 +21509,10 @@ Clues của chương: H06_E11 bản ghi chuông; H06_E12 ảnh Minh và An; H06_
 - `stories/ST-2104.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19672,9 +21530,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H06_E11 bản ghi chuông; H06_E12 ảnh Minh và An; H06_L06 món đồ An giữ; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19711,6 +21571,10 @@ Bị bắt sát cinematic reveal; skip/reload cảnh An ở 4 mốc; revisit H06
 - `stories/ST-2104.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19728,9 +21592,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Bị bắt sát cinematic reveal; skip/reload cảnh An ở 4 mốc; revisit H06 không phát lại reveal sai. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -19775,6 +21641,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-2201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19793,9 +21663,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -19832,6 +21704,10 @@ An có cuộc đối thoại ngắn rõ cảm xúc; skip giữ reveal_an=true, k
 - `stories/ST-2201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19850,9 +21726,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - An có cuộc đối thoại ngắn rõ cảm xúc; skip giữ reveal_an=true, không xóa bằng chứng.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19889,6 +21767,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-2201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19906,9 +21788,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -19945,6 +21829,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-2201.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -19962,9 +21850,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20004,6 +21894,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2202.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20021,9 +21915,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -20059,6 +21955,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2202.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20077,9 +21977,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -20115,6 +22017,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2202.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20132,9 +22038,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -20171,6 +22079,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-2202.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20188,9 +22100,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20230,6 +22144,10 @@ Motif An và chuông tách stems; encounter bảo vệ tháp dùng cùng Knocker
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2203.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20248,9 +22166,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Motif An và chuông tách stems; encounter bảo vệ tháp dùng cùng Knocker, không boss combat
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -20286,6 +22206,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2203.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20304,9 +22228,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -20343,6 +22269,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-2203.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20361,9 +22291,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20400,6 +22332,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-2203.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20417,9 +22353,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20460,6 +22398,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-2204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20477,9 +22419,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20516,6 +22460,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-2204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20533,9 +22481,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20572,6 +22522,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-2204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20589,9 +22543,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20628,6 +22584,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-2204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20645,9 +22605,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20671,7 +22633,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-220405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-220405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S22 · **Story:** ST-2204 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -20684,6 +22646,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-2204.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH06.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20696,14 +22662,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P21, P22, P23, P24; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20748,6 +22716,10 @@ Giữ nhịp 45–60 phút là giả thuyết; critical path và nhánh ký ức
 - `stories/ST-2301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20765,9 +22737,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ nhịp 45–60 phút là giả thuyết; critical path và nhánh ký ức phân biệt rõ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20804,6 +22778,10 @@ Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; came
 - `stories/ST-2301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20821,9 +22799,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Chơi từ entry đến exit theo tuyến thử, biên Z không cho bypass; camera giữ mục tiêu trong frame.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20860,6 +22840,10 @@ H07 biến mất đúng progression; địa điểm phụ không bị đếm th�
 - `stories/ST-2301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20877,9 +22861,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - H07 biến mất đúng progression; địa điểm phụ không bị đếm thành nhà khác.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -20916,6 +22902,10 @@ Không sinh hai player, không cửa bị reset khi chuyển zone.
 - `stories/ST-2301.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20933,9 +22923,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không sinh hai player, không cửa bị reset khi chuyển zone.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -20957,13 +22949,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-2302 — P13 — Tuyến đường của bảy ký ức
+## STORY ST-2302 — P27 — Tuyến đường của bảy ký ức
 
 Người chơi giải câu đố: Nối các điểm neo đã biết để đi vào nhà quá khứ; bộ route fragments mở thêm lời giải sơ tán.
 
 ---
 
-# T-230201 — Đặc tả state graph và hint của P13
+# T-230201 — Đặc tả state graph và hint của P27
 
 **Wave:** S23 · **Story:** ST-2302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -20975,8 +22967,12 @@ Ghi input, state, reset, fail-safe, evidence reward. Graph cố định bảy no
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P13.md`
+- `specs/puzzles/P27.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -20984,19 +22980,21 @@ Dependencies đã expand: `T-230101`, `T-230102`, `T-230103`, `T-230104`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P13.md`
+- `docs/puzzles/P27.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P13. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Graph cố định bảy node; đường chính luôn có, nhánh bí mật dùng M01..M07.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả state graph và hint của P27. Kết quả bắt buộc: Ghi input, state, reset, fail-safe, evidence reward. Graph cố định bảy node; đường chính luôn có, nhánh bí mật dùng M01..M07.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ghi input, state, reset, fail-safe, evidence reward. Graph cố định bảy node; đường chính luôn có, nhánh bí mật dùng M01..M07.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21020,7 +23018,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-230202 — Implement tương tác và điều kiện P13
+# T-230202 — Implement tương tác và điều kiện P27
 
 **Wave:** S23 · **Story:** ST-2302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -21032,8 +23030,12 @@ Nối các điểm neo đã biết để đi vào nhà quá khứ; bộ route fr
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P13.md`
+- `specs/puzzles/P27.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21041,20 +23043,22 @@ Dependencies đã expand: `T-230101`, `T-230102`, `T-230103`, `T-230104`, `T-230
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `data/puzzles/P13.tres`
-- `scenes/puzzles/P13.tscn`
+- `data/puzzles/P27.tres`
+- `scenes/puzzles/P27.tscn`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P13. Kết quả bắt buộc: Nối các điểm neo đã biết để đi vào nhà quá khứ; bộ route fragments mở thêm lời giải sơ tán.
+2. Đầu ra cụ thể cần hiện thực: Implement tương tác và điều kiện P27. Kết quả bắt buộc: Nối các điểm neo đã biết để đi vào nhà quá khứ; bộ route fragments mở thêm lời giải sơ tán.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nối các điểm neo đã biết để đi vào nhà quá khứ; bộ route fragments mở thêm lời giải sơ tán.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21078,7 +23082,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-230203 — Ghép clue/reward và feedback của P13
+# T-230203 — Ghép clue/reward và feedback của P27
 
 **Wave:** S23 · **Story:** ST-2302 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -21090,8 +23094,12 @@ Reward idempotent, clue được journal lưu; feedback đúng phase và không 
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P13.md`
+- `specs/puzzles/P27.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21105,14 +23113,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P13. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+2. Đầu ra cụ thể cần hiện thực: Ghép clue/reward và feedback của P27. Kết quả bắt buộc: Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reward idempotent, clue được journal lưu; feedback đúng phase và không phụ thuộc màu duy nhất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21136,7 +23146,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-230204 — Test lời giải sai/đúng/reload P13
+# T-230204 — Test lời giải sai/đúng/reload P27
 
 **Wave:** S23 · **Story:** ST-2302 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -21148,8 +23158,12 @@ Không đủ fragments vẫn tiếp cận được hai ending thường; journal
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2302.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P13.md`
+- `specs/puzzles/P27.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21157,19 +23171,21 @@ Dependencies đã expand: `T-230101`, `T-230102`, `T-230103`, `T-230104`, `T-230
 Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `reports/S23/P13_tests.md`
+- `reports/S23/P27_tests.md`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P13. Kết quả bắt buộc: Không đủ fragments vẫn tiếp cận được hai ending thường; journal nói rõ điều chưa đủ.
+2. Đầu ra cụ thể cần hiện thực: Test lời giải sai/đúng/reload P27. Kết quả bắt buộc: Không đủ fragments vẫn tiếp cận được hai ending thường; journal nói rõ điều chưa đủ.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không đủ fragments vẫn tiếp cận được hai ending thường; journal nói rõ điều chưa đủ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -21209,6 +23225,10 @@ Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để h�
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2303.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21226,9 +23246,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Khớp cửa, thang/bệ, anchor; không sửa kích thước gameplay để hợp model đẹp hơn.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -21252,7 +23274,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-230302 — Dựng nhóm prop puzzle P13/P14
+# T-230302 — Dựng nhóm prop puzzle P27/P28
 
 **Wave:** S23 · **Story:** ST-2303 · **Mode:** ART_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -21263,9 +23285,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2303.md`
-- `specs/puzzles/P13.md`
-- `specs/puzzles/P14.md`
+- `specs/puzzles/P27.md`
+- `specs/puzzles/P28.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21278,14 +23304,16 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Implementation steps
 1. Đọc art bible và target camera/phase/chapter; chốt asset IDs và danh sách mesh/material/animation cần tạo.
-2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P13/P14. Kết quả bắt buộc: Ưu tiên Nhà Minh variant quá khứ, mặt nước dàn dựng, ba cụm sơ tán và nền đồi bình minh; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+2. Đầu ra cụ thể cần hiện thực: Dựng nhóm prop puzzle P27/P28. Kết quả bắt buộc: Ưu tiên Nhà Minh variant quá khứ, mặt nước dàn dựng, ba cụm sơ tán và nền đồi bình minh; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
 3. Tạo model/source bằng Blender Python hoặc pipeline asset thực có sẵn; dùng seed và config để tái tạo; không chỉ viết prompt rồi đánh Done.
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ưu tiên Nhà Minh variant quá khứ, mặt nước dàn dựng, ba cụm sơ tán và nền đồi bình minh; mỗi prop quan trọng có pivot/ID theo thiết kế puzzle.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -21321,6 +23349,10 @@ Giữ đường silhouette; material contrast không che chữ trên clue.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2303.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21338,9 +23370,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Giữ đường silhouette; material contrast không che chữ trên clue.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -21377,6 +23411,10 @@ Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an t
 - `stories/ST-2303.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21394,9 +23432,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
 6. Cập nhật ledger/handoff và chọn task Ready tiếp theo; chỉ yêu cầu bên ngoài cho permission/capability không thể tự cung cấp.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Visual mesh không tự sinh collision chi tiết; không chắn cửa/bệ an toàn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -21418,13 +23458,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-2304 — P14 và ký ức tùy chọn của H07
+## STORY ST-2304 — P28 và ký ức tùy chọn của H07
 
 Người chơi hoàn tất chương qua Cơ chế trả lại thời gian và có thể tìm thêm M07 — Đường cuối từ nhà Minh lên đồi.
 
 ---
 
-# T-230401 — Implement state graph và tương tác P14
+# T-230401 — Implement state graph và tương tác P28
 
 **Wave:** S23 · **Story:** ST-2304 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -21436,8 +23476,12 @@ Người chơi hoàn tất chương qua Cơ chế trả lại thời gian và c�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P14.md`
+- `specs/puzzles/P28.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21445,20 +23489,22 @@ Dependencies đã expand: `T-230201`, `T-230202`, `T-230203`, `T-230204`, `T-230
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P14.md`
-- `data/puzzles/P14.tres`
+- `docs/puzzles/P28.md`
+- `data/puzzles/P28.tres`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P14. Kết quả bắt buộc: Điều khiển các điểm chốt trong H07 và mở menu lựa chọn cuối, có checkpoint trước cam kết. EndingController nhận flags bất biến; water level theo beat/script, không full flood simulation.
+2. Đầu ra cụ thể cần hiện thực: Implement state graph và tương tác P28. Kết quả bắt buộc: Điều khiển các điểm chốt trong H07 và mở menu lựa chọn cuối, có checkpoint trước cam kết. EndingController nhận flags bất biến; water level theo beat/script, không full flood simulation.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Điều khiển các điểm chốt trong H07 và mở menu lựa chọn cuối, có checkpoint trước cam kết. EndingController nhận flags bất biến; water level theo beat/script, không full flood simulation.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21495,6 +23541,10 @@ Có dấu báo trước, fragment ID và route hint; quay lại qua memory route
 - `stories/ST-2304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21513,9 +23563,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Có dấu báo trước, fragment ID và route hint; quay lại qua memory route lấy được sau khi nhà biến mất.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21552,6 +23604,10 @@ Clues của chương: H07_E13 sơ đồ neo; H07_E14 cơ chế chuông; H07_L07 
 - `stories/ST-2304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21569,9 +23625,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Clues của chương: H07_E13 sơ đồ neo; H07_E14 cơ chế chuông; H07_L07 kỷ vật gia đình; không commit ending trước lựa chọn.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21608,6 +23666,10 @@ Tất cả 128 tổ hợp M01..M07 cho eligibility đúng; route bí mật khôn
 - `stories/ST-2304.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21625,9 +23687,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Tất cả 128 tổ hợp M01..M07 cho eligibility đúng; route bí mật không dùng crowd AI hàng trăm NPC. Lỗi ngăn tiến trình chặn chuyển sang art final.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -21672,6 +23736,10 @@ Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler
 - `stories/ST-2401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21690,9 +23758,11 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Mọi chuỗi có key, người nói/context, giới hạn chữ; không spoiler lạc chapter.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -21729,6 +23799,10 @@ Minh/An đối thoại trước lựa chọn; cho quay lại memory routes thu M
 - `stories/ST-2401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21747,9 +23821,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Minh/An đối thoại trước lựa chọn; cho quay lại memory routes thu M còn thiếu trước point of no return.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21786,6 +23862,10 @@ CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 d
 - `stories/ST-2401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21803,9 +23883,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - CH4/CH6 dùng Knocker đã có; CH2/CH3/CH5 không chèn boss/enemy mới; CH7 dùng flood beats.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21842,6 +23924,10 @@ Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub s
 - `stories/ST-2401.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21859,9 +23945,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Reveal flag không thể bị bỏ qua do skip; replay không mâu thuẫn hub state.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -21901,6 +23989,10 @@ So sánh REAL/ERASED và low preset từ in-engine frames.
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2402.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21918,9 +24010,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - So sánh REAL/ERASED và low preset từ in-engine frames.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -21956,6 +24050,10 @@ Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng �
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2402.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -21974,9 +24072,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Dùng asset/rig hiện có trước; toàn bộ source và quyền sử dụng được bàn giao.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -22012,6 +24112,10 @@ Critical clue không bị props phụ che; không dùng thêm fog để giấu l
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2402.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22029,9 +24133,11 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 4. Xuất GLB với đúng scale/pivot/rig/material; kiểm tra dependencies texture, normals và pose; giữ source mở được.
 5. Import Godot, gắn prefab/collision theo hợp đồng, chụp REAL/ERASED trong camera gameplay; sửa silhouette/occlusion.
 6. Cập nhật asset manifest, provenance/license/hash/metrics; reviewer kiểm tra clip trước khi FINAL; blockout không đủ cho content complete.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Critical clue không bị props phụ che; không dùng thêm fog để giấu lỗi art.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -22068,6 +24174,10 @@ Collider, nav, camera và puzzle regression pass sau replacement.
 - `stories/ST-2402.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22085,9 +24195,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Collider, nav, camera và puzzle regression pass sau replacement.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22127,6 +24239,10 @@ Nước/chuông tăng theo beat, motif hai anh em và âm bình minh; pause dừ
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2403.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22145,9 +24261,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nước/chuông tăng theo beat, motif hai anh em và âm bình minh; pause dừng áp lực đúng cách
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -22183,6 +24301,10 @@ Không cần full voice-over; source/license, loop points và mix notes được
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2403.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22201,9 +24323,11 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 4. Xuất WAV master và OGG runtime nếu phù hợp; kiểm tra peak, silence, click ở đầu/cuối và loop seam.
 5. Ghép buses/ducking/cue triggers trong Godot; ghi loopback hoặc file capture từ phiên runtime để kiểm tra mix thực.
 6. Test mute/reduced effects/phase transition; cập nhật cue sheet, nguồn, license và hash; reviewer nghe/kiểm tra tín hiệu thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không cần full voice-over; source/license, loop points và mix notes được lưu.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -22240,6 +24364,10 @@ Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/te
 - `stories/ST-2403.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22258,9 +24386,11 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Switch/skip/checkpoint không tạo loop trùng; cue thiết yếu có visual/text tương đương.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22297,6 +24427,10 @@ Không clipping ở output; pause/reload không phát cue sai thứ tự.
 - `stories/ST-2403.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22314,9 +24448,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Không clipping ở output; pause/reload không phát cue sai thứ tự.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22357,6 +24493,10 @@ Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp
 - `stories/ST-2404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22374,9 +24514,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Save trước/sau mỗi puzzle; 20 vị trí switch rủi ro; tương tác lặp và load chéo vùng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22413,6 +24555,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `stories/ST-2404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22430,9 +24576,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Ít nhất 2 người chưa biết lời giải; ghi hint, mắc kẹt, hiểu reveal; mẫu nhỏ không coi là nghiên cứu thị trường.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22469,6 +24617,10 @@ Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
 - `stories/ST-2404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22486,9 +24638,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Nếu vượt quỹ sửa lỗi, không ép Done; mở change request/reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22525,6 +24679,10 @@ Handoff, inventory, fragment và NPC state không bị reset.
 - `stories/ST-2404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22542,9 +24700,11 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - Handoff, inventory, fragment và NPC state không bị reset.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22568,7 +24728,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-240405 — Duyệt chapter DoD và đánh giá lại đường găng
+# T-240405 — Duyệt chapter Do D và đánh giá lại đường găng
 
 **Wave:** S24 · **Story:** ST-2404 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -22581,6 +24741,10 @@ ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ
 - `stories/ST-2404.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `specs/chapters/CH07.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22593,14 +24757,16 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Duyệt chapter DoD và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+2. Đầu ra cụ thể cần hiện thực: Duyệt chapter Do D và đánh giá lại đường găng. Kết quả bắt buộc: ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+7. Scope chapter theo v3.1: P25, P26, P27, P28; 3 bắt buộc và 1 secret phải được sản xuất/kiểm thử, secret không khóa main. Đọc card puzzle tương ứng trong specs/puzzles trước authoring.
 
 ## Acceptance criteria
 - ORCHESTRATOR có build/hash, checklist art/audio/QA; không nhận chapter chỉ có level đẹp.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22624,7 +24790,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 # WAVE S25 — Ba ending và CH1 đầy đủ
 
-Cả ba kết thúc chơi được từ checkpoint cuối; phần mở đầu đủ cấu trúc của một chapter full game.
+Ba ending và audit/polish/revisit CH01 đã quaG2, không hoãn puzzle đầu game tới cuối dự án.
 
 ## STORY ST-2501 — Ending A/B có lựa chọn và cái giá rõ ràng
 
@@ -22644,6 +24810,10 @@ Menu giải thích hệ quả bằng nội dung đã tìm; không dùng lựa ch
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22664,6 +24834,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Menu giải thích hệ quả bằng nội dung đã tìm; không dùng lựa chọn mập mờ đánh lừa.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22699,6 +24870,10 @@ Minh bị quên, An trở về; epilogue dùng cảnh có sẵn với diễn xu�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22720,6 +24895,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Minh bị quên, An trở về; epilogue dùng cảnh có sẵn với diễn xuất hạn chế.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22755,6 +24931,10 @@ Có hậu quả mất mát đã viết trong canon; không cho cảnh cứu tấ
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22776,6 +24956,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có hậu quả mất mát đã viết trong canon; không cho cảnh cứu tất cả của ending C xuất hiện.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22811,6 +24992,10 @@ Không loop giữa final choice và credits; completion record tách khỏi auto
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2501.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22831,6 +25016,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không loop giữa final choice và credits; completion record tách khỏi autosave trước lựa chọn.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -22870,6 +25056,10 @@ Phân biệt đủ điều kiện thấy lựa chọn và đã hoàn tất route
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -22890,6 +25080,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Phân biệt đủ điều kiện thấy lựa chọn và đã hoàn tất route; không dùng magic count mơ hồ.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22925,10 +25116,14 @@ NPC theo nhóm/script; không crowd simulation hàng trăm người hoặc nư�
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
-Dependencies đã expand: `T-250101`, `T-250102`, `T-250103`, `T-250104`, `T-250201`
+Dependencies đã expand: `T-250101`, `T-250102`, `T-250103`, `T-250104`, `T-250201`, `T-250205`
 Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
@@ -22945,6 +25140,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - NPC theo nhóm/script; không crowd simulation hàng trăm người hoặc nước vật lý.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -22980,6 +25176,10 @@ An tự do, chuông dừng; dấu vật chứng M tạo payoff nhìn thấy đư
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23001,6 +25201,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - An tự do, chuông dừng; dấu vật chứng M tạo payoff nhìn thấy được.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23036,6 +25237,10 @@ Chỉ tổ hợp đủ bảy M mở C; A/B không bị khóa nhầm, test replay
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2502.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23056,6 +25261,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Chỉ tổ hợp đủ bảy M mở C; A/B không bị khóa nhầm, test replay không ghi đè save tốt.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23077,46 +25283,111 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
 - Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
 
-## STORY ST-2503 — Mở rộng CH1 và hoàn thiện payoff hình ảnh
-
-Người chơi thấy mở đầu có đủ hai puzzle và hạt giống của ending bí mật.
-
 ---
 
-# T-250301 — Đặc tả P02 khung ảnh thiếu người và hạt giống M01
+# T-250205 — Decision model sơ tán theo trạng thái và tám kế hoạch
 
-**Wave:** S25 · **Story:** ST-2503 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+**Wave:** S25 · **Story:** ST-2502 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
 ## Goal
-Một ảnh đủ thông tin môi trường để người chơi nhận ra khoảng trống; chưa tiết lộ tên An.
+HOLD→OPEN trước chuyển nhóm; cả 6 thứ tự nhóm hỗ trợ; thư viện chỉ beat 0/gallery cao beat 0..2 tạo 8 plan hợp lệ. Crossing commit mới tăng water beat; preview/nước/pause/save/replan đúng. RETURN sớm từ chối, sai giữ nhóm đã an toàn, final C chỉ sau 3 nhóm; A/B không cần trial.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
-- `stories/ST-2503.md`
-- `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P02.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+- `specs/ending_c_decisions.json`
+- `stories/ST-2502.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
-Dependencies đã expand: `T-100401`, `T-100402`, `T-100403`, `T-100404`, `T-250201`, `T-250202`, `T-250203`, `T-250204`
-Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+Dependencies đã expand: `T-250201`
+Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
 
 ## Outputs / allowed change scope
-- `docs/puzzles/P02.md`
-- `data/evidence/M01.tres`
+- `scripts/endings/evacuation_decisions.gd`
+- `tests/endings/decision_plans/`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Đặc tả P02 khung ảnh thiếu người và hạt giống M01. Kết quả bắt buộc: Một ảnh đủ thông tin môi trường để người chơi nhận ra khoảng trống; chưa tiết lộ tên An.
+2. HOLD→OPEN trước chuyển nhóm; cả 6 thứ tự nhóm hỗ trợ; thư viện chỉ beat 0/gallery cao beat 0..2 tạo 8 plan hợp lệ. Crossing commit mới tăng water beat; preview/nước/pause/save/replan đúng. RETURN sớm từ chối, sai giữ nhóm đã an toàn, final C chỉ sau 3 nhóm; A/B không cần trial.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Một ảnh đủ thông tin môi trường để người chơi nhận ra khoảng trống; chưa tiết lộ tên An.
+- HOLD→OPEN trước chuyển nhóm; cả 6 thứ tự nhóm hỗ trợ; thư viện chỉ beat 0/gallery cao beat 0..2 tạo 8 plan hợp lệ. Crossing commit mới tăng water beat; preview/nước/pause/save/replan đúng. RETURN sớm từ chối, sai giữ nhóm đã an toàn, final C chỉ sau 3 nhóm; A/B không cần trial.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
+
+## Verify / test
+1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
+2. Chạy ca cụ thể trong acceptance; thêm invalid/reentrant/load nếu có state.
+3. Không lỗi parser/runtime; assertions >0; scene tích hợp có capture nếu ảnh hưởng hình/điều khiển.
+Verification kinds bắt buộc: **ARTIFACT_REVIEW, ENGINE_TEST, RENDERED_RUNTIME**. Lệnh RUN-* và prerequisites trong `10_ENVIRONMENT_AND_COMMANDS.md`. Không gọi harness chưa tạo rồi báo PASS.
+
+## Evidence / review / Done
+Lưu `reports/tasks/T-250205/evidence.json` và `reports/tasks/T-250205/review.md` theo template. Mỗi claim có expected/observed/result, output/hash và log/capture phù hợp. Reviewer pass sau implementation; chỉ một agent phải khai self-review.
+`Không được NOT_APPLICABLE; phải DONE hoặc blocker rõ.`
+Sau khi evidence thực có, chạy `python tools/agentctl.py review T-250205` rồi `python tools/agentctl.py finish T-250205 --evidence reports/tasks/T-250205/evidence.json`.
+
+## Blocked / resume
+Phân loại BLOCKED_DEPENDENCY / BLOCKED_CAPABILITY / BLOCKED_EXTERNAL; ghi attempted/fallback/needed trong ledger; chọn task Ready khác không phụ thuộc nhánh này, không vượt hard gate.
+Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, blocker, bước tiếp theo và task ID; phiên sau kiểm tra working tree trước khi tiếp tục.
+
+## Không làm
+- Chỉ sửa output/module trực tiếp liên quan; không refactor ngoài phạm vi.
+- Không tự cắt 7 chương, 3 ending, save, VI/EN hoặc runtime QA.
+- Không tạo TODO/stub rồi báo hoàn thành; thiếu tool/permission phải ghi blocker.
+
+## STORY ST-2503 — Mở rộng CH1 và hoàn thiện payoff hình ảnh
+
+Người chơi thấy mở đầu có đủ hai puzzle và hạt giống của ending bí mật.
+
+---
+
+# T-250301 — Audit CH01 và payoff M01 theo baseline mới
+
+**Wave:** S25 · **Story:** ST-2503 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
+
+## Goal
+Audit/hoàn thiện P03/P04/M01 từ CH01 đã nghiệm thu G2; không trì hoãn gameplay CH01 tới S25.
+
+## Read before / context tối thiểu
+- `AGENTS.md`
+- `04_TECHNICAL_EXECUTION_CONTRACTS.md`
+- `stories/ST-2503.md`
+- `03_CONTENT_AND_ASSET_PLAN.md`
+- `specs/puzzles/P03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
+Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
+
+## Preconditions
+Dependencies đã expand: `T-100401`, `T-100402`, `T-100403`, `T-100404`, `T-250201`, `T-250202`, `T-250203`, `T-250204`, `T-250205`
+Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nhận capability bằng probe thật; thiếu điều kiện kiểm thử phải ghi blocker.
+
+## Outputs / allowed change scope
+- `docs/puzzles/P03.md`
+- `data/evidence/M01.tres`
+Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
+
+## Implementation steps
+1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
+2. Đầu ra cụ thể cần hiện thực: Đặc tả P03 khung ảnh thiếu người và hạt giống M01. Kết quả bắt buộc: Một ảnh đủ thông tin môi trường để người chơi nhận ra khoảng trống; chưa tiết lộ tên An.
+3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
+4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
+5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
+6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
+
+## Acceptance criteria
+- Audit/hoàn thiện P03/P04/M01 từ CH01 đã nghiệm thu G2; không trì hoãn gameplay CH01 tới S25.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23140,19 +25411,23 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-250302 — Ghép P02/M01 vào CH1 full và memory revisit
+# T-250302 — Audit CH01 full và memory revisit
 
 **Wave:** S25 · **Story:** ST-2503 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Slice vẫn là subset phát riêng; CH1 full không chứa demo end card.
+CH01P01–P04 đã được nghiệm thu tại G2; S25 kiểm nối campaign/revisit và polish, không trì hoãn puzzle tới S25.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2503.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P02.md`
+- `specs/puzzles/P03.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23165,14 +25440,15 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Ghép P02/M01 vào CH1 full và memory revisit. Kết quả bắt buộc: Slice vẫn là subset phát riêng; CH1 full không chứa demo end card.
+2. CH01P01–P04 đã được nghiệm thu tại G2; S25 kiểm nối campaign/revisit và polish, không trì hoãn puzzle tới S25.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Slice vẫn là subset phát riêng; CH1 full không chứa demo end card.
+- CH01P01–P04 đã được nghiệm thu tại G2; S25 kiểm nối campaign/revisit và polish, không trì hoãn puzzle tới S25.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23207,6 +25483,10 @@ A/B/C có khác biệt rõ, tránh tạo ba bộ môi trường mới.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2503.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23215,7 +25495,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Outputs / allowed change scope
 - `art/export/endings/`
-- `art/export/props/P02/`
+- `art/export/props/P03/`
 Đây là output phải tạo trong repository, không phải source game có sẵn trong gói. Expand folder/glob thành file thật và hash trong evidence. Được thêm tests/helper liên quan; thay shared module phải ghi impact và review; không refactor lan rộng.
 
 ## Implementation steps
@@ -23228,6 +25508,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - A/B/C có khác biệt rõ, tránh tạo ba bộ môi trường mới.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -23251,7 +25532,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-250304 — Test CH1full → CH2 và save từ slice
+# T-250304 — Test CH1 full → CH2 và save từ slice
 
 **Wave:** S25 · **Story:** ST-2503 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -23263,6 +25544,10 @@ Chính sách save demo→full được ghi rõ; nếu không hỗ trợ phải b
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2503.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23275,7 +25560,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Test CH1full → CH2 và save từ slice. Kết quả bắt buộc: Chính sách save demo→full được ghi rõ; nếu không hỗ trợ phải báo, không crash/mất slot full.
+2. Đầu ra cụ thể cần hiện thực: Test CH1 full → CH2 và save từ slice. Kết quả bắt buộc: Chính sách save demo→full được ghi rõ; nếu không hỗ trợ phải báo, không crash/mất slot full.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
@@ -23283,6 +25568,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Chính sách save demo→full được ghi rõ; nếu không hỗ trợ phải báo, không crash/mất slot full.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23322,6 +25608,10 @@ Ghi riêng 3 nhánh, missing-fragment và đủ-fragment; evidence theo build.
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23342,6 +25632,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Ghi riêng 3 nhánh, missing-fragment và đủ-fragment; evidence theo build.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23376,6 +25667,10 @@ Tái sử dụng stems hợp lý; captions cho tín hiệu cần thiết.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2504.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23396,6 +25691,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Tái sử dụng stems hợp lý; captions cho tín hiệu cần thiết.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -23431,6 +25727,10 @@ Không có fragment/flag sai làm ending không thể đạt.
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23451,6 +25751,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không có fragment/flag sai làm ending không thể đạt.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23486,6 +25787,10 @@ Mọi nội dung bắt buộc thiếu có ID và owner; không để một endin
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2504.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23506,6 +25811,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Mọi nội dung bắt buộc thiếu có ID và owner; không để một ending sang DLC.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -23531,7 +25837,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 Từ New Game chơi qua đủ bảy đêm đến credits, không còn nội dung Must bị để trống.
 
-## STORY ST-2601 — Audit nội dung 7 nhà / 14 puzzle / 28 bằng chứng
+## STORY ST-2601 — Audit nội dung 7 nhà / 28 puzzle / 28 bằng chứng
 
 ORCHESTRATOR truy ngược mỗi mục scope đến nội dung chạy trong build.
 
@@ -23548,6 +25854,10 @@ Không duplicate/missing stable IDs, localization keys hoặc scene references.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2601.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23568,6 +25878,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không duplicate/missing stable IDs, localization keys hoặc scene references.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23602,6 +25913,10 @@ Có đường lấy đủ 7 M trước final choice; không missable critical cl
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2601.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23622,6 +25937,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có đường lấy đủ 7 M trước final choice; không missable critical clue.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23656,6 +25972,10 @@ Mỗi item đóng phải có reviewer agent; không chỉ đổi tên placeholde
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2601.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23677,6 +25997,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Mỗi item đóng phải có reviewer agent; không chỉ đổi tên placeholder thành final.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23711,6 +26032,10 @@ Nội dung mới đi qua change control; bug/missing Must vẫn được sửa.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2601.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23731,6 +26056,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Nội dung mới đi qua change control; bug/missing Must vẫn được sửa.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -23769,6 +26095,10 @@ Không dùng debug chapter select; ghi actual thời gian và các lần reload.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2602.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23789,6 +26119,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không dùng debug chapter select; ghi actual thời gian và các lần reload.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23823,6 +26154,10 @@ Thu đủ M trong gameplay, không sửa save thủ công để giả đạt rou
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2602.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23843,6 +26178,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Thu đủ M trong gameplay, không sửa save thủ công để giả đạt route.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23877,6 +26213,10 @@ Không có nhân vật biết An trước thời điểm luật cho phép; house
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-2602.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23897,6 +26237,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Không có nhân vật biết An trước thời điểm luật cho phép; house numbering chính xác.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -23931,6 +26272,10 @@ Mỗi lỗi từ walkthrough có testcase và xác minh lại.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2602.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -23951,6 +26296,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Mỗi lỗi từ walkthrough có testcase và xác minh lại.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -23989,6 +26335,10 @@ CHAR/ENV/PROP/UI có trạng thái Final; nguồn thư viện không được co
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2603.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24009,6 +26359,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - CHAR/ENV/PROP/UI có trạng thái Final; nguồn thư viện không được coi là tự do mặc định.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -24043,6 +26394,10 @@ Source gốc, exports, dependency textures và credits khớp.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2603.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24064,6 +26419,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Source gốc, exports, dependency textures và credits khớp.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -24098,6 +26454,10 @@ Không asset temp chưa mua quyền; music marketing usage kiểm tra riêng.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2603.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24118,6 +26478,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Không asset temp chưa mua quyền; music marketing usage kiểm tra riêng.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -24152,6 +26513,10 @@ Ghi đầy đủ dependency engine/plugin/fonts/asset; unresolved rights chặn 
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2603.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24173,6 +26538,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Ghi đầy đủ dependency engine/plugin/fonts/asset; unresolved rights chặn release.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -24211,6 +26577,10 @@ ORCHESTRATOR chuyển từ làm nội dung sang sửa chất lượng trên mộ
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2604.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24231,6 +26601,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Đường hoàn tất 7 chương không bị kẹt; lỗi lớn vượt quỹ kích hoạt reserve.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24265,6 +26636,10 @@ Tách content work còn thiếu, QA remediation và store external waiting.
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2604.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24285,6 +26660,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Tách content work còn thiếu, QA remediation và store external waiting.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -24319,6 +26695,10 @@ Có Windows máy mục tiêu thực và máy yếu hơn; M1 Mac chỉ là máy d
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2604.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24339,6 +26719,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Có Windows máy mục tiêu thực và máy yếu hơn; M1 Mac chỉ là máy dev phụ nếu không phát hành Mac.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24373,6 +26754,10 @@ GO/REWORK nêu bằng chứng; giữ 7 chương/3 ending, chỉ hạ độ phứ
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2604.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24393,6 +26778,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - GO/REWORK nêu bằng chứng; giữ 7 chương/3 ending, chỉ hạ độ phức tạp trang trí khi được duyệt.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -24436,6 +26822,10 @@ Người chơi không mất lượt chơi do collision hoặc state chuyển th�
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2701.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24456,6 +26846,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Ưu tiên bridge/tower/H07 floor support, không chỉ street P0.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -24490,6 +26881,10 @@ Có rollback/rejection rõ; không giải quyết bằng teleport ngẫu nhiên.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2701.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24511,6 +26906,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có rollback/rejection rõ; không giải quyết bằng teleport ngẫu nhiên.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -24545,6 +26941,10 @@ Tọa độ/phase/flags tái hiện được từ bug report.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2701.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24565,6 +26965,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Tọa độ/phase/flags tái hiện được từ bug report.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24599,6 +27000,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2701.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24619,6 +27024,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - 1000 request trải nhiều vùng, gồm request bị từ chối; không state mismatch.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -24658,6 +27064,10 @@ Mỗi chương có trước/sau puzzle và trước/sau cinematic.
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2702.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24678,6 +27088,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Mỗi chương có trước/sau puzzle và trước/sau cinematic.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24712,6 +27123,10 @@ Unknown IDs hoặc field thiếu không biến thành crash.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2702.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24732,6 +27147,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Unknown IDs hoặc field thiếu không biến thành crash.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -24766,6 +27182,10 @@ Mất file temp/đĩa không ghi được có UI báo rõ và fallback hợp l�
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2702.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24786,6 +27206,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Mất file temp/đĩa không ghi được có UI báo rõ và fallback hợp lệ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24820,6 +27241,10 @@ A/B/C và completionist vẫn đạt với fixture hỗ trợ.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2702.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24840,6 +27265,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - A/B/C và completionist vẫn đạt với fixture hỗ trợ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24878,6 +27304,10 @@ Có cả keyboard và gamepad, mute audio, text lớn.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2703.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24898,6 +27328,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Có cả keyboard và gamepad, mute audio, text lớn.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24932,6 +27363,10 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2703.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -24952,6 +27387,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Ít nhất 2 phiên 4 giờ có save/load; ghi crash/RAM/handle anomalies.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -24986,6 +27422,10 @@ Sev-0 crash/data loss; Sev-1 progress block ưu tiên hơn lỗi trang trí.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2703.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25006,6 +27446,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Sev-0 crash/data loss; Sev-1 progress block ưu tiên hơn lỗi trang trí.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25040,6 +27481,10 @@ Phần chưa sửa giữ Open và update forecast; không làm đẹp số bug.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2703.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25060,6 +27505,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Phần chưa sửa giữ Open và update forecast; không làm đẹp số bug.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25098,6 +27544,10 @@ Chỉ sửa defects, không redesign cả bộ art khi đã content freeze.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2704.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25119,6 +27569,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Chỉ sửa defects, không redesign cả bộ art khi đã content freeze.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -25153,6 +27604,10 @@ Low preset và large text vẫn dùng được.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2704.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25173,6 +27628,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Low preset và large text vẫn dùng được.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -25207,6 +27663,10 @@ Không phát sinh collider mới chặn đường puzzle đã pass.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2704.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25227,6 +27687,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không phát sinh collider mới chặn đường puzzle đã pass.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25250,7 +27711,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-270404 — Đóng Alpha1 và review tải còn lại
+# T-270404 — Đóng Alpha 1 và review tải còn lại
 
 **Wave:** S27 · **Story:** ST-2704 · **Mode:** ORCHESTRATOR · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -25261,6 +27722,10 @@ Không có Sev-0 chưa xử lý; các Sev-1 còn mở có owner và hạn.
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2704.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25274,7 +27739,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc baseline v3, ledger và evidence của dependency; không khởi động lại kế hoạch từ đầu hoặc đợi họp với con người.
-2. Đầu ra cụ thể cần hiện thực: Đóng Alpha1 và review tải còn lại. Kết quả bắt buộc: Không có Sev-0 chưa xử lý; các Sev-1 còn mở có owner và hạn.
+2. Đầu ra cụ thể cần hiện thực: Đóng Alpha 1 và review tải còn lại. Kết quả bắt buộc: Không có Sev-0 chưa xử lý; các Sev-1 còn mở có owner và hạn.
 3. Tạo đúng artifact của task từ dữ liệu thật; unknown giữ null/NOT_TESTED; quyết định nhỏ dùng default trong hợp đồng.
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
@@ -25282,6 +27747,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Không có Sev-0 chưa xử lý; các Sev-1 còn mở có owner và hạn.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -25307,13 +27773,13 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 Chiến dịch giữ người chơi theo dõi bí ẩn, không kéo dài bằng đi bộ hoặc đọc thừa.
 
-## STORY ST-2801 — Tuning 14 puzzle và đường khám phá
+## STORY ST-2801 — Tuning 28 puzzle và đường khám phá
 
 Người chơi hiểu phản hồi và có hint hữu ích khi mắc kẹt.
 
 ---
 
-# T-280101 — Phân tích dwell time/hint use của 14 puzzle
+# T-280101 — Phân tích dwell time/hint use của 28 puzzle
 
 **Wave:** S28 · **Story:** ST-2801 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -25325,6 +27791,10 @@ Dữ liệu từ playtest, không dùng walkthrough time của dev làm thời g
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25337,7 +27807,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Phân tích dwell time/hint use của 14 puzzle. Kết quả bắt buộc: Dữ liệu từ playtest, không dùng walkthrough time của dev làm thời gian người mới.
+2. Đầu ra cụ thể cần hiện thực: Phân tích dwell time/hint use của 28 puzzle. Kết quả bắt buộc: Dữ liệu từ playtest, không dùng walkthrough time của dev làm thời gian người mới.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
@@ -25345,6 +27815,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Dữ liệu từ playtest, không dùng walkthrough time của dev làm thời gian người mới.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25368,7 +27839,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-280102 — Sửa ambiguity trong P03/P06/P09/P11 hoặc issue thực tế
+# T-280102 — Sửa ambiguity trong P05/P11/P17/P22 hoặc issue thực tế
 
 **Wave:** S28 · **Story:** ST-2801 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -25380,10 +27851,14 @@ Mỗi đáp án có lý do quan sát được; không thêm luật lore mới đ
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
-- `specs/puzzles/P03.md`
-- `specs/puzzles/P06.md`
-- `specs/puzzles/P09.md`
+- `specs/puzzles/P05.md`
 - `specs/puzzles/P11.md`
+- `specs/puzzles/P17.md`
+- `specs/puzzles/P22.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25397,7 +27872,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Sửa ambiguity trong P03/P06/P09/P11 hoặc issue thực tế. Kết quả bắt buộc: Mỗi đáp án có lý do quan sát được; không thêm luật lore mới để cứu puzzle.
+2. Đầu ra cụ thể cần hiện thực: Sửa ambiguity trong P05/P11/P17/P22 hoặc issue thực tế. Kết quả bắt buộc: Mỗi đáp án có lý do quan sát được; không thêm luật lore mới để cứu puzzle.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
@@ -25405,6 +27880,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Mỗi đáp án có lý do quan sát được; không thêm luật lore mới để cứu puzzle.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25439,6 +27915,10 @@ Vẫn giữ memory revisit và foreshadowing ending C.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2801.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25460,6 +27940,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Vẫn giữ memory revisit và foreshadowing ending C.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25495,6 +27976,10 @@ Người mới có thể tiến với hint trong game, không cần người tes
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2801.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25515,6 +28000,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Người mới có thể tiến với hint trong game, không cần người test giải thích.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25554,6 +28040,10 @@ CH5 là điểm nghỉ; CH7 cao trào không thêm enemy mới.
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2802.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25574,6 +28064,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - CH5 là điểm nghỉ; CH7 cao trào không thêm enemy mới.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -25608,6 +28099,10 @@ Không nhận diện tức thời không tín hiệu; retry mục tiêu <=10 gi�
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25628,6 +28123,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không nhận diện tức thời không tín hiệu; retry mục tiêu <=10 giây trên máy test.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25662,6 +28158,10 @@ Giữ reveal matrix; cắt câu trùng thay vì bỏ lời giải cốt truyện
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-2802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25683,6 +28183,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Giữ reveal matrix; cắt câu trùng thay vì bỏ lời giải cốt truyện.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -25717,6 +28218,10 @@ Mục tiêu tiếp theo còn hiểu được; không mất choice quan trọng.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2802.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25737,6 +28242,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Mục tiêu tiếp theo còn hiểu được; không mất choice quan trọng.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25776,6 +28282,10 @@ Có ít nhất hai lượt end-to-end; không mọi người chỉ test CH1.
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2803.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25796,6 +28306,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Có ít nhất hai lượt end-to-end; không mọi người chỉ test CH1.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25830,6 +28341,10 @@ Người chơi giải thích được vì sao An bị kẹt và hậu quả lự
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25850,6 +28365,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Người chơi giải thích được vì sao An bị kẹt và hậu quả lựa chọn bằng lời họ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -25884,6 +28400,10 @@ Không còn mâu thuẫn gây sai luật ending.
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-2803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25905,6 +28425,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Không còn mâu thuẫn gây sai luật ending.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -25939,6 +28460,10 @@ Có line ID, speaker, context, screenshot, spoiler tag và word count thực.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2803.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -25960,6 +28485,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Có line ID, speaker, context, screenshot, spoiler tag và word count thực.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -25998,6 +28524,10 @@ Chuyển cảnh không cắt âm vô lý; đầu ra không clipping.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26019,6 +28549,7 @@ Capabilities: filesystem, python, audio_production, godot_cli, audio_capture_or_
 
 ## Acceptance criteria
 - Chuyển cảnh không cắt âm vô lý; đầu ra không clipping.
+- Gameplay 3.2: cue được giao gắn anticipation/commit/aftermath, có caption; pause/focus/load không lặp scare hoặc mất tín hiệu bắt buộc.
 
 ## Verify / test
 1. Đo file không hỏng/không toàn silence/không clipping; test loop seam và event count.
@@ -26053,6 +28584,10 @@ Không mở thêm scope visual; source text không bị đổi lén trong textur
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26074,6 +28609,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Không mở thêm scope visual; source text không bị đổi lén trong texture.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -26108,6 +28644,10 @@ Build/hash và source-string hash được lưu.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26128,6 +28668,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Build/hash và source-string hash được lưu.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -26162,6 +28703,10 @@ Text VI đã khóa; LOCALIZATION_AGENT và REVIEWER_AGENT thực hiện dịch/r
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2804.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26182,6 +28727,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Text VI đã khóa; LOCALIZATION_AGENT và REVIEWER_AGENT thực hiện dịch/review; không khai native-human review nếu chưa xảy ra; không chờ tuyển translator.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -26224,6 +28770,10 @@ Ngôi Nhà Thứ Bảy/The Seventh House, REAL/ERASED và tên nhân vật thố
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2901.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26244,6 +28794,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Ngôi Nhà Thứ Bảy/The Seventh House, REAL/ERASED và tên nhân vật thống nhất.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -26278,6 +28829,10 @@ Giữ placeholders/keys; ghi câu cần hỏi tác giả thay vì đoán lore.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2901.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26298,6 +28853,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Giữ placeholders/keys; ghi câu cần hỏi tác giả thay vì đoán lore.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -26332,6 +28888,10 @@ Puzzle watermarks/class schedule không đổi đáp án vì cách dịch.
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2901.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26352,6 +28912,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Puzzle watermarks/class schedule không đổi đáp án vì cách dịch.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -26386,6 +28947,10 @@ Giữ source/target và reviewer agent; task vượt word-count budget phải t�
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2901.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26406,6 +28971,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Giữ source/target và reviewer agent; task vượt word-count budget phải tách/đánh giá lại đường găng.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -26444,6 +29010,10 @@ Chọn ngôn ngữ được lưu độc lập save tiến trình.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2902.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26465,6 +29035,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Chọn ngôn ngữ được lưu độc lập save tiến trình.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -26499,6 +29070,10 @@ Báo key thiếu, biến format mismatch, chuỗi hardcode còn trong gameplay.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2902.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26519,6 +29094,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Báo key thiếu, biến format mismatch, chuỗi hardcode còn trong gameplay.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -26547,12 +29123,16 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S29 · **Story:** ST-2902 · **Mode:** NARRATIVE_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lách lỗi.
+Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lá ch lỗi.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-2902.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26566,14 +29146,15 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc canon và reveal của đúng chương; phân biệt sự thật với điều NPC/Minh được biết tại thời điểm đó.
-2. Đầu ra cụ thể cần hiện thực: Chạy pseudo-loc và sửa layout tràn. Kết quả bắt buộc: Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lách lỗi.
+2. Đầu ra cụ thể cần hiện thực: Chạy pseudo-loc và sửa layout tràn. Kết quả bắt buộc: Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lá ch lỗi.
 3. Viết nội dung cụ thể bằng tiếng Việt, translation key ổn định; quy định condition/event/once flag cho từng đoạn.
 4. Đối chiếu từng dòng với puzzle, evidence và timeline; không tạo lore mới đổi luật chuông hoặc thêm ending.
 5. Ghép vào dữ liệu/story trigger; thử thứ tự xem manh mối khác nhau và cinematic skip/load bằng test tương ứng.
 6. Reviewer agent kiểm tra continuity, spoiler và chữ trên màn hình; lưu version nội dung cùng evidence.
 
 ## Acceptance criteria
-- Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lách lỗi.
+- Dialogue/options/journal/menu đều thử text dài; không thu chữ quá nhỏ để lá ch lỗi.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -26608,6 +29189,10 @@ Không mất progress hoặc focus; unsupported locale fallback rõ.
 - `AGENTS.md`
 - `11_STORY_BIBLE.md`
 - `stories/ST-2902.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26628,6 +29213,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Không mất progress hoặc focus; unsupported locale fallback rõ.
+- Gameplay 3.2: manh mối/giả thuyết/phản chứng và payoff trong phần nội dung được giao có nguồn thật, chapter guard và ngữ nghĩa VI/EN nhất quán.
 
 ## Verify / test
 1. Validate translation keys, flags, IDs và thứ tự reveal.
@@ -26666,6 +29252,10 @@ Không phải sửa texture mỗi ngôn ngữ; bằng chứng có bản text đ�
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-2903.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26687,6 +29277,7 @@ Capabilities: filesystem, python, blender_or_equivalent, godot_cli, gpu_render, 
 
 ## Acceptance criteria
 - Không phải sửa texture mỗi ngôn ngữ; bằng chứng có bản text đọc được.
+- Gameplay 3.2: asset được giao thể hiện các trạng thái, affordance, clue và route của card ở camera gameplay; không che cue hoặc tạo lối đi giả.
 
 ## Verify / test
 1. Chạy generator hai lần cùng config/seed; so semantic manifest, kiểm tra import GLB.
@@ -26721,6 +29312,10 @@ Phân loại mistranslation, truncation, glyph và wrong clue separately.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2903.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26741,6 +29336,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Phân loại mistranslation, truncation, glyph và wrong clue separately.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -26769,12 +29365,16 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S29 · **Story:** ST-2903 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Không sửa bản dịch chuyên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
+Không sửa bản dịch chu yên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2903.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26788,14 +29388,15 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Sửa wiring/layout từ LQA đợt một. Kết quả bắt buộc: Không sửa bản dịch chuyên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
+2. Đầu ra cụ thể cần hiện thực: Sửa wiring/layout từ LQA đợt một. Kết quả bắt buộc: Không sửa bản dịch chu yên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Không sửa bản dịch chuyên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
+- Không sửa bản dịch chu yên môn tùy ý; chuyển ngược reviewer agent đúng line ID.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -26830,6 +29431,10 @@ Thay source sau freeze có ID và yêu cầu dịch lại.
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2903.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26850,6 +29455,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Thay source sau freeze có ID và yêu cầu dịch lại.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -26888,6 +29494,10 @@ Gắn hash source/text/content và known issues còn lại.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2904.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26908,6 +29518,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Gắn hash source/text/content và known issues còn lại.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -26942,6 +29553,10 @@ Không hardcode absolute path máy dev; chạy không cần editor.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-2904.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -26962,6 +29577,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không hardcode absolute path máy dev; chạy không cần editor.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -26996,6 +29612,10 @@ Không commit credentials và không đưa source asset license cấm phân ph�
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-2904.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27017,6 +29637,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không commit credentials và không đưa source asset license cấm phân phối vào package.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -27040,7 +29661,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-290404 — Review Beta1 và scope S30
+# T-290404 — Review Beta 1 và scope S30
 
 **Wave:** S29 · **Story:** ST-2904 · **Mode:** ORCHESTRATOR · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -27051,6 +29672,10 @@ Chỉ bug/translation/performance fixes, không thêm tính năng mới.
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-2904.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27063,7 +29688,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc baseline v3, ledger và evidence của dependency; không khởi động lại kế hoạch từ đầu hoặc đợi họp với con người.
-2. Đầu ra cụ thể cần hiện thực: Review Beta1 và scope S30. Kết quả bắt buộc: Chỉ bug/translation/performance fixes, không thêm tính năng mới.
+2. Đầu ra cụ thể cần hiện thực: Review Beta 1 và scope S30. Kết quả bắt buộc: Chỉ bug/translation/performance fixes, không thêm tính năng mới.
 3. Tạo đúng artifact của task từ dữ liệu thật; unknown giữ null/NOT_TESTED; quyết định nhỏ dùng default trong hợp đồng.
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
@@ -27071,6 +29696,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Chỉ bug/translation/performance fixes, không thêm tính năng mới.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -27113,6 +29739,10 @@ Timeline dates/causal explanation khớp canon, không vô tình tiết lộ s�
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-3001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27133,6 +29763,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Timeline dates/causal explanation khớp canon, không vô tình tiết lộ sớm.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -27167,6 +29798,10 @@ Giọng nhân vật thống nhất, câu reveal rõ chứ không phô diễn vă
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-3001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27187,6 +29822,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Giọng nhân vật thống nhất, câu reveal rõ chứ không phô diễn văn phong.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -27221,6 +29857,10 @@ Các lựa chọn cuối phản ánh đúng cái giá, không ambiguous ngoài �
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-3001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27241,6 +29881,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Các lựa chọn cuối phản ánh đúng cái giá, không ambiguous ngoài ý đồ.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -27275,6 +29916,10 @@ Reviewer ghi signoff theo text version; source change mới phải mở lại ap
 - `AGENTS.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
 - `stories/ST-3001.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27295,6 +29940,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Reviewer ghi signoff theo text version; source change mới phải mở lại approval.
+- Gameplay 3.2: clue/quan hệ/feedback/caption được giao giữ cùng logic và guard VI/EN; không lộ đáp án hoặc mất nghĩa khi đổi ngôn ngữ.
 
 ## Verify / test
 1. VI/EN key set và runtime placeholders phải khớp 100%.
@@ -27327,15 +29973,19 @@ Bản tiếng Anh không có lỗi chặn puzzle hoặc lựa chọn ending sai 
 **Wave:** S30 · **Story:** ST-3002 · **Mode:** QA_AGENT · **Priority:** Must · **Complexity:** L (không phải ETA)
 
 ## Goal
-Test bảy M, P09/P11/P14 và ending choice labels có context.
+Test bảy M, P17/P22/P28 và ending choice labels có context.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-3002.md`
-- `specs/puzzles/P09.md`
-- `specs/puzzles/P11.md`
-- `specs/puzzles/P14.md`
+- `specs/puzzles/P17.md`
+- `specs/puzzles/P22.md`
+- `specs/puzzles/P28.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27348,14 +29998,15 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Implementation steps
 1. Lấy build/commit thật và fixture theo task; ghi OS/GPU/renderer/input mode; không kiểm thử source khác bản được review.
-2. Đầu ra cụ thể cần hiện thực: Chạy EN campaign và secret-route checks. Kết quả bắt buộc: Test bảy M, P09/P11/P14 và ending choice labels có context.
+2. Đầu ra cụ thể cần hiện thực: Chạy EN campaign và secret-route checks. Kết quả bắt buộc: Test bảy M, P17/P22/P28 và ending choice labels có context.
 3. Tạo ca happy-path, invalid-path và interrupted/reload phù hợp acceptance; định rõ inputs và expected state.
 4. Chạy test automation; phần camera/UI/audio cần runtime render/capture, không thay bằng kết quả headless.
 5. Phân loại PASS/FAIL/NOT_TESTED với log/assertion count; lỗi có bước tái hiện, observed/expected và severity.
 6. Retest sau fix cùng affected regression; reviewer kiểm chứng artifact; mô phỏng agent không được gọi là người dùng thật.
 
 ## Acceptance criteria
-- Test bảy M, P09/P11/P14 và ending choice labels có context.
+- Test bảy M, P17/P22/P28 và ending choice labels có context.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -27390,6 +30041,10 @@ Menu/journal/subtitle/credits không clipping ở cấu hình hỗ trợ.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-3002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27410,6 +30065,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Menu/journal/subtitle/credits không clipping ở cấu hình hỗ trợ.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -27444,6 +30100,10 @@ Text sai nghĩa do reviewer agent sửa; không thay key làm save mất evidenc
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-3002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27465,6 +30125,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Text sai nghĩa do reviewer agent sửa; không thay key làm save mất evidence.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -27499,6 +30160,10 @@ Chỉ version đã retest mới được đánh dấu approved.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-3002.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27519,6 +30184,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Chỉ version đã retest mới được đánh dấu approved.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -27558,6 +30224,10 @@ Không menu mới nào còn cần chuột bắt buộc.
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-3003.md`
 - `03_CONTENT_AND_ASSET_PLAN.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27578,6 +30248,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Không menu mới nào còn cần chuột bắt buộc.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -27612,6 +30283,10 @@ Rút pad trong final choice hoặc save menu vẫn phục hồi được bằng 
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-3003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27633,6 +30308,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Rút pad trong final choice hoặc save menu vẫn phục hồi được bằng bàn phím.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -27667,6 +30343,10 @@ Settings áp toàn cục sau load chapter; mute không làm puzzle vô nghiệm.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-3003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27687,6 +30367,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Settings áp toàn cục sau load chapter; mute không làm puzzle vô nghiệm.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -27721,6 +30402,10 @@ Chỉ công bố thiết bị đã test; không tự ghi Steam Deck Verified.
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-3003.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27741,6 +30426,7 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Acceptance criteria
 - Chỉ công bố thiết bị đã test; không tự ghi Steam Deck Verified.
+- Gameplay 3.2: triển khai thought_path, observation_routes, alternate solutions và feedback của card liên quan; không dùng hidden-read gate hoặc per-slot oracle. Test đúng phạm vi thay đổi và state/save.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -27779,6 +30465,10 @@ Không giảm severity chỉ để qua gate.
 - `AGENTS.md`
 - `05_QA_RELEASE_AND_HYPERCARE.md`
 - `stories/ST-3004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27799,6 +30489,7 @@ Capabilities: filesystem, python, godot_cli, gpu_render. Permission: `none`. Ch�
 
 ## Acceptance criteria
 - Không giảm severity chỉ để qua gate.
+- Gameplay 3.2: chạy các ca REASON/ROUTES/FEEDBACK/TENSION liên quan với input/state thật; ghi rõ chưa kiểm runtime hoặc human usability, không dùng solved flag thay hiểu biết.
 
 ## Verify / test
 1. Mỗi test ghi actual result riêng và testcase ID, build hash, log/capture.
@@ -27822,7 +30513,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-300402 — Audit DoD với traceability R01–R18
+# T-300402 — Audit Do D với traceability R01–R18
 
 **Wave:** S30 · **Story:** ST-3004 · **Mode:** ORCHESTRATOR · **Priority:** Must · **Complexity:** L (không phải ETA)
 
@@ -27833,6 +30524,10 @@ Unverified = chưa đạt; tách chứng cứ automated/headless/runtime có ren
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-3004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27845,7 +30540,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc baseline v3, ledger và evidence của dependency; không khởi động lại kế hoạch từ đầu hoặc đợi họp với con người.
-2. Đầu ra cụ thể cần hiện thực: Audit DoD với traceability R01–R18. Kết quả bắt buộc: Unverified = chưa đạt; tách chứng cứ automated/headless/runtime có render rõ.
+2. Đầu ra cụ thể cần hiện thực: Audit Do D với traceability R01–R18. Kết quả bắt buộc: Unverified = chưa đạt; tách chứng cứ automated/headless/runtime có render rõ.
 3. Tạo đúng artifact của task từ dữ liệu thật; unknown giữ null/NOT_TESTED; quyết định nhỏ dùng default trong hợp đồng.
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
@@ -27853,6 +30548,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Unverified = chưa đạt; tách chứng cứ automated/headless/runtime có render rõ.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -27887,6 +30583,10 @@ Release branch chỉ nhận fix reviewed; bảo quản save compatibility fixtur
 - `AGENTS.md`
 - `12_RELEASE_AND_PERMISSIONS.md`
 - `stories/ST-3004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27907,6 +30607,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Release branch chỉ nhận fix reviewed; bảo quản save compatibility fixtures.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Chạy kiểm tra local và checksum trước bất kỳ external write.
@@ -27930,7 +30631,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 
 ---
 
-# T-300404 — Duyệt G6 và đóng Beta2
+# T-300404 — Duyệt G6 và đóng Beta 2
 
 **Wave:** S30 · **Story:** ST-3004 · **Mode:** ORCHESTRATOR · **Priority:** Must · **Complexity:** S (không phải ETA)
 
@@ -27941,6 +30642,10 @@ Ghi config/hardware/text version chính xác và vấn đề Sev-2 được ch�
 - `AGENTS.md`
 - `06_AGENT_DELIVERY_PROTOCOL.md`
 - `stories/ST-3004.md`
+- `14_PUZZLE_DESIGN_BIBLE.md`
+- `docs/decisions/ADR-002-puzzle-first-gameplay.md`
+- `docs/decisions/ADR-003-reasoning-and-tension.md`
+- `specs/gameplay_reasoning.json`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -27954,7 +30659,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc baseline v3, ledger và evidence của dependency; không khởi động lại kế hoạch từ đầu hoặc đợi họp với con người.
-2. Đầu ra cụ thể cần hiện thực: Duyệt G6 và đóng Beta2. Kết quả bắt buộc: Ghi config/hardware/text version chính xác và vấn đề Sev-2 được chấp nhận.
+2. Đầu ra cụ thể cần hiện thực: Duyệt G6 và đóng Beta 2. Kết quả bắt buộc: Ghi config/hardware/text version chính xác và vấn đề Sev-2 được chấp nhận.
 3. Tạo đúng artifact của task từ dữ liệu thật; unknown giữ null/NOT_TESTED; quyết định nhỏ dùng default trong hợp đồng.
 4. Đối chiếu scope, dependencies và quality gate; sửa bất nhất có thể tự giải, ghi ADR khi thay đổi contract.
 5. Reviewer agent kiểm tra tài liệu và artifact liên kết; không ký PASS cho gameplay chỉ từ báo cáo chữ.
@@ -27962,6 +30667,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Acceptance criteria
 - Ghi config/hardware/text version chính xác và vấn đề Sev-2 được chấp nhận.
+- Gameplay 3.2: kiểm phạm vi/trace/gate/evidence liên quan theo ADR-003, không tự xác nhận tính năng đã chạy từ tài liệu.
 
 ## Verify / test
 1. Đối chiếu nội dung artifact với requirement/task/gate thực liên quan.
@@ -28382,14 +31088,14 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S31 · **Story:** ST-3102 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
 ## Goal
-P01–P14 vẫn đọc lời giải bằng low quality/mute.
+P02–P28 vẫn đọc lời giải bằng low quality/mute.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
 - `04_TECHNICAL_EXECUTION_CONTRACTS.md`
 - `stories/ST-3102.md`
-- `specs/puzzles/P01.md`
-- `specs/puzzles/P14.md`
+- `specs/puzzles/P02.md`
+- `specs/puzzles/P28.md`
 Đọc output dependency và implementation hiện có. Không nạp toàn bộ backlog. Trạng thái thực lấy từ `state/task_state.json`.
 
 ## Preconditions
@@ -28402,14 +31108,14 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Tuning fallback và kiểm tra UI trên Low. Kết quả bắt buộc: P01–P14 vẫn đọc lời giải bằng low quality/mute.
+2. Đầu ra cụ thể cần hiện thực: Tuning fallback và kiểm tra UI trên Low. Kết quả bắt buộc: P02–P28 vẫn đọc lời giải bằng low quality/mute.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- P01–P14 vẫn đọc lời giải bằng low quality/mute.
+- P02–P28 vẫn đọc lời giải bằng low quality/mute.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -29271,7 +31977,7 @@ Ghi state/session_handoff.md: commit/tree hash, file đã đổi, test cuối, b
 **Wave:** S32 · **Story:** ST-3202 · **Mode:** GAMEPLAY_AGENT · **Priority:** Must · **Complexity:** S (không phải ETA)
 
 ## Goal
-Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chuyên môn khi cần.
+Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chu yên môn khi cần.
 
 ## Read before / context tối thiểu
 - `AGENTS.md`
@@ -29289,14 +31995,14 @@ Capabilities: filesystem, python, godot_cli. Permission: `none`. Chỉ xác nh�
 
 ## Implementation steps
 1. Kiểm tra scene/script đích và dependency hiện có; tái sử dụng module đã có thay vì tạo implementation thứ hai.
-2. Đầu ra cụ thể cần hiện thực: Owner signoff gói pháp lý/thương mại. Kết quả bắt buộc: Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chuyên môn khi cần.
+2. Đầu ra cụ thể cần hiện thực: Owner signoff gói pháp lý/thương mại. Kết quả bắt buộc: Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chu yên môn khi cần.
 3. Viết hoặc chỉnh failing test cho hành vi cụ thể của task, bao gồm đường hợp lệ và ít nhất một đường bị từ chối.
 4. Implement thay đổi nhỏ nhất đáp ứng hợp đồng; expose tuning trong Resource; không gắn state toàn game vào Player.
 5. Ghép vào scene đang chơi, chạy import + test suite ảnh hưởng + replay có render khi có thay đổi gameplay/UI.
 6. Review diff, cập nhật schema/fixture nếu cần, lưu report và resume state; không đóng task chỉ vì hết lỗi parser.
 
 ## Acceptance criteria
-- Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chuyên môn khi cần.
+- Bản quyền không rõ là no-go release; đây không thay thẩm định pháp lý chu yên môn khi cần.
 
 ## Verify / test
 1. Chạy import và suite tương ứng theo RUN-IMPORT/RUN-TEST trong 10_ENVIRONMENT_AND_COMMANDS.md.
@@ -32197,7 +34903,7 @@ Owner có hồ sơ hoàn tất sản phẩm thay vì chỉ có trailer hoặc de
 
 ---
 
-# T-350401 — Audit public package so với Full Game DoD
+# T-350401 — Audit public package so với Full Game Do D
 
 **Wave:** S35 · **Story:** ST-3504 · **Mode:** RELEASE_AGENT · **Priority:** Must · **Complexity:** M (không phải ETA)
 
@@ -32220,7 +34926,7 @@ Capabilities: filesystem, python. Permission: `none`. Chỉ xác nhận capabili
 
 ## Implementation steps
 1. Đọc permissions và release runbook; phân biệt chuẩn bị local/draft với ghi lên dịch vụ ngoài hoặc public.
-2. Đầu ra cụ thể cần hiện thực: Audit public package so với Full Game DoD. Kết quả bắt buộc: Không thiếu content so với RC, không demo end-card trong bản bán.
+2. Đầu ra cụ thể cần hiện thực: Audit public package so với Full Game Do D. Kết quả bắt buộc: Không thiếu content so với RC, không demo end-card trong bản bán.
 3. Chuẩn bị manifest/copy/build đúng task; đối chiếu source platform hiện hành và trạng thái tài khoản nếu được truy cập.
 4. Thực hiện local/dry-run trước; chỉ thao tác ngoài khi quyền được ghi rõ cho operation/app/build/channel này.
 5. Kiểm tra artifact hoặc phản hồi nền tảng thật; thiếu quyền/credential/approval ghi BLOCKED_EXTERNAL không giả lập thành công.

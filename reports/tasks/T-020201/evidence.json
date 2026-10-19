@@ -1,0 +1,164 @@
+{
+  "task_id": "T-020201",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T07:24:37.420610+00:00",
+  "revision": "artifact-tree-sha256:990254e996fe88fd9e3646638830f9b9156bfb96d3fcc6cf511789b3e433018a",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020201/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scenes/camera/camera_rig.tscn",
+      "sha256": "8d35438cf46eb8b29844f0f6a103aa487a85191844d1aa6a9c73d42c5a6c09d8"
+    },
+    {
+      "path": "scripts/camera/camera_rig.gd",
+      "sha256": "7292add185c4f3b32bf50a8ed47a67e7be2a91654d24ea53c57d6a38d10ea540"
+    },
+    {
+      "path": "scripts/camera/camera_preset.gd",
+      "sha256": "2c70bba1d6366de9ce54939af304e4837f86d2eb15856222a7f27c0a8ebe156e"
+    },
+    {
+      "path": "config/tuning/camera_corridor.tres",
+      "sha256": "d1431c8614b0697cec777a7c8a9af5552098317756d68a1a94aa1058660fd3c0"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "c79d6e83a53630d05f60713cc16650a8f9595e2523ac8790cc68af3c850cbb33"
+    },
+    {
+      "path": "scripts/bootstrap/main.gd",
+      "sha256": "190638ed42f5e150070ae26f4a24d9c2ae87031ec54573d18eb193717541849f"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "520fa77dc4dce8028c2e26f1ec2e4f5458540c77657c7bbe95758d0a51f96ca4"
+    },
+    {
+      "path": "tests/unit/test_scene.gd",
+      "sha256": "483df613985f843382dc0fdd3e57a06a74e83772d799363c917854016b527460"
+    },
+    {
+      "path": "tests/unit/test_camera_preset.gd",
+      "sha256": "8b2ec8bbb2be531a8b4c4790b570d6653afca708a34b02b0bf0d39e213870ea2"
+    },
+    {
+      "path": "tests/replays/camera_preset.gd",
+      "sha256": "2422bfc7548be698a0b74a2f4247ac481b692be6da53cfcd25c8133d696a4607"
+    },
+    {
+      "path": "tests/fixtures/art/render_stool.gd",
+      "sha256": "deb727ff1a95a845f8f4362374119780bbd73a2b49caf3e44f7910aaf99ebb72"
+    },
+    {
+      "path": "reports/builds/20261019T072140737079Z/manifest.json",
+      "sha256": "5133953e7a1375e4a3bd97404fd1ce7b7d07bbee86089f3f350852f2e2842eed"
+    },
+    {
+      "path": "reports/tasks/T-020201/before.stderr.log",
+      "sha256": "993f1f17fe21b5bb6c93def602c6cdd3cad0ebc103f2aaf1273b943815f61627"
+    },
+    {
+      "path": "reports/tasks/T-020201/before.stdout.log",
+      "sha256": "b48b107c4e2129844bf3aad8bd925dd224c0673faf3e0ce4398a7062c036a288"
+    },
+    {
+      "path": "reports/tasks/T-020201/camera.stdout.log",
+      "sha256": "4a2b8380f95d9e917dd6b46f5c1367c15e1d18f68ac0502f76f22841221a32a2"
+    },
+    {
+      "path": "reports/tasks/T-020201/default.png",
+      "sha256": "2a1c28f3b695a44f42e124e26c710f70285833cf179c7f5b7abead28ab095534"
+    },
+    {
+      "path": "reports/tasks/T-020201/import.stdout.log",
+      "sha256": "f5ef4c9a8f661b8e0f325498c61dcaa2299912648e6ba48271a83e841f2a22ad"
+    },
+    {
+      "path": "reports/tasks/T-020201/review.md",
+      "sha256": "132c8d9b31699cc688cd58a56192eb3436090960d9ba40b3732659de3ff5f7dc"
+    },
+    {
+      "path": "reports/tasks/T-020201/runtime.json",
+      "sha256": "0769e44a99d039c168282b20644f9fc2c647b8dd555c6300bb5bb9ef7c6ba60c"
+    },
+    {
+      "path": "reports/tasks/T-020201/runtime.stdout.log",
+      "sha256": "3f8f9a849ef4591f4bf53536443c5cf1e9e93ec0ee5cce3fff140d020f88bbbd"
+    },
+    {
+      "path": "reports/tasks/T-020201/stool.stdout.log",
+      "sha256": "6483f5d84da39565e4c89edc60a7097b8b3456857891a04bdf749c7c5ac3114a"
+    },
+    {
+      "path": "reports/tasks/T-020201/stool_occluded.png",
+      "sha256": "0c15e7699b76c8328220a67debc4c6d7ff542b1193ed6339ab75fd353c2abe34"
+    },
+    {
+      "path": "reports/tasks/T-020201/stool_occluded.stdout.log",
+      "sha256": "6483f5d84da39565e4c89edc60a7097b8b3456857891a04bdf749c7c5ac3114a"
+    },
+    {
+      "path": "reports/tasks/T-020201/stool_regression.png",
+      "sha256": "90b2fdb57349212a07a4614f300a0f5910cd4cd9dfc8c8371a66ad2e099c0233"
+    },
+    {
+      "path": "reports/tasks/T-020201/tuned.png",
+      "sha256": "0ebc512d4d9ec28634a87e93c341636a9168de21d6bcfc9dde33a874dfeeba60"
+    },
+    {
+      "path": "builds/windows/20261019T072140737079Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T072140737079Z/TheSeventhHouse.pck",
+      "sha256": "868c048ae7cd73185aece9778de31fec204bbfbd88dd0948d5229904bebf8ebb"
+    }
+  ],
+  "checks": [
+    {
+      "id": "configurable_camera",
+      "kind": "ENGINE_TEST",
+      "expected": "perspective rig integrated, adjustableFOV/offset, invalid reject, no mouse-look",
+      "observed": "camera2cases13assertions; full registry23cases193assertions failed0/skipped0; import/export/PCK PASS",
+      "result": "PASS",
+      "assertions": 193,
+      "command": "python -X utf8 scripts/build_windows.py",
+      "log_path": "reports/builds/20261019T072140737079Z/manifest.json"
+    },
+    {
+      "id": "rendered_preset",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "actualForward+ perspective captures before/after tuning, rejected side and mouse preserve pose",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 6, \"captures_ok\": true, \"custom_applied\": true, \"fov\": 45.0, \"input_mode\": \"synthetic_mouse_motion\", \"offset\": \"(4.0, 3.5, 9.0)\", \"opposite_side_rejected\": true, \"perspective\": true, \"rejection_and_mouse_preserve_transform\": true, \"renderer\": \"forward_plus\", \"result\": \"PASS\"}",
+      "result": "PASS",
+      "assertions": 6,
+      "command": "tools.godot_process.run --script res://tests/replays/camera_preset.gd, software=True",
+      "log_path": "reports/tasks/T-020201/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020201/default.png",
+        "reports/tasks/T-020201/tuned.png",
+        "reports/tasks/T-020201/stool_regression.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "ownership_and_visual_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Resource tuning, camera only owns framing, renderer/capture reviewed and historical evidence preserved",
+      "observed": "source diff and3actual captures reviewed; stale prop fixture path/occlusion fixed; default38, custom45; noinput/orbit/world/save state",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Software Forward+ only; no hardware performance/physical input/audio/human usability claim.",
+    "Follow/deadzone/bounds/zoneblend/aspect are not implemented by this task.",
+    "Campaign3.2 remains DESIGN_ONLY; no gate advanced."
+  ]
+}

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/environment/street_blockout.tscn" id="1_street"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/camera/camera_rig.tscn" id="3_camera"]
+[ext_resource type="Resource" path="res://config/tuning/camera_street_blockout.tres" id="4_preset"]
+
+[sub_resource type="Environment" id="Environment_street"]
+background_mode = 1
+background_color = Color(0.065, 0.09, 0.11, 1)
+ambient_light_source = 2
+ambient_light_sky_contribution = 0.0
+ambient_light_color = Color(0.64, 0.71, 0.77, 1)
+ambient_light_energy = 0.7
+
+[node name="StreetScaleScene" type="Node3D"]
+
+[node name="Street" parent="." instance=ExtResource("1_street")]
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+
+[node name="CameraRig" parent="." instance=ExtResource("3_camera")]
+preset = ExtResource("4_preset")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-50, -35, 0)
+light_color = Color(1, 0.88, 0.72, 1)
+light_energy = 1.1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_street")

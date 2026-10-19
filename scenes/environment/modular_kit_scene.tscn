@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/environment/modules/fence_2m.tscn" id="1_fence"]
+[ext_resource type="PackedScene" path="res://scenes/environment/modules/wall_2m.tscn" id="2_wall"]
+[ext_resource type="PackedScene" path="res://scenes/environment/modules/door_open_2m.tscn" id="3_open"]
+[ext_resource type="PackedScene" path="res://scenes/environment/modules/door_closed_2m.tscn" id="4_closed"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="5_player"]
+[ext_resource type="PackedScene" path="res://scenes/camera/camera_rig.tscn" id="6_camera"]
+[ext_resource type="Resource" path="res://config/tuning/camera_modular_kit.tres" id="7_preset"]
+
+[sub_resource type="StandardMaterial3D" id="Material_floor"]
+albedo_color = Color(0.3, 0.32, 0.29, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="Mesh_floor"]
+material = SubResource("Material_floor")
+size = Vector3(16, 0.2, 10)
+
+[sub_resource type="BoxShape3D" id="Shape_floor"]
+size = Vector3(16, 0.2, 10)
+
+[sub_resource type="Environment" id="Environment_kit"]
+background_mode = 1
+background_color = Color(0.065, 0.09, 0.11, 1)
+ambient_light_source = 2
+ambient_light_sky_contribution = 0.0
+ambient_light_color = Color(0.64, 0.71, 0.77, 1)
+ambient_light_energy = 0.7
+
+[node name="ModularKitScene" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.1, -1)
+collision_layer = 1
+collision_mask = 8
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Mesh_floor")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("Shape_floor")
+
+[node name="Modules" type="Node3D" parent="."]
+
+[node name="FenceWestA" parent="Modules" instance=ExtResource("1_fence")]
+position = Vector3(-7, 0, -2)
+
+[node name="FenceWestB" parent="Modules" instance=ExtResource("1_fence")]
+position = Vector3(-5, 0, -2)
+
+[node name="WallWest" parent="Modules" instance=ExtResource("2_wall")]
+position = Vector3(-3, 0, -2)
+
+[node name="OpenDoor" parent="Modules" instance=ExtResource("3_open")]
+position = Vector3(-1, 0, -2)
+
+[node name="WallEast" parent="Modules" instance=ExtResource("2_wall")]
+position = Vector3(1, 0, -2)
+
+[node name="ReturnCorner" parent="Modules" instance=ExtResource("2_wall")]
+position = Vector3(3, 0, -2)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="FenceEastA" parent="Modules" instance=ExtResource("1_fence")]
+position = Vector3(3, 0, -2)
+
+[node name="FenceEastB" parent="Modules" instance=ExtResource("1_fence")]
+position = Vector3(5, 0, -2)
+
+[node name="ClosedDoor" parent="Modules" instance=ExtResource("4_closed")]
+position = Vector3(-5, 0, 1)
+
+[node name="ReversedFence" parent="Modules" instance=ExtResource("1_fence")]
+position = Vector3(-5, 0, 1)
+rotation_degrees = Vector3(0, 180, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+
+[node name="CameraRig" parent="." instance=ExtResource("6_camera")]
+preset = ExtResource("7_preset")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-50, -35, 0)
+light_color = Color(1, 0.88, 0.72, 1)
+light_energy = 1.1
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kit")

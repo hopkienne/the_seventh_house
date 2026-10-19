@@ -1,0 +1,21 @@
+{
+  "asset_id": "ENV_STREET_BLOCKOUT_01",
+  "generator_version": 1,
+  "seed": 7301,
+  "quality_state": "BLOCKOUT",
+  "chapter_ids": ["CH01"],
+  "phase_membership": "SHARED",
+  "street": {"length": 18.0, "clear_width": 4.0, "slab_depth": 0.2},
+  "house": {"width": 6.4, "front_z": -2.4, "back_z": -7.1, "wall_height": 3.0, "wall_thickness": 0.18, "door_width": 1.25, "door_height": 2.25},
+  "roof": {"width": 7.5, "front_z": -1.8, "back_z": -7.6, "eave_y": 3.05, "ridge_y": 4.5},
+  "materials": {
+    "Plaster": [0.64, 0.57, 0.42, 1.0],
+    "Wood": [0.22, 0.12, 0.065, 1.0],
+    "ClayRoof": [0.43, 0.16, 0.09, 1.0],
+    "RidgeClay": [0.52, 0.23, 0.13, 1.0],
+    "StreetStone": [0.25, 0.28, 0.26, 1.0],
+    "HouseFloor": [0.40, 0.32, 0.24, 1.0],
+    "EarthJar": [0.48, 0.29, 0.14, 1.0],
+    "WindowDark": [0.075, 0.095, 0.09, 1.0]
+  }
+}

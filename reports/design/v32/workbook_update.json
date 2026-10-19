@@ -1,0 +1,9 @@
+{
+  "result": "EXPORTED",
+  "revision": 61,
+  "tasks": 602,
+  "done": 19,
+  "puzzles": 28,
+  "tool": "@oai/artifact-tool",
+  "native_excel": "NOT_TESTED"
+}

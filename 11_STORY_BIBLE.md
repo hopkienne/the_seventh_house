@@ -48,3 +48,12 @@ Minh nói ngắn, quan sát cụ thể trước giải thích. NPC không độc
 
 ## Narrative tests bắt buộc
 Kiểm spoiler mỗi chapter; người kích hoạt đầu tiên luôn là Minh; mẹ luôn là người ổn định/duy trì; An 6→21 rõ; initial Minh không nhớ An; mỗi memory có vai trò thực trong route; B/C có epilogue thống nhất tuổi; capture không xóa essential evidence. Mọi cinematic skip đặt cùng final flags như xem hết và không grant memory chưa thu.
+
+
+## Bổ sung canon qua ADR-002 / gameplay3.1
+
+Giữ T−15/T0, không mặc định năm lịch2011/2026. Đêm thảm họa có giờ hư cấu:01:48 cảnh báo,02:05 vỡ đập,02:17 Minh kéo chuông lần đầu. Nước tới mỗi tuyến có thời điểm khác; FIRST_BELL không đồng nghĩa VILLAGE_FLOOD.
+
+Ở entryCH05, H01..H05 đã được thu hồi, H06/H07 chưa. Minh vào record H05 bằng đèn; có thể đi trong ngôi nhà bị xóa không có nghĩa nó vẫn hiện nguyên ở REAL. Cảnh trườngCH04 chỉ giữ dòng tên trống, không gọi “anh Minh” hoặc hiện “Nguyễn A…”; tên/quan hệ xác nhận ởP23CH06, không tự thêm họ nhân vật.
+
+M01..M06 từ puzzle bí mật, M07 từ hộp tuổi thơP25. P27 chỉ lập route_plan_ready; P28 cho thử sơ tán trong record khi đủ M và plan, rồi mới evacuation_route_validated khi ba nhóm an toàn. FinalconfirmC mới trả thời gian. A/B không đòi các nhánh bí mật. Hình bóng mẹ/Hạnh là dấu ký ức, không thêm luật hồi sinh; scare không xóa evidence đã neo.

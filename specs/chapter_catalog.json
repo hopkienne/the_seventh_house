@@ -3,11 +3,11 @@
     "id": "CH01",
     "house_id": "H01",
     "title": "Họ đã từng ở đây",
-    "house_name": "Ngôi nhà đối diện",
-    "zone": "Đường làng / nhà Minh / H01",
+    "house_name": "Nhà/xưởng mộc ông Kha",
+    "zone": "Phòng mẹ / cửa hàng ông Nhân / sân / xưởng mộc ông Kha / hộc bên",
     "main_puzzles": [
-      "P01",
-      "P02"
+      "P02",
+      "P03"
     ],
     "memory_id": "M01",
     "lore_id": "L01",
@@ -16,20 +16,59 @@
       "E02"
     ],
     "entry_condition": "new_game",
-    "exit_condition": "p01_solved AND p02_solved",
+    "exit_condition": "p01_solved AND p02_solved AND p03_solved",
     "reveal": "Ngôi nhà biến mất; vật chứng trái ngược lời người bán hàng.",
     "greybox_sprint": "S07",
-    "complete_sprint": "S25"
+    "complete_sprint": "S25",
+    "support_puzzles": [
+      "P01"
+    ],
+    "secret_puzzles": [
+      "P04"
+    ],
+    "required_puzzles": [
+      "P01",
+      "P02",
+      "P03"
+    ],
+    "all_puzzles": [
+      "P01",
+      "P02",
+      "P03",
+      "P04"
+    ],
+    "pacing_target_minutes": 35,
+    "design_version": "3.2",
+    "investigation_question": "Vì sao Minh nhớ một ngôi nhà mà cả làng phủnhận?",
+    "bonding_beat": "Minh lắp lại đồ mẹ chuẩn bị; có thể dừng xem nét sửa đèn, không thêm quest.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P01": [],
+        "P02": [
+          "P01"
+        ],
+        "P03": [
+          "P02"
+        ],
+        "P04": [
+          "P02"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH02",
     "house_id": "H02",
     "title": "Bữa cơm thiếu một người",
     "house_name": "Nhà bà Liên",
-    "zone": "H02 / sân chung / góc ký ức",
+    "zone": "Sân chung / bàn ăn / bếp / phòng Hạnh / phòng cất đồ",
     "main_puzzles": [
-      "P03",
-      "P04"
+      "P05",
+      "P07"
     ],
     "memory_id": "M02",
     "lore_id": "L02",
@@ -38,20 +77,58 @@
       "E04"
     ],
     "entry_condition": "CH01_complete",
-    "exit_condition": "p03_solved AND p04_solved",
+    "exit_condition": "p05_solved AND p06_solved AND p07_solved",
     "reveal": "Bà Liên phủ nhận người con gái Hạnh nhưng thói quen dọn cơm vẫn còn.",
     "greybox_sprint": "S13",
-    "complete_sprint": "S14"
+    "complete_sprint": "S14",
+    "support_puzzles": [
+      "P06"
+    ],
+    "secret_puzzles": [
+      "P08"
+    ],
+    "required_puzzles": [
+      "P05",
+      "P06",
+      "P07"
+    ],
+    "all_puzzles": [
+      "P05",
+      "P06",
+      "P07",
+      "P08"
+    ],
+    "pacing_target_minutes": 40,
+    "design_version": "3.2",
+    "investigation_question": "Ai đã sống trong căn phòng trống và vì sao thói quen vẫn giữ chỗ cho họ?",
+    "bonding_beat": "Bà Liên nhờ đặt bát ở sân; hành động nhỏ dùng cùng prop, lời nói thay đổi sau khi xác nhận Hạnh.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P05": [],
+        "P06": [],
+        "P07": [
+          "P05",
+          "P06"
+        ],
+        "P08": [
+          "P06"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH03",
     "house_id": "H03",
     "title": "Dấu nước trên tường",
     "house_name": "Nhà ông Phúc lái đò",
-    "zone": "H03 / bến sông / cầu gỗ",
+    "zone": "Bến / kho cùng bờ A / cầu / chòi lái đò / phòng đo nước",
     "main_puzzles": [
-      "P05",
-      "P06"
+      "P10",
+      "P11"
     ],
     "memory_id": "M03",
     "lore_id": "L03",
@@ -60,20 +137,61 @@
       "E06"
     ],
     "entry_condition": "CH02_complete",
-    "exit_condition": "p05_solved AND p06_solved",
+    "exit_condition": "p09_solved AND p10_solved AND p11_solved",
     "reveal": "Các dấu nước chứng minh trận lũ lớn từng đi qua nơi dân làng khẳng định chưa ngập.",
     "greybox_sprint": "S15",
-    "complete_sprint": "S16"
+    "complete_sprint": "S16",
+    "support_puzzles": [
+      "P09"
+    ],
+    "secret_puzzles": [
+      "P12"
+    ],
+    "required_puzzles": [
+      "P09",
+      "P10",
+      "P11"
+    ],
+    "all_puzzles": [
+      "P09",
+      "P10",
+      "P11",
+      "P12"
+    ],
+    "pacing_target_minutes": 45,
+    "design_version": "3.2",
+    "investigation_question": "Làng từng ngập đến đâu và một đường thoát phải được đánh giá thế nào?",
+    "bonding_beat": "Giúp ông Phúc kiểm dây buộc ở bến; sau đó ông chỉ vào tuyến người chơi đã chứng minh.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P09": [],
+        "P10": [],
+        "P11": [],
+        "P12": [
+          "P10",
+          "P11"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {
+        "P10": [
+          "P09",
+          "P11"
+        ]
+      }
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH04",
     "house_id": "H04",
     "title": "Ngôi trường không tồn tại",
     "house_name": "Nhà bác Tư giữ trường",
-    "zone": "H04 / hành lang trường / phòng hồ sơ",
+    "zone": "H04 / lớp 3A / phòng mỹ thuật / phòng âm nhạc / archive / cửa sau",
     "main_puzzles": [
-      "P07",
-      "P08"
+      "P14",
+      "P15"
     ],
     "memory_id": "M04",
     "lore_id": "L04",
@@ -82,20 +200,59 @@
       "E08"
     ],
     "entry_condition": "CH03_complete",
-    "exit_condition": "p07_solved AND p08_solved",
+    "exit_condition": "p13_solved AND p14_solved AND p15_solved",
     "reveal": "Hồ sơ cho thấy Hạ Vân đã bị phá hủy 15 năm trước; trường là khu phụ gắn với H04.",
     "greybox_sprint": "S17",
-    "complete_sprint": "S18"
+    "complete_sprint": "S18",
+    "support_puzzles": [
+      "P13"
+    ],
+    "secret_puzzles": [
+      "P16"
+    ],
+    "required_puzzles": [
+      "P13",
+      "P14",
+      "P15"
+    ],
+    "all_puzzles": [
+      "P13",
+      "P14",
+      "P15",
+      "P16"
+    ],
+    "pacing_target_minutes": 50,
+    "design_version": "3.2",
+    "investigation_question": "Lịch sử nào đã bị xóa, và hồ sơ nào đủ để bác bỏ lời kể hiện tại?",
+    "bonding_beat": "Bác Tư giữ một bài tập không tên; khi phục hồi buổi học, ông sửa lại ghế chứ chưa nhớ tất cả.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P13": [],
+        "P14": [
+          "P13"
+        ],
+        "P15": [
+          "P14"
+        ],
+        "P16": [
+          "P14"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH05",
     "house_id": "H05",
     "title": "Những trang mẹ giấu",
     "house_name": "Nhà bà Hảo, bạn của mẹ",
-    "zone": "H05 / phòng nhật ký / sân ký ức",
+    "zone": "H05 / phòng thư / phòng mẹ / mô hình neo / sân sau",
     "main_puzzles": [
-      "P09",
-      "P10"
+      "P18",
+      "P19"
     ],
     "memory_id": "M05",
     "lore_id": "L05",
@@ -104,20 +261,58 @@
       "E10"
     ],
     "entry_condition": "CH04_complete",
-    "exit_condition": "p09_solved AND p10_solved",
+    "exit_condition": "p17_solved AND p18_solved AND p19_solved",
     "reveal": "Mẹ để lại cách hiểu thời gian vay mượn và dấu vết người đã ở lại; không đổ toàn bộ lore trong một đoạn đọc.",
     "greybox_sprint": "S19",
-    "complete_sprint": "S20"
+    "complete_sprint": "S20",
+    "support_puzzles": [
+      "P17"
+    ],
+    "secret_puzzles": [
+      "P20"
+    ],
+    "required_puzzles": [
+      "P17",
+      "P18",
+      "P19"
+    ],
+    "all_puzzles": [
+      "P17",
+      "P18",
+      "P19",
+      "P20"
+    ],
+    "pacing_target_minutes": 45,
+    "design_version": "3.2",
+    "investigation_question": "Mẹ đã duy trì điều gì trong 15 năm và nguồn nào cho biết cái giá?",
+    "bonding_beat": "Tự lật các trang mẹ viết lại, đủkhoảnglặng để thấy sựkiệtsức; không fullvoice.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P17": [],
+        "P18": [
+          "P17",
+          "P19"
+        ],
+        "P19": [],
+        "P20": [
+          "P18"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH06",
     "house_id": "H06",
     "title": "Người mặc áo mưa vàng",
     "house_name": "Nhà người giữ chuông",
-    "zone": "H06 / lối tháp / buồng chuông",
+    "zone": "H06 / chuông mẫu / cơ khí / đối trọng / buồng ký ức / tháp",
     "main_puzzles": [
-      "P11",
-      "P12"
+      "P22",
+      "P23"
     ],
     "memory_id": "M06",
     "lore_id": "L06",
@@ -126,20 +321,59 @@
       "E12"
     ],
     "entry_condition": "CH05_complete",
-    "exit_condition": "p11_solved AND p12_solved",
+    "exit_condition": "p21_solved AND p22_solved AND p23_solved",
     "reveal": "An là em gái Minh và là điểm neo; câu chuyện giải thích vì sao cô không thể đơn giản rời tháp.",
     "greybox_sprint": "S21",
-    "complete_sprint": "S22"
+    "complete_sprint": "S22",
+    "support_puzzles": [
+      "P21"
+    ],
+    "secret_puzzles": [
+      "P24"
+    ],
+    "required_puzzles": [
+      "P21",
+      "P22",
+      "P23"
+    ],
+    "all_puzzles": [
+      "P21",
+      "P22",
+      "P23",
+      "P24"
+    ],
+    "pacing_target_minutes": 50,
+    "design_version": "3.2",
+    "investigation_question": "Người ở tháp là ai, có quan hệ gì với Minh, và chuông thực sự vận hành ra sao?",
+    "bonding_beat": "Cuộc gặp An có quyền đợi/xem lại chứng cứ trước xác nhận; không timer buộc bấm.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P21": [],
+        "P22": [
+          "P21"
+        ],
+        "P23": [
+          "P22"
+        ],
+        "P24": [
+          "P22"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   },
   {
     "id": "CH07",
     "house_id": "H07",
     "title": "Cánh cửa thứ bảy",
     "house_name": "Nhà Minh trong đêm lũ",
-    "zone": "H07 / tuyến sơ tán 3 cụm / đồi",
+    "zone": "H07 / hộp tuổi thơ / cửa lõi / bàn bản đồ / record sơ tán / đồi",
     "main_puzzles": [
-      "P13",
-      "P14"
+      "P26",
+      "P28"
     ],
     "memory_id": "M07",
     "lore_id": "L07",
@@ -148,9 +382,54 @@
       "E14"
     ],
     "entry_condition": "CH06_complete",
-    "exit_condition": "P14 resolution complete AND credits reachable",
+    "exit_condition": "p25_solved AND p26_solved AND p28_resolution_complete AND credits_reachable",
     "reveal": "Người chơi nhìn thấy cái giá của ba cách kết thúc và quyết định sau khi hiểu sự thật.",
     "greybox_sprint": "S23",
-    "complete_sprint": "S24"
+    "complete_sprint": "S24",
+    "support_puzzles": [
+      "P25"
+    ],
+    "secret_puzzles": [
+      "P27"
+    ],
+    "required_puzzles": [
+      "P25",
+      "P26",
+      "P28"
+    ],
+    "all_puzzles": [
+      "P25",
+      "P26",
+      "P27",
+      "P28"
+    ],
+    "pacing_target_minutes": 55,
+    "design_version": "3.2",
+    "investigation_question": "Người chơi sẽ dùng hiểu biết này để xử lý món nợ và chuẩn bị cứu người thế nào?",
+    "bonding_beat": "Những nhóm đại diện có người/đồ quen từ chương trước; nhóm đang đợi có caption, không chỉ icon.",
+    "investigation_graph": {
+      "puzzle_dependencies": {
+        "P25": [],
+        "P26": [],
+        "P27": [
+          "P25",
+          "P26",
+          "P04",
+          "P08",
+          "P12",
+          "P16",
+          "P20",
+          "P24"
+        ],
+        "P28": [
+          "P25",
+          "P26"
+        ]
+      },
+      "observation_order": "Independent room/prop observations may be gathered before puzzle commit; show an intelligible lead for each branch.",
+      "shortcut": "Open a persistent return route after the chapter choke point; never bypass phase safety.",
+      "information_inputs": {}
+    },
+    "tension_policy": "One authored intense encounter at most in CH01(optional),CH04,CH06; CH07 uses decision pressure. CH02/CH03/CH05 use anticipation/reflection without chase."
   }
 ]

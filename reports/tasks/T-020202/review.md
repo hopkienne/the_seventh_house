@@ -1,0 +1,11 @@
+# T-020202 separate self-review
+
+PASS; reviewer/executor codex-primary, self_review=true.
+
+Implemented CameraDirector and CameraZone Resource: X/Z dead zone, exponential weight1-exp(-speed*delta), authored anchor volume, same orientation, fixed camera anchor Y. Main scene now follows actual Player. Bounds are camera-anchor limits in parent space, not player pose clamps. CameraZone validates ID/framing/finite values/nonnegative deadzone/ordered volume/positive smoothing. enter_zone/restore reject unknown IDs; restore places camera in safe authored bounds immediately. Accepted tuning is copied so invalid live source edits cannot inject NaN into active smoothing. No player/story/world/save mutation.
+
+Test-first2failures retained. Final follow4cases21assertions PASS, including3deterministic delta schedules30/60/120 resulting x0.999665 after1second. This is a numerical schedule test, not observed renderedFPS. Other camera/scene suites passed; full candidate27cases214assertions failed0/skipped0, import/export/PCK inspection passed. Source hash147725a987465e390211624aa8d0ca4c8ccb92df68739ed1a98fa337401152f4 agrees with current runtime sources.
+
+Actual nonheadless replay7checks on Forward+/Vulkan SwiftShader:300held input ticks, playerx4.619882 grounded at wall, camera anchorx1, idle drift0m over120ticks, basis unchanged. Opened bound.png, player/corridor visible at authored view. Native Windows EXE/PCK copied into clean .qa/T-020202/native, both hashes checked; launched with no editor/source project, BOOTSTRAP5assertions PASS at1280x720; native PNG opened. First launch incorrectly supplied --path, which this release template forbids; failure log retained and retried with executable directory as cwd. No game code change was required.
+
+Initial/default zone registration and accepted-config snapshots are coherent. Invalid/zero deltas do not mutate; stale target/rig no update; load/newscene defaults remain covered by scene suite. Scope limits: onlyCORRIDOR authored here; cross-zone framing blend/triggers and aspect acceptance belong to020203/204. No claim those already work. Hardware performance, physicalpad/audio/human usability and campaign gameplay remain unverified. Baseline3.2, old task evidence and gates preserved. No production defect requiring RW reproduced.

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://art/export/blockout_street.glb" id="1_visual"]
+[ext_resource type="Script" path="res://scripts/art/street_blockout.gd" id="2_adapter"]
+
+[node name="StreetBlockout" type="Node3D"]
+script = ExtResource("2_adapter")
+collision_ids = PackedStringArray("StreetSlab", "HouseSlab", "NearCurb", "WestCurb", "EastCurb", "FrontWallWest", "SideWallWest", "DoorJambWest", "OpenDoorLeafWest", "WindowRecessWest", "FrontWallEast", "SideWallEast", "DoorJambEast", "OpenDoorLeafEast", "WindowRecessEast", "FrontLintelWall", "DoorHeader", "BackWall", "VerandaPost00", "VerandaPost01", "VerandaPost02", "VerandaPost03", "VerandaBeam", "ClayGableRoof", "RoofRidge", "FencePost__1_0", "FencePost__1_1", "FencePost__1_2", "FencePost__1_3", "FencePost__1_4", "FencePost__1_5", "FenceRail__1", "FencePost_1_0", "FencePost_1_1", "FencePost_1_2", "FencePost_1_3", "FencePost_1_4", "FencePost_1_5", "FenceRail_1", "BenchSeat", "BenchLeg__0_52__0_12", "BenchLeg__0_52_0_12", "BenchLeg_0_52__0_12", "BenchLeg_0_52_0_12", "EarthenJar")
+
+[node name="Visuals" parent="." instance=ExtResource("1_visual")]

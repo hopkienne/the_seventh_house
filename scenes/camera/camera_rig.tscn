@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/camera/camera_rig.gd" id="1_rig"]
+[ext_resource type="Resource" path="res://config/tuning/camera_corridor.tres" id="2_preset"]
+
+[node name="CameraRig" type="Node3D"]
+script = ExtResource("1_rig")
+preset = ExtResource("2_preset")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(6, 4, 8)
+current = true
+fov = 38.0

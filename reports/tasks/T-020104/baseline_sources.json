@@ -1,0 +1,26 @@
+{
+  "design_version": "3.2",
+  "read_sources": {
+    "AGENTS.md": "3808fc0c89d6ca2b60257cd15db6fc02d7bb34d0b71dd00a83346c826343956f",
+    "START_HERE.md": "7772f29fd76c86bf86d2dbc9c2988a04c5c927eeaf7ed3f06294bea527a24d36",
+    "01_MASTER_PRODUCTION_PLAN.md": "05ea1ad759bca979fd99ab18fc5a15f3cdde21a9c77677af0a8ef3817e46b716",
+    "10_ENVIRONMENT_AND_COMMANDS.md": "2b9fbecf90a912973d85204f5e18dbf50c02889191253200355f7d766331bda2",
+    "06_AGENT_DELIVERY_PROTOCOL.md": "17636030bcf7acf875ddb8d416feb01d12f50677b8fb5d506fca918b50af5bc8",
+    "04_TECHNICAL_EXECUTION_CONTRACTS.md": "9d7f219692822565da2c43635fd8839928bd76968ded918dfe503a7eca924d03",
+    "13_GDD_AGENT_EDITION.md": "a58f8a3d33ba6ce208a2eba4d6d037cbe85755aa60e28455818f0ff71da23a51",
+    "14_PUZZLE_DESIGN_BIBLE.md": "4d3d25813f29bf16c1dfe422eede39a0f7a3203b6f412d00ecd04fda5024364c",
+    "docs/decisions/ADR-003-reasoning-and-tension.md": "6180f0a4fd88882898632da301d4990ec4c5af234d64a9e8811b8230fa37e831",
+    "docs/design/puzzle_depth_matrix_v32.md": "72b835c5cba55e42ac16ce8d40b6f7fdb5baa85c9e95e7de1182c790a476774b",
+    "docs/design/comparative_gameplay_research_v32.md": "da8d7742121fdd3ecebdc676a20dfa64991814c43908512be9e724d5acc96b7a",
+    "specs/puzzle_catalog.json": "2b7e3c3f81cf8dcf4b9c46347c65351a5b9c63c96ed0c852bc5406614ba796fa",
+    "specs/chapter_catalog.json": "2ce501c200aff420038cde46c8ebb28a8b7da1289de9d122b228b229fd653894",
+    "specs/gameplay_reasoning.json": "5cd3f5c568802840c5529c8b92e9885ff12c1e33469444bcdb095c995f2c7f01",
+    "specs/deduction_models.json": "01533121638d95e7461f17198fc9372ac7651b338ac13392c5a2be18adba65ff",
+    "specs/ending_c_decisions.json": "d775b762562c71636ea376f99cc98de1cbeb018a5acab01414fb63c37b350dbf",
+    "specs/item_catalog.json": "2c91e3ee9243a6619a3335f75d65cabe7fe22e3f185d65238a938fb18651102b",
+    "specs/evacuation_route.json": "1345f077483ea4f07e368c31192e332774c7f78b970e35bc5ed26036072da35b"
+  },
+  "production_scope": "movement_only_no_campaign_controllers",
+  "head": "2498ad4bd768b3b6d5c252ecf851fa0b211d30ea",
+  "platform": "Windows-10-10.0.19045-SP0"
+}

@@ -1,0 +1,492 @@
+Bạn đã chỉ ra đúng vấn đề lớn nhất của Ngôi Nhà Thứ Bảy hiện tại: chúng ta đã có một cốt truyện khá hoàn chỉnh, nhưng chưa có đủ gameplay để biến nó thành một game kinh dị giải đố thực sự.
+
+Và việc bạn muốn phát triển game giống Áo Cưới Giấy (Paper Bride) làm thay đổi đáng kể định hướng thiết kế.
+
+[《纸嫁衣2奘铃村》全章节解谜流程图文攻略_第五章-游民星空 GamerSky.com](https://images.openai.com/static-rsc-4/hsGQaznWcUTT5Gm27mxjocX4uwWCAuM4LQjTwXGmv9A5lrHGx906AIkkPCSFgKUYPQUktEfAY4Gw12J7SEn8eZYUGj8QNT5NMn5cJFMxBuMy7wt134LWf1BRCWJNO73u7qjv5D4Zv8DRfagQXJWUgygNpxY2Ek9Rx6G4F-HIKoU?purpose=inline)
+
+[《纸嫁衣2奘铃村》全章节解谜流程图文攻略_第五章-游民星空 GamerSky.com](https://images.openai.com/static-rsc-4/lr7V_2kzpo0G-BM4dlstbeetx4fikjhP16fcZT4CuesmeKOY7_5NyZVQV1Y0vgJRtInjzpOtcsAvQ87gwcLHMhRaqWeIe32SXx3tWFGe7BMb1yxQAzUFZuY6AXHQcSZIhpHqmZGUD0veC7YI8rKFeX74o0oUr-NEsvUZrjFg53Y?purpose=inline)
+
+[Save 45% on Paper Bride 4 Bound Love on Steam](https://images.openai.com/static-rsc-4/3TBIahWU3fg-Jy9quAylR6krjW8X3s3bXtqFEMpGDh31Q_zRtShhSxTig48ljXsJLSNgSNgefXDpCLsezwOrz_eoHI2kAmGDM_51nmXgI61P0-mrO0jPmMDuxrfNbPcV4yoE1lt8THT5eWgwHe1_yau_c4h5zaFI0LPhs_jxW2U?purpose=inline)
+
+12
+
+Tham chiếu lối chơi Paper Bride: khám phá từng khung cảnh, thu thập vật phẩm, quan sát manh mối và thao tác với những cơ cấu giải đố.
+
+## 1. Chúng ta cần thay đổi trọng tâm gameplay
+
+Điểm đặc biệt của Paper Bride không phải là điều khiển nhân vật chạy qua một bản đồ lớn. Người chơi phải liên tục quan sát môi trường, nhặt đồ vật, tìm quy luật, kết hợp manh mối và mở những khu vực bị khóa. Mỗi lần giải được câu đố, họ lại khám phá thêm một phần câu chuyện kinh dị.&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://store.steampowered.com\&sz=32)
+
+Steam Store
+
++1
+
+
+
+Vì thế, tôi đề xuất điều chỉnh Ngôi Nhà Thứ Bảy thành:
+
+2.5D Cinematic Horror Puzzle Adventure — lấy hệ thống giải đố, khám phá và kinh dị tâm lý làm trọng tâm.
+
+| Thành phần            | Thiết kế mới                                                                             |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| Khám phá              | Di chuyển qua các khu vực nhỏ, camera điện ảnh cố định hoặc chuyển góc theo phòng        |
+| Tương tác             | Click vật thể, phóng to để kiểm tra, lật giấy, kéo ngăn tủ, xoay cơ cấu                  |
+| Inventory             | Thu thập, quan sát và kết hợp vật phẩm                                                   |
+| Câu đố                | Khôi phục ảnh, suy luận ký hiệu, mở khóa, sắp xếp vật thể, nối đường, điều chỉnh máy móc |
+| Cơ chế độc quyền      | Dùng đèn chuyển giữa thế giới thực và thế giới bị xóa để tìm lời giải                    |
+| Kinh dị               | Âm thanh bất thường, hình bóng, sự kiện bất ngờ và những tình huống gây áp lực           |
+| Chiến đấu             | Không có                                                                                 |
+| Điều kiện chiến thắng | Giải đố để tiến sâu vào bí mật của bảy ngôi nhà                                          |
+
+Điều này vẫn giữ lựa chọn 2.5D trước đó: chúng ta có thể dựng môi trường 3D trong Godot, nhưng khi người chơi kiểm tra tủ, nhật ký, bảng số hoặc bức ảnh, game chuyển sang giao diện giải đố cận cảnh giống Paper Bride.
+
+## 2. Thiết kế lại tổng thể hệ thống câu đố
+
+Tôi đề xuất 28 câu đố có thể chơi được, chia đều cho bảy hồi. Trong đó có 14 câu đố chính và 14 câu đố hỗ trợ, chưa tính những vật thể nhỏ, hội thoại, manh mối và sự kiện kinh dị.
+
+Số hồi
+
+# 7
+
+Câu đố
+
+# 28
+
+Thời lượng mục tiêu
+
+# 4–6h
+
+Hồi I — Ngôi nhà biến mất
+
+35 phút
+
+Hồi II — Bữa cơm thiếu người
+
+40 phút
+
+Hồi III — Dấu nước trên tường
+
+45 phút
+
+Hồi IV — Ngôi trường không tồn tại
+
+50 phút
+
+Hồi V — Những trang mẹ giấu
+
+45 phút
+
+Hồi VI — Người áo mưa vàng
+
+50 phút
+
+Hồi VII — Cánh cửa thứ bảy
+
+55 phút
+
+Thời lượng là mục tiêu thiết kế ban đầu, không phải kết quả playtest.
+
+Mỗi hồi sẽ tuân thủ nguyên tắc:
+
+Quan sát → Phát hiện manh mối → Giải đố nhỏ → Mở phòng mới → Giải đố liên hoàn → Sự kiện kinh dị → Khám phá bí mật → Sang hồi tiếp theo.
+
+Và quan trọng: không chỉ có những mật mã bốn chữ số. Mỗi ngôi nhà sẽ có một kiểu thử thách đặc trưng.
+
+# 3. Toàn bộ 28 câu đố theo từng hồi
+
+## Hồi I — Ngôi nhà biến mất
+
+Mục tiêu: Người chơi tìm ra cách sử dụng chiếc đèn của mẹ, bước vào nhà ông Kha và thu thập bằng chứng đầu tiên về những người bị lãng quên.
+
+Khu vực: Phòng ngủ Minh → Phòng khách → Sân nhà → Xưởng mộc ông Kha → Phòng tầng hai.
+
+[【纸嫁衣2：奘铃村】第一章～第三章·图文攻略-纸嫁衣2奘铃村游戏-光环助手网页版](https://images.openai.com/static-rsc-4/hL4XipPpxZsfkN3040GjGJk6U_vd1KjSMXH4P0Qcx82vnMFlBtv7iZkyj29PND7NXcIjqDBuu-lnTiCULSHS0Czn_AtbEKfWGdtGAiohpaO-UPuozv-uFI_5aIDw9ODUnM3ecWXyrzTfnxUyI9ey5x59vXMVV5sFIGLUaXVRq10?purpose=inline)
+
+[ghzs666.com](https://www.ghzs666.com/bbs/thread-235239?utm_source=chatgpt.com)
+
+Phong cách đề xuất cho màn giải đố xưởng mộc: mỗi ngăn kéo, bức ảnh hoặc thiết bị đều có thể trở thành đối tượng tương tác.
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                                          |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P01 | Chiếc đồng hồ ngừng chạy. Trong nhà mẹ Minh có một đồng hồ bị kẹt và một chiếc tủ khóa bằng cơ cấu kim giờ/phút. Người chơi đọc ghi chú về ba tiếng chuông, quan sát chiếc đồng hồ ở cửa hàng ông Nhân dừng tại 2:17, rồi chỉnh cơ cấu tủ về đúng thời điểm. Nhận vòng kính còn thiếu của chiếc đèn.                             |
+| P02 | Hàng rào giữa hai thế giới. Đường vào sân ông Kha bị một hàng rào gỗ chặn. Bật đèn cho thấy hàng rào biến mất nhưng sàn nhà gần giếng bị thủng. Người chơi phải di chuyển tới phần sân có nền an toàn, đổi thực tại để vượt hàng rào, rồi quay về thế giới thực ở vị trí hợp lệ để lấy chìa khóa dưới viên gạch cạnh giếng.      |
+| P03 | Bức ảnh bị tháo rời. Tại xưởng mộc, một khung ảnh có ba ô và ba miếng gỗ chạm hình con sông, cây đa, hai đứa trẻ. Các dấu số phía sau ảnh và ghi chú của ông Kha cho biết thứ tự sông → cây đa → hai anh em. Lắp đúng mở ngăn tủ, nhận bức ảnh có hai đứa trẻ và tài liệu đầu tiên.                                              |
+| P04 | Tiếng gõ trong xưởng — câu đố bí mật. Một lối nhỏ bị Kẻ Gõ Cửa chặn. Người chơi quan sát sinh vật luôn tiến về phía âm thanh, lấy con quay gỗ, kết hợp với dây cót từ chiếc đồng hồ xưởng, đặt lên bàn ở góc đối diện rồi kích hoạt. Khi sinh vật rời vị trí, người chơi mở ngăn giấu trong hộc bàn và lấy mảnh bản đồ thứ nhất. |
+
+### Khoảnh khắc kinh dị của hồi I
+
+Khi người chơi đang nhìn bức ảnh trong P03, camera chuyển sang góc nhìn cận cảnh.
+
+Trong ảnh có hai đứa trẻ.
+
+Người chơi nhấn nút xoay mặt sau để đọc chữ.
+
+Khi xoay trở lại, đứa trẻ thứ hai không còn trong ảnh.
+
+Một tiếng gõ vang lên phía sau.
+
+Người chơi thoát giao diện kiểm tra vật phẩm.
+
+Ở góc phòng, Kẻ Gõ Cửa đang đứng sát bức tường, nhưng khi quay camera lại, nó biến mất.
+
+Đây là kiểu kinh dị nên xuất hiện xuyên suốt trò chơi: lời giải câu đố cũng chính là tác nhân làm điều bất thường xuất hiện.
+
+## Hồi II — Bữa cơm thiếu một người
+
+Mục tiêu: Xác minh Hạnh từng tồn tại, khám phá phòng ngủ bị xóa và tìm dấu vết về cuộc sơ tán trong đêm lũ.
+
+Khu vực: Sân chung → Phòng ăn nhà bà Liên → Nhà bếp → Phòng ngủ Hạnh → Phòng cất đồ.
+
+[这款民俗惊悚纯爱游戏究竟如何讲好中式恐怖故事？\_纸嫁衣系列|游民星空](https://images.openai.com/static-rsc-4/_7qPDkFvi3M4f4-B3nTXBOGP8mQvhwjlnB0OWU_VeE-mJpgKOwFvn-CtOJhALeSvAtnjdf-STj0O-q-KhqAWjyWCUoL0SQSAVSPL8UIXFV2wK7-cczYwIBM4fiC2b6dHwcMESDdWfQcwu2OzAL7IRDZ5vUgu3lSDMnzRLhfFsFs?purpose=inline)
+
+[club.gamersky.com](https://club.gamersky.com/activity/640386?club=1151\&utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                                   |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P05 | Bốn chiếc bát. Bàn ăn có bốn vị trí nhưng chỉ ba người được thừa nhận. Từ vết lõm ghế, sơ đồ ngồi vẽ trên mặt dưới bàn và lời kể ở bữa cơm, người chơi đặt đúng: bà Liên phía Bắc, anh cả phía Đông, Hạnh phía Nam, em trai phía Tây. Cơ cấu dưới bàn mở một ngăn chứa chìa khóa phòng trong.                             |
+| P06 | Tủ quần áo không có chủ. Một chiếc tủ chứa áo từ nhiều năm nhưng nhãn tên đã biến mất. Người chơi tìm các vạch chiều cao của Hạnh trên tường và ghép ba thanh trượt chiều cao vào đúng các dấu được ghi năm. Tủ mở, để lộ cuốn sổ có nét chữ của Hạnh.                                                                    |
+| P07 | Bức ảnh gia đình thiếu người. Trong thế giới thực, ảnh có ba người; trong thế giới bị xóa, có thêm bóng người thứ tư. Người chơi quan sát hai phiên bản, lấy các mảnh ảnh còn thiếu và chồng chúng lên tấm kính rọi sáng theo dấu khung. Khuôn mặt và tên Hạnh dần hiện ra. Nhận bằng chứng để Minh đối chất với bà Liên. |
+| P08 | Chiếc khăn thêu — câu đố bí mật. Mặt sau khăn của Hạnh có các mũi thêu không liên tục. Người chơi dựa vào mẫu đường thêu treo trên tường phòng để nối đúng các điểm khâu, tạo hình lối đi từ sân sau tới chân đồi. Nhận mảnh bản đồ thứ hai.                                                                              |
+
+### Khoảnh khắc kinh dị của hồi II
+
+Ngay sau khi người chơi đặt đủ bốn bát, một chiếc đũa tự rơi xuống vị trí ghế của Hạnh.
+
+Màn hình tối trong chớp mắt.
+
+Khi ánh sáng trở lại, có một bàn tay rất nhợt nhạt đang đặt trên chiếc bát ấy.
+
+Nếu người chơi bấm vào chiếc ghế, Minh nói:
+
+> "Có ai đó vừa ngồi ở đây."
+
+Khi giải xong P07, người chơi nghe giọng Hạnh gọi "Mẹ ơi" từ căn phòng trống. Không có bóng ma tấn công, nhưng người chơi bắt đầu sợ mỗi khi phát hiện thêm một bằng chứng.
+
+## Hồi III — Dấu nước trên tường
+
+Mục tiêu: Vượt qua cây cầu đứt, tiếp cận kho bến sông và khôi phục hồ sơ về trận lũ năm 2011.
+
+Khu vực: Bến sông → Cầu gỗ → Chòi người lái đò → Kho dụng cụ → Phòng đo mực nước.
+
+[Ghost Of Tsushima Concept Art (33) | Images :: Behance](https://images.openai.com/static-rsc-4/qi2Khpw06MLHkfZraq9ilqIiiFp3_eBd4QY4TyS48KCJLzMrWtpJ_fcuE8i6m_rOaIuL5ABQwTltTFJNhEkA-UoRdXC5ipr86DznXP6lSULQpCFbaRzs0xHSxJyVNpwHft1sP6GpiAUePvuyarUVmytp3pEhhL3tD-julUBY9Jc?purpose=inline)
+
+[behance.net](https://www.behance.net/gallery/105832027/Ghost-Of-Tsushima-Concept-Art/modules/607371751?utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                                                      |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P09 | Đèn hiệu ở bến sông. Một đèn bến cũ không hoạt động. Người chơi nhặt tay quay từ thuyền, tìm dây dẫn bị đứt trong kho, sửa cơ cấu và bật đèn. Ánh sáng làm lộ các cọc đánh dấu nước ở hai thực tại, cho phép xác định vị trí nhịp cầu có thể đi qua.                                                                                         |
+| P10 | Cây cầu tồn tại ở hai thời điểm. Ở thế giới thực, nhịp cầu từ bờ A đến bệ B bị đứt; trong thế giới bị xóa, nhịp A–B còn nguyên nhưng nhịp B–C lại bị đứt. Người chơi phải bật đèn ở A → đi đến B → tắt đèn tại bệ có sàn chung → qua C. Nếu đổi trạng thái tại vị trí không có sàn đỡ, game từ chối chuyển đổi và báo tín hiệu từ chiếc đèn. |
+| P11 | Ba bánh van đo mực nước. Trong kho có một máy ghi dấu nước với ba vị trí: nước cạn, đêm lũ, nước tràn bờ. Sổ ông Phúc ghi rằng cần xem bản đo của đêm thảm họa, tương ứng vị trí số 2. Xoay ba van theo các vạch liên kết để toàn bộ kim chỉ về mốc 2, mở tấm chắn và để lộ vết bùn cao gần tới trần.                                        |
+| P12 | Sổ người lái đò — câu đố bí mật. Nhật ký bến sông có nhiều chuyến đò và vị trí cọc khác nhau. Người chơi dùng mốc thời gian trước khi đập vỡ cùng sơ đồ nước lên để loại bỏ những tuyến đã ngập, xác định lối vòng từ bến lên sườn đồi. Nhận mảnh bản đồ thứ ba.                                                                             |
+
+### Khoảnh khắc kinh dị của hồi III
+
+Khi người chơi đang chỉnh P11, cửa sổ phòng đo mực nước bắt đầu phát ra tiếng nước va đập.
+
+Một vạch bùn xuất hiện trên tường.
+
+Nó từ từ dâng lên.
+
+Đến khi cao ngang đầu Minh, từ lớp bùn hiện ra những dấu bàn tay trẻ con.
+
+Nhưng khi người chơi mở chiếc đèn, căn phòng trở lại bình thường.
+
+Ở phần cửa kính lại xuất hiện một dòng chữ:
+
+"ĐỪNG ĐỂ NƯỚC VÀO."
+
+Sự kiện này chỉ làm tăng căng thẳng, không đặt đồng hồ đếm ngược khiến người chơi mất cơ hội đọc lời giải.
+
+## Hồi IV — Ngôi trường không tồn tại
+
+Mục tiêu: Khám phá ngôi trường bị xóa, tìm hồ sơ trận lũ và nhận ra rằng lịch sử của Hạ Vân đã bị thay đổi.
+
+Khu vực: Cổng trường → Lớp học 3A → Phòng âm nhạc → Phòng lưu trữ → Hành lang sau trường.
+
+[Classroom ghost Images - Free Download on Magnific (formerly Freepik)](https://images.openai.com/static-rsc-4/bp6b3z-57MS1tzLdZRDkyweb7Vmu6-Ru1Hy5iXgOVL-1p2vJMUrt6VW7qosaI5d7qSkSd9Lzrf07oU9ys68q79dDmsLFKbEShuJBiJUXQogoBKQngJJTYbUOAe7EQy4mBxJ8KNhg3trCXJSyFqTUJYlFWXGeDdgYAyIpc_XbF84?purpose=inline)
+
+[magnific.com](https://www.magnific.com/free-photos-vectors/classroom-ghost?utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                       |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P13 | Thời khóa biểu bị xóa. Trên bảng lớp chỉ còn hình một cuốn sách, bảng vẽ và nốt nhạc. Người chơi tìm ba mảnh thời khóa biểu ở bàn giáo viên, cặp học sinh và bảng thông báo, rồi xác định ba hoạt động của buổi học cuối: Đọc → Vẽ → Hát.                                                                     |
+| P14 | Ba lớp học bị khóa. Người chơi phải kích hoạt ba cơ cấu theo thứ tự tìm được: mở tủ sách ở lớp 3A, phục hồi bức tranh trong phòng mỹ thuật, rồi bật máy phát trong phòng âm nhạc. Khi làm đúng, tiếng bài hát trẻ con vang lên và cánh cửa phòng lưu trữ mở ra.                                               |
+| P15 | Hồ sơ đêm lũ. Người chơi tìm ba tài liệu bị tách khỏi cùng một tập hồ sơ: cảnh báo nước dâng lúc 01:48, thông báo vỡ đập lúc 02:05, bản ghi tiếng chuông lúc 02:17. Sắp xếp chúng theo dòng thời gian, ghép số hồ sơ và mở tủ sắt. Bên trong là bằng chứng ngôi làng đã bị trận lũ phá hủy trong lịch sử gốc. |
+| P16 | Sơ đồ sơ tán trường học — câu đố bí mật. Một tấm bản đồ trường bị rách mất các hành lang nối. Người chơi dùng sơ đồ cửa thoát hiểm cùng những mảnh giấy tìm trong lớp học để nối được tuyến từ lớp 3A ra cổng sau mà không đi qua phần sân ngập. Nhận mảnh bản đồ thứ tư.                                     |
+
+### Khoảnh khắc kinh dị của hồi IV
+
+Trong P14, người chơi phải bật chiếc máy phát nhạc.
+
+Khi máy phát hoạt động, một bài hát thiếu nhi bắt đầu vang lên.
+
+Camera chuyển sang bảng đen. Những nét phấn tự xuất hiện, viết tên từng học sinh.
+
+Ban đầu là những cái tên bình thường.
+
+Sau đó, những dòng tên lần lượt bị một bàn tay vô hình xóa đi.
+
+Cuối cùng, chỉ còn:
+
+Nguyễn Minh.
+
+Và bên dưới, một dòng chưa hoàn chỉnh:
+
+Nguyễn A...
+
+Tiếng nhạc dừng đột ngột.
+
+Từ cuối hành lang vang lên tiếng trẻ con:
+
+"Anh Minh, anh đến đón em rồi à?"
+
+Khi Minh mở cửa lớp, phía ngoài có một chiếc áo mưa màu vàng đang treo trên móc.
+
+Nó vẫn còn nhỏ nước.
+
+Đến khi anh quay lại nhìn, chiếc áo đã biến mất.
+
+## Hồi V — Những trang mẹ giấu
+
+Mục tiêu: Khám phá mẹ Minh đã làm gì trong mười lăm năm, hiểu nguyên lý chiếc chuông và biết rằng việc xóa từng ngôi nhà là một quá trình thu hồi thời gian.
+
+Khu vực: Nhà bà Hảo → Phòng cất thư → Phòng làm việc của mẹ → Hành lang gương → Kho lưu trữ.
+
+[How to choose the right escape room | Escapemark](https://images.openai.com/static-rsc-4/ViId1tBNsayFNew5eWxn1k5LvmdXgxjs3O6Ua9sy5x0I9YkgWqHdRyRRuapQVdtths7kl1njp4C7itFEPtEeyrTMctqYTjnvXF5bTr44s8-P6wVVKdgz9wDfe4FEM8sbhx5KUow7I4S81IoIEa6ecVstRjH5i6h8SiGY2uxgT78?purpose=inline)
+
+[escapemark.com](https://escapemark.com/articles/how-to-choose-the-right-escape-room/?utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                                                                      |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| P17 | Những lá thư không theo thứ tự. Người chơi nhận một hộp chứa các bức thư mẹ Minh viết qua nhiều năm. Thay vì chỉ ghép ngày tháng, phải phân biệt thư gốc và bản sao ký ức qua dấu mực, ngày và tình trạng con dấu. Sắp xếp các thư thật theo thứ tự để tìm một lời nhắn dẫn tới căn phòng bí mật.                                                            |
+| P18 | Ánh sáng xuyên hai thế giới. Phòng làm việc có hai cửa chớp và một tấm kính phản chiếu. Một cửa chỉ tương tác được ở thế giới thực, cửa còn lại chỉ mở được ở thế giới bị xóa. Người chơi điều chỉnh cửa thứ nhất, chuyển thực tại tại vùng an toàn, chỉnh cửa thứ hai rồi đặt tấm kính vào giá. Ánh đèn chiếu lên tường, để lộ dòng chữ bằng mực ẩn của mẹ. |
+| P19 | Cơ cấu bảy điểm neo. Một mô hình bằng đồng thể hiện bảy căn nhà nối với chiếc chuông. Người chơi phải đối chiếu ngày năm ngôi nhà biến mất với các dấu trên nhật ký, rồi đặt các đĩa đồng vào đúng trạng thái: năm điểm đã tắt, hai điểm còn hoạt động. Mô hình mở hộc chứa bản giải thích quy tắc thu hồi thời gian.                                        |
+| P20 | Bức thư cuối cùng — câu đố bí mật. Trên nền phòng có những hình bóng không liên tục của một lối đi. Người chơi đặt tấm kính phản chiếu từ P18 đúng hướng để những hình bóng ghép thành đường qua sân sau nhà bà Hảo. Mở được hộc giấu dưới ván sàn, lấy mảnh bản đồ thứ năm và lá thư mẹ dành cho người bị lãng quên.                                        |
+
+### Khoảnh khắc kinh dị của hồi V
+
+Khi người chơi đọc các bức thư, có thể nghe thấy giọng mẹ Minh đọc từng đoạn.
+
+Ban đầu, giọng nói rất rõ ràng.
+
+Nhưng càng đến những bức thư cuối, giọng nói càng yếu và có nhiều khoảng dừng.
+
+Ở một trang nhật ký, mẹ viết:
+
+"Hôm nay tôi lại quên tên con bé."
+
+Người chơi vô thức kéo sang trang tiếp theo.
+
+Trang ấy chỉ có một câu được viết đi viết lại hàng chục lần:
+
+"Tôi có hai đứa con."
+
+Khi người chơi đóng nhật ký, có một người phụ nữ đứng phía sau bàn.
+
+Đó là mẹ Minh.
+
+Bà đang quay lưng lại, như thể đang viết thư.
+
+Nếu Minh gọi "Mẹ?", bóng người tan biến thành những hạt bụi.
+
+Lúc ấy, Minh không còn sợ hình bóng ấy nữa.
+
+Anh chỉ nói:
+
+"Mẹ vất vả quá rồi."
+
+Đây là hồi nên có ít jumpscare nhất nhưng nặng cảm xúc nhất.
+
+## Hồi VI — Người mặc áo mưa vàng
+
+Mục tiêu: Vào tháp chuông, khôi phục ký ức của Minh và khám phá danh tính của An.
+
+Khu vực: Nhà người giữ chuông → Hành lang đối trọng → Phòng cơ khí → Buồng ký ức → Tháp chuông.
+
+[The Remake Engine: When Every Game Costs Millions | The Platform Layer](https://images.openai.com/static-rsc-4/5p6CoFoVsf5cVGxJYffw7qa3MBw5pSCvqBBJr-daysTxrJ87qUPkSjYLs29Ru_GmAcgpBPst4wWj36JsilgzqoRss9LJbenLHotgmKZnSvzaNFiJzuJ1XhrcN0-yVPhFbnJmbE2ZbsEEdtiz1Mf_GHYciSvONZzYgPt1v_mPMC4?purpose=inline)
+
+[medium.com](https://medium.com/the-platform-layer/the-remake-engine-when-every-game-costs-millions-1ee91e54b793?utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                     |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P21 | Ba hồi chuông. Người chơi tìm các ghi chú cơ khí và kiểm tra ba chiếc chuông nhỏ. Mỗi chiếc tương ứng một chức năng: mở lối, giữ nhịp, đưa người trở về. Thử các cần gạt cho biết chúng hoạt động không độc lập. Từ hướng dẫn và âm thanh mẫu, xác định trình tự kích hoạt.                                 |
+| P22 | Bộ đối trọng 1–3–2. Bảng điều khiển có ba cần gạt, ba bánh răng và một cơ cấu cầu nâng. Người chơi phải đặt cần theo thứ tự 1 → 3 → 2, rồi điều chỉnh đối trọng để ba bánh răng ăn khớp. Cây cầu sắt được hạ xuống, mở lối tới buồng ký ức.                                                                 |
+| P23 | Người không có tên. Trên bàn trong buồng ký ức có sổ học sinh, nhật ký của mẹ và bức ảnh gia đình. Người chơi phải đối chiếu chỗ trống trong danh sách học sinh, ghi chú về người ở lại tháp và bức ảnh có hai đứa trẻ. Khi ba bằng chứng được nối với nhau, tên AN xuất hiện. Minh bắt đầu nhớ lại em gái. |
+| P24 | Đường đối trọng cuối cùng — câu đố bí mật. Trong tháp có một sơ đồ gồm bảy đường xích và các vị trí chốt. Người chơi dựa vào thứ tự các cụm neo bị thu hồi để truy ra lối bảo trì dẫn từ tháp xuống chân đồi. Khi các chốt được đặt đúng, mở hộc chứa mảnh bản đồ thứ sáu.                                  |
+
+### Khoảnh khắc kinh dị của hồi VI
+
+Câu đố P23 là một trong những điểm cao trào của toàn bộ game.
+
+Khi người chơi đặt ba bằng chứng lên bàn, căn phòng bắt đầu rung.
+
+Màn hình chuyển sang đoạn cinematic.
+
+Từng hình ảnh xuất hiện: Minh khi nhỏ, một cô bé mặc áo mưa vàng, con đường mưa, cánh cửa tháp.
+
+Sau đó, hình ảnh cô bé rõ dần.
+
+An đứng ngay trước mặt Minh.
+
+"Anh nhớ ra em rồi sao?"
+
+Lần đầu tiên, người chơi nhìn thấy khuôn mặt An.
+
+Đây là phần thưởng cảm xúc cho việc đã khám phá và giải những câu đố của sáu hồi.
+
+Tôi muốn người chơi có cảm giác:
+
+> "Hóa ra suốt từ đầu, chúng ta không chỉ đi tìm nguyên nhân của những ngôi nhà biến mất. Chúng ta đang đi tìm người em gái mà nhân vật chính đã quên."
+
+## Hồi VII — Cánh cửa thứ bảy
+
+Mục tiêu: Hoàn thành ngôi nhà cuối cùng, quyết định số phận của Minh, An và toàn bộ Hạ Vân.
+
+Khu vực: Nhà Minh năm 2011 → Phòng ký ức → Buồng lõi của chiếc chuông → Bản ghi đêm lũ → Đường lên đồi.
+
+[Lighting Real Time Environments with Maria Yue - Vertex School](https://images.openai.com/static-rsc-4/_TK6ULaLHYDudA4_O0r-P_L-c8Xnj1_cUdwmV4eCvqKy_1PjKxqUz7InAonlMhJZFDX6hSca2DMc40EJe4XVZB_hwzB6HHCYBid3I6XUlCiDsDNg-GGiWOINDTC1ZBlIowhgAi_OFH3cr2KrGl-XXCBbazB68J4ooQlRBNJEpn8?purpose=inline)
+
+[blog.vertexschool.com](https://blog.vertexschool.com/lighting-real-time-environments/?utm_source=chatgpt.com)
+
+| ID  | Câu đố và cách vượt qua                                                                                                                                                                                                                                                                                                             |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| P25 | Chiếc hộp ký ức tuổi thơ. Người chơi tìm các món đồ của Minh và An: con quay, thuyền giấy, bức ảnh và thước đo chiều cao. Từ những nét vẽ của hai anh em trên tường, sắp xếp đồ vật theo thứ tự các kỷ niệm trong nhà. Mở hộp gỗ dưới cầu thang và tìm được bức vẽ đường lên đồi.                                                   |
+| P26 | Cánh cửa của ngôi nhà thứ bảy. Cánh cửa được khóa bằng ba vòng đồng tượng trưng cho ký ức, thời gian và điểm neo. Các ký hiệu đã xuất hiện trong thư mẹ, nhà ông Kha và tháp chuông. Người chơi xoay ba vòng đúng hình, đặt chiếc đèn vào ổ khóa để mở cửa dẫn đến khoảnh khắc đêm lũ.                                              |
+| P27 | Bản đồ cuối cùng — câu đố bí mật. Khi đã sở hữu các mảnh trước đó, người chơi ghép đường bí mật của Minh và An với sáu mảnh bản đồ còn lại. Cần xoay các mảnh để nối ba khu dân cư qua những đường an toàn lên đồi. Nếu hoàn thành, một tuyến thứ ba xuất hiện trên cơ cấu chuông, cho phép mở Ending C.                            |
+| P28 | Phán quyết của chiếc chuông. Người chơi tương tác với ba chế độ của cơ cấu trung tâm. Hai chế độ đầu mở Ending A/B. Chế độ thứ ba chỉ khả dụng khi P27 hoàn tất và dẫn tới một màn sơ tán tương tác: mở tuyến bến sông, trường học, sân chung và cổng đồi theo các manh mối đã học ở những chương trước. Thành công sẽ mở Ending C. |
+
+### Điểm đặc biệt của câu đố cuối cùng
+
+Tôi không muốn kết thúc bằng việc người chơi chỉ cần chọn ba nút A, B hoặc C.
+
+Ending C phải là phần thưởng cho việc thực sự hiểu và vận dụng lại những gì đã học trong game.
+
+Ở P28, màn chơi quay về năm 2011. Người chơi phải phối hợp ba tuyến sơ tán:
+
+- Bến sông: sử dụng thông tin vạch nước, chọn đường vòng an toàn và hướng dẫn ông Phúc đưa người qua bến.
+- Trường học: sử dụng chìa khóa và sơ đồ thoát hiểm để dẫn học sinh ra cổng sau.
+- Sân chung: dùng lối nối các sân nhà để đưa gia đình bà Liên lên đồi, sau đó vận hành cổng sắt theo cơ cấu đã học trong hồi VI.
+
+Thay vì một bộ đếm thời gian khắc nghiệt, nước lũ tiến qua các giai đoạn rõ ràng, cho người chơi quan sát và suy luận. Nếu chọn sai tuyến, trò chơi thể hiện hậu quả, cho phép quay về checkpoint ngay trước quyết định đó.
+
+Khi cả ba nhóm đến chân đồi, người chơi mới được kích hoạt cơ cấu cuối cùng để nối lại dòng thời gian.
+
+Đó sẽ là thử thách lớn nhất của toàn bộ game, cả về tư duy lẫn cảm xúc.
+
+# 4. Làm thế nào để những câu đố này thực sự hấp dẫn như Paper Bride?
+
+28 câu đố ở trên mới là khung thiết kế gameplay. Để đạt chất lượng của một game giải đố kinh dị, mỗi câu cần được phát triển thành một chuỗi tương tác, chứ không phải chỉ nhấn đúng mật mã là hoàn thành.
+
+Tôi muốn quy định năm nguyên tắc.
+
+## Nguyên tắc 1 — Không để lời giải nằm ngay cạnh ổ khóa
+
+Ví dụ ở P23, câu đố khôi phục danh tính An:
+
+Luồng giải đố P23 — Người không có tên
+
+Phòng học hồi IV
+
+Tìm danh sách học sinh có dòng tên trống và dấu hiệu chỉnh sửa hồ sơ.
+
+Nhật ký của mẹ hồi V
+
+Đọc lời nhắn về một đứa trẻ bị bỏ lại tại tháp chuông.
+
+Bức ảnh trong tháp hồi VI
+
+Quan sát hai đứa trẻ trước cửa nhà và dòng chữ bị che phía sau ảnh.
+
+Người chơi tự liên kết ba bằng chứng
+
+Tên AN được khôi phục, mở đoạn cinematic hồi tưởng và danh tính của cô gái áo mưa vàng.
+
+Điều quan trọng là người chơi đã nhìn thấy những chi tiết này ở các chương trước. Khi giải được, họ có cảm giác tự tìm ra sự thật chứ không chỉ đoán đúng.
+
+Tuy nhiên, bằng chứng bắt buộc phải được lưu trong journal để người chơi không mắc kẹt vì bỏ sót một đồ vật không thể quay lại lấy.
+
+## Nguyên tắc 2 — Câu đố phải liên kết nhiều căn phòng
+
+Một căn phòng có khóa, căn phòng khác có manh mối, và một căn phòng thứ ba chứa vật phẩm để sử dụng.
+
+Nhưng không nên bắt người chơi di chuyển tới lui hàng chục lần chỉ để đối chiếu biểu tượng. Khi phát hiện manh mối, họ có thể ghi lại hoặc ghim vào journal.
+
+## Nguyên tắc 3 — Thế giới bị xóa không chỉ là công cụ mở cửa
+
+Đây là yếu tố giúp Ngôi Nhà Thứ Bảy có bản sắc riêng, thay vì trở thành một game giải đố thông thường.
+
+Một đồ vật ở thế giới thực có thể mang ý nghĩa khác ở thế giới bị xóa:
+
+| Trong thế giới thực      | Trong thế giới bị xóa                     |
+| ------------------------ | ----------------------------------------- |
+| Khung ảnh có ba người    | Khung ảnh có bốn người                    |
+| Tủ quần áo trống         | Có quần áo thuộc về người bị quên         |
+| Đồng hồ dừng hoạt động   | Kim quay ngược về thời điểm thảm họa      |
+| Cầu đã gãy               | Một phần cầu vẫn tồn tại                  |
+| Bản đồ không có ngôi nhà | Ngôi nhà hiện ra cùng các đường nối ký ức |
+| Bức tường bình thường    | Chứa vết nước, chữ viết và dấu tay        |
+
+Người chơi phải học cách đặt câu hỏi: "Nếu nhìn vật thể này trong thế giới còn lại thì sao?"
+
+## Nguyên tắc 4 — Kinh dị là hậu quả của hành động
+
+Thay vì cứ vài phút xuất hiện một jumpscare, chúng ta gắn sự kiện kinh dị với khám phá của người chơi.
+
+Khi mở chiếc tủ vốn thuộc về người không tồn tại, có tiếng ai đó đứng phía sau.
+
+Khi khôi phục bức ảnh, một người trong ảnh quay đầu nhìn người chơi.
+
+Khi giải đúng đồng hồ, tiếng chuông vang lên dù đồng hồ không hoạt động.
+
+Khi đọc hết lá thư của mẹ, người chơi nghe thấy tiếng khóc trong căn phòng vốn không có cửa.
+
+Các sự kiện nên được điều tiết. Nếu bất cứ vật thể nào cũng gây jumpscare, người chơi sẽ đoán trước được.
+
+## Nguyên tắc 5 — Có hệ thống gợi ý mà không phá trải nghiệm
+
+Ví dụ hệ thống hint cho câu đố bốn chiếc bát
+
+Gợi ý 1Gợi ý 2Lời giải
+
+"Bàn ăn dường như vẫn được dọn cho nhiều người hơn số người trong nhà."
+
+Ba tầng hint giúp người chơi vẫn có thể tự giải, nhưng không bị mắc kẹt vĩnh viễn. Không dùng cơ chế phải xem quảng cáo hoặc chờ thời gian mới được nhận gợi ý.
+
+# 5. Bây giờ cần thay đổi gì trong kế hoạch của coding agent?
+
+Đây là phần rất quan trọng.
+
+Tôi không khuyến nghị để agent tiếp tục triển khai toàn bộ game bằng GDD v3 cũ mà chưa cập nhật thiết kế gameplay này.
+
+Trước đây, chúng ta đang định hướng nhiều về exploration, movement và stealth. Nhưng với trải nghiệm giống Paper Bride, phân bổ gameplay nên đổi thành:
+
+Giải đố và tương tác vật phẩm
+
+55%
+
+Khám phá và điều tra
+
+25%
+
+Hội thoại và cinematic
+
+15%
+
+Sự kiện kinh dị và thoát hiểm
+
+5%
+
+Tỷ trọng thiết kế mục tiêu, chưa phải số liệu đo từ game.
+
+Bộ tài liệu agent nên được bổ sung một tài liệu đặc biệt: PUZZLE DESIGN BIBLE, chứa đầy đủ cho từng câu đố: scene, điều kiện kích hoạt, vật phẩm, vị trí manh mối, chuỗi tương tác, đáp án, cách tính thành công, trạng thái thất bại, ba cấp gợi ý, sự kiện kinh dị và các bài kiểm thử.
+
+Song song, Technical Design trong Godot phải ưu tiên `InspectableObject`, `InventoryManager`, `PuzzleManager`, `EvidenceJournal`, `WorldStateController` và `HintManager`, cùng hệ thống dựng giao diện câu đố cận cảnh. Camera 2.5D và cơ chế chuyển thế giới vẫn được giữ.
+
+## Kết luận
+
+Tôi nghĩ Ngôi Nhà Thứ Bảy có thể hấp dẫn hơn rất nhiều nếu chuyển hẳn sang hướng giải đố kinh dị như Áo Cưới Giấy.
+
+Nhưng tôi cũng đánh giá 28 câu đố trên mới đạt mức Puzzle Concept Design. Chúng ta vẫn cần thiết kế sâu hơn: chính xác chiếc chìa khóa nằm ở ngăn nào, vì sao người chơi biết cần mở ngăn đó, manh mối được thể hiện thế nào và các hành động phải xảy ra theo thứ tự nào. Nếu chưa làm bước này, coding agent rất dễ tạo ra 28 minigame tách rời, thay vì một trải nghiệm giải đố có chiều sâu.
+
+Bước tiếp theo nên là khóa lại gameplay mới và viết Puzzle Design Bible ở mức có thể triển khai trực tiếp, bắt đầu bằng toàn bộ Hồi I như một chương hoàn chỉnh. Khi Hồi I đủ hấp dẫn và được playtest, chúng ta mới dùng chuẩn thiết kế ấy để hoàn thiện sáu hồi còn lại.

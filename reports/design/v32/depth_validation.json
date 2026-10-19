@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "scope": "STATIC_DESIGN_DEPTH_NOT_RUNTIME",
+  "checks_count": 473,
+  "errors": [],
+  "valid_evacuation_plans": 8,
+  "human_usability": "HUMAN_USABILITY_NOT_ASSESSED"
+}

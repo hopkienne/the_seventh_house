@@ -1,0 +1,212 @@
+{
+  "task_id": "T-020204",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T07:49:07.993320+00:00",
+  "revision": "artifact-tree-sha256:89ab1b284e2703a3579d0320df30e66ee5e0f3b3895e3835ff228a23926864dd",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020204/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "project.godot",
+      "sha256": "a3cd863db03ce240c3e055ac39f8423ace4f094575b00160cc7bf17efa9b6534"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "23fe312a30d7b55cf8dbefe8c47e455663037a8087b97e7366ffe6b68c59058b"
+    },
+    {
+      "path": "scenes/ui/safe_frame.tscn",
+      "sha256": "40bf52f0004998823f488a656c706d9a14d8b0fadeea255ae329920bba2dc3c3"
+    },
+    {
+      "path": "scripts/ui/safe_frame.gd",
+      "sha256": "b3d350678b1f711a4a2563545d1bfe9f83ea9312911f12ba6671deacaf4456b6"
+    },
+    {
+      "path": "scripts/ui/safe_frame_settings.gd",
+      "sha256": "347aabc42548c8557daec695f3be89a5e589af67be190366af47cc7908e1f1bc"
+    },
+    {
+      "path": "config/tuning/ui_safe_frame.tres",
+      "sha256": "d28145438fa5a40240b2b01831499d0fc5e8a05f87cffe815bf603180c4dffd4"
+    },
+    {
+      "path": "scripts/bootstrap/main.gd",
+      "sha256": "67f96b8a4c2b8ad83da5dcfdf6148d186cb79e7f89c94aeca850fceb553cf390"
+    },
+    {
+      "path": "tests/unit/test_safe_frame.gd",
+      "sha256": "285b4bb12e3e97d0d7dd25e65f10c461072f8c5252e4f4f53b4f5a46fdf6f237"
+    },
+    {
+      "path": "tests/replays/camera_frames.gd",
+      "sha256": "3614ce4a6336991d479bbd93cc585b16a0341a7c311106909ef3e92a84ac7d53"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "294b634a54d16ff4c2ba1b14cdcd41c3070f6c8996f5bed092efcc968cc2113c"
+    },
+    {
+      "path": "reports/S02/camera_frames.md",
+      "sha256": "9e2350c0cd71effb4593626db24fc7aadd26e1dc967a1b05ab0585e7c1ac761d"
+    },
+    {
+      "path": "reports/builds/20261019T074605916708Z/manifest.json",
+      "sha256": "36b94a6e8ebeb19b905c71affee677c5d2b861c7f3db93d75155f0ffcf42dfc2"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x720_0_east.png",
+      "sha256": "2c6ead526577014a3abbf0c3781209e4bf313cb9665307a4037305459eadb895"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x720_0_west.png",
+      "sha256": "585a40cbd3230c1b796dd1519e78d6f87b8fa911fc97101a762ef7222f79b675"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x720_6_east.png",
+      "sha256": "5f65453e6ed06fd4394815cf2c957be45531afa6e713fd16f44706376f9bd0b2"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x720_6_west.png",
+      "sha256": "585a40cbd3230c1b796dd1519e78d6f87b8fa911fc97101a762ef7222f79b675"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x800_2_east.png",
+      "sha256": "2c6ead526577014a3abbf0c3781209e4bf313cb9665307a4037305459eadb895"
+    },
+    {
+      "path": "reports/tasks/T-020204/1280x800_2_west.png",
+      "sha256": "585a40cbd3230c1b796dd1519e78d6f87b8fa911fc97101a762ef7222f79b675"
+    },
+    {
+      "path": "reports/tasks/T-020204/1680x720_4_east.png",
+      "sha256": "5f65453e6ed06fd4394815cf2c957be45531afa6e713fd16f44706376f9bd0b2"
+    },
+    {
+      "path": "reports/tasks/T-020204/1680x720_4_west.png",
+      "sha256": "585a40cbd3230c1b796dd1519e78d6f87b8fa911fc97101a762ef7222f79b675"
+    },
+    {
+      "path": "reports/tasks/T-020204/before.stderr.log",
+      "sha256": "5085cb0c9b0940703243d05fe5de53d4324fa59830517174f3c72b96c77ccaca"
+    },
+    {
+      "path": "reports/tasks/T-020204/before.stdout.log",
+      "sha256": "6b8b63315b49ed42fa37f8d35d39f0f67803ef627fb8d2854e7995868a78b709"
+    },
+    {
+      "path": "reports/tasks/T-020204/design_checks.json",
+      "sha256": "e205aa4f39dde32717355ae9a4f57f7182d25f89ee5364b473e1f0375563cb4a"
+    },
+    {
+      "path": "reports/tasks/T-020204/image_comparison.json",
+      "sha256": "8a6d2d9769125dfd25c87f893ddfce956257c3cc7ac54100d2bc3036ac984ed8"
+    },
+    {
+      "path": "reports/tasks/T-020204/import.stdout.log",
+      "sha256": "78d596d5fbaebb64ae68d0bedaa7d012b1e41b8b82f08ba1ea275681d1929801"
+    },
+    {
+      "path": "reports/tasks/T-020204/native.stdout.log",
+      "sha256": "7055bd7d668c7dee4929c459a177e673c9abaea43a5661b61af62fdf812af23a"
+    },
+    {
+      "path": "reports/tasks/T-020204/native_ultrawide.json",
+      "sha256": "7c579328ae4967390b602adeb1d3480893721498bb72ae9efaaab717d3d96c00"
+    },
+    {
+      "path": "reports/tasks/T-020204/native_ultrawide.png",
+      "sha256": "2a1c28f3b695a44f42e124e26c710f70285833cf179c7f5b7abead28ab095534"
+    },
+    {
+      "path": "reports/tasks/T-020204/review.md",
+      "sha256": "e8bd539c6b6c78ac01b0838260fec95f300664e34b3bd45d0fdcd79aa099f00c"
+    },
+    {
+      "path": "reports/tasks/T-020204/runtime.json",
+      "sha256": "4304cea4e7e88e5fc678ed45192cc3d1bf41ad132f9edf76c8f3d57267bcd04c"
+    },
+    {
+      "path": "reports/tasks/T-020204/runtime.stdout.log",
+      "sha256": "825606e6dcb0285e84440b05d4dcc541e32650bc48c47b04acaf30abc9dd47be"
+    },
+    {
+      "path": "reports/tasks/T-020204/safe_frame.stdout.log",
+      "sha256": "24063376d11d3908357e76068e3783088e0ee5533cd42d72fbe229e99439f6cd"
+    },
+    {
+      "path": "builds/windows/20261019T074605916708Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T074605916708Z/TheSeventhHouse.pck",
+      "sha256": "2786f1d2b0dd63f45ffa5f201804ac749f4c2eaed5fc417d8eabb610ae12d65b"
+    }
+  ],
+  "checks": [
+    {
+      "id": "safe_frame_regression",
+      "kind": "ENGINE_TEST",
+      "expected": "aspect policy, safe child layout, invalid configuration rejected; affected regression passes",
+      "observed": "safe_frame2cases7assertions; all33cases246assertions failed0/skipped0, export+PCK PASS",
+      "result": "PASS",
+      "assertions": 246,
+      "command": "python -X utf8 scripts/build_windows.py",
+      "log_path": "reports/builds/20261019T074605916708Z/manifest.json"
+    },
+    {
+      "id": "actual_aspect_profiles",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "UI and main focus remain safe at16:9/16:10/21:9 and resize back",
+      "observed": "50checks8actual window/zone samples,0failures; viewport1920x1080/safe(96,54,1728,972)/content1280x720 preserved",
+      "result": "PASS",
+      "assertions": 50,
+      "command": "tools.godot_process.run --script res://tests/replays/camera_frames.gd, software=True",
+      "log_path": "reports/tasks/T-020204/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020204/1280x720_0_west.png",
+        "reports/tasks/T-020204/1280x720_0_east.png",
+        "reports/tasks/T-020204/1280x800_2_west.png",
+        "reports/tasks/T-020204/1280x800_2_east.png",
+        "reports/tasks/T-020204/1680x720_4_west.png",
+        "reports/tasks/T-020204/1680x720_4_east.png",
+        "reports/tasks/T-020204/1280x720_6_west.png",
+        "reports/tasks/T-020204/1280x720_6_east.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "native_ultrawide_export",
+      "kind": "WINDOWS_RUNTIME",
+      "expected": "clean exported Windows candidate keeps content aspect under ultrawide",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 5, \"authored_viewport\": \"(1920, 1080)\", \"capture\": \"reports/native_ultrawide.png\", \"content_scale_aspect\": 1, \"display\": \"Windows\", \"driver\": \"vulkan\", \"engine\": \"4.7.2-stable (official)\", \"failed\": 0, \"failures\": [], \"height\": 720, \"input_mode\": \"scene_smoke_no_physical_input\", \"native_os\": \"Windows\", \"profile\": \"BOOTSTRAP\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"sample_colors\": 23, \"skipped\": 0, \"software\": true, \"width\": 1280, \"window_height\": 720, \"window_width\": 1680}",
+      "result": "PASS",
+      "assertions": 5,
+      "command": ".qa/T-020204/native/TheSeventhHouse.exe --resolution1680x720 -- --qa-profile BOOTSTRAP --qa-report res://reports/native_ultrawide.json",
+      "log_path": "reports/tasks/T-020204/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020204/native_ultrawide.png"
+      ],
+      "native_os": "Windows",
+      "software": true
+    },
+    {
+      "id": "framing_report_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "measured results/reproduction/limits and visual evidence reviewed",
+      "observed": "ratio captures+native image opened; padding explicitly calculated/content-only, frame report and source diff reviewed",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Software Forward+ functional tests, not hardware-performance/physical-input/audio/human usability evidence.",
+    "Reusable UI layout only; full menus and cinematic/campaign acceptance remain later tasks.",
+    "Content-only screenshots do not capture OS-managed padding; window/content dimensions and KEEP mode measured."
+  ]
+}

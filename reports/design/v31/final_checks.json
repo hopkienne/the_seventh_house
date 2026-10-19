@@ -1,0 +1,118 @@
+[
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/render_puzzle_cards.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_1.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/write_requirements.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_2.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/render_views.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_3.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/validate_plan.py",
+      "--output",
+      "reports/design/v31/plan_validation.json"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_4.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/validate_puzzle_design.py",
+      "--output",
+      "reports/design/v31/design_validation.json"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_5.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_puzzle_design.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_6.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_validate_game_data.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_7.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/test_agentctl.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_8.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/check_narrative_contract.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_9.log"
+  },
+  {
+    "command": [
+      "python",
+      "-X",
+      "utf8",
+      "tools/validate_game_data.py"
+    ],
+    "exit_code": 0,
+    "log": "reports/design/v31/final_check_10.log"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-19T04:56:53.022902+00:00",
+  "kind": "DESIGN_MIGRATION_NOT_GAME_QA",
+  "old_tasks": 592,
+  "new_tasks": 598,
+  "added_tasks": [
+    "T-070205",
+    "T-070206",
+    "T-070207",
+    "T-070208",
+    "T-070209",
+    "T-070210"
+  ],
+  "existing_task_states_unchanged": true,
+  "gates_unchanged": true,
+  "owner_proposal_sha256": "2e96b6aea11f5a078d55a8a1e0e1c40a6747b0b777c1f77f6ae1c4155d9a3c44",
+  "plan_version": "3.1"
+}

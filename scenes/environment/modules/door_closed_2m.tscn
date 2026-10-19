@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://art/export/blockout/door_closed_2m.glb" id="1_visual"]
+[ext_resource type="Script" path="res://scripts/art/street_blockout.gd" id="2_collision"]
+
+[node name="door_closed_2m" type="Node3D"]
+script = ExtResource("2_collision")
+collision_ids = PackedStringArray("JambLeft", "JambRight", "Lintel", "HeaderTrim", "ClosedLeafLeft", "ClosedLeafRight")
+
+[node name="Visuals" parent="." instance=ExtResource("1_visual")]
+
+[node name="SocketStart" type="Marker3D" parent="."]
+
+[node name="SocketEnd" type="Marker3D" parent="."]
+position = Vector3(2, 0, 0)

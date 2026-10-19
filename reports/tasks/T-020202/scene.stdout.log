@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE scene/scene_structure
+CASE scene/input_mapping
+CASE scene/scene_reload
+TEST_REPORT {"assertions":57,"executed":3,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion","corridor","movement_qa","camera_preset","camera_follow"],"result":"PASS","skipped":0,"suite":"scene","tests":3}

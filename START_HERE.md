@@ -36,3 +36,8 @@ Thử khả năng thực, ghi blocker cụ thể. Ví dụ không có Windows ru
 
 ## 7. Kết quả cuối
 Bảy chương đầy đủ và cả ba ending, assets và audio final, save, UI VI/EN, QA, build, source/rebuild, license và handover. Public release cần gate ngoài. Khi chưa có quyền public, bàn giao `READY_FOR_RELEASE` với external queue, không dùng chữ PUBLISHED.
+
+## Gameplay revision3.1
+Đọc `14_PUZZLE_DESIGN_BIBLE.md` và ADR-002 khi làm việc gameplay/content. Nguồn IDs là catalog mới P01–P28; không dùng lại đáp án14puzzle của baseline3.0. G2 yêu cầu CH01 P01–P04 hoàn chỉnh; xem review28concept tại `docs/design/gameplay_review_v31.md`.
+
+Gameplay3.2 hiện hành theo ADR-003: xem `docs/design/comparative_gameplay_research_v32.md`, `docs/design/puzzle_depth_matrix_v32.md` và reasoning trong catalog/cards. 28puzzle/21main-required/7secret và28journalIDs giữ nguyên. Định nghĩa602task, trạngthái chỉ ởledger. Kiểm reasoning/routes/tension riêng, không coi tài liệu hoặc finite model là runtime/human playtest.

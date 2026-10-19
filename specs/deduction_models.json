@@ -1,0 +1,110 @@
+{
+  "design_version": "3.2",
+  "scope": "FINITE_AUTHORING_FIXTURES_NOT_RUNTIME",
+  "P05": {
+    "people": [
+      "MOTHER",
+      "SON_A",
+      "HANH",
+      "SON_B"
+    ],
+    "directions": [
+      "north",
+      "east",
+      "south",
+      "west"
+    ],
+    "constraints": [
+      "mother opposite south courtyard door",
+      "HANH opposite MOTHER",
+      "SON_A east"
+    ]
+  },
+  "P12": {
+    "arrival_minutes": 124,
+    "options": [
+      {
+        "id": "LOW_PIER",
+        "walk_minutes": 3,
+        "flood_minutes": 120
+      },
+      {
+        "id": "REED_BANK",
+        "walk_minutes": 3,
+        "flood_minutes": 123
+      },
+      {
+        "id": "HIGH_RAMP",
+        "walk_minutes": 3,
+        "flood_minutes": 140
+      }
+    ]
+  },
+  "P17": {
+    "letters": [
+      {
+        "id": "A",
+        "seal_continuous": true,
+        "ink_bleed": true
+      },
+      {
+        "id": "B",
+        "seal_continuous": true,
+        "ink_bleed": true
+      },
+      {
+        "id": "C",
+        "seal_continuous": true,
+        "ink_bleed": true
+      },
+      {
+        "id": "D",
+        "seal_continuous": false,
+        "ink_bleed": true
+      },
+      {
+        "id": "E",
+        "seal_continuous": true,
+        "ink_bleed": false
+      }
+    ]
+  },
+  "P16": {
+    "edges": [
+      [
+        "CLASS3A",
+        "LIBRARY"
+      ],
+      [
+        "LIBRARY",
+        "REAR_GATE"
+      ],
+      [
+        "CLASS3A",
+        "UPPER_GALLERY"
+      ],
+      [
+        "UPPER_GALLERY",
+        "REAR_GATE"
+      ],
+      [
+        "CLASS3A",
+        "SHORT_YARD"
+      ]
+    ],
+    "blocked_edges": [
+      [
+        "CLASS3A",
+        "SHORT_YARD"
+      ]
+    ]
+  },
+  "P04": {
+    "valid_decoy_sockets": [
+      "FAR_TABLE",
+      "LOFT_POST"
+    ],
+    "invalid_socket": "NEAR_HATCH",
+    "invariant": "Sound source pulls investigate away from hatch and authored cover remains connected; verify real nav/perception at runtime."
+  }
+}

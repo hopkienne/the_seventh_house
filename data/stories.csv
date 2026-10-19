@@ -1,9 +1,9 @@
 ﻿id,sprint,title,task_count,done_count
-ST-0101,S01,Khóa định nghĩa Full Game 1.0,4,0
-ST-0102,S01,Đóng các lỗ hổng canon trước khi dựng cảnh,4,0
-ST-0103,S01,Bootstrap Godot 3D và build có phiên bản,4,0
-ST-0104,S01,Mở sổ rủi ro và nghiệm thu Sprint 1,4,0
-ST-0201,S02,Minh di chuyển ổn định trong không gian 3D,4,0
+ST-0101,S01,Khóa định nghĩa Full Game 1.0,4,4
+ST-0102,S01,Đóng các lỗ hổng canon trước khi dựng cảnh,4,4
+ST-0103,S01,Bootstrap Godot 3D và build có phiên bản,4,4
+ST-0104,S01,Mở sổ rủi ro và nghiệm thu Sprint 1,4,4
+ST-0201,S02,Minh di chuyển ổn định trong không gian 3D,4,3
 ST-0202,S02,Camera cinematic giữ hướng đi dễ đọc,4,0
 ST-0203,S02,Chốt tỷ lệ art qua một street kit thử nghiệm,4,0
 ST-0204,S02,Nghiệm thu sandbox traversal,4,0
@@ -24,13 +24,13 @@ ST-0602,S06,Cinematic có skip an toàn,4,0
 ST-0603,S06,Animation locomotion và tương tác của Minh,4,0
 ST-0604,S06,Kiểm thử narration trong một đoạn chơi,4,0
 ST-0701,S07,Chơi đủ tám beat đêm đầu tiên,4,0
-ST-0702,S07,Puzzle H01 có ý nghĩa điều tra,4,0
+ST-0702,S07,CH01 giải đố quan sát–suy luận với closeup và inventory,12,0
 ST-0703,S07,Art pass street/H01 và bóng An,4,0
 ST-0704,S07,Soundscape và review lần chơi đầu,4,0
 ST-0801,S08,Enemy tuần tra và phát hiện đúng phase,4,0
 ST-0802,S08,"Nấp, chạy và hồi checkpoint công bằng",4,0
 ST-0803,S08,Model và animation Kẻ Gõ Cửa,4,0
-ST-0804,S08,Kiểm thử encounter đầu tiên,4,0
+ST-0804,S08,Kiểm thử encounter đầu tiên,5,0
 ST-0901,S09,"Menu, pause và continue hoạt động",4,0
 ST-0902,S09,Gamepad và accessibility cho demo,4,0
 ST-0903,S09,Lighting/VFX pass cho slice có thể benchmark,4,0
@@ -48,60 +48,60 @@ ST-1202,S12,Journal bằng chứng và bản đồ ký ức,4,0
 ST-1203,S12,Input rebind và accessibility baseline full game,4,0
 ST-1204,S12,Gate nền tảng và template sản xuất chương,4,0
 ST-1301,S13,Khám phá Nhà bà Liên và hiểu mục tiêu chương,4,0
-ST-1302,S13,P03 — Chỗ ngồi thứ tư,4,0
+ST-1302,S13,P05 — Chỗ ngồi thứ tư,4,0
 ST-1303,S13,Art blockout và hero props cho H02,4,0
-ST-1304,S13,P04 và ký ức tùy chọn của H02,4,0
+ST-1304,S13,P06 và ký ức tùy chọn của H02,4,0
 ST-1401,S14,Kể trọn bí mật H02 trong gameplay,4,0
 ST-1402,S14,Art final và diễn xuất H02,4,0
 ST-1403,S14,Âm thanh dẫn cảm xúc chương H02,4,0
 ST-1404,S14,Nghiệm thu chương H02 và chống soft-lock,5,0
 ST-1405,S14,Trang giới thiệu game dựa trên footage thật,5,0
 ST-1501,S15,Khám phá Nhà ông Phúc lái đò và hiểu mục tiêu chương,4,0
-ST-1502,S15,P05 — Cây cầu thiếu hai nhịp,4,0
+ST-1502,S15,P10 — Cây cầu thiếu hai nhịp,4,0
 ST-1503,S15,Art blockout và hero props cho H03,4,0
-ST-1504,S15,P06 và ký ức tùy chọn của H03,4,0
+ST-1504,S15,P11 và ký ức tùy chọn của H03,4,0
 ST-1601,S16,Kể trọn bí mật H03 trong gameplay,4,0
 ST-1602,S16,Art final và diễn xuất H03,4,0
 ST-1603,S16,Âm thanh dẫn cảm xúc chương H03,4,0
 ST-1604,S16,Nghiệm thu chương H03 và chống soft-lock,5,0
 ST-1701,S17,Khám phá Nhà bác Tư giữ trường và hiểu mục tiêu chương,4,0
-ST-1702,S17,P07 — Tiết học cuối cùng,4,0
+ST-1702,S17,P14 — Tiết học cuối cùng,4,0
 ST-1703,S17,Art blockout và hero props cho H04,4,0
-ST-1704,S17,P08 và ký ức tùy chọn của H04,4,0
+ST-1704,S17,P15 và ký ức tùy chọn của H04,4,0
 ST-1801,S18,Kể trọn bí mật H04 trong gameplay,4,0
 ST-1802,S18,Art final và diễn xuất H04,4,0
 ST-1803,S18,Âm thanh dẫn cảm xúc chương H04,4,0
 ST-1804,S18,Nghiệm thu chương H04 và chống soft-lock,5,0
 ST-1901,S19,"Khám phá Nhà bà Hảo, bạn của mẹ và hiểu mục tiêu chương",4,0
-ST-1902,S19,P09 — Ba ngày trên một lá thư,4,0
+ST-1902,S19,P17 — Ba ngày trên một lá thư,4,0
 ST-1903,S19,Art blockout và hero props cho H05,4,0
-ST-1904,S19,P10 và ký ức tùy chọn của H05,4,0
+ST-1904,S19,P18 và ký ức tùy chọn của H05,4,0
 ST-2001,S20,Kể trọn bí mật H05 trong gameplay,4,0
 ST-2002,S20,Art final và diễn xuất H05,4,0
 ST-2003,S20,Âm thanh dẫn cảm xúc chương H05,4,0
 ST-2004,S20,Nghiệm thu chương H05 và chống soft-lock,5,0
 ST-2005,S20,Cập nhật truyền thông trong giai đoạn sản xuất CH5,5,0
 ST-2101,S21,Khám phá Nhà người giữ chuông và hiểu mục tiêu chương,4,0
-ST-2102,S21,P11 — Lối đi dưới ba hồi chuông,4,0
+ST-2102,S21,P22 — Lối đi dưới ba hồi chuông,4,0
 ST-2103,S21,Art blockout và hero props cho H06,4,0
-ST-2104,S21,P12 và ký ức tùy chọn của H06,4,0
+ST-2104,S21,P23 và ký ức tùy chọn của H06,4,0
 ST-2201,S22,Kể trọn bí mật H06 trong gameplay,4,0
 ST-2202,S22,Art final và diễn xuất H06,4,0
 ST-2203,S22,Âm thanh dẫn cảm xúc chương H06,4,0
 ST-2204,S22,Nghiệm thu chương H06 và chống soft-lock,5,0
 ST-2301,S23,Khám phá Nhà Minh trong đêm lũ và hiểu mục tiêu chương,4,0
-ST-2302,S23,P13 — Tuyến đường của bảy ký ức,4,0
+ST-2302,S23,P27 — Tuyến đường của bảy ký ức,4,0
 ST-2303,S23,Art blockout và hero props cho H07,4,0
-ST-2304,S23,P14 và ký ức tùy chọn của H07,4,0
+ST-2304,S23,P28 và ký ức tùy chọn của H07,4,0
 ST-2401,S24,Kể trọn bí mật H07 trong gameplay,4,0
 ST-2402,S24,Art final và diễn xuất H07,4,0
 ST-2403,S24,Âm thanh dẫn cảm xúc chương H07,4,0
 ST-2404,S24,Nghiệm thu chương H07 và chống soft-lock,5,0
 ST-2501,S25,Ending A/B có lựa chọn và cái giá rõ ràng,4,0
-ST-2502,S25,Secret Ending C có điều kiện hợp lý,4,0
+ST-2502,S25,Secret Ending C có điều kiện hợp lý,5,0
 ST-2503,S25,Mở rộng CH1 và hoàn thiện payoff hình ảnh,4,0
 ST-2504,S25,Nghiệm thu mọi nhánh ending,4,0
-ST-2601,S26,Audit nội dung 7 nhà / 14 puzzle / 28 bằng chứng,4,0
+ST-2601,S26,Audit nội dung 7 nhà / 28 puzzle / 28 bằng chứng,4,0
 ST-2602,S26,Walkthrough end-to-end và kiểm tra timeline,4,0
 ST-2603,S26,Khóa art/audio inventory và license chain,4,0
 ST-2604,S26,Duyệt G4 và kiểm tra forecast phát hành,4,0
@@ -109,7 +109,7 @@ ST-2701,S27,Chống soft-lock toàn chiến dịch,4,0
 ST-2702,S27,"Save, backup và load có khả năng phục hồi",4,0
 ST-2703,S27,Alpha usability/technical QA độc lập,4,0
 ST-2704,S27,Polish hình ảnh lỗi rõ và build Alpha 1,4,0
-ST-2801,S28,Tuning 14 puzzle và đường khám phá,4,0
+ST-2801,S28,Tuning 28 puzzle và đường khám phá,4,0
 ST-2802,S28,Tuning stealth và cinematic pacing,4,0
 ST-2803,S28,Cohort Alpha cuối trước dịch full,4,0
 ST-2804,S28,Khóa Alpha và polish âm thanh trọng điểm,4,0

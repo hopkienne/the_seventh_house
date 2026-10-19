@@ -1,0 +1,562 @@
+[
+  {
+    "id": "fence_2m",
+    "asset_id": "ENV_FENCE_2M_01",
+    "kind": "fence",
+    "generator_version": 1,
+    "seed": 7302,
+    "quality_state": "BLOCKOUT",
+    "phase": "SHARED",
+    "unit": "metre",
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2.0,
+        0,
+        0
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "Post00",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          0.0,
+          -0.07
+        ],
+        "bounds_max": [
+          0.1,
+          1.0,
+          0.07
+        ]
+      },
+      {
+        "name": "Post01",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.9,
+          0.0,
+          -0.07
+        ],
+        "bounds_max": [
+          2.0,
+          1.0,
+          0.07
+        ]
+      },
+      {
+        "name": "Rail00",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.1,
+          0.29,
+          -0.05
+        ],
+        "bounds_max": [
+          1.9,
+          0.41,
+          0.05
+        ]
+      },
+      {
+        "name": "Rail01",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.1,
+          0.59,
+          -0.05
+        ],
+        "bounds_max": [
+          1.9,
+          0.71,
+          0.05
+        ]
+      },
+      {
+        "name": "Picket00",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.2125,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          0.2875,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket01",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.4625,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          0.5375,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket02",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.7125,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          0.7875,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket03",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.9625,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          1.0375,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket04",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.2125,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          1.2875,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket05",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.4625,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          1.5375,
+          0.9,
+          0.135
+        ]
+      },
+      {
+        "name": "Picket06",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.7125,
+          0.0,
+          0.055
+        ],
+        "bounds_max": [
+          1.7875,
+          0.9,
+          0.135
+        ]
+      }
+    ],
+    "triangles": 132,
+    "tool_version": "4.5.3 LTS",
+    "config_sha256": "cc858673c62b3482db6f25f0d9156fda89e8d4e19651a1575a0e8cde6984a8cb",
+    "palette_sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac",
+    "semantic_sha256": "8ac83a4bf723aa703aa3d493694383b6e824b8c0374fefef5995dd2daee44d0f",
+    "glb_sha256": "819aeb9fbafce8c99f546f3702b81fbab3a497e0e58a44c1e31935024f34f85e"
+  },
+  {
+    "id": "wall_2m",
+    "asset_id": "ENV_WALL_2M_01",
+    "kind": "wall",
+    "generator_version": 1,
+    "seed": 7302,
+    "quality_state": "BLOCKOUT",
+    "phase": "SHARED",
+    "unit": "metre",
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2.0,
+        0,
+        0
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "PlasterPanel",
+        "material": "Plaster",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          0.0,
+          -0.1
+        ],
+        "bounds_max": [
+          2.0,
+          3.0,
+          0.1
+        ]
+      }
+    ],
+    "triangles": 12,
+    "tool_version": "4.5.3 LTS",
+    "config_sha256": "cc858673c62b3482db6f25f0d9156fda89e8d4e19651a1575a0e8cde6984a8cb",
+    "palette_sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac",
+    "semantic_sha256": "cbbc08cf1319d38697a184367977c3e3e4b06fe970471c798ddccd356032e35d",
+    "glb_sha256": "ac145103d88ba77d1cd8a52516c229aaebb5e5a8e071db7c0dbb9598ec7ac951"
+  },
+  {
+    "id": "door_open_2m",
+    "asset_id": "ENV_DOOR_OPEN_2M_01",
+    "kind": "door_open",
+    "generator_version": 1,
+    "seed": 7302,
+    "quality_state": "BLOCKOUT",
+    "phase": "SHARED",
+    "unit": "metre",
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2.0,
+        0,
+        0
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "JambLeft",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          0.0,
+          -0.1
+        ],
+        "bounds_max": [
+          0.375,
+          2.25,
+          0.1
+        ]
+      },
+      {
+        "name": "JambRight",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.625,
+          0.0,
+          -0.1
+        ],
+        "bounds_max": [
+          2.0,
+          2.25,
+          0.1
+        ]
+      },
+      {
+        "name": "Lintel",
+        "material": "Plaster",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          2.25,
+          -0.1
+        ],
+        "bounds_max": [
+          2.0,
+          3.0,
+          0.1
+        ]
+      },
+      {
+        "name": "HeaderTrim",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.375,
+          2.25,
+          0.1
+        ],
+        "bounds_max": [
+          1.625,
+          2.37,
+          0.14
+        ]
+      },
+      {
+        "name": "FoldedLeafLeft",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.285,
+          0.0,
+          -0.625
+        ],
+        "bounds_max": [
+          0.345,
+          2.19,
+          0.0
+        ]
+      },
+      {
+        "name": "FoldedLeafRight",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.655,
+          0.0,
+          -0.625
+        ],
+        "bounds_max": [
+          1.715,
+          2.19,
+          0.0
+        ]
+      }
+    ],
+    "triangles": 72,
+    "tool_version": "4.5.3 LTS",
+    "config_sha256": "cc858673c62b3482db6f25f0d9156fda89e8d4e19651a1575a0e8cde6984a8cb",
+    "palette_sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac",
+    "semantic_sha256": "d9b70aae6932a511f5f82c6b7dee90f6b66bfee45c30cb3141be9378acf79a1d",
+    "glb_sha256": "ca90dad65b940b615bef755c95d347cdc141e191695b901e28c77156f544e026"
+  },
+  {
+    "id": "door_closed_2m",
+    "asset_id": "ENV_DOOR_CLOSED_2M_01",
+    "kind": "door_closed",
+    "generator_version": 1,
+    "seed": 7302,
+    "quality_state": "BLOCKOUT",
+    "phase": "SHARED",
+    "unit": "metre",
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2.0,
+        0,
+        0
+      ]
+    ],
+    "meshes": [
+      {
+        "name": "JambLeft",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          0.0,
+          -0.1
+        ],
+        "bounds_max": [
+          0.375,
+          2.25,
+          0.1
+        ]
+      },
+      {
+        "name": "JambRight",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.625,
+          0.0,
+          -0.1
+        ],
+        "bounds_max": [
+          2.0,
+          2.25,
+          0.1
+        ]
+      },
+      {
+        "name": "Lintel",
+        "material": "Plaster",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.0,
+          2.25,
+          -0.1
+        ],
+        "bounds_max": [
+          2.0,
+          3.0,
+          0.1
+        ]
+      },
+      {
+        "name": "HeaderTrim",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.375,
+          2.25,
+          0.1
+        ],
+        "bounds_max": [
+          1.625,
+          2.37,
+          0.14
+        ]
+      },
+      {
+        "name": "ClosedLeafLeft",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          0.375,
+          0.0,
+          -0.04
+        ],
+        "bounds_max": [
+          1.0,
+          2.19,
+          0.04
+        ]
+      },
+      {
+        "name": "HandleLeft",
+        "material": "Wood",
+        "collision": false,
+        "triangles": 12,
+        "bounds_min": [
+          0.9025,
+          0.965,
+          0.04
+        ],
+        "bounds_max": [
+          0.9375,
+          1.135,
+          0.08
+        ]
+      },
+      {
+        "name": "ClosedLeafRight",
+        "material": "Wood",
+        "collision": true,
+        "triangles": 12,
+        "bounds_min": [
+          1.0,
+          0.0,
+          -0.04
+        ],
+        "bounds_max": [
+          1.625,
+          2.19,
+          0.04
+        ]
+      },
+      {
+        "name": "HandleRight",
+        "material": "Wood",
+        "collision": false,
+        "triangles": 12,
+        "bounds_min": [
+          1.0625,
+          0.965,
+          0.04
+        ],
+        "bounds_max": [
+          1.0975,
+          1.135,
+          0.08
+        ]
+      }
+    ],
+    "triangles": 96,
+    "tool_version": "4.5.3 LTS",
+    "config_sha256": "cc858673c62b3482db6f25f0d9156fda89e8d4e19651a1575a0e8cde6984a8cb",
+    "palette_sha256": "95e284e84a8e8f14710a59f49155165bcfedd0ca0401e9bd861a9a2452816fac",
+    "semantic_sha256": "da9f82c4b3cf1712eb2fa0a734aa1860b48e6467a6413a6bef9804563e9c44f0",
+    "glb_sha256": "3d0afd0b8ea607ef3e44a979656a4cb9f6b16b6f3faeb403029d041dcc3a29f4"
+  }
+]

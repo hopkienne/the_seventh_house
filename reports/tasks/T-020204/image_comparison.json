@@ -1,0 +1,78 @@
+{
+  "result": "PASS",
+  "scope": "content_viewport_resize_consistency_not_native_window_bands",
+  "profiles": [
+    {
+      "name": "1280x720_0_west",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1280x720_0_east",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1280x800_2_west",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1280x800_2_east",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1680x720_4_west",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1680x720_4_east",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 6.510416666666667e-06,
+      "max_rgb_diff": 1
+    },
+    {
+      "name": "1280x720_6_west",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 0.0,
+      "max_rgb_diff": 0
+    },
+    {
+      "name": "1280x720_6_east",
+      "capture_size": [
+        1280,
+        720
+      ],
+      "mean_absolute_rgb_diff": 6.510416666666667e-06,
+      "max_rgb_diff": 1
+    }
+  ]
+}

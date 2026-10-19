@@ -48,3 +48,6 @@ Các once flags chỉ xác nhận đoạn đã kết thúc, không dùng thay re
 ## Ràng buộc production
 
 H01–H07 là bảy nhà duy nhất. Trường gắn H04; tháp gắn H06, bến và đồi là khu phụ. Knocker là dấu thu hồi, không thêm tộc quái/tôn giáo thật. Không thêm ngày tháng, nguyên nhân chết của mẹ hoặc luật cứu tất cả ngoài canon. Asset nhân vật hiện tại cần An trưởng thành; silhouettes/camera được dùng cho đoạn cơ thể trẻ ở B/C theo Bible.
+
+## Gameplay3.2 / ADR-003
+P28 chấp nhận mọi thứtự ba nhóm khi tuyến phùhợp beat: trường qua thưviện ởbeat0 hoặc gallerycao ởbeat0/1/2, tổngtámplan. Preview trước crossing; reading/pause không tăngnước; sai giữnhómđãsafe. GIỮ/MỞ/TRẢ của lõi khác cần1/3/2 ởcổngsân. P27chỉplan;3nhóm+validationrồimớifinalC. MainreadyvẫnP25/P26+identity; A/Bkhôngcầnsecret. Các lối khác nhau không thêmending/nhà hoặc đổi tuổi/canon.

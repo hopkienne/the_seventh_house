@@ -1,0 +1,26 @@
+[
+  {
+    "command": "python -X utf8 tools/validate_plan.py",
+    "chunk_id": "438230",
+    "wall_time_seconds": 0.8935534,
+    "exit_code": 0,
+    "original_token_count": 200,
+    "output": "{\r\n  \"result\": \"PASS\",\r\n  \"scope\": \"DOCUMENT_PACKAGE_ONLY_NOT_GAME_QA\",\r\n  \"counts\": {\r\n    \"sprints\": 36,\r\n    \"stories\": 146,\r\n    \"tasks\": 602,\r\n    \"chapters\": 7,\r\n    \"puzzles\": 28,\r\n    \"journal_records\": 28\r\n  },\r\n  \"checks\": [\r\n    \"unique_ids\",\r\n    \"parent_references\",\r\n    \"task_fields\",\r\n    \"no_active_staffing_hours\",\r\n    \"dependency_exists\",\r\n    \"dependency_acyclic\",\r\n    \"no_future_wave_dependency\",\r\n    \"read_before_paths\",\r\n    \"task_story_sprint_cards\",\r\n    \"state_id_sets\",\r\n    \"content_counts\",\r\n    \"puzzle_solutions_hints\",\r\n    \"route_connectivity\",\r\n    \"json_parse\"\r\n  ],\r\n  \"errors\": [],\r\n  \"topological_first_tasks\": [\r\n    \"T-010101\",\r\n    \"T-010102\",\r\n    \"T-010103\",\r\n    \"T-010104\",\r\n    \"T-010201\",\r\n    \"T-010202\",\r\n    \"T-010203\",\r\n    \"T-010204\"\r\n  ]\r\n}\r\n"
+  },
+  {
+    "command": "python -X utf8 tools/validate_puzzle_depth.py",
+    "chunk_id": "556948",
+    "wall_time_seconds": 0.4653342,
+    "exit_code": 0,
+    "original_token_count": 50,
+    "output": "{\r\n  \"result\": \"PASS\",\r\n  \"scope\": \"STATIC_DESIGN_DEPTH_NOT_RUNTIME\",\r\n  \"checks_count\": 587,\r\n  \"errors\": [],\r\n  \"valid_evacuation_plans\": 8,\r\n  \"human_usability\": \"HUMAN_USABILITY_NOT_ASSESSED\"\r\n}\r\n"
+  },
+  {
+    "command": "python -X utf8 -m unittest discover -s tests -p test_puzzle*.py",
+    "chunk_id": "75103a",
+    "wall_time_seconds": 0.959336,
+    "exit_code": 0,
+    "original_token_count": 31,
+    "output": "....................\r\n----------------------------------------------------------------------\r\nRan 20 tests in 0.386s\r\n\r\nOK\r\n"
+  }
+]

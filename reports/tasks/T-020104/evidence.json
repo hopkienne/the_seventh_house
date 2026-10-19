@@ -1,0 +1,210 @@
+{
+  "task_id": "T-020104",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:1a3f81a7ce339b22ada5573e7f851fa02aa3f9a39d578c2e10bf6ebd8ebfa5c2",
+  "created_at": "2026-10-19T07:19:04.976435+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020104/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "reports/S02/movement.md",
+      "sha256": "cc8f4ff2a4557b682fcb69b638e089b0ad6f218cb380eded7c6a0e69af1cafdc"
+    },
+    {
+      "path": "reports/tasks/T-020104/review.md",
+      "sha256": "495c4811a97c297fadc991f01fa8bc43d31e2ffff5f108fac4bc950d16328231"
+    },
+    {
+      "path": "reports/builds/20261019T071623400900Z/manifest.json",
+      "sha256": "d2876053ba9dab6b00c35f6a32419b0a2082ac6dace1867a188195c4c6185889"
+    },
+    {
+      "path": "reports/tasks/T-020104/baseline_sources.json",
+      "sha256": "83b3a5d20e2642501b26c58e8c86c3310adab2af3357c908fa0c59ed56a5ca2a"
+    },
+    {
+      "path": "reports/tasks/T-020104/design_checks.json",
+      "sha256": "ec0485a1f1644def0aa9bcbed785543c753ffd80562226f1f012e8d744c6518a"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "666c3a63de12cf73dd377d646d4f48907010a291b8f2a96e4f2ca8d9d655fd88"
+    },
+    {
+      "path": "tests/fixtures/movement_course.gd",
+      "sha256": "be56d8f1a053c14b98a3ce6cd27f6de05e12259171290220834d7c93fdf6be77"
+    },
+    {
+      "path": "tests/unit/test_movement_qa.gd",
+      "sha256": "87dadc10d8105168e46219e727e6656ebda517da861f4fc061b8d34ca851cf58"
+    },
+    {
+      "path": "tests/replays/movement_fps.gd",
+      "sha256": "a0f914928f4dbdba12c00b7b497e70da844d277f7e323811ca08ea788a9f209e"
+    },
+    {
+      "path": "tests/replays/movement_clip.gd",
+      "sha256": "76040bbfc9feff3f807315702182a8094567d09b5224f7bcc3dc0f9f2e79c259"
+    },
+    {
+      "path": ".qa/T-020104/slope_diagnostic.avi",
+      "sha256": "88cc54d383eb97939d3ef4f17091f9b13224c9fbb1aca5660df8a2ab0cb5aa50"
+    },
+    {
+      "path": "reports/tasks/T-020104/clip.stdout.log",
+      "sha256": "a006ff27bb7daa2e441ebb07095eb860f3ffa15a3a0676b7394b1635f58acaae"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps.json",
+      "sha256": "18a721d0736392120c5c732431b3be3b1d1e4e62f70f348a2571015bc2bebe80"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps.stderr.log",
+      "sha256": "93a43567d24589370c0dd163f79be667a59de1912ac9619a3de8337c98c98015"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps.stdout.log",
+      "sha256": "31bc5ba0a9ecb3a98fa733bee76645da1e74033ac634099c7440919f0f1080cb"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_120.png",
+      "sha256": "5acf688aafe7f77ba6044b9e6fae13498fdefc65e84015b414965b7042ef9544"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90.json",
+      "sha256": "1bc17916f4ddf498af87555329bbc81bda7f3e03ce9b42b21b23c62cd93a90f7"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90.stderr.log",
+      "sha256": "93a43567d24589370c0dd163f79be667a59de1912ac9619a3de8337c98c98015"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90.stdout.log",
+      "sha256": "6513afb1560c9b95f383948ba6614e12aa6e743d5678a6d5c22208959e048c80"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90_120.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90_30.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_160x90_60.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_30.png",
+      "sha256": "5acf688aafe7f77ba6044b9e6fae13498fdefc65e84015b414965b7042ef9544"
+    },
+    {
+      "path": "reports/tasks/T-020104/fps_60.png",
+      "sha256": "5acf688aafe7f77ba6044b9e6fae13498fdefc65e84015b414965b7042ef9544"
+    },
+    {
+      "path": "reports/tasks/T-020104/headless_rejection.stderr.log",
+      "sha256": "c560777b7f1dfa2d91779750b8f72e127dd9f2115ada6d261aeec321ebae8423"
+    },
+    {
+      "path": "reports/tasks/T-020104/headless_rejection.stdout.log",
+      "sha256": "83cf0b082206af2aa236c83064fbcfa76be1e00a4aa3558574b2f65965d9481c"
+    },
+    {
+      "path": "reports/tasks/T-020104/slopes.stdout.log",
+      "sha256": "b1387f32b8f2b6caa568000c31d1e3c77adeeed58a25b4097a906fa9f7674db1"
+    },
+    {
+      "path": "reports/tasks/T-020104/slopes_initial.stderr.log",
+      "sha256": "a399a67e4198419edc04bd08438b777add67af1ddb365b2cfc44e45f3381286a"
+    },
+    {
+      "path": "reports/tasks/T-020104/slopes_initial.stdout.log",
+      "sha256": "68e65d0b1067bcadf718c88350450a986c8c58ea674ab27cb4fdf088faa3bc6e"
+    },
+    {
+      "path": "reports/tasks/T-020104/slope_render.png",
+      "sha256": "66ce3339bb1ec59bf83a44e31a27d899c594037aae2f4f4d4c4a3ed03df5eb14"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90.json",
+      "sha256": "2a542f200b340891fb6bc3fdc73432585294dce29accbcbf248d0e8fc98a83d6"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90.stderr.log",
+      "sha256": "93a43567d24589370c0dd163f79be667a59de1912ac9619a3de8337c98c98015"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90.stdout.log",
+      "sha256": "976d047f10afbb9e5d914c14b6a8f7f5ee2c78d60fa043a08b2f48e6e2a38697"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90_120.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90_30.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "reports/tasks/T-020104/contended_probe/fps_160x90_60.png",
+      "sha256": "8b2b9b4eb753f3f8880cde13238787670df81a5db4c7069ba2c9b69a8b8db1a9"
+    },
+    {
+      "path": "builds/windows/20261019T071623400900Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T071623400900Z/TheSeventhHouse.pck",
+      "sha256": "d75e92a09739c447355d732260c4ad674feceebc8cf123a3e2dc3fe280076d07"
+    }
+  ],
+  "checks": [
+    {
+      "id": "movement_regression",
+      "kind": "ENGINE_TEST",
+      "expected": "all registered tests pass, nonzero counts",
+      "observed": "21 cases /180 assertions /0 failures /0 skipped; export and pack checks passed",
+      "result": "PASS",
+      "command": "python -X utf8 scripts/build_windows.py",
+      "log_path": "reports/builds/20261019T071623400900Z/manifest.json",
+      "assertions": 180
+    },
+    {
+      "id": "live_fps_comparison",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "actual30/60/120 draws within10percent and distance spread below5percent",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"input_mode\": \"synthetic_actions\", \"physics_ticks_per_second\": 60, \"relative_distance_spread\": 0.0, \"renderer\": \"forward_plus\", \"resolution\": \"(160, 90)\", \"result\": \"PASS\", \"samples\": [{\"capture_error\": 0, \"distance_m\": 10.8166770935059, \"drawn_frames\": 150, \"elapsed_seconds\": 4.999939, \"final_position\": \"(5.950011, 0.000038, 0.0)\", \"grounded\": true, \"held_physics_ticks\": 300, \"observed_draw_fps\": 30.0003660044653, \"requested_fps\": 30, \"target_achieved\": true}, {\"capture_error\": 0, \"distance_m\": 10.8166770935059, \"drawn_frames\": 300, \"elapsed_seconds\": 4.999815, \"final_position\": \"(5.950011, 0.000038, 0.0)\", \"grounded\": true, \"held_physics_ticks\": 300, \"observed_draw_fps\": 60.002220082143, \"requested_fps\": 60, \"target_achieved\": true}, {\"capture_error\": 0, \"distance_m\": 10.8166770935059, \"drawn_frames\": 600, \"elapsed_seconds\": 5.008347, \"final_position\": \"(5.950011, 0.000038, 0.0)\", \"grounded\": true, \"held_physics_ticks\": 300, \"observed_draw_fps\": 119.8000058702, \"requested_fps\": 120, \"target_achieved\": true}], \"scope\": \"QA_course_only_not_campaign_or_hardware_benchmark\"}",
+      "result": "PASS",
+      "command": "tools.godot_process.run --resolution160x90 --script tests/replays/movement_fps.gd, software=True",
+      "log_path": "reports/tasks/T-020104/fps_160x90.stdout.log",
+      "assertions": 9,
+      "capture_paths": [
+        "reports/tasks/T-020104/fps_160x90_30.png",
+        "reports/tasks/T-020104/fps_160x90_60.png",
+        "reports/tasks/T-020104/fps_160x90_120.png",
+        "reports/tasks/T-020104/slope_render.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "slope_movie_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "actual ramp traversal/capture and reproducible movie, reviewed limits",
+      "observed": "decoded132frames, viewed0/66/131; functional slopes grounded; separate self review",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-020104/clip.stdout.log",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Live FPS evidence at160x90 software Forward+ only; 320x180 requested120 not achieved.",
+    "No 1080p hardware performance or physical input/audio/human playtest claim.",
+    "Campaign baseline3.2 DESIGN_ONLY; no gate advancement."
+  ]
+}

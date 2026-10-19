@@ -54,7 +54,7 @@ def run_step(name, command, log_dir, timeout):
 
 def source_hash():
     files = [ROOT / 'project.godot', ROOT / 'export_presets.cfg', ROOT / 'config/toolchain.lock.json']
-    for directory in ['scenes', 'scripts', 'config/tuning', 'data/runtime', 'data/chapters', 'data/puzzles', 'data/dialogue', 'data/clues', 'data/localization']:
+    for directory in ['scenes', 'scripts', 'config/tuning', 'art/export', 'art/materials', 'data/runtime', 'data/chapters', 'data/puzzles', 'data/dialogue', 'data/clues', 'data/localization']:
         files += [p for p in (ROOT / directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
     return hashlib.sha256('\n'.join(f'{p.relative_to(ROOT).as_posix()} {sha(p)}' for p in sorted(files)).encode()).hexdigest()
 

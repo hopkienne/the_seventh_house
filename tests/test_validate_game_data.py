@@ -67,6 +67,22 @@ class DataValidationTests(unittest.TestCase):
         self.write('save_fixtures/slot.json', save)
         self.assertTrue(any('slot_id' in e['message'] for e in validator.validate(self.data)['errors']))
 
+    def test_old_design_save_is_not_silently_reinterpreted(self):
+        self.product()
+        save=validator.read(validator.ROOT/'specs/fixtures/save_empty_CH01.json')
+        for old_version in ['3.0','3.1']:
+            with self.subTest(design_version=old_version):
+                save['design_version']=old_version
+                self.write('save_fixtures/old_design.json',save)
+                self.assertTrue(any('design_version' in e['message'] for e in validator.validate(self.data)['errors']))
+
+    def test_unversioned_save_is_rejected(self):
+        self.product()
+        save=validator.read(validator.ROOT/'specs/fixtures/save_empty_CH01.json')
+        del save['design_version']
+        self.write('save_fixtures/unversioned.json',save)
+        self.assertTrue(any('design_version' in e['message'] for e in validator.validate(self.data)['errors']))
+
     def test_bad_csv_and_reference_types_report_errors(self):
         self.product()
         self.write('chapters/CH01.json', {'id':'CH01','chapter_id':[]})

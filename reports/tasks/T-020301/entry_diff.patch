@@ -1,0 +1,275 @@
+diff --git a/scenes/main.tscn b/scenes/main.tscn
+index 79cb398..5e6ab23 100644
+--- a/scenes/main.tscn
++++ b/scenes/main.tscn
+@@ -1,7 +1,10 @@
+-[gd_scene load_steps=14 format=3]
++[gd_scene load_steps=17 format=3]
+ 
+ [ext_resource type="Script" path="res://scripts/bootstrap/main.gd" id="1_main"]
+ [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
++[ext_resource type="PackedScene" path="res://scenes/camera/camera_rig.tscn" id="3_camera"]
++[ext_resource type="Script" path="res://scripts/camera/camera_director.gd" id="4_director"]
++[ext_resource type="PackedScene" path="res://scenes/ui/safe_frame.tscn" id="5_ui"]
+ 
+ [sub_resource type="Environment" id="Environment_bootstrap"]
+ background_mode = 1
+@@ -123,7 +126,11 @@ light_color = Color(1, 0.84, 0.65, 1)
+ light_energy = 1.3
+ shadow_enabled = true
+ 
+-[node name="Camera3D" type="Camera3D" parent="."]
+-position = Vector3(6, 4, 8)
+-current = true
+-fov = 38.0
++[node name="CameraRig" parent="." instance=ExtResource("3_camera")]
++
++[node name="CameraDirector" type="Node" parent="."]
++script = ExtResource("4_director")
++
++[node name="Interface" type="CanvasLayer" parent="."]
++
++[node name="SafeFrame" parent="Interface" instance=ExtResource("5_ui")]
+diff --git a/scripts/bootstrap/main.gd b/scripts/bootstrap/main.gd
+index 87178a3..9630494 100644
+--- a/scripts/bootstrap/main.gd
++++ b/scripts/bootstrap/main.gd
+@@ -3,7 +3,6 @@ extends Node3D
+ 
+ 
+ func _ready() -> void:
+-	$Camera3D.look_at(Vector3(0, 0.85, 0))
+ 	var args: PackedStringArray = OS.get_cmdline_user_args()
+ 	if not args.has("--qa-profile") and not args.has("--qa-report"):
+ 		return
+@@ -32,7 +31,7 @@ func _smoke(report_path: String) -> void:
+ 	var method: String = RenderingServer.get_current_rendering_method()
+ 	if method != "forward_plus":
+ 		failures.append("Required Forward+ renderer unavailable: " + method)
+-	if not $Camera3D.current:
++	if not $CameraRig/Camera3D.current:
+ 		failures.append("Main camera is inactive")
+ 	if capture.is_empty() or capture.get_width() < 640 or capture.get_height() < 360:
+ 		failures.append("Viewport image missing/too small")
+@@ -60,6 +59,9 @@ func _smoke(report_path: String) -> void:
+ 		"adapter": RenderingServer.get_video_adapter_name(), "native_os": OS.get_name(),
+ 		"input_mode": "scene_smoke_no_physical_input", "capture": capture_path,
+ 		"width": capture.get_width(), "height": capture.get_height(), "sample_colors": colors.size(),
++		"window_width": get_window().size.x, "window_height": get_window().size.y,
++		"content_scale_aspect": get_window().content_scale_aspect,
++		"authored_viewport": str(get_window().content_scale_size),
+ 		"engine": Engine.get_version_info().string,
+ 		"software": RenderingServer.get_video_adapter_name().contains("SwiftShader")}
+ 	var file: FileAccess = FileAccess.open(absolute, FileAccess.WRITE)
+diff --git a/state/task_state.json b/state/task_state.json
+index 2562805..00923fc 100644
+--- a/state/task_state.json
++++ b/state/task_state.json
+@@ -1,7 +1,7 @@
+ {
+   "schema_version": 1,
+-  "plan_version": "3.0",
+-  "revision": 58,
++  "plan_version": "3.2",
++  "revision": 76,
+   "tasks": {
+     "T-010101": {
+       "status": "DONE",
+@@ -270,52 +270,82 @@
+       "updated_at": "2026-10-19T04:30:10.987504+00:00"
+     },
+     "T-020104": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
+-      "evidence": null,
++      "status": "DONE",
++      "executor_id": "codex-primary",
++      "evidence": "reports/tasks/T-020104/evidence.json",
+       "blocker": null,
+-      "notes": [],
+-      "updated_at": null
++      "notes": [
++        {
++          "closed_at": "2026-10-19T07:19:37.194735+00:00",
++          "revision": "artifact-tree-sha256:1a3f81a7ce339b22ada5573e7f851fa02aa3f9a39d578c2e10bf6ebd8ebfa5c2",
++          "evidence_sha256": "a4fb504c4f9c700bc60604f5c2620320adff336d42977b29dedf180f1a1b3be5"
++        }
++      ],
++      "updated_at": "2026-10-19T07:19:37.195679+00:00"
+     },
+     "T-020201": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
+-      "evidence": null,
++      "status": "DONE",
++      "executor_id": "codex-primary",
++      "evidence": "reports/tasks/T-020201/evidence.json",
+       "blocker": null,
+-      "notes": [],
+-      "updated_at": null
++      "notes": [
++        {
++          "closed_at": "2026-10-19T07:24:38.025662+00:00",
++          "revision": "artifact-tree-sha256:990254e996fe88fd9e3646638830f9b9156bfb96d3fcc6cf511789b3e433018a",
++          "evidence_sha256": "6f7d3f695d55cbfab7c8ce9ad91e65b5734c4b4667c350c95e59823221f4ca99"
++        }
++      ],
++      "updated_at": "2026-10-19T07:24:38.026496+00:00"
+     },
+     "T-020202": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
+-      "evidence": null,
++      "status": "DONE",
++      "executor_id": "codex-primary",
++      "evidence": "reports/tasks/T-020202/evidence.json",
+       "blocker": null,
+-      "notes": [],
+-      "updated_at": null
++      "notes": [
++        {
++          "closed_at": "2026-10-19T07:30:45.425556+00:00",
++          "revision": "artifact-tree-sha256:c0ccc406fdf8a755d00e1fb7885e2dc3dcecf38625ef2a6ca56b2fc233663e87",
++          "evidence_sha256": "58323c939aaff9b3add9e4277d7c78ef866b7b9c3050a484fce21bbc6a4b8f07"
++        }
++      ],
++      "updated_at": "2026-10-19T07:30:45.426363+00:00"
+     },
+     "T-020203": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
+-      "evidence": null,
++      "status": "DONE",
++      "executor_id": "codex-primary",
++      "evidence": "reports/tasks/T-020203/evidence.json",
+       "blocker": null,
+-      "notes": [],
+-      "updated_at": null
++      "notes": [
++        {
++          "closed_at": "2026-10-19T07:41:39.859045+00:00",
++          "revision": "artifact-tree-sha256:cb9d7075fbea95cb5a06cdc8aac5269fafb5b0a438a395aecccf8889d168a986",
++          "evidence_sha256": "4e3b1d8f6c0e9b41e35c03e44b74eb45d1a5be9b4c8bf22fda73dfd0ef14c217"
++        }
++      ],
++      "updated_at": "2026-10-19T07:41:39.859864+00:00"
+     },
+     "T-020204": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
+-      "evidence": null,
++      "status": "DONE",
++      "executor_id": "codex-primary",
++      "evidence": "reports/tasks/T-020204/evidence.json",
+       "blocker": null,
+-      "notes": [],
+-      "updated_at": null
++      "notes": [
++        {
++          "closed_at": "2026-10-19T07:49:08.601131+00:00",
++          "revision": "artifact-tree-sha256:89ab1b284e2703a3579d0320df30e66ee5e0f3b3895e3835ff228a23926864dd",
++          "evidence_sha256": "3a39671da509561b46744a0059bf138b9bbfa4ec47b4079ce8b47727354e7fca"
++        }
++      ],
++      "updated_at": "2026-10-19T07:49:08.602019+00:00"
+     },
+     "T-020301": {
+-      "status": "NOT_STARTED",
+-      "executor_id": null,
++      "status": "IN_PROGRESS",
++      "executor_id": "codex-primary",
+       "evidence": null,
+       "blocker": null,
+       "notes": [],
+-      "updated_at": null
++      "updated_at": "2026-10-19T07:56:15.867420+00:00"
+     },
+     "T-020302": {
+       "status": "NOT_STARTED",
+@@ -4852,6 +4882,86 @@
+       "blocker": null,
+       "notes": [],
+       "updated_at": null
++    },
++    "T-070205": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070206": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070207": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070208": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070209": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070210": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070211": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-070212": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-080405": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
++    },
++    "T-250205": {
++      "status": "NOT_STARTED",
++      "executor_id": null,
++      "evidence": null,
++      "blocker": null,
++      "notes": [],
++      "updated_at": null
+     }
+   },
+   "gates": {

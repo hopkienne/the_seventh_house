@@ -1,0 +1,168 @@
+{
+  "task_id": "T-020202",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T07:30:44.812616+00:00",
+  "revision": "artifact-tree-sha256:c0ccc406fdf8a755d00e1fb7885e2dc3dcecf38625ef2a6ca56b2fc233663e87",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020202/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scripts/camera/camera_director.gd",
+      "sha256": "1e910680556dd6d5b8f07b401941004490cf42530b90bb29f6b9b6bb0e82e273"
+    },
+    {
+      "path": "scripts/camera/camera_zone.gd",
+      "sha256": "c6f60d4674d91e17e9f54b6c1e4961f50eeb84a79d4f928ec93d1b013f86c8f9"
+    },
+    {
+      "path": "config/tuning/camera_zone_corridor.tres",
+      "sha256": "5c89cf0ed1d27f87cef88f5ab1e90361da8a24af484186d9b0383e045fb6ebcb"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "54e9fbd385d76e4a722da4e7ac8c118819c4aac5ce17889c519f33468d9661ce"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "be2a2cc2f3b74eb858a5bcb2da82b23ed3352356f358a41f0eba43c9c60136db"
+    },
+    {
+      "path": "tests/unit/test_camera_follow.gd",
+      "sha256": "70939165c078d4f6b70bd90d03df2db53f9fcb7a23b0c4f10c2931cfb88decf7"
+    },
+    {
+      "path": "tests/replays/camera_follow.gd",
+      "sha256": "93ac5956594dfa9e879870f9087c61bcc61e6bec65b382a4d99d98cfacd1428a"
+    },
+    {
+      "path": "reports/builds/20261019T072803035188Z/manifest.json",
+      "sha256": "ffa92ba219bd28c46af24d187db11253d96d26053c8c02ee91769a0d7e671155"
+    },
+    {
+      "path": "reports/tasks/T-020202/before.stderr.log",
+      "sha256": "b0080ce443ff6a071269078f017bc8a98641736baf14f0c9dbdee01a8aaba0d5"
+    },
+    {
+      "path": "reports/tasks/T-020202/before.stdout.log",
+      "sha256": "07b9bb33fe01d3835723f0fd3d8603bb7cee64fa0d1320a3f69b1f9b06f38d47"
+    },
+    {
+      "path": "reports/tasks/T-020202/bound.png",
+      "sha256": "24e76621d79fa6347d56f7d58e6950cbe51a6a4504f7b52924f589ff8449c7a1"
+    },
+    {
+      "path": "reports/tasks/T-020202/camera_follow.stdout.log",
+      "sha256": "b067e66155b764ade4e9d2b512dd6a29df03ed2cd2aa00c557ad0778a695e54e"
+    },
+    {
+      "path": "reports/tasks/T-020202/camera_preset.stdout.log",
+      "sha256": "10b9b6b3a2b54be20d015d9aa9cb1ae3ed84f683de809b29c9839daa0d7f78a0"
+    },
+    {
+      "path": "reports/tasks/T-020202/follow.stdout.log",
+      "sha256": "90e87f9a2db12c2ee9fc6c87fcb699ff3a8e94b6b3c79e08ca5f5f0738e3509c"
+    },
+    {
+      "path": "reports/tasks/T-020202/import.stdout.log",
+      "sha256": "4a0a6f92c9870b9708d2084c1a3da87b01c4620d42a2dd8cb93bc55f5d64d8b4"
+    },
+    {
+      "path": "reports/tasks/T-020202/native.stdout.log",
+      "sha256": "48a856d67736e9c6338e16aa89a643a9d37d981333ec6ab6529c3dbb5575e09d"
+    },
+    {
+      "path": "reports/tasks/T-020202/native_path_override.stderr.log",
+      "sha256": "15633fc55613dda8726ed4e601d4caaa7458734978577b83db7d43cf646fef80"
+    },
+    {
+      "path": "reports/tasks/T-020202/native_smoke.json",
+      "sha256": "42895638e88a7a2046f01275992a017450a2cafa550d546848c71f49b46399f5"
+    },
+    {
+      "path": "reports/tasks/T-020202/native_smoke.png",
+      "sha256": "2a1c28f3b695a44f42e124e26c710f70285833cf179c7f5b7abead28ab095534"
+    },
+    {
+      "path": "reports/tasks/T-020202/review.md",
+      "sha256": "20dac97d96ecf520ab7ff19af2a07e0f2eca57543cfb91bcfdd31143db733940"
+    },
+    {
+      "path": "reports/tasks/T-020202/runtime.json",
+      "sha256": "9b65c8def510fc96cb404ab0494b10e0dd535aa06278ea8651603cb1045b0d63"
+    },
+    {
+      "path": "reports/tasks/T-020202/runtime.stdout.log",
+      "sha256": "d5d3767a7f4064cee3eee25cc11306edbe9bc9d0088ebb6a4ed65bfd9f6dc146"
+    },
+    {
+      "path": "reports/tasks/T-020202/scene.stdout.log",
+      "sha256": "885566c5d6fe15cb99cfd947731064e8b9fb9626168925f56e59c7afedd07939"
+    },
+    {
+      "path": "builds/windows/20261019T072803035188Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T072803035188Z/TheSeventhHouse.pck",
+      "sha256": "8e8f82e0d664da51b9d0760dbc7a93fc545ba1413f14ac4f82c8d3efda90ff66"
+    }
+  ],
+  "checks": [
+    {
+      "id": "bounded_camera_follow",
+      "kind": "ENGINE_TEST",
+      "expected": "deadzone/smoothing/XZ bounds, no bound jitter, invalid inputs reject",
+      "observed": "follow4cases21assertions; full registry27cases214assertions failed0/skipped0; import/export/PCK PASS",
+      "result": "PASS",
+      "assertions": 214,
+      "command": "python -X utf8 scripts/build_windows.py",
+      "log_path": "reports/builds/20261019T072803035188Z/manifest.json"
+    },
+    {
+      "id": "actual_wall_follow",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "camera follows real player without screen-axis flip or bound drift",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"anchor\": \"(1.0, 0.0, 0.0)\", \"assertions\": 7, \"axis_preserved\": true, \"bound_idle_drift_m\": 0.0, \"capture_error\": 0, \"grounded\": true, \"input_mode\": \"synthetic_actions\", \"player\": \"(4.619882, 0.0, 0.0)\", \"renderer\": \"forward_plus\", \"result\": \"PASS\"}",
+      "result": "PASS",
+      "assertions": 7,
+      "command": "tools.godot_process.run --script res://tests/replays/camera_follow.gd, software=True",
+      "log_path": "reports/tasks/T-020202/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020202/bound.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "native_clean_smoke",
+      "kind": "NATIVE_WINDOWS",
+      "expected": "matching exportedEXE/PCK start outside editor/source tree, actual Forward+capture",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 5, \"capture\": \"reports/native_smoke.png\", \"display\": \"Windows\", \"driver\": \"vulkan\", \"engine\": \"4.7.2-stable (official)\", \"failed\": 0, \"failures\": [], \"height\": 720, \"input_mode\": \"scene_smoke_no_physical_input\", \"native_os\": \"Windows\", \"profile\": \"BOOTSTRAP\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"sample_colors\": 23, \"skipped\": 0, \"software\": true, \"width\": 1280}",
+      "result": "PASS",
+      "assertions": 5,
+      "command": ".qa/T-020202/native/TheSeventhHouse.exe -- --qa-profile BOOTSTRAP --qa-report res://reports/native_smoke.json",
+      "log_path": "reports/tasks/T-020202/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020202/native_smoke.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "camera_scope_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Resource tuning; camera only authority, self-review of source/rawlogs/captures",
+      "observed": "reviewed exponential follow and tuning isolation, two captures opened, native PCK hash8e8f82e0d664da51b9d0760dbc7a93fc545ba1413f14ac4f82c8d3efda90ff66",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Software Forward+ only, not GPU benchmark or physical-device/human playtest.",
+    "Cross-zone framing blend/triggers/aspect not claimed; next020203/204.",
+    "Campaign3.2 DESIGN_ONLY; no gate changed."
+  ]
+}

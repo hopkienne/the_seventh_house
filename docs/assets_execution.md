@@ -1,5 +1,13 @@
 # Pipeline art/audio do agent thực thi
 
+## Portable Blender pipeline verified — T-020301
+
+The earlier PATH audit is historical. Blender 4.5.3 LTS now runs locally from the SHA256-pinned portable binary in `config/blender.lock.json`; the archive matches two independently retrieved public mirror checksum lists. Tool license files stay under `.tools/blender/`; the tool is not shipped with the game.
+
+`python -X utf8 tools/art/rebuild_street.py --output-root .qa/street_NEW_ID` creates genuine `.blend`, GLB and semantic metrics in a new directory. Optional `--install` copies the three canonical outputs and regenerates prefab collision IDs; rerun import, tests, captures and manifest hashes after installation. Never reuse an evidence directory. Run the pinned Blender with `--background art/source/blockout_street.blend --disable-autoexec --python-exit-code 1 --python tools/art/verify_street_blend.py` to reopen and independently measure the source.
+
+Street asset `ENV_STREET_BLOCKOUT_01` is BLOCKOUT, static/no rig, metre scale and shared geometry. Provenance, hashes and measurements are in `art/manifest/blockout_street.asset.json`; evidence is under `reports/tasks/T-020301/`. `.gdignore` excludes authoring sources; Godot imports the explicit GLB only. `scenes/environment/street_scale_scene.tscn` integrates the actual player and gameplay camera. REAL/ERASED material previews do not implement phase switching. The opaque exterior roof/walls hide the player once inside from this camera; chapter interior cameras/cutaway remain later integration work. No character rig, final art, GPU performance or whole-chapter acceptance follows from this static pipeline.
+
 Giữ toàn bộ scope v3; không giao sản xuất cho freelancer/owner. Công cụ trả phí mặc định0. Gói hiện có static GLB pipeline spike và bootstrap scene, chưa có final campaign assets/audio. Đây là quyết định workflow của T-010403; sản xuất từng asset/cue ở task backlog tương ứng, không coi tài liệu này là asset hoàn thành.
 
 ## Art

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "plan_version": "3.0",
-  "revision": 58,
+  "plan_version": "3.2",
+  "revision": 81,
   "tasks": {
     "T-010101": {
       "status": "DONE",
@@ -270,60 +270,102 @@
       "updated_at": "2026-10-19T04:30:10.987504+00:00"
     },
     "T-020104": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020104/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T07:19:37.194735+00:00",
+          "revision": "artifact-tree-sha256:1a3f81a7ce339b22ada5573e7f851fa02aa3f9a39d578c2e10bf6ebd8ebfa5c2",
+          "evidence_sha256": "a4fb504c4f9c700bc60604f5c2620320adff336d42977b29dedf180f1a1b3be5"
+        }
+      ],
+      "updated_at": "2026-10-19T07:19:37.195679+00:00"
     },
     "T-020201": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020201/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T07:24:38.025662+00:00",
+          "revision": "artifact-tree-sha256:990254e996fe88fd9e3646638830f9b9156bfb96d3fcc6cf511789b3e433018a",
+          "evidence_sha256": "6f7d3f695d55cbfab7c8ce9ad91e65b5734c4b4667c350c95e59823221f4ca99"
+        }
+      ],
+      "updated_at": "2026-10-19T07:24:38.026496+00:00"
     },
     "T-020202": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020202/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T07:30:45.425556+00:00",
+          "revision": "artifact-tree-sha256:c0ccc406fdf8a755d00e1fb7885e2dc3dcecf38625ef2a6ca56b2fc233663e87",
+          "evidence_sha256": "58323c939aaff9b3add9e4277d7c78ef866b7b9c3050a484fce21bbc6a4b8f07"
+        }
+      ],
+      "updated_at": "2026-10-19T07:30:45.426363+00:00"
     },
     "T-020203": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020203/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T07:41:39.859045+00:00",
+          "revision": "artifact-tree-sha256:cb9d7075fbea95cb5a06cdc8aac5269fafb5b0a438a395aecccf8889d168a986",
+          "evidence_sha256": "4e3b1d8f6c0e9b41e35c03e44b74eb45d1a5be9b4c8bf22fda73dfd0ef14c217"
+        }
+      ],
+      "updated_at": "2026-10-19T07:41:39.859864+00:00"
     },
     "T-020204": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020204/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T07:49:08.601131+00:00",
+          "revision": "artifact-tree-sha256:89ab1b284e2703a3579d0320df30e66ee5e0f3b3895e3835ff228a23926864dd",
+          "evidence_sha256": "3a39671da509561b46744a0059bf138b9bbfa4ec47b4079ce8b47727354e7fca"
+        }
+      ],
+      "updated_at": "2026-10-19T07:49:08.602019+00:00"
     },
     "T-020301": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020301/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T08:37:37.558290+00:00",
+          "revision": "artifact-tree-sha256:81a2cd53bd757f2af7cab05f98ca06cb28b9b2d998e3cdc5ebb3bfb047ab60d4",
+          "evidence_sha256": "cf6ed886fe13786c91f855000a8ec2ba85b1493b26a5dff14c79a7ad43be1057"
+        }
+      ],
+      "updated_at": "2026-10-19T08:37:37.559121+00:00"
     },
     "T-020302": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020302/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T09:32:58.255200+00:00",
+          "revision": "artifact-tree-sha256:133f264038621391313fdfc51c8fa4b749d81217833c381732137cfe42f72299",
+          "evidence_sha256": "04ef9cfcf17c4d446d0c769d64030657fa0cbd6871ca53327df22586cfeaebcd"
+        }
+      ],
+      "updated_at": "2026-10-19T09:32:58.256177+00:00"
     },
     "T-020303": {
       "status": "NOT_STARTED",
@@ -4846,6 +4888,86 @@
       "updated_at": null
     },
     "T-360404": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070205": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070206": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070207": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070208": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070209": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070210": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070211": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-070212": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-080405": {
+      "status": "NOT_STARTED",
+      "executor_id": null,
+      "evidence": null,
+      "blocker": null,
+      "notes": [],
+      "updated_at": null
+    },
+    "T-250205": {
       "status": "NOT_STARTED",
       "executor_id": null,
       "evidence": null,

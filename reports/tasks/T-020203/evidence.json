@@ -1,0 +1,217 @@
+{
+  "task_id": "T-020203",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "created_at": "2026-10-19T07:41:39.263243+00:00",
+  "revision": "artifact-tree-sha256:cb9d7075fbea95cb5a06cdc8aac5269fafb5b0a438a395aecccf8889d168a986",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020203/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scripts/camera/camera_director.gd",
+      "sha256": "14d5cbfff5e4c1b37ed07d2abe79081b5023543f239aa63a71d77efc765b265f"
+    },
+    {
+      "path": "scripts/camera/camera_zone.gd",
+      "sha256": "844a3b40858c71e3681835cc6799425a58475667afef2865288710b07b54f1ea"
+    },
+    {
+      "path": "scripts/camera/camera_rig.gd",
+      "sha256": "9b3c49a0040d4200f6edcc94936a80c232a123a3693572c1f96c0e8b884fa8ce"
+    },
+    {
+      "path": "scripts/camera/camera_zone_trigger.gd",
+      "sha256": "7e5f060f17535962dfa29451192285ae82ecbff0184cff71e5c1540fbfceb47d"
+    },
+    {
+      "path": "scenes/tests/camera_corridor.tscn",
+      "sha256": "b3f00fb80a96ad4d8f40017a10e9e537e29b55bfc5fde10d692febb4452a6aa1"
+    },
+    {
+      "path": "tests/unit/test_camera_zones.gd",
+      "sha256": "f6061cf154d522a5cfb5a5ffdeea14e355a3dc123bd8eeb8f3dc09fdbaad10c5"
+    },
+    {
+      "path": "tests/replays/camera_zones.gd",
+      "sha256": "bcdc19711ca596da7308ba47b730330a0b02446acaab5447382f15de6c21747c"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "da200bcd7b3d1bdbc7370a94855c634244ecaf1ea7eef2cd5b67ea51dd4b8b8b"
+    },
+    {
+      "path": "tests/fixtures/inspect_pack.gd",
+      "sha256": "3ae318dbaa558090480b8d37f1bb57bdd6650591c027c6a89731263563ef2fb2"
+    },
+    {
+      "path": "export_presets.cfg",
+      "sha256": "78a8a250a32bbceed8ec2c315153248dcda601fa218caa319144cab4aeeb2ead"
+    },
+    {
+      "path": "reports/builds/20261019T073855741851Z/manifest.json",
+      "sha256": "d3d1c84499cee8bb44031d8617b533601d4d4dc2259d9ca1bfe8794d4816c752"
+    },
+    {
+      "path": "reports/tasks/T-020203/before.stderr.log",
+      "sha256": "cb3d5129e8ad5a774740d16fc2e3a028db679c3cd0123772499f087953777ac8"
+    },
+    {
+      "path": "reports/tasks/T-020203/before.stdout.log",
+      "sha256": "2b146a7dd6cd0aaa310b5b68396d74f9356e1db21f1d4ee5610a71d7ae42a508"
+    },
+    {
+      "path": "reports/tasks/T-020203/camera_follow.stdout.log",
+      "sha256": "592d71962edd1609273248c7c9a7bedc3dc8eaf8a9d7bb9801caf3e38333c672"
+    },
+    {
+      "path": "reports/tasks/T-020203/camera_preset.stdout.log",
+      "sha256": "eb02327921a2ddee5d56b1c23f477e80b1ae4d61bc6c7bc2c5e22664a3222e86"
+    },
+    {
+      "path": "reports/tasks/T-020203/camera_zones.stdout.log",
+      "sha256": "8498cfd2d137df2564149ba029cc78b8f65322a95adddc095b6697fe6df98072"
+    },
+    {
+      "path": "reports/tasks/T-020203/design_checks.json",
+      "sha256": "e205aa4f39dde32717355ae9a4f57f7182d25f89ee5364b473e1f0375563cb4a"
+    },
+    {
+      "path": "reports/tasks/T-020203/entry_diff.patch",
+      "sha256": "2aa7a99e975ecfc18f682d5866c41ee40422cafaa8f031f3b6c429ef15b25e6b"
+    },
+    {
+      "path": "reports/tasks/T-020203/entry_sources.json",
+      "sha256": "9723b8950b6bcadecc8fbcda83f234e5e9c3e642f334ec15e0b069aca7cbfb82"
+    },
+    {
+      "path": "reports/tasks/T-020203/entry_worktree.txt",
+      "sha256": "30d47a217dbbaed0b15c658dda751e11322f86b4793f2807ca7a60f271571aa9"
+    },
+    {
+      "path": "reports/tasks/T-020203/import.stdout.log",
+      "sha256": "7fc55da550d384e39480ac9dc29d01c9e0712f3865f46a91ac8213efe419c02a"
+    },
+    {
+      "path": "reports/tasks/T-020203/move_left_blend.png",
+      "sha256": "42d918dca2b700a51f3c83c4002375d2eaeb02465f56f3fe5fe70b283e5793f8"
+    },
+    {
+      "path": "reports/tasks/T-020203/move_left_end.png",
+      "sha256": "3ad887bdc8bd000162f42c06699d6410d62c9ffcf06c41464437d70033601f4a"
+    },
+    {
+      "path": "reports/tasks/T-020203/move_right_blend.png",
+      "sha256": "8d22993a08b61f5dfbddfa67aab03a40f7f617080230803235d133c2e1c8d094"
+    },
+    {
+      "path": "reports/tasks/T-020203/move_right_end.png",
+      "sha256": "096bc5c308e6f20f4ed94ac4d5e9fd385f2a46e0bae1079b4995b6d0cf500b54"
+    },
+    {
+      "path": "reports/tasks/T-020203/overlap.stdout.log",
+      "sha256": "eb0cf1a51aa0ce2e3520f6f6a3bc394df0053ff25963cae74062a454701e60f7"
+    },
+    {
+      "path": "reports/tasks/T-020203/review.md",
+      "sha256": "7788ac87c55f9107e516bdd598f9d52fcb909a964155ec46623d64fa691bc952"
+    },
+    {
+      "path": "reports/tasks/T-020203/runtime.json",
+      "sha256": "dde7da1e9721d44f06ebd1c77fc82f1676f4c087e3db709e2fb4f011d21d146d"
+    },
+    {
+      "path": "reports/tasks/T-020203/runtime.stdout.log",
+      "sha256": "b613052abc98684f2fc0408158e464bda441a36e01fab71d22eb4cf81e6aa03b"
+    },
+    {
+      "path": "reports/tasks/T-020203/west_start.png",
+      "sha256": "85c28486a0e410351bf2ac7b734a8ada185874ab3ce0ebc889a38c737d930c4a"
+    },
+    {
+      "path": "reports/tasks/T-020203/zones.stdout.log",
+      "sha256": "3cdde903d4c72a71755b7e1f3748d590ec0d5bff60c013c96f6764ea16c5a903"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/move_left_blend.png",
+      "sha256": "c525bd20a73dc225978a74d9d488b7f02850156881070ca7fdbbe28ecf084e3c"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/move_left_end.png",
+      "sha256": "bd88258161506071028b32cd32ae2f10d7102a98f1c4fbe538866b61a9b8537c"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/move_right_blend.png",
+      "sha256": "a7c3bfa5cc505c7a7a3974c626382d77941ae09b65b3f098f397d82ccb2cdf2c"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/move_right_end.png",
+      "sha256": "1dcbe627a85cdbf76a7acf888a8908c8b9810efe15a86979b7f516a6b2b46815"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/runtime.json",
+      "sha256": "7acb5ddf6dc03166e085e6f6e78d94e9c59a62063d9c2393144d86fb1020dcac"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/runtime.stdout.log",
+      "sha256": "11fe8ff9d9033ea21c620e51c110b47bbff650a784583a6f9f97cb0fc3b7ba69"
+    },
+    {
+      "path": "reports/tasks/T-020203/initial_render/west_start.png",
+      "sha256": "6e61c30c4b60528218cf3309532ff7c3059b2a8c3414c5ddebd6f59791618b97"
+    },
+    {
+      "path": "builds/windows/20261019T073855741851Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497"
+    },
+    {
+      "path": "builds/windows/20261019T073855741851Z/TheSeventhHouse.pck",
+      "sha256": "c7db9ae09aac5301d8b4ecf3984cf7a2d53c93df8356a944542d823647d946ca"
+    }
+  ],
+  "checks": [
+    {
+      "id": "zone_blend_regression",
+      "kind": "ENGINE_TEST",
+      "expected": "two zones, continuous/reentrant/restore blend, same-side axes, physical triggers",
+      "observed": "zone4cases25assertions; full31cases239assertions,0failed/0skipped; export+pack excludingQA PASS",
+      "result": "PASS",
+      "assertions": 239,
+      "command": "python -X utf8 scripts/build_windows.py",
+      "log_path": "reports/builds/20261019T073855741851Z/manifest.json"
+    },
+    {
+      "id": "input_zone_roundtrip",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "actual Area3D entry and rendered intermediate framing both directions, no flipped axis",
+      "observed": "{\"adapter\": \"SwiftShader Device (Subzero)\", \"assertions\": 15, \"blend_samples\": [{\"direction\": \"move_right\", \"fov\": 38.5473136901855, \"zone\": \"EAST\"}, {\"direction\": \"move_left\", \"fov\": 41.5237503051758, \"zone\": \"WEST\"}], \"failures\": [], \"input_mode\": \"synthetic_actions_actual_Area3D_signals\", \"position\": \"(-3.0, 0.0, 0.0)\", \"renderer\": \"forward_plus\", \"result\": \"PASS\", \"software\": true}",
+      "result": "PASS",
+      "assertions": 15,
+      "command": "tools.godot_process.run --script res://tests/replays/camera_zones.gd, software=True",
+      "log_path": "reports/tasks/T-020203/runtime.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020203/west_start.png",
+        "reports/tasks/T-020203/move_right_blend.png",
+        "reports/tasks/T-020203/move_right_end.png",
+        "reports/tasks/T-020203/move_left_blend.png",
+        "reports/tasks/T-020203/move_left_end.png"
+      ],
+      "software": true
+    },
+    {
+      "id": "fixture_and_camera_review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "actual fixture/output, isolated camera authority and evidence, visual inspection",
+      "observed": "5captures opened; independent self-review; exportedQA exclusion verified, current source hash matches candidate",
+      "result": "PASS",
+      "assertions": 0
+    }
+  ],
+  "limitations": [
+    "Software Forward+ functional replay only, no hardware/physical-device/human playtest claim.",
+    "No campaign/save/puzzle or gate completion claim; baseline3.2 preserved."
+  ]
+}

@@ -1,0 +1,2 @@
+WARNING: The requested V-Sync mode Disabled is not available. Falling back to V-Sync mode Enabled.
+   at: swap_chain_resize (drivers/vulkan/rendering_device_driver_vulkan.cpp:3767)

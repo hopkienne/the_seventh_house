@@ -1,0 +1,209 @@
+{
+  "created_at": "2026-10-19T05:17:05.186050+00:00",
+  "base_commit": "2498ad4bd768b3b6d5c252ecf851fa0b211d30ea",
+  "base_tree": "db905bb35db12a0373354d27bb70fb361f2b70e1",
+  "scope": "DESIGN_ARTIFACTS_NOT_IMPLEMENTED_GAME",
+  "self_review": true,
+  "artifacts": [
+    {
+      "path": "14_PUZZLE_DESIGN_BIBLE.md",
+      "sha256": "bf5a5f5ddaffb0bc6e174a0e80265c6e712ef7fd2055f02930fa61ce1e8bd430"
+    },
+    {
+      "path": "docs/design/gameplay_review_v31.md",
+      "sha256": "dc939a5749184a0116e6ec80711f124a8a6002892ecd5e3150aa44451b6d15b1"
+    },
+    {
+      "path": "docs/decisions/ADR-002-puzzle-first-gameplay.md",
+      "sha256": "b906fb2a6b2aae500bedd9f0eb17ac577c92b3c9503c954762d924b3f3a34b39"
+    },
+    {
+      "path": "plan/backlog.json",
+      "sha256": "ef576cabd70c6110fcd4c0c004195a6477e250178d6c37a6d2482bdf82f4e28e"
+    },
+    {
+      "path": "state/task_state.json",
+      "sha256": "b10b192ba67b26848b4c73f6a25ab846a70efb36d2e4b44c514e48e0223b858b"
+    },
+    {
+      "path": "THE_SEVENTH_HOUSE_AGENT_TRACKER.xlsx",
+      "sha256": "3b9fa7dc3c978ce98ddece90c530b6beab7f500013520a10882563c9ebcf3e56"
+    },
+    {
+      "path": "THE_SEVENTH_HOUSE_AGENT_HANDBOOK.html",
+      "sha256": "9fb184b30ab1fc84836874842f0c12fcf35749470ea35d201df408b1a4470d37"
+    },
+    {
+      "path": "reports/design/v31/review.md",
+      "sha256": "45ab79f701d0d2dd471929c72357012110b625ae9011cf386116ff4435bc5873"
+    },
+    {
+      "path": "specs/chapter_catalog.json",
+      "sha256": "18a925a53012b57c70f5b77b8f70af09e41eb352bd49a3b56eb0d12934784a93"
+    },
+    {
+      "path": "specs/evacuation_route.json",
+      "sha256": "46d93793da95b013706c185883d8bf22d568fe109900964e1eb8aab6f18021c8"
+    },
+    {
+      "path": "specs/evidence_catalog.json",
+      "sha256": "72b0d052aa0ef4ad0ed0f6711034b782a5f9eec673635c2e2473d283b741c76b"
+    },
+    {
+      "path": "specs/item_catalog.json",
+      "sha256": "3712f9057eaf2638b78a5add8a3788cae5bbe20fc5bfb9172b866d74ef31aec2"
+    },
+    {
+      "path": "specs/puzzle_catalog.json",
+      "sha256": "75241f13feb54d8074727ed8fd6bae605bd6da3f45f4081a5703def1c9501324"
+    },
+    {
+      "path": "specs/puzzle_id_migration_v3_to_v31.json",
+      "sha256": "69f6b989f9c08b981baa984e61cd59e3fdd6a66a6bb5cb913e39fea17fb7a6fc"
+    },
+    {
+      "path": "specs/puzzles/P01.md",
+      "sha256": "5c384842d7a94a502d17a7a015de5e3e36edc7babbddf7b9864a612ebb5b6a56"
+    },
+    {
+      "path": "specs/puzzles/P02.md",
+      "sha256": "ff22df06589812d445a612b5ffcfdce75ba2e4cc6a034f6d980e55ca22a4b411"
+    },
+    {
+      "path": "specs/puzzles/P03.md",
+      "sha256": "0382324f6a2710af0e91b5da5adfbe05731257b591d310cf57eea128c10f0e83"
+    },
+    {
+      "path": "specs/puzzles/P04.md",
+      "sha256": "0240751380db77a0fbee1a17f178af0d5b846ec3d404d0370d7906383025b054"
+    },
+    {
+      "path": "specs/puzzles/P05.md",
+      "sha256": "fd0c2c9a68ba4089a2d9df8e17c20a0324e1dedda0b751d2180d922176f11d40"
+    },
+    {
+      "path": "specs/puzzles/P06.md",
+      "sha256": "1967a79d3507c833f3b76fd8675c782a512cdeed6e66dbc1fae5827a0f64e994"
+    },
+    {
+      "path": "specs/puzzles/P07.md",
+      "sha256": "d3c08824ff593e4faa3c1dba7659e1305904aaef9c48924e99c7e863c820abe5"
+    },
+    {
+      "path": "specs/puzzles/P08.md",
+      "sha256": "f0903e3806a701f952181c9b7fd1a4b90d2b2bb630aba344706191a917f9b501"
+    },
+    {
+      "path": "specs/puzzles/P09.md",
+      "sha256": "d0244c340761b90066721f1fc0530401661030f35655fb4d33346960e9b7a5ca"
+    },
+    {
+      "path": "specs/puzzles/P10.md",
+      "sha256": "c7236cfcb604acfb1623b9710d3e50d992b78c66730830c688b2f60c40f67e73"
+    },
+    {
+      "path": "specs/puzzles/P11.md",
+      "sha256": "bd168f5d0cfe934df25daf965aae38357e0cdd7a09385c59f0295703e462b92b"
+    },
+    {
+      "path": "specs/puzzles/P12.md",
+      "sha256": "0aff7a1851d238a1f8d5a0ac124d9d22999637a8cfbdb9fc2e9d2ac77be3da5f"
+    },
+    {
+      "path": "specs/puzzles/P13.md",
+      "sha256": "fa907075fa48b7ea6e61c6520d4975d1df41bce18aa70b83361350fcdb8ff2fb"
+    },
+    {
+      "path": "specs/puzzles/P14.md",
+      "sha256": "26cd04463c0734425637cd6e37eca6f47cbfff94787d1424ed52a48ddaddb625"
+    },
+    {
+      "path": "specs/puzzles/P15.md",
+      "sha256": "83543c981ead750b4cb603bfbdfb332bd7bc45c24bc7241047ba4bc93b3957e7"
+    },
+    {
+      "path": "specs/puzzles/P16.md",
+      "sha256": "d23bb9cc9b3ecc5e9986e8c5a963a33447e711df56fbce875f9f15596d0ea6ca"
+    },
+    {
+      "path": "specs/puzzles/P17.md",
+      "sha256": "b00392a4fb86d1b2e028f54e0ea9f7cd6e9e88c82210312c8f4781578e9cdf81"
+    },
+    {
+      "path": "specs/puzzles/P18.md",
+      "sha256": "83d59c4621088bc070574903386ba9f18b433b10452644bed5f18b702fc43c3d"
+    },
+    {
+      "path": "specs/puzzles/P19.md",
+      "sha256": "5d1b98e77b69e3530dc41f310d7078aba7bb18295688eaae77493c0d38f03d30"
+    },
+    {
+      "path": "specs/puzzles/P20.md",
+      "sha256": "96d540d86167b071d1be46458c43748b6159792d80c662635ed9ef0ef7229704"
+    },
+    {
+      "path": "specs/puzzles/P21.md",
+      "sha256": "b22d435f829aec9e0db117d136a57f3c768622dbda93128b9958add7f17e8412"
+    },
+    {
+      "path": "specs/puzzles/P22.md",
+      "sha256": "dbd35e52dc9a9ae1da503ee75225199ad34c729619de2f30bba8633a8f3eaf55"
+    },
+    {
+      "path": "specs/puzzles/P23.md",
+      "sha256": "b7763a4a420b7713738a024481c110e7320c180fedd824aaf695384cd1791493"
+    },
+    {
+      "path": "specs/puzzles/P24.md",
+      "sha256": "dc5933e43ba51e2e2b8aa0b9071f9fbb32134adaf5aebe32efbd0864907a06c1"
+    },
+    {
+      "path": "specs/puzzles/P25.md",
+      "sha256": "cad5721b92421fc537c359ff93b9821a8d3c77f23fe6660bf014acca3413f1c2"
+    },
+    {
+      "path": "specs/puzzles/P26.md",
+      "sha256": "5f1e03701b18407fe797fae294bcbae12cf92aee43eb1a9b9612c46225e85ee3"
+    },
+    {
+      "path": "specs/puzzles/P27.md",
+      "sha256": "3252035d185117bd16f4542264dc3b51220fff009d2732e8e0503a45f49bf972"
+    },
+    {
+      "path": "specs/puzzles/P28.md",
+      "sha256": "7102be52376b0822a4434afcdaa7ec5af6ac56b38aed26923065d1e71fe29828"
+    },
+    {
+      "path": "specs/chapters/CH01.md",
+      "sha256": "665ca6d8708299c74b045fcbf6bc38ff7ce2e9024dfe4bef6f1e30a05f53612f"
+    },
+    {
+      "path": "specs/chapters/CH02.md",
+      "sha256": "c7abfb5e0f7335841dab22623f090e306f9b66be22b8ba1c8333f720ff23675a"
+    },
+    {
+      "path": "specs/chapters/CH03.md",
+      "sha256": "c7247b41ab06e4cef4f7f57e4a4f9a59bb260bc552af3c6335b8af4e6482757a"
+    },
+    {
+      "path": "specs/chapters/CH04.md",
+      "sha256": "4fbeaf0d4123486a31bef6ff2a57553e3d40f831e4886c3e371e94c4d6e6cce2"
+    },
+    {
+      "path": "specs/chapters/CH05.md",
+      "sha256": "09da01b95424b29e400c357868fe551176df554ba974ed57cd95f091c7dd3927"
+    },
+    {
+      "path": "specs/chapters/CH06.md",
+      "sha256": "1a5ee07c9094421496d284d4e16e6f43cfd8b9553d9f2ee67ca66706784c3ae8"
+    },
+    {
+      "path": "specs/chapters/CH07.md",
+      "sha256": "d82e63219d51e54af211fe0c27bb00f57dcfca21daf59401532f1f4ebeeac0ba"
+    },
+    {
+      "path": "docs/design/owner_proposal_28_puzzles.txt",
+      "sha256": "2e96b6aea11f5a078d55a8a1e0e1c40a6747b0b777c1f77f6ae1c4155d9a3c44"
+    }
+  ]
+}

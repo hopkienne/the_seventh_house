@@ -1,0 +1,5 @@
+# Separate self-review — T-020104
+
+Reviewer/executor codex-primary; self_review=true. PASS for task functional movement scope only.
+
+Reviewed current card/story/contracts, source diff, candidate raw import/test/export/pack logs, live FPS JSON and warnings, actual slope PNG and decoded movie frames0/66/131. All21cases/180assertions passed. Attempted failure modes: steep supported slope, idle gravity drift, reload after lock, out-of-bounds diagonal, headless masquerading as render, requested versus observed FPS. Initial slope threshold was a QA geometry error and corrected without production change; failing logs remain. 320x180 cannot attest120FPS; isolated160x90 attests29.999..120 actual draws, equal motion. Tiny viewport does not satisfy hardware performance or art review; these limits stay explicit. Movie uses fixed time and is never used for live FPS. No production defect requiring RW was found. No status/evidence of older task rewritten, no gate advanced, design3.2 remains a production requirement.

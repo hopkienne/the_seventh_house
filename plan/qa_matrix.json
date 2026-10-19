@@ -478,5 +478,89 @@
     "owner": "QA_AGENT",
     "status": "NOT_TESTED",
     "evidence": ""
+  },
+  {
+    "id": "QA-041",
+    "area": "Puzzle3.1",
+    "scenario": "28 puzzle / 21 main / 7 secret",
+    "expected": "Main không phụ thuộcSECRET; all28 wrong/order/load/revisit; reward sources đúng",
+    "mode": "Engine + Rendered runtime + separate human usability",
+    "first_sprint": "S10",
+    "gate": "G2/G4",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-042",
+    "area": "Closeup/inventory",
+    "scenario": "Inspect/combine/use và phase safety",
+    "expected": "Keyboard/pad/mouse; no capture tại safe inspect; Warn/Chase chặn UI freeze; atomic recipe và reused item recovery",
+    "mode": "Engine + Rendered runtime + separate human usability",
+    "first_sprint": "S07",
+    "gate": "G2/G3",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-043",
+    "area": "Ending C3.1",
+    "scenario": "Plan → trial → validation → final commit",
+    "expected": "P27 chỉplan; P28 đủ3nhómmớivalidated; khôngtimerkhiđọc; retrykhôngforcedB",
+    "mode": "Engine + Rendered runtime + separate human usability",
+    "first_sprint": "S25",
+    "gate": "G4/G7",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-044",
+    "area": "Reasoning3.2",
+    "scenario": "Thought path / phản chứng / feedback",
+    "expected": "Hai observation_routes tới được, nguồn cóthật, không hiddenreadgate/per-slot oracle; ghiNOT_ASSESSED khi chưahuman",
+    "mode": "Engine + Rendered runtime; human usability separate",
+    "first_sprint": "S10",
+    "gate": "G2/G4",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-045",
+    "area": "Branches3.2",
+    "scenario": "EntryP06 / consoleP11 / kínhP19 / cửaP26",
+    "expected": "P06trướcP05; P10sớmđúngluật; P19trướcP17 vàP18cầnkínhthật; P26trướcP25",
+    "mode": "Engine + Rendered runtime; human usability separate",
+    "first_sprint": "S13",
+    "gate": "G3/G4",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-046",
+    "area": "Tension3.2",
+    "scenario": "Hai mồiP04 và statepreviewP28",
+    "expected": "Cảhai cover khảdụng; Warn/Chaseguard; readingkhôngadvance; crossingcommitmớităng; wronggiữnhómđãsafe",
+    "mode": "Engine + Rendered runtime; human usability separate",
+    "first_sprint": "S08",
+    "gate": "G2/G4",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
+  },
+  {
+    "id": "QA-047",
+    "area": "Evacuation3.2",
+    "scenario": "Tám plan trong sáu thứtự nhóm",
+    "expected": "LIBRARYchỉbeat0/GALLERYbeat0..2; cổngsânkhácRETURNlõi; save/retry/earlyRETURNđúng",
+    "mode": "Engine + Rendered runtime; human usability separate",
+    "first_sprint": "S25",
+    "gate": "G4/G7",
+    "owner": "QA_AGENT",
+    "status": "NOT_TESTED",
+    "evidence": ""
   }
 ]

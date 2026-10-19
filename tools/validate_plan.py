@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Validate the document/backlog package, NOT the Godot game. Standard library only."""
 from __future__ import annotations
-import argparse,json,sys
+import argparse,json,sys,os
 from pathlib import Path
 
 def validate(root:Path)->dict:
@@ -50,7 +50,7 @@ def validate(root:Path)->dict:
         if not (root/f'sprints/{s["id"]}.md').is_file():errors.append(f'Missing sprint card {s["id"]}')
     chapter=read('specs/chapter_catalog.json');puzzles=read('specs/puzzle_catalog.json');evidence=read('specs/evidence_catalog.json');route=read('specs/evacuation_route.json')
     if len(chapter)!=7:errors.append('Expected seven chapter contracts')
-    if len(puzzles)!=14:errors.append('Expected fourteen puzzle contracts')
+    if len(puzzles)!=28:errors.append('Expected twenty-eight puzzle contracts (gameplay3.1)')
     if len(evidence)!=28:errors.append('Expected twenty-eight evidence records')
     if isinstance(evidence,list):
         unique(evidence,'id','evidence');valid={f'E{i:02}' for i in range(1,15)}|{f'M{i:02}' for i in range(1,8)}|{f'L{i:02}' for i in range(1,8)}
@@ -63,9 +63,21 @@ def validate(root:Path)->dict:
     if len(edges)!=7 or [e.get('memory_id') for e in edges]!=[f'M{i:02}' for i in range(1,8)]:errors.append('Route segment IDs/count wrong')
     if edges and (edges[0]['from']!=route['start'] or edges[-1]['to']!=route['end'] or any(a['to']!=b['from'] for a,b in zip(edges,edges[1:]))):errors.append('Route is disconnected')
     if len({e.get('from') for e in edges})!=len(edges):errors.append('Route repeats source node')
-    for f in root.rglob('*.json'):
-        try:json.loads(f.read_text(encoding='utf-8'))
-        except (OSError,ValueError) as e:errors.append(f'Invalid JSON {f.relative_to(root)}: {e}')
+    from validate_puzzle_design import validate as validate_design
+    design = validate_design(root)
+    errors.extend('Puzzle design: '+message for message in design['errors'])
+    from validate_puzzle_depth import validate as validate_depth
+    depth = validate_depth(root)
+    errors.extend('Puzzle depth: '+message for message in depth['errors'])
+    # Validate authored package JSON, not ignored engine/dependency caches or junctions.
+    ignored={'.git','.tools','.godot','.qa','builds','__pycache__','node_modules'}
+    for directory,subdirs,files in os.walk(root,followlinks=False):
+        subdirs[:]=[name for name in subdirs if name not in ignored]
+        for name in files:
+            if not name.endswith('.json'):continue
+            f=Path(directory)/name
+            try:json.loads(f.read_text(encoding='utf-8'))
+            except (OSError,ValueError) as e:errors.append(f'Invalid JSON {f.relative_to(root)}: {e}')
     return {'result':'PASS' if not errors else 'FAIL','scope':'DOCUMENT_PACKAGE_ONLY_NOT_GAME_QA','counts':{'sprints':len(sprints),'stories':len(stories),'tasks':len(tasks),'chapters':len(chapter),'puzzles':len(puzzles),'journal_records':len(evidence)},'checks':['unique_ids','parent_references','task_fields','no_active_staffing_hours','dependency_exists','dependency_acyclic','no_future_wave_dependency','read_before_paths','task_story_sprint_cards','state_id_sets','content_counts','puzzle_solutions_hints','route_connectivity','json_parse'],'errors':errors,'topological_first_tasks':order[:8]}
 
 def main():

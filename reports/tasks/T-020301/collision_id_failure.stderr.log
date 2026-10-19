@@ -1,0 +1,3 @@
+StreetBlockout: COLLISION_ID_MISMATCH 41/45
+ASSERTION FAILED: every authored collision ID resolves after import
+ASSERTION FAILED: all authored collision bodies produced

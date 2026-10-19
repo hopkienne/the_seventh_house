@@ -4,9 +4,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH01",
     "title_key": "journal.E01.title",
-    "vi": "Ảnh trong nhà đối diện",
-    "en": "The photo across the road",
-    "source_puzzle": "P01",
+    "vi": "Dấu vết trong xưởng ông Kha",
+    "en": "Traces in Kha’s workshop",
+    "source_puzzle": "P02",
     "missable": false,
     "gates_main": true
   },
@@ -17,7 +17,7 @@
     "title_key": "journal.E02.title",
     "vi": "Khung ảnh thiếu người",
     "en": "The incomplete frame",
-    "source_puzzle": "P02",
+    "source_puzzle": "P03",
     "missable": false,
     "gates_main": true
   },
@@ -26,9 +26,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH02",
     "title_key": "journal.E03.title",
-    "vi": "Ảnh sinh nhật bốn chỗ",
-    "en": "The four-place birthday photo",
-    "source_puzzle": "P03",
+    "vi": "Bàn ăn bốn chỗ",
+    "en": "The four-place table",
+    "source_puzzle": "P05",
     "missable": false,
     "gates_main": true
   },
@@ -37,9 +37,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH02",
     "title_key": "journal.E04.title",
-    "vi": "Dấu chiều cao của Hạnh",
-    "en": "Hanh’s height marks",
-    "source_puzzle": "P04",
+    "vi": "Bức ảnh xác nhận Hạnh",
+    "en": "The photo identifying Hanh",
+    "source_puzzle": "P07",
     "missable": false,
     "gates_main": true
   },
@@ -50,7 +50,7 @@
     "title_key": "journal.E05.title",
     "vi": "Vết lũ trên cầu",
     "en": "Flood marks on the bridge",
-    "source_puzzle": "P05",
+    "source_puzzle": "P10",
     "missable": false,
     "gates_main": true
   },
@@ -61,7 +61,7 @@
     "title_key": "journal.E06.title",
     "vi": "Sổ bến đò",
     "en": "The ferry ledger",
-    "source_puzzle": "P06",
+    "source_puzzle": "P11",
     "missable": false,
     "gates_main": true
   },
@@ -72,7 +72,7 @@
     "title_key": "journal.E07.title",
     "vi": "Thời khóa biểu lớp học",
     "en": "The class timetable",
-    "source_puzzle": "P07",
+    "source_puzzle": "P14",
     "missable": false,
     "gates_main": true
   },
@@ -83,7 +83,7 @@
     "title_key": "journal.E08.title",
     "vi": "Hồ sơ vỡ đập",
     "en": "The dam-break report",
-    "source_puzzle": "P08",
+    "source_puzzle": "P15",
     "missable": false,
     "gates_main": true
   },
@@ -92,9 +92,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH05",
     "title_key": "journal.E09.title",
-    "vi": "Thư mẹ qua ba mốc thời gian",
-    "en": "Mother’s letters across three dates",
-    "source_puzzle": "P09",
+    "vi": "Dòng chữ dưới ánh đèn",
+    "en": "Words revealed by lamplight",
+    "source_puzzle": "P18",
     "missable": false,
     "gates_main": true
   },
@@ -103,9 +103,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH05",
     "title_key": "journal.E10.title",
-    "vi": "Nhật ký của chiếc đèn",
-    "en": "The lantern journal",
-    "source_puzzle": "P10",
+    "vi": "Nhật ký duy trì bảy điểm neo",
+    "en": "The seven-anchor maintenance log",
+    "source_puzzle": "P19",
     "missable": false,
     "gates_main": true
   },
@@ -116,7 +116,7 @@
     "title_key": "journal.E11.title",
     "vi": "Bản ghi đối trọng chuông",
     "en": "The bell counterweight record",
-    "source_puzzle": "P11",
+    "source_puzzle": "P22",
     "missable": false,
     "gates_main": true
   },
@@ -127,7 +127,7 @@
     "title_key": "journal.E12.title",
     "vi": "Ảnh Minh và An",
     "en": "Minh and An in the photograph",
-    "source_puzzle": "P12",
+    "source_puzzle": "P23",
     "missable": false,
     "gates_main": true
   },
@@ -136,9 +136,9 @@
     "kind": "ESSENTIAL",
     "chapter": "CH07",
     "title_key": "journal.E13.title",
-    "vi": "Bản đồ lõi của bảy nhà",
-    "en": "The core map of seven houses",
-    "source_puzzle": "P13",
+    "vi": "Cửa lõi và ba ký hiệu",
+    "en": "The core door and its three symbols",
+    "source_puzzle": "P26",
     "missable": false,
     "gates_main": true
   },
@@ -149,7 +149,7 @@
     "title_key": "journal.E14.title",
     "vi": "Ghi chú về cái giá của chuông",
     "en": "The price of the bell",
-    "source_puzzle": "P14",
+    "source_puzzle": "P28",
     "missable": false,
     "gates_main": true
   },
@@ -163,7 +163,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H07_FRONT",
-    "route_to": "H01_LANE"
+    "route_to": "H01_LANE",
+    "source_puzzle": "P04"
   },
   {
     "id": "L01",
@@ -185,7 +186,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H01_LANE",
-    "route_to": "H02_COURTYARD"
+    "route_to": "H02_COURTYARD",
+    "source_puzzle": "P08"
   },
   {
     "id": "L02",
@@ -207,7 +209,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H02_COURTYARD",
-    "route_to": "H03_DOCK_RAMP"
+    "route_to": "H03_DOCK_RAMP",
+    "source_puzzle": "P12"
   },
   {
     "id": "L03",
@@ -229,7 +232,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H03_DOCK_RAMP",
-    "route_to": "H04_SCHOOL_REAR"
+    "route_to": "H04_SCHOOL_REAR",
+    "source_puzzle": "P16"
   },
   {
     "id": "L04",
@@ -251,7 +255,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H04_SCHOOL_REAR",
-    "route_to": "H05_BACKYARD"
+    "route_to": "H05_BACKYARD",
+    "source_puzzle": "P20"
   },
   {
     "id": "L05",
@@ -273,7 +278,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H05_BACKYARD",
-    "route_to": "H06_TOWER_WALK"
+    "route_to": "H06_TOWER_WALK",
+    "source_puzzle": "P24"
   },
   {
     "id": "L06",
@@ -295,7 +301,8 @@
     "missable": false,
     "gates_main": false,
     "route_from": "H06_TOWER_WALK",
-    "route_to": "HILL"
+    "route_to": "HILL",
+    "source_puzzle": "P25"
   },
   {
     "id": "L07",

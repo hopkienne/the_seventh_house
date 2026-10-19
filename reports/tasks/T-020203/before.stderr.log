@@ -1,0 +1,4 @@
+ASSERTION FAILED: zone entry begins continuous blend without cut
+ASSERTION FAILED: mid blend FOV is strictly between presets
+ASSERTION FAILED: reverse blend settles exactly at original preset
+ASSERTION FAILED: two-zone playable fixture exists

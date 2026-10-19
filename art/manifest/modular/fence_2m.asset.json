@@ -1,0 +1,79 @@
+{
+  "asset_id": "ENV_FENCE_2M_01",
+  "category": "MODEL",
+  "chapter_ids": [
+    "CH01"
+  ],
+  "phase": "SHARED",
+  "quality_state": "BLOCKOUT",
+  "source_path": "art/source/modular/fence_2m.blend",
+  "runtime_path": "art/export/blockout/fence_2m.glb",
+  "sha256": "819aeb9fbafce8c99f546f3702b81fbab3a497e0e58a44c1e31935024f34f85e",
+  "source_sha256": "7c2b6e7319b2aed20e6eac8543695d1ec43ba167e8e71ddcdbca095815086996",
+  "generator_path": "tools/art/build_modular_blender.py",
+  "config": "tools/art/modular_kit.json",
+  "seed": 7302,
+  "generator_version": 1,
+  "tool_lock": "config/blender.lock.json",
+  "tool_version": "4.5.3 LTS",
+  "semantic_sha256": "8ac83a4bf723aa703aa3d493694383b6e824b8c0374fefef5995dd2daee44d0f",
+  "measurements": {
+    "width_m": 2.0,
+    "grid_m": 0.25,
+    "pivot": [
+      0,
+      0,
+      0
+    ],
+    "sockets": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "triangles": 132,
+    "meshes": 11,
+    "collision_meshes": 11
+  },
+  "dependencies": [
+    "tools/art/street_blockout.json",
+    "scripts/art/street_blockout.gd"
+  ],
+  "prefab": "scenes/environment/modules/fence_2m.tscn",
+  "integration_scene": "scenes/environment/modular_kit_scene.tscn",
+  "provenance": {
+    "created_by": "codex-primary",
+    "created_at": "2026-10-19T09:26:40.607270+00:00",
+    "method": "Original parameterized local mesh/UV geometry and shared project PBR colors; no external mesh/texture/animation inputs.",
+    "external_asset_dependencies": [],
+    "asset_license": "Original project production asset; public release rights review remains a separate gate.",
+    "tool_license": "GPL-3.0-or-later",
+    "tool_license_files": ".tools/blender/blender-4.5.3-windows-x64/license/",
+    "tool_not_bundled": true
+  },
+  "animation": {
+    "status": "STATIC_VARIANT_NO_RIG",
+    "clips": []
+  },
+  "limitations": [
+    "BLOCKOUT, not FINAL.",
+    "Open/closed are static placement variants, no interaction/save state implied.",
+    "REAL/ERASED material preview only; no WorldController switching.",
+    "Rotate to face direction; do not mirror or nonuniformly scale colliders."
+  ],
+  "captures": [
+    "reports/tasks/T-020302/REAL_gameplay.png",
+    "reports/tasks/T-020302/REAL_front.png",
+    "reports/tasks/T-020302/REAL_wide.png",
+    "reports/tasks/T-020302/ERASED_gameplay.png",
+    "reports/tasks/T-020302/ERASED_front.png",
+    "reports/tasks/T-020302/ERASED_wide.png"
+  ],
+  "review_path": "reports/tasks/T-020302/review.md"
+}

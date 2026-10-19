@@ -1,0 +1,105 @@
+{
+  "timestamp": "2026-10-19T06:57:10.111687+00:00",
+  "base_head": "2498ad4bd768b3b6d5c252ecf851fa0b211d30ea",
+  "base_tree": "db905bb35db12a0373354d27bb70fb361f2b70e1",
+  "working_tree": "DIRTY_UNCOMMITTED_DESIGN_EDITS_WITH_PREEXISTING_CHANGES_PRESERVED",
+  "scope": "DESIGN_NOT_RUNTIME_COMPLETION",
+  "files": [
+    {
+      "path": "13_GDD_AGENT_EDITION.md",
+      "sha256": "a58f8a3d33ba6ce208a2eba4d6d037cbe85755aa60e28455818f0ff71da23a51"
+    },
+    {
+      "path": "14_PUZZLE_DESIGN_BIBLE.md",
+      "sha256": "4d3d25813f29bf16c1dfe422eede39a0f7a3203b6f412d00ecd04fda5024364c"
+    },
+    {
+      "path": "01_MASTER_PRODUCTION_PLAN.md",
+      "sha256": "05ea1ad759bca979fd99ab18fc5a15f3cdde21a9c77677af0a8ef3817e46b716"
+    },
+    {
+      "path": "04_TECHNICAL_EXECUTION_CONTRACTS.md",
+      "sha256": "9d7f219692822565da2c43635fd8839928bd76968ded918dfe503a7eca924d03"
+    },
+    {
+      "path": "05_QA_RELEASE_AND_HYPERCARE.md",
+      "sha256": "f89ca69ee21fabc154d44903a91281a5261c5e9ef0a531f4d2a48ac21a042ff2"
+    },
+    {
+      "path": "docs/decisions/ADR-003-reasoning-and-tension.md",
+      "sha256": "6180f0a4fd88882898632da301d4990ec4c5af234d64a9e8811b8230fa37e831"
+    },
+    {
+      "path": "docs/design/comparative_gameplay_research_v32.md",
+      "sha256": "da8d7742121fdd3ecebdc676a20dfa64991814c43908512be9e724d5acc96b7a"
+    },
+    {
+      "path": "docs/design/puzzle_depth_matrix_v32.md",
+      "sha256": "72b835c5cba55e42ac16ce8d40b6f7fdb5baa85c9e95e7de1182c790a476774b"
+    },
+    {
+      "path": "specs/puzzle_catalog.json",
+      "sha256": "2b7e3c3f81cf8dcf4b9c46347c65351a5b9c63c96ed0c852bc5406614ba796fa"
+    },
+    {
+      "path": "specs/chapter_catalog.json",
+      "sha256": "2ce501c200aff420038cde46c8ebb28a8b7da1289de9d122b228b229fd653894"
+    },
+    {
+      "path": "specs/gameplay_reasoning.json",
+      "sha256": "5cd3f5c568802840c5529c8b92e9885ff12c1e33469444bcdb095c995f2c7f01"
+    },
+    {
+      "path": "specs/deduction_models.json",
+      "sha256": "01533121638d95e7461f17198fc9372ac7651b338ac13392c5a2be18adba65ff"
+    },
+    {
+      "path": "specs/ending_c_decisions.json",
+      "sha256": "d775b762562c71636ea376f99cc98de1cbeb018a5acab01414fb63c37b350dbf"
+    },
+    {
+      "path": "specs/research_sources.json",
+      "sha256": "54e9543cee275ec20b611397f65f4ad29fae67ab2c420270102562f1c01d97f0"
+    },
+    {
+      "path": "specs/item_catalog.json",
+      "sha256": "2c91e3ee9243a6619a3335f75d65cabe7fe22e3f185d65238a938fb18651102b"
+    },
+    {
+      "path": "specs/evacuation_route.json",
+      "sha256": "1345f077483ea4f07e368c31192e332774c7f78b970e35bc5ed26036072da35b"
+    },
+    {
+      "path": "specs/schemas/save.schema.json",
+      "sha256": "94ca81aef10a9ee81860c63e79e4899e0a5c04ac67b510fff92001470485f103"
+    },
+    {
+      "path": "specs/fixtures/save_empty_CH01.json",
+      "sha256": "a0e0e58bdeaf6c44f4c1c265e2395defd57149fb2c6a51874e0376f2b0f0ce60"
+    },
+    {
+      "path": "plan/backlog.json",
+      "sha256": "cbf2f5741d911f4e2f395d573c458b8fdc34ef3bf9764967ff9c9f795251c1b1"
+    },
+    {
+      "path": "plan/qa_matrix.json",
+      "sha256": "627d1f68a35e3e8045892b41751fcd3c102954fd43b7911a95edd61d9229a746"
+    },
+    {
+      "path": "state/task_state.json",
+      "sha256": "09b4d584d130d500494cb53a9cf57d20c73aee86cb6c14bc3e234b54341e153d"
+    },
+    {
+      "path": "tools/validate_puzzle_depth.py",
+      "sha256": "4d6dfe5937a40a01d022b012ca04864a33105f5a73cdf80d1a418f7f83453fee"
+    },
+    {
+      "path": "tests/test_puzzle_depth.py",
+      "sha256": "20fd4fb715a0ff4e9cc17e943969e246bcf049443056b82056bfd3264246cb47"
+    },
+    {
+      "path": "THE_SEVENTH_HOUSE_AGENT_TRACKER.xlsx",
+      "sha256": "a459b2dd9e994a7eb31a8d9c2cdcc10ae35ba8fa4b08557384bbe80db4ebb3c7"
+    }
+  ]
+}

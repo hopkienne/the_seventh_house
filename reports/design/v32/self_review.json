@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-10-19T06:57:10.111687+00:00",
+  "scope": "GAMEPLAY_DESIGN_GDD_BACKLOG_ONLY",
+  "result": "STATIC_REVIEW_PASS",
+  "self_review": true,
+  "independent_reviewer": false,
+  "resolved_findings": [
+    {
+      "issue": "P10 information links could become a hidden solved/read gate.",
+      "resolution": "depends_on is empty, P09/P11 are information inputs; regression rejects hidden bridge gate."
+    },
+    {
+      "issue": "P18 convergence originally lacked a physical output from the model branch.",
+      "resolution": "REFLECTOR originates at P19 hatch; P18 requires P17 room access and P19 reflector; item catalog and cards agree."
+    },
+    {
+      "issue": "Semantic thought-path action names differed from canonical interaction IDs.",
+      "resolution": "All inference steps list canonical_actions; static validator and a negative regression reject undefined actions."
+    },
+    {
+      "issue": "Short route clue lists omitted sources needed when inquiry continued.",
+      "resolution": "Routes distinguish entry_clues from convergent source coverage; both cover each inference, with different entry leads. They may converge on shared evidence."
+    },
+    {
+      "issue": "Canonical ending walkthrough could override valid route/order alternatives or return time early.",
+      "resolution": "Eight finite plans enumerated; courtyard levers separate from core HOLD/OPEN/RETURN; P28 rejects early return and retains safe progress."
+    },
+    {
+      "issue": "New authoring fields must not imply completed gameplay or invalidate closed production evidence.",
+      "resolution": "Old task records, gate records and closed task definitions compared to before snapshot: unchanged; all four new tasks NOT_STARTED."
+    }
+  ],
+  "validation": {
+    "plan": "PASS: 602 tasks; dependencies acyclic; references/cards present",
+    "puzzle_consistency": "PASS: 278 checks",
+    "reasoning_depth": "PASS: 587 checks",
+    "narrative": "PASS: 81 checks",
+    "unit_tests": "PASS: 20 puzzle + 8 data/save + 22 agentctl = 50 cases",
+    "workbook": "PASS: 12 sheets / 11 native tables preserved, 602 task rows, 47 QA rows, formula counts verified, rendered Content preview inspected"
+  },
+  "limits": {
+    "human_usability": "HUMAN_USABILITY_NOT_ASSESSED",
+    "runtime_campaign": "PARTIAL: 0/28 produced runtime puzzles",
+    "godot_gpu_audio_input": "NOT_TESTED_THIS_DESIGN_CHANGE",
+    "native_excel": "NOT_TESTED",
+    "research": "Primary-source desk research; no claim of playing or playtesting the reference games."
+  },
+  "evidence": [
+    "final_checks.json",
+    "final_recheck.json",
+    "preservation_check.json",
+    "workbook_preservation.json",
+    "workbook_update.json"
+  ]
+}

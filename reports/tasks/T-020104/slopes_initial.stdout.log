@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE movement_qa/slope_20_up_down_idle
+SLOPE_METRICS {"bottom":"(-5.767423, 0.000438, 0.0)","degrees":20.0,"top":"(5.46651, 2.052975, 0.0)"}
+CASE movement_qa/slope_40_up_down_idle
+SLOPE_METRICS {"bottom":"(-8.236636, 0.000255, 0.0)","degrees":40.0,"top":"(2.991907, 3.856897, 0.0)"}
+CASE movement_qa/interrupted_scene_reload
+TEST_REPORT {"assertions":15,"executed":3,"failed":1,"failures":["climbs supported slope without sticking"],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion","corridor","movement_qa"],"result":"FAIL","skipped":0,"suite":"movement_qa","tests":3}

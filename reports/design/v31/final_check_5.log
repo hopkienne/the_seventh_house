@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "scope": "STATIC_DESIGN_CONSISTENCY_NOT_RUNTIME_OR_HUMAN_PLAYTEST",
+  "checks_count": 278,
+  "errors": [],
+  "puzzles": 28,
+  "main_required": 21,
+  "human_usability": "HUMAN_USABILITY_NOT_ASSESSED"
+}

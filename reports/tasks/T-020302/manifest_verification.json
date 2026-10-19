@@ -1,0 +1,25 @@
+{
+  "result": "PASS",
+  "assets": [
+    {
+      "asset_id": "ENV_DOOR_CLOSED_2M_01",
+      "hashes_match": true,
+      "required_fields_and_enums_valid": true
+    },
+    {
+      "asset_id": "ENV_DOOR_OPEN_2M_01",
+      "hashes_match": true,
+      "required_fields_and_enums_valid": true
+    },
+    {
+      "asset_id": "ENV_FENCE_2M_01",
+      "hashes_match": true,
+      "required_fields_and_enums_valid": true
+    },
+    {
+      "asset_id": "ENV_WALL_2M_01",
+      "hashes_match": true,
+      "required_fields_and_enums_valid": true
+    }
+  ]
+}

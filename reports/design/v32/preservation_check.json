@@ -1,0 +1,20 @@
+{
+  "scope": "DESIGN_MIGRATION_NOT_RUNTIME",
+  "existing_task_states_preserved": true,
+  "gates_preserved": true,
+  "closed_task_definitions_preserved": true,
+  "new_tasks": [
+    "T-070211",
+    "T-070212",
+    "T-080405",
+    "T-250205"
+  ],
+  "plan_version": "3.2",
+  "revision": 61,
+  "counts": {
+    "DONE": 19,
+    "IN_PROGRESS": 1,
+    "NOT_STARTED": 582
+  },
+  "new_tasks_not_started": true
+}

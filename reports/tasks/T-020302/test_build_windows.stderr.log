@@ -1,0 +1,11 @@
+test_exit_zero_engine_error_fails (__main__.BuildTests.test_exit_zero_engine_error_fails) ... ok
+test_missing_report_cannot_pass (__main__.BuildTests.test_missing_report_cannot_pass) ... ok
+test_runtime_asset_changes_invalidate_candidate_source_hash (__main__.BuildTests.test_runtime_asset_changes_invalidate_candidate_source_hash) ... ok
+test_timeout_fails_and_logs (__main__.BuildTests.test_timeout_fails_and_logs) ... ok
+test_valid_report (__main__.BuildTests.test_valid_report) ... ok
+test_zero_and_skipped_cannot_pass (__main__.BuildTests.test_zero_and_skipped_cannot_pass) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.197s
+
+OK

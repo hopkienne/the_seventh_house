@@ -1,0 +1,161 @@
+{
+  "design_version": "3.2",
+  "research_ids": [
+    "RS01",
+    "RS02",
+    "RS03",
+    "RS04",
+    "RS05",
+    "RS06",
+    "RS07"
+  ],
+  "policy": "Knowledge and hypotheses are authoring/provenance, not collectible count or hidden read gates. Re-teach locally when branch order permits.",
+  "knowledge": [
+    {
+      "id": "K_PHASE",
+      "rule": "Chuyển cùngpose chỉ khi lớpđích còn support/không overlap; lớpđổi cả cấu trúc và thôngtin.",
+      "mandatory_teachers": [
+        "P02"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P03",
+        "P04",
+        "P10",
+        "P18",
+        "P20"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_TRACE",
+      "rule": "Dấu trên vật phải được giải nghĩa bằng ngữcảnh hoặc một nguồn độc lập.",
+      "mandatory_teachers": [
+        "P03"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P18",
+        "P20",
+        "P25",
+        "P26",
+        "P27"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_WATER",
+      "rule": "Giờ sựkiện khác giờ nước tới; độcao và thời gian toàn hànhtrình quyếtđịnh lốian toàn.",
+      "mandatory_teachers": [
+        "P11"
+      ],
+      "optional_teachers": [
+        "P12"
+      ],
+      "consumers": [
+        "P10",
+        "P12",
+        "P15",
+        "P16",
+        "P20",
+        "P27",
+        "P28"
+      ],
+      "hard_gate": false,
+      "observation_teachers_at_entry": [
+        "P11"
+      ]
+    },
+    {
+      "id": "K_SEQUENCE",
+      "rule": "Quan hệ trước/sau xác định chuỗi, không phải vịtríicon trên hình.",
+      "mandatory_teachers": [
+        "P13"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P14",
+        "P15",
+        "P21",
+        "P25",
+        "P28"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_AUTH",
+      "rule": "Kiểm nguồn gốc bằng cảniêmliên tục và mựcthấm trước khi dùng nộidung.",
+      "mandatory_teachers": [
+        "P17",
+        "P19"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P19",
+        "P23",
+        "P26"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_HOLD_OPEN",
+      "rule": "GIỮ→MỞ→TRẢ là chức năng nhânquả; kýhiệuvàâm là hai cách biểuđạt cùngmộtluật.",
+      "mandatory_teachers": [
+        "P21"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P22",
+        "P24",
+        "P26",
+        "P28"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_IDENTITY",
+      "rule": "Cùngngười, quan hệgiađình và vai trò là các mệnhđề khác nhau, cần chứngcứ hỗtrợ.",
+      "mandatory_teachers": [
+        "P07"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P23"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_CAUSAL",
+      "rule": "Hai sựkiện liênquan không mặc nhiên là nguyênnhân; dùng thứtự và cơchế để phânbiệt.",
+      "mandatory_teachers": [
+        "P15"
+      ],
+      "optional_teachers": [],
+      "consumers": [
+        "P19",
+        "P23",
+        "P24",
+        "P28"
+      ],
+      "hard_gate": false
+    },
+    {
+      "id": "K_SOUND",
+      "rule": "Knocker điều tra nguồn âm thực và lastseen, không biết player xuyênphase.",
+      "mandatory_teachers": [
+        "P14"
+      ],
+      "optional_teachers": [
+        "P04"
+      ],
+      "consumers": [
+        "P22"
+      ],
+      "hard_gate": false
+    }
+  ]
+}

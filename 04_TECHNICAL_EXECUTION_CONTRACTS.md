@@ -1,4 +1,4 @@
-# 04 — Technical execution contracts v3
+# 04 — Technical execution contracts 3.2
 
 **Đây là interface/behavior phải implement và test, không phải API game đã tồn tại.** Godot API đối chiếu binary pin + tài liệu chính thức trong 07_SOURCES_AND_DECISIONS.md. Không tạo một framework lớn để mô phỏng engine.
 
@@ -18,7 +18,7 @@ scripts/world/           # WorldController, SwitchSafety, PhaseAware
 scripts/player/
 scripts/camera/
 scripts/interaction/
-scripts/puzzles/         # P01..P14 controllers/adapters
+scripts/puzzles/         # P01..P28 controllers/adapters
 scripts/characters/
 data/chapters/ data/puzzles/ data/dialogue/ data/clues/ data/localization/
 art/source/ art/export/ art/materials/
@@ -49,8 +49,16 @@ GDScript typed khi phù hợp, snake_case file/function/property, PascalCase cla
 | CinematicDirector | `play(cinematic_id)`, `skip()` | Xem hết/skip cùng finalize_once; không giữ input lock |
 | KnockerController | perception events, phase, authored route | FSM bounded; không đọc player xuyên tường/phase |
 | JournalService | `collect(evidence_id)`, `list_records()` | E01–E14/M01–M07/L01–L07 unique; không duplicate rewards |
+| InspectableObject / InspectionView | `open(target_id)`, flip/rotate/slot actions, `close()` | Range/LOS/phase check; owner lock; keyboard/pad equivalents; reject lúc Warn/Chase; không capture khi đọc ở safe zone |
+| InventoryManager | inspect/combine/use theo item/recipe IDs | Atomic commit consume+output; wrong-use không consume; reused items không mất; không crafting tổng quát |
+| PuzzleManager | registry P01–P28, dispatch action, snapshot/restore | Authority local puzzle state; DAG validate; không trực tiếp sửa world/save; 21required+7 secret |
+| JournalService clue pins | record observed clue snapshots; player-selected typed links | Notes không thêm28record IDs; không auto-fill lời giải; không hiện record chưa quan sát |
+| HintManager | request(puzzle_id,level,observed_state) | 3 cấp tự nguyện, VI/EN, không timer/ads, không tự solve |
+| HypothesisController | draft typed links/claim groups, validate source IDs, submit | Chỉ các bàn chứng cứ cần; không NLP/28boards. Phản hồi nhóm quan hệ, không per-slot oracle; provenance/chapter guard; không hidden-read gate |
+| ActionPreview | query target/action/current state, show consequence before commit | Readonly, không tự advance puzzle/AI/water; range/LOS/phase và owner locks vẫn áp dụng |
+| EvacuationDecisions | HOLD/OPEN, preview crossing, commit unique group, RETURN | Model theo specs/ending_c_decisions.json; tám plan; crossing_order là tiếntrình, beat/cachedgroups phảikhớp; retry không forcedB |
 
-Autoload tối thiểu: InputRouter, StoryState, SaveService, LevelRouter, AudioDirector. WorldController thuộc active zone; LevelRouter chuyển scene phải rebind listeners. Khi prototype chưa có autoload đầy đủ, dùng adapter nhỏ nhưng giữ interface, không có hai authoritative states.
+Autoload tối thiểu: InputRouter, StoryState, SaveService, LevelRouter, AudioDirector. WorldController thuộc active zone; LevelRouter chuyển scene phải rebind listeners. Khi prototype chưa có autoload đầy đủ, dùng adapter nhỏ nhưng giữ interface, không có hai authoritative states. Không tạo WorldStateController/EvidenceJournal thứ hai chỉ để giống tên trong bản đề xuất. Đọc Bible/ADR-002 cho closeup phase transaction, threat-safe boundary và recipe recovery.
 
 ## 3. Tọa độ, movement và camera defaults
 1 unit = 1 m; Y lên, X ngang, Z sâu. Player feet pivot y=0, capsule height=1.70m/radius=0.28m ban đầu. Walk 2.2m/s, run 3.4m/s, acceleration 12m/s², deceleration 16m/s², gravity từ project settings; là initial tuning, không số đã đo. Hành lang sâu khoảng 3–4m; real physics bounds cả X/Z. Đi chéo không nhanh hơn thẳng >5% trong bài test 5 giây. Không jump.
@@ -99,12 +107,14 @@ ChapterRoot(Node3D)
   ChapterController(Node)
 ```
 
-Chapter ID canonical **CH01…CH07**, house H01…H07, puzzle P01…P14, evidence E01…E14/M01…M07/L01…L07. V2 `H02_E03` là alias migration, không thêm journal entry mới. Định danh component persistent dạng `CH02.table_layout`; không dùng NodePath làm save key. Validate duplicate keys/IDs và dependency cycles trước import content.
+Chapter ID canonical **CH01…CH07**, house H01…H07, puzzle P02…P28, evidence E01…E14/M01…M07/L01…L07. V2 `H02_E03` là alias migration, không thêm journal entry mới. Định danh component persistent dạng `CH02.table_layout`; không dùng NodePath làm save key. Validate duplicate keys/IDs và dependency cycles trước import content.
 
 Dùng JSON cho story/puzzle/evidence/dialogue catalogs, Resource cho tuning kỹ thuật. Spec schemas ở `specs/schemas/`. Nếu chọn Resource runtime, tạo converter và semantic equality test; không để JSON doc và Resource thật lệch nhau. Không nạp global flags từ file tùy ý ngoài allowlist. Lời giải/hints theo puzzle specs, không regenerate ngẫu nhiên từng lần load.
 
 ## 7. Save contract
-3 slots, settings tách profile. Autosave tại safe checkpoints; request save khi switch/cinematic/level load xếp hàng hoặc báo deferred, không snapshot transaction dở. Snapshot schema trong `specs/schemas/save.schema.json`; có schema_version/build_version, slot/chapter/level/checkpoint, player position/rotation_y, phase, story_flags, inventory, journal_ids, puzzle_states, completed_cinematics, zone_states.
+3 slots, settings tách profile. Autosave tại safe checkpoints; request save khi switch/cinematic/level load/recipe commit được deferred, không snapshot transaction dở. Snapshot schema có `schema_version`, `design_version=3.2`, build_version và các trường slot/chapter/level/checkpoint/player/phase/story/inventory/journal/puzzles/cinematics/zones. Puzzle partial slots/angles/links/recipe commits được lưu qua registry. Design3.0 có Pxx nghĩa khác: không rename solved flags; từ chối import không hỗ trợ, giữ file gốc và slot mới, không reset dữ liệu cũ. Schema chưa có save runtime triển khai; phải test ở task SaveService.
+
+Design 3.1→3.2 giữ IDs nhưng đổi dependencies/layout/multiple-valid-solutions; cùngID không đủ xác nhận compatibility. Cấm tự diễn giải save chưa hỗ trợ. Các thought_path và K-ID là authoring; runtime chỉ lưu observed clues/draft/committed actions và nguồn đã thấy cần thiết, không serialize cả spec hoặc tạo thêm một authoritative knowledge manager. Input đúng đã đủ điều kiện thật được nhận dù không bấm đọc mọi clue.
 
 Write temp trong cùng thư mục → flush/close → validate parse/schema → tạo backup hợp lệ của bản trước → replace bằng cơ chế target OS kiểm chứng. Không overwrite backup bằng file corrupt. Permission/disk-full báo lỗi UI thực; không display Saved khi fail. Unknown future schema từ chối không reset mất dữ liệu; recovery dùng backup hoặc cho người chơi chọn, log rõ.
 

@@ -1,0 +1,17 @@
+{
+  "generator_version": 1,
+  "seed": 7302,
+  "grid_m": 0.25,
+  "width_m": 2.0,
+  "wall_height_m": 3.0,
+  "wall_depth_m": 0.2,
+  "door_clear_width_m": 1.25,
+  "door_clear_height_m": 2.25,
+  "palette_config": "tools/art/street_blockout.json",
+  "modules": [
+    {"id": "fence_2m", "asset_id": "ENV_FENCE_2M_01", "kind": "fence"},
+    {"id": "wall_2m", "asset_id": "ENV_WALL_2M_01", "kind": "wall"},
+    {"id": "door_open_2m", "asset_id": "ENV_DOOR_OPEN_2M_01", "kind": "door_open"},
+    {"id": "door_closed_2m", "asset_id": "ENV_DOOR_CLOSED_2M_01", "kind": "door_closed"}
+  ]
+}
