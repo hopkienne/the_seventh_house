@@ -1,0 +1,67 @@
+{
+  "gate_id": "G0",
+  "result": "PASS",
+  "created_at": "2026-10-19T04:05:55.259358+00:00",
+  "review_file": "reports/S01/gate_G0.md",
+  "self_review": true,
+  "artifacts": [
+    {
+      "path": "reports/S01/gate_G0.md",
+      "sha256": "c66abbdc03cbab80ec1430654433300e611eaff1aa1beb8299793a11ef45749b"
+    },
+    {
+      "path": "reports/tasks/T-010404/evidence.json",
+      "sha256": "3b669c47f1c9f7d4ed3d74b100591a8070f8f51494ab7cc212ff73651a850558"
+    },
+    {
+      "path": "reports/tasks/T-010404/candidate_manifest.json",
+      "sha256": "2ecd42db8bf88a4b11feceb3135ba7ca368d9e9ef1e3209a327a307d0911a56a"
+    },
+    {
+      "path": "reports/tasks/T-010404/candidate_verification.json",
+      "sha256": "f71e9270cc906b9b5fdb53ef8aac3911cc952d252ea6f9f75baa8abe7b1bf66a"
+    },
+    {
+      "path": "reports/tasks/T-010404/native_smoke.png",
+      "sha256": "de27712f9053c7ffadc102b8b86aa6a2bed01e94a0c19df4c5b0e91979a1be85"
+    },
+    {
+      "path": "reports/tasks/T-010404/scope_digest.json",
+      "sha256": "e1a7a0bd0fddef2699a652cb29da77b0e67af115efbce7e8c64cfe31fedc86fe"
+    },
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "b3155425a09d71d53767669bd31815b2c90bb76b01a18bbd298976523aa0f13b"
+    },
+    {
+      "path": "config/permissions.json",
+      "sha256": "005554a64825f0742e5dfbb6638c49b816821081f1f4a25e433acce576e74c14"
+    },
+    {
+      "path": "config/toolchain.lock.json",
+      "sha256": "cfb1de5b073584b7cbd0b0b6738a532177f3071b78b83dd2aeb0f79f596e0c78"
+    }
+  ],
+  "checks": [
+    {
+      "id": "scope-capabilities-permissions",
+      "result": "PASS",
+      "observed": "Scope unchanged,actual capabilities probed,spend0/publicfalse"
+    },
+    {
+      "id": "actual-bootstrap-build",
+      "result": "PASS",
+      "observed": "113 engine assertions,export/package pass,source/build hashes tied"
+    },
+    {
+      "id": "native-windows-software-render",
+      "result": "PASS",
+      "observed": "Actual exported WindowsEXE outsideeditor,Forward+softwareVulkan frame,5assertions/exit0;hardware/input/audio limitations retained"
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "G0 only,not full game or release.",
+    "Software CPU render;hardware GPU performance and physical input/audio NOT_TESTED."
+  ]
+}

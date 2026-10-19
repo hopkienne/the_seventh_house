@@ -1,0 +1,121 @@
+{
+  "task_id": "T-020103",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:f42cbf84c3fcdc9c95e33cd8a326cab6d96ae324dc3c003e742e5a70d30bcfb4",
+  "created_at": "2026-10-19T04:30:10.471341+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020103/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scripts/player/locomotion_state.gd",
+      "sha256": "3f23a47ef87259ed4fc562541f5d6cb7fdafdac6fa5b8fe01e0771bbd82db790"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "sha256": "48694a0bcfeaee58ab03b2acc9be99531e87c71f858c70a83c58dc5c1c39063c"
+    },
+    {
+      "path": "scripts/player/player_physics_settings.gd",
+      "sha256": "43df450cb071d1c7541d67918993f5f23d6b107f7f7f7e23c78cc72555ed0ff5"
+    },
+    {
+      "path": "config/tuning/player_physics.tres",
+      "sha256": "43e7a2327a2e3f92b834cc48fdf2c7fe13033f849041e701b4fd0bb4c5af257a"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "3edabf8398e396b3816e5ee10e3a2639ed5147abb09af917c66fc6e912bfb74a"
+    },
+    {
+      "path": "tests/unit/test_corridor.gd",
+      "sha256": "6eac09fa1154bc7d523a8a30536c73de86f3a242a179dc1ee2c5301415873184"
+    },
+    {
+      "path": "tests/replays/corridor_bounds.gd",
+      "sha256": "e705d0b6b181d2ca20ca1e80f00f424915c9354eefe56b554136067c1788b038"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "276fb27fc08cffac7c6dbbd6192e106fbaf57ae7eb6a85df72fd37221512d2f1"
+    },
+    {
+      "path": "reports/tasks/T-020103/before.stdout.log",
+      "sha256": "0eee76e1be05ad5c5506f52b000660b735f8e8217dcbd35a53cbff76827b4a85"
+    },
+    {
+      "path": "reports/tasks/T-020103/corridor.stdout.log",
+      "sha256": "ae256c855111f3a35d1b7928396092e8cbbc9e8531b658d5b6cd13b748551021"
+    },
+    {
+      "path": "reports/tasks/T-020103/corridor.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020103/build_manifest.json",
+      "sha256": "e498c250606d88c2740aa06c5958e4d7852e1e6d9639fbb6d2db58a12c9a11f3"
+    },
+    {
+      "path": "reports/tasks/T-020103/replay.stdout.log",
+      "sha256": "fc0b5fd1adb6812f6b2bbe9d370888d152ad7573f6e63702a108ef0118928e20"
+    },
+    {
+      "path": "reports/tasks/T-020103/replay.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020103/bounds.png",
+      "sha256": "38bb87ce4a0d6fa767a00965a9729acccf46d4573310081f9491445241a948e9"
+    },
+    {
+      "path": "reports/tasks/T-020103/review.md",
+      "sha256": "beb106f4b958414db02bd7d288b20a40412b7ffa962720a2040c91ad2281333e"
+    },
+    {
+      "path": "reports/tasks/T-020103/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "fsm-and-real-boundaries",
+      "kind": "ENGINE_TEST",
+      "expected": "Clear Idle/Walk/Locked states,no jump/combat;real XZ bounds prevent leaving floor",
+      "observed": "2cases19assertions;exact transition signals;four directional+diagonal collision tests stayx±4.62/z±1.62,grounded;all-suite build161 assertions passes",
+      "result": "PASS",
+      "command": "Godot --headless --script res://tests/test_runner.gd -- --suite corridor",
+      "log_path": "reports/tasks/T-020103/corridor.stdout.log",
+      "assertions": 19
+    },
+    {
+      "id": "state-boundary-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Local locomotion state only,matching visible physical bounds,Resource tuning",
+      "observed": "Actual motion state+signals,Shared StaticBody3D/mesh geometry,no clamp/teleport/no jump/combat or world/save writes",
+      "result": "PASS",
+      "assertions": 0
+    },
+    {
+      "id": "long-held-input-render",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Actual main-scene replay remains safely inside physical wall and captures renderer/state",
+      "observed": "300heldphysics ticks,x4.619882,y0,grounded,LOCKED,1280x720 Forward+Vulkan SwiftShader software;capture reviewed,exit0",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-020103/replay.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020103/bounds.png"
+      ],
+      "software": true,
+      "assertions": 1
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Bootstrap geometry/visual proxy;final level/character art not delivered.",
+    "Slopes/steps/frame-rate QA remain T-020104;synthetic input/software renderer do not prove physical device or GPU performance."
+  ]
+}

@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE player_physics/feet_and_capsule
+CASE player_physics/gravity_and_idle
+PHYSICS_METRICS {"feet_y":-0.000398121774196625,"horizontal_drift":0.0,"physics_ticks_per_second":60,"vertical_drift":0.0}
+CASE player_physics/invalid_settings
+TEST_REPORT {"assertions":18,"executed":3,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics"],"result":"PASS","skipped":0,"suite":"player_physics","tests":3}

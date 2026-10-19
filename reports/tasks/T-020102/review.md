@@ -1,0 +1,8 @@
+# Review T-020102
+Result: PASS. Reviewer: codex-primary; self_review=true. Separate implementation/metrics/render review.
+
+Controller uses actual Input.get_vector circular normalization and Vector2.move_toward; authored walk2.2/run3.4m/s,acceleration12/deceleration16 in Resource. Local control gate rejects held input after deceleration and resumes without teleport; global lock tokens remain future InputRouter ownership. No story/world/save mutation. Tests first failed7 checks because body had gravity only. Actual2cases/11assertions now verify acceleration/deceleration/rest/run/control disable/resume and five-second distance:straight10.816701889m,diagonal10.816639900m,relative error0.000005730844 (~0.000573percent),under5percent. Body/gravity and other suites remain passing in142-assertion build/export/package pipeline.
+
+Rendered replay initially failed: driver waited process_frame after every physics_frame, under slow software rendering it skipped catch-up physics ticks and held input much longer, walking off the not-yet-bounded main floor. Raw failed log/image retained. Replay/unit tick driver now counts every physics_frame and awaits rendering only at capture boundary. After fix same controller replay travels2.14999938m for60heldticks+deceleration,feet_y0,Forward+Vulkan software,exit0/no stderr. Viewed capture shows moved capsule still grounded/visible. Corrected locomotion suite rerun passes; runtime source was unchanged by this driver-only fix, existing build manifest remains same runtime candidate.
+
+No unresolved task acceptance issue. Corridor bounds/locomotion states are explicitly next T-020103;this is not completed movement story/full campaign. Physical keyboard/gamepad and GPU performance are not claimed.

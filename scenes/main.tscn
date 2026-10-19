@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Script" path="res://scripts/bootstrap/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
 
 [sub_resource type="Environment" id="Environment_bootstrap"]
 background_mode = 1
@@ -28,6 +29,24 @@ roughness = 0.8
 material = SubResource("Material_reference")
 size = Vector3(0.56, 1.7, 0.56)
 
+[sub_resource type="StandardMaterial3D" id="Material_bounds"]
+albedo_color = Color(0.23, 0.18, 0.12, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_long_bound"]
+material = SubResource("Material_bounds")
+size = Vector3(10.2, 0.7, 0.2)
+
+[sub_resource type="BoxShape3D" id="Shape_long_bound"]
+size = Vector3(10.2, 0.7, 0.2)
+
+[sub_resource type="BoxMesh" id="Mesh_end_bound"]
+material = SubResource("Material_bounds")
+size = Vector3(0.2, 0.7, 4.2)
+
+[sub_resource type="BoxShape3D" id="Shape_end_bound"]
+size = Vector3(0.2, 0.7, 4.2)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_main")
 
@@ -46,8 +65,57 @@ mesh = SubResource("Mesh_floor")
 shape = SubResource("Shape_floor")
 
 [node name="ScaleReference" type="MeshInstance3D" parent="."]
+visible = false
 position = Vector3(0, 0.85, 0)
 mesh = SubResource("Mesh_reference")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+
+[node name="CorridorBounds" type="Node3D" parent="."]
+
+[node name="Near" type="StaticBody3D" parent="CorridorBounds"]
+position = Vector3(0, 0.35, 2)
+collision_layer = 1
+collision_mask = 8
+
+[node name="Mesh" type="MeshInstance3D" parent="CorridorBounds/Near"]
+mesh = SubResource("Mesh_long_bound")
+
+[node name="Collision" type="CollisionShape3D" parent="CorridorBounds/Near"]
+shape = SubResource("Shape_long_bound")
+
+[node name="Far" type="StaticBody3D" parent="CorridorBounds"]
+position = Vector3(0, 0.35, -2)
+collision_layer = 1
+collision_mask = 8
+
+[node name="Mesh" type="MeshInstance3D" parent="CorridorBounds/Far"]
+mesh = SubResource("Mesh_long_bound")
+
+[node name="Collision" type="CollisionShape3D" parent="CorridorBounds/Far"]
+shape = SubResource("Shape_long_bound")
+
+[node name="Left" type="StaticBody3D" parent="CorridorBounds"]
+position = Vector3(-5, 0.35, 0)
+collision_layer = 1
+collision_mask = 8
+
+[node name="Mesh" type="MeshInstance3D" parent="CorridorBounds/Left"]
+mesh = SubResource("Mesh_end_bound")
+
+[node name="Collision" type="CollisionShape3D" parent="CorridorBounds/Left"]
+shape = SubResource("Shape_end_bound")
+
+[node name="Right" type="StaticBody3D" parent="CorridorBounds"]
+position = Vector3(5, 0.35, 0)
+collision_layer = 1
+collision_mask = 8
+
+[node name="Mesh" type="MeshInstance3D" parent="CorridorBounds/Right"]
+mesh = SubResource("Mesh_end_bound")
+
+[node name="Collision" type="CollisionShape3D" parent="CorridorBounds/Right"]
+shape = SubResource("Shape_end_bound")
 
 [node name="KeyLight" type="DirectionalLight3D" parent="."]
 rotation_degrees = Vector3(-50, -35, 0)

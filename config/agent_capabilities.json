@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "probe_timestamp": "2026-10-19T04:02:59.478196+00:00",
+  "probe_timestamp": "2026-10-19T04:05:53.852782+00:00",
   "tools": [
     {
       "name": "python",
@@ -153,7 +153,8 @@
     "character_rig_pipeline": null,
     "custom_shader_pipeline": null,
     "navigation_pipeline": null,
-    "audio_synthesis_pipeline": null
+    "audio_synthesis_pipeline": null,
+    "native_windows_exe_smoke": true
   },
   "limitations": [
     "Godot portable downloaded and hash-verified locally; Blender not found on PATH or inspected install directories.",
@@ -227,5 +228,32 @@
     "render_capture": "reports/tasks/T-010402/stool.png",
     "quality_state": "BLOCKOUT",
     "rebuild_manifest": "reports/tasks/T-010402/asset_manifest.json"
+  },
+  "latest_native_smoke": {
+    "commit": "5fb6d50defa62f0f66b7811c348853b76c96665d",
+    "source_sha256": "e2644d93f1c34e2aab3407a3682da39fa787b5d3152ead36206e15e5ad53e1bf",
+    "current_source_matches_candidate": true,
+    "build_id": "20261019T040053405815Z",
+    "exe_sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497",
+    "pck_sha256": "2cb91f6d3d14534b339f937c8d2b525189fe9ac32eca4335387ea0624a84542e",
+    "native_os": "Windows",
+    "software": true,
+    "command": [
+      "G:\\zalo_mini_app\\the_seventh_house\\.qa\\g0_smoke\\20261019T040053405815Z\\TheSeventhHouse.exe",
+      "--rendering-method",
+      "forward_plus",
+      "--rendering-driver",
+      "vulkan",
+      "--audio-driver",
+      "Dummy",
+      "--",
+      "--qa-profile",
+      "BOOTSTRAP",
+      "--qa-report",
+      "res://reports/g0_smoke.json"
+    ],
+    "exit_code": 0,
+    "capture": "reports/tasks/T-010404/native_smoke.png",
+    "assertions": 113
   }
 }

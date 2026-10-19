@@ -1,0 +1,8 @@
+# Review T-020101
+Result: PASS. Reviewer: codex-primary; self_review=true; separate physics/source/log/render review.
+
+CharacterBody3D root is feet pivot; CapsuleShape3D height1.70/radius0.28 centered at y0.85 matches blockout CapsuleMesh. Player layer8,initial REAL mask19,grounded floor snap0.2,45deg max angle. Gravity comes from engine via version-verified get_gravity and scale Resource. Invalid negative/null settings rejected without replacing valid settings. No world/story/save state assigned to player. This task implements body/gravity only; movement input is next task and no final character art is claimed.
+
+Tests were written first and failed3 assertions while scene absent. Actual physics test now executes3 cases/18 assertions: falls2m onto StaticBody floor,feet settle about-0.000398m (under2mm threshold),180 idle physics frames at60Hz have0 horizontal/vertical drift. Runner now awaits async physics cases while preserving sync cases/providers; build runs all registered suites and passes131 assertions,package inspection/export. Runtime tuning Resource directory added to source hash coverage to fingerprint physics changes. Opened integrated non-headless Forward+ software capture: standing capsule visible/grounded,reference column hidden,scene light/shadow present.5 smoke assertions and no stderr. No parser/import-only or GPU benchmark inference.
+
+No unresolved task acceptance issue. Capsule visual remains explicit blockout and does not satisfy final Minh/animation art. Synthetic logic/source render only; physical input/audio not tested,exported S02 EXE has not had a separate native smoke in this task.

@@ -1,0 +1,7 @@
+ASSERTION FAILED: five-second walk distance reflects2.2m/s with acceleration
+ASSERTION FAILED: diagonal moves real body over five seconds
+ASSERTION FAILED: accelerates rather than instantly reaching walk speed
+ASSERTION FAILED: reaches authored walk speed
+ASSERTION FAILED: decelerates on release
+ASSERTION FAILED: run reaches authored3.4m/s
+ASSERTION FAILED: local control gate exists

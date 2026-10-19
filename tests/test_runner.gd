@@ -5,7 +5,9 @@ var assertions: int = 0
 var failures: Array[String] = []
 var cases_run: int = 0
 const SUITES: Dictionary = {"bootstrap": "", "scene": "res://tests/unit/test_scene.gd",
-	"utilities": "res://tests/unit/test_utility.gd", "asset_import": "res://tests/unit/test_asset_import.gd"}
+	"utilities": "res://tests/unit/test_utility.gd", "asset_import": "res://tests/unit/test_asset_import.gd",
+	"player_physics": "res://tests/unit/test_player_physics.gd",
+	"locomotion": "res://tests/unit/test_locomotion.gd", "corridor": "res://tests/unit/test_corridor.gd"}
 
 
 func _init() -> void:
@@ -70,7 +72,7 @@ func _run() -> void:
 		if not execute.is_valid():
 			failures.append("Invalid case callable: " + case_id)
 			continue
-		execute.call()
+		await execute.call()
 	if cases_run == 0 or assertions == 0:
 		failures.append("Zero tests/assertions cannot pass")
 	_finish(suite, 0 if failures.is_empty() else 1)

@@ -1,0 +1,349 @@
+{
+  "build_id": "20261019T041556055664Z",
+  "result": "PASS",
+  "stage": "BOOTSTRAP",
+  "steps": [
+    {
+      "id": "version",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--version"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.054498499957844615,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/version.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/version.stderr.log"
+    },
+    {
+      "id": "import",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--import"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.4766782000660896,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/import.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/import.stderr.log"
+    },
+    {
+      "id": "suite_registry",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--list-suites"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2031266000121832,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/suite_registry.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/suite_registry.stderr.log"
+    },
+    {
+      "id": "bootstrap",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "bootstrap"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2945785999763757,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/bootstrap.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/bootstrap.stderr.log",
+      "test_report": {
+        "assertions": 21,
+        "executed": 2,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "bootstrap",
+        "tests": 2
+      }
+    },
+    {
+      "id": "scene",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "scene"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.30085120000876486,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/scene.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/scene.stderr.log",
+      "test_report": {
+        "assertions": 57,
+        "executed": 3,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "scene",
+        "tests": 3
+      }
+    },
+    {
+      "id": "utilities",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "utilities"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2906799999764189,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/utilities.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/utilities.stderr.log",
+      "test_report": {
+        "assertions": 6,
+        "executed": 4,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "utilities",
+        "tests": 4
+      }
+    },
+    {
+      "id": "asset_import",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "asset_import"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.19951880001462996,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/asset_import.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/asset_import.stderr.log",
+      "test_report": {
+        "assertions": 29,
+        "executed": 2,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "asset_import",
+        "tests": 2
+      }
+    },
+    {
+      "id": "player_physics",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "player_physics"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 4.727687400067225,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/player_physics.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/player_physics.stderr.log",
+      "test_report": {
+        "assertions": 18,
+        "executed": 3,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "player_physics",
+        "tests": 3
+      }
+    },
+    {
+      "id": "locomotion",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--script",
+        "res://tests/test_runner.gd",
+        "--",
+        "--suite",
+        "locomotion"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 14.462356299976818,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/locomotion.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/locomotion.stderr.log",
+      "test_report": {
+        "assertions": 11,
+        "executed": 2,
+        "failed": 0,
+        "failures": [],
+        "registered_suites": [
+          "bootstrap",
+          "scene",
+          "utilities",
+          "asset_import",
+          "player_physics",
+          "locomotion"
+        ],
+        "result": "PASS",
+        "skipped": 0,
+        "suite": "locomotion",
+        "tests": 2
+      }
+    },
+    {
+      "id": "export",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house",
+        "--export-release",
+        "Windows Desktop",
+        "G:\\zalo_mini_app\\the_seventh_house\\builds\\windows\\20261019T041556055664Z\\TheSeventhHouse.exe"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.7054155999794602,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/export.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/export.stderr.log"
+    },
+    {
+      "id": "pack_contents",
+      "command": [
+        "G:\\zalo_mini_app\\the_seventh_house\\.tools\\godot\\4.7.2-stable\\Godot_v4.7.2-stable_win64_console.exe",
+        "--headless",
+        "--path",
+        "G:\\zalo_mini_app\\the_seventh_house\\.qa\\build_checks\\20261019T041556055664Z",
+        "--script",
+        "G:\\zalo_mini_app\\the_seventh_house\\tests\\fixtures\\inspect_pack.gd",
+        "--",
+        "G:\\zalo_mini_app\\the_seventh_house\\builds\\windows\\20261019T041556055664Z\\TheSeventhHouse.pck"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.2266558000119403,
+      "stdout": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/pack_contents.stdout.log",
+      "stderr": "G:/zalo_mini_app/the_seventh_house/reports/builds/20261019T041556055664Z/pack_contents.stderr.log",
+      "pack_report": {
+        "files": [
+          "res://project.binary",
+          "res://project.godot",
+          "res://.godot/global_script_class_cache.cfg",
+          "res://.godot/uid_cache.bin",
+          "res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn",
+          "res://.godot/exported/133200997/export-721258a65b5d695132eff2903f38d645-player_physics.res",
+          "res://.godot/exported/133200997/export-c2c62cb8c73458cd122faf659769dc80-player.scn",
+          "res://config/tuning/player_physics.tres.remap",
+          "res://data/runtime/product.json",
+          "res://scenes/main.tscn.remap",
+          "res://scenes/player/player.tscn.remap",
+          "res://scripts/bootstrap/main.gd.remap",
+          "res://scripts/bootstrap/main.gdc",
+          "res://scripts/core/json_reader.gd.remap",
+          "res://scripts/core/json_reader.gdc",
+          "res://scripts/player/player_controller.gd.remap",
+          "res://scripts/player/player_controller.gdc",
+          "res://scripts/player/player_physics_settings.gd.remap",
+          "res://scripts/player/player_physics_settings.gdc"
+        ],
+        "forbidden": [],
+        "main_scene_included": true,
+        "result": "PASS",
+        "runtime_data_included": true
+      }
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "builds/windows/20261019T041556055664Z/TheSeventhHouse.exe",
+      "sha256": "2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497",
+      "bytes": 109127680
+    },
+    {
+      "path": "builds/windows/20261019T041556055664Z/TheSeventhHouse.pck",
+      "sha256": "cf4400e74e4c81acf00e57bdc324b55c5bad4d32dd6d99ca20a255da9112269f",
+      "bytes": 29980
+    }
+  ],
+  "created_at": "2026-10-19T04:15:56.055934+00:00",
+  "source_sha256": "f56721b32fa31bbaf7ff9fe8e1893054577f78981b398aa50956d3e3ebb7d732",
+  "engine_version": "4.7.2.stable.official.ed1daf0bf",
+  "engine_sha256": "ab1824f85bfd8e0e4128182c000c4003a3e042245b2967848d089b2a04b22424",
+  "template_hashes": {
+    "windows_debug_x86_64.exe": "51498b72b3a237f882ebd7d1787f06a4bc1eaf0572daab93837adcfd3cfdc107",
+    "windows_release_x86_64.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  },
+  "limitations": [
+    "Export build only; Windows rendered executable smoke is a separate check.",
+    "Bootstrap content, not a finished campaign or retail release."
+  ]
+}

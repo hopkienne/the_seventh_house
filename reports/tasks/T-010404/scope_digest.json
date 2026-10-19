@@ -1,0 +1,23 @@
+{
+  "scope_version": "v3",
+  "chapters": 7,
+  "houses": 7,
+  "puzzles": 14,
+  "memories": 7,
+  "journal_records": 28,
+  "endings": [
+    "A",
+    "B",
+    "C"
+  ],
+  "required": [
+    "save/load/recovery",
+    "VI/EN",
+    "keyboard/gamepad",
+    "Windows x64",
+    "final art/audio"
+  ],
+  "scope_file": "docs/product_scope.md",
+  "scope_file_sha256": "21faf27a6ebd475485e0e0957e63ea5bb651985c7b3a249a9e650bfae8117fcc",
+  "runtime_content_complete": false
+}

@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+CASE locomotion/five_second_straight_diagonal
+LOCOMOTION_METRICS {"diagonal_m":10.8166399002075,"duration_seconds":5.0,"input_mode":"synthetic_actions","physics_ticks":300,"relative_error":0.00000573084394876661,"straight_m":10.8167018890381,"tick_rate":60}
+CASE locomotion/acceleration_deceleration_run_lock
+TEST_REPORT {"assertions":11,"executed":2,"failed":0,"failures":[],"registered_suites":["bootstrap","scene","utilities","asset_import","player_physics","locomotion"],"result":"PASS","skipped":0,"suite":"locomotion","tests":2}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "plan_version": "3.0",
-  "revision": 46,
+  "revision": 58,
   "tasks": {
     "T-010101": {
       "status": "DONE",
@@ -214,36 +214,60 @@
       "updated_at": "2026-10-19T04:03:00.699865+00:00"
     },
     "T-010404": {
-      "status": "IN_PROGRESS",
+      "status": "DONE",
       "executor_id": "codex-primary",
-      "evidence": null,
+      "evidence": "reports/tasks/T-010404/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": "2026-10-19T04:03:00.883324+00:00"
+      "notes": [
+        {
+          "closed_at": "2026-10-19T04:05:55.171453+00:00",
+          "revision": "artifact-tree-sha256:9b431673acfd74ca86bac7e5a08ae02250a3e3576da6cabf1666517f24be1961",
+          "evidence_sha256": "3b669c47f1c9f7d4ed3d74b100591a8070f8f51494ab7cc212ff73651a850558"
+        }
+      ],
+      "updated_at": "2026-10-19T04:05:55.172253+00:00"
     },
     "T-020101": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020101/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T04:11:48.577961+00:00",
+          "revision": "artifact-tree-sha256:bcc03f9582caaec92afd7dfee631f6e9722bdab7101033350226e0702ab70e73",
+          "evidence_sha256": "f5535a1e2bf575f512f036dc06a925e421cde4b97ad8f8ab4693104fd57212c6"
+        }
+      ],
+      "updated_at": "2026-10-19T04:11:48.578746+00:00"
     },
     "T-020102": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020102/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T04:20:31.478374+00:00",
+          "revision": "artifact-tree-sha256:9226e8cd5bc57f41e06a2754f66aa7c4798a10ede24b77bfa016bffb5d4f14c3",
+          "evidence_sha256": "b5e2149958e1ddf13fa08d7e0bc91ecf421f984519c6130d47a4b870fdbd952b"
+        }
+      ],
+      "updated_at": "2026-10-19T04:20:31.479714+00:00"
     },
     "T-020103": {
-      "status": "NOT_STARTED",
-      "executor_id": null,
-      "evidence": null,
+      "status": "DONE",
+      "executor_id": "codex-primary",
+      "evidence": "reports/tasks/T-020103/evidence.json",
       "blocker": null,
-      "notes": [],
-      "updated_at": null
+      "notes": [
+        {
+          "closed_at": "2026-10-19T04:30:10.983858+00:00",
+          "revision": "artifact-tree-sha256:f42cbf84c3fcdc9c95e33cd8a326cab6d96ae324dc3c003e742e5a70d30bcfb4",
+          "evidence_sha256": "5f584296f01bbb10471ee666fd9d0817467abf7248ab9e32ce0156a622961b40"
+        }
+      ],
+      "updated_at": "2026-10-19T04:30:10.987504+00:00"
     },
     "T-020104": {
       "status": "NOT_STARTED",
@@ -4832,8 +4856,9 @@
   },
   "gates": {
     "G0": {
-      "status": "NOT_EVALUATED",
-      "evidence": null
+      "status": "PASS",
+      "evidence": "reports/gates/G0/evidence.json",
+      "updated_at": "2026-10-19T04:05:55.415977+00:00"
     },
     "G1": {
       "status": "NOT_EVALUATED",

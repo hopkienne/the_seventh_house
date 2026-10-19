@@ -1,0 +1,129 @@
+{
+  "task_id": "T-020101",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:bcc03f9582caaec92afd7dfee631f6e9722bdab7101033350226e0702ab70e73",
+  "created_at": "2026-10-19T04:11:48.263714+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020101/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scenes/player/player.tscn",
+      "sha256": "9f57e6e65fa0b2201de248970c4d2fbdc42e509c721e3aa257bf6878bc86a03d"
+    },
+    {
+      "path": "scripts/player/player_controller.gd",
+      "sha256": "f0d7c3b1816c9d1aab4406c9e4fb1ce9e4a03531cc5916be7d85826f14c20d3a"
+    },
+    {
+      "path": "scripts/player/player_physics_settings.gd",
+      "sha256": "e388a442edeac7a1507741dba6e6e089dee8c3cc8b9ebd192605978e3a75c5ae"
+    },
+    {
+      "path": "config/tuning/player_physics.tres",
+      "sha256": "7b8481fb27a2530f644a580aa8dbbbd98f5f5bf56e658e99fc8d64476270ba2a"
+    },
+    {
+      "path": "scenes/main.tscn",
+      "sha256": "238ca8a75b692653000951dbfccdeb29a661eec8b8561cc1e735279fdce18f70"
+    },
+    {
+      "path": "tests/unit/test_player_physics.gd",
+      "sha256": "f6a50ab0676ebfb297aa716a066602ce55d565f3cee1bbbffb0e9d84f050a387"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "fa83d91b51b933b633fd9f3846458da88d9b01fc1e04d68ffadbaa6570c2074b"
+    },
+    {
+      "path": "scripts/build_windows.py",
+      "sha256": "5fb4706df745d675d8a1bcc5ece8142ee089895976adfebbe35cbbae3d9eb195"
+    },
+    {
+      "path": "reports/tasks/T-020101/before.stdout.log",
+      "sha256": "7ca893e0c7114f493dbe8b81fb7d1d189622038e43aab89f7ed51abba804c378"
+    },
+    {
+      "path": "reports/tasks/T-020101/before.stderr.log",
+      "sha256": "ca2efb8d0fa4090b2a21564c6e7c9edcb46965189947cb5653ba96a33c071374"
+    },
+    {
+      "path": "reports/tasks/T-020101/player_physics.stdout.log",
+      "sha256": "916dd07886862b6a7dcb522861f089b5d2c1ee8f62c359ee05c64e9e6978b978"
+    },
+    {
+      "path": "reports/tasks/T-020101/player_physics.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020101/build_manifest.json",
+      "sha256": "426ede0243e95b72e9f7e43c64649cb09ecf4032dcedd35cb4ddbca3c4af1975"
+    },
+    {
+      "path": "reports/tasks/T-020101/integrated_smoke.json",
+      "sha256": "b976346f9a29dcec1eac0a1994aaff66cb261c71122d6e9822d1b7bca2f2d940"
+    },
+    {
+      "path": "reports/tasks/T-020101/integrated_smoke.png",
+      "sha256": "2132f97f1811efe79c882c3b0b079977428bc010188bfb038829334cbdf48afe"
+    },
+    {
+      "path": "reports/tasks/T-020101/render.stdout.log",
+      "sha256": "9bfcf819635dc790e76c85fbced9841ba286ca92bcab4b97d4521507a4e52e45"
+    },
+    {
+      "path": "reports/tasks/T-020101/render.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020101/review.md",
+      "sha256": "b8ee794a873898a30ccab09ad4ab2cb4254598ad71724ac22edb862d20e5b80a"
+    },
+    {
+      "path": "reports/tasks/T-020101/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "feet-gravity-idle",
+      "kind": "ENGINE_TEST",
+      "expected": "Real feet-centered capsule falls/settles and does not drift;invalid tuning rejected",
+      "observed": "3cases18assertions;feet_y=-0.0003981218m;horizontal/vertical drift0 over180ticks/3s at60Hz;negative/null settings preserve valid resource",
+      "result": "PASS",
+      "command": "Godot --headless --script res://tests/test_runner.gd -- --suite player_physics",
+      "log_path": "reports/tasks/T-020101/player_physics.stdout.log",
+      "assertions": 18
+    },
+    {
+      "id": "body-source-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Scene/config match physics contract and no world/save ownership leak",
+      "observed": "Capsule1.70m/0.28m/center0.85;Player layer8/mask19;Resource tuning;body only;all-suite build/export pass",
+      "result": "PASS",
+      "assertions": 0
+    },
+    {
+      "id": "integrated-body-render",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Body integrated in visible main scene with real frame",
+      "observed": "1280x720,16colors,Forward+ Vulkan SwiftShader software;standing capsule/shadow reviewed;5smokeassertionsexit0",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-020101/render.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020101/integrated_smoke.png"
+      ],
+      "software": true,
+      "assertions": 5
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Body/gravity only;input locomotion is T-020102,full campaign/final character art remain unimplemented.",
+    "Software CPU render;no hardware performance,physical input/audio or new exported-EXE native smoke claimed."
+  ]
+}

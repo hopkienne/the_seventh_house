@@ -1,0 +1,3 @@
+ASSERTION FAILED: player scene exists
+ASSERTION FAILED: gravity fixture has real player scene
+ASSERTION FAILED: settings fixture has real player

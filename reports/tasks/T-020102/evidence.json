@@ -1,0 +1,121 @@
+{
+  "task_id": "T-020102",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:9226e8cd5bc57f41e06a2754f66aa7c4798a10ede24b77bfa016bffb5d4f14c3",
+  "created_at": "2026-10-19T04:20:31.122285+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-020102/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "scripts/player/player_controller.gd",
+      "sha256": "5e55dda4d5e8fecca8ba134d7a6c63ae23e1d7561527cf0affa129a73f752e4b"
+    },
+    {
+      "path": "scripts/player/player_physics_settings.gd",
+      "sha256": "70e4370823774c85c09ad7320786caa77475fa367851782b828fc40fb42534c3"
+    },
+    {
+      "path": "config/tuning/player_physics.tres",
+      "sha256": "c64cdeb34c986c598facd85c0d5f2500d2a46024999e3ea2d5f2a50dfd6fbbd9"
+    },
+    {
+      "path": "tests/unit/test_locomotion.gd",
+      "sha256": "75b72a08aad600fe21024943c23d61d0111c05cb232ff6b1628c1bdffdfdb209"
+    },
+    {
+      "path": "tests/replays/player_walk.gd",
+      "sha256": "74fefe44ba786cecfbfec66f9b0482438356f5ce6de5078e740e47314ea9f80b"
+    },
+    {
+      "path": "tests/test_runner.gd",
+      "sha256": "e58913987724b8c418a9d786488bb94c37dd30c3cef4f8c13569d19ab14d5e73"
+    },
+    {
+      "path": "reports/tasks/T-020102/before.stdout.log",
+      "sha256": "d2dc3bc0bcd542e1e7b4571fd2bece00fc12e817aac8fb6b12b11a754098ba6d"
+    },
+    {
+      "path": "reports/tasks/T-020102/locomotion.stdout.log",
+      "sha256": "a79d8373c66a05d535f4e2464c1e35d38ad943ca9502b9c65c082bf1ea4118a1"
+    },
+    {
+      "path": "reports/tasks/T-020102/locomotion.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020102/build_manifest.json",
+      "sha256": "287ce8c9270b77592f03e1736d735cc7fced3ff5be5462fd6427be6010089e32"
+    },
+    {
+      "path": "reports/tasks/T-020102/replay.stdout.log",
+      "sha256": "bca20e1eb06379890a515bf99013d764eda8a1d11bd42a7a458f5debd39afe11"
+    },
+    {
+      "path": "reports/tasks/T-020102/replay.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-020102/walk.png",
+      "sha256": "bcc0e22bad9dff0724053e20b65660fad3b0576a67f5a6bf5e83d57b90e93faf"
+    },
+    {
+      "path": "reports/tasks/T-020102/before_timing_fix.replay.stdout.log",
+      "sha256": "b9402090626abc9894a4fea666f6f290a64b00c124f6493cd99964520e5579b5"
+    },
+    {
+      "path": "reports/tasks/T-020102/before_timing_fix.walk.png",
+      "sha256": "5426e1507d11ea42b35e25be9b34004093094f061500d82e811073b71c2a54c1"
+    },
+    {
+      "path": "reports/tasks/T-020102/review.md",
+      "sha256": "ce3fff2f5531a35bb1004f7a9b97a710cde0175713c63732fd1b6311210cfa46"
+    },
+    {
+      "path": "reports/tasks/T-020102/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "five-second-normalization-and-motion",
+      "kind": "ENGINE_TEST",
+      "expected": "Straight/diagonal five-second distance error<=5percent with real acceleration,deceleration,run and control gate",
+      "observed": "2cases11assertions;10.816701889m vs10.816639900m,error0.000573percent;walk2.2/run3.4 and stopping/control assertions pass",
+      "result": "PASS",
+      "command": "Godot --headless --script res://tests/test_runner.gd -- --suite locomotion",
+      "log_path": "reports/tasks/T-020102/locomotion.stdout.log",
+      "assertions": 11
+    },
+    {
+      "id": "locomotion-source-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Tuning Resource/normalized XZ movement and no global state ownership;regressions retained",
+      "observed": "Authored2.2/3.4/12/16;no world/save writes;142-assertion build passes;driver catch-up timing bug fixed with failed reproduction retained",
+      "result": "PASS",
+      "assertions": 0
+    },
+    {
+      "id": "walking-render-replay",
+      "kind": "RENDERED_RUNTIME",
+      "expected": "Actual input-action replay moves integrated body on ground and captures correct renderer",
+      "observed": "60heldphysics ticks plus deceleration,dx2.14999938m,feet_y0;1280x720/Forward+Vulkan software capture reviewed,exit0",
+      "result": "PASS",
+      "log_path": "reports/tasks/T-020102/replay.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-020102/walk.png"
+      ],
+      "software": true,
+      "assertions": 1
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "Synthetic action input;physical hardware mapping/hotplug and GPU performance not verified.",
+    "Main corridor bounds/states remain T-020103;full game and final character art not complete."
+  ]
+}

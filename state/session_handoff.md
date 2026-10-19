@@ -1,32 +1,64 @@
-# Session handoff — checkpoint 2026-10-19T03:35:56.645800+00:00
+# Session handoff — checkpoint 2026-10-19T04:06:32.796272+00:00
 
-Root: G:/zalo_mini_app/the_seventh_house. Git repository chưa khởi tạo; commit/tree Git: null. Working artifact tree SHA256: f9c480fb438fb1aefae73831c775af04e19febb78da1dfbf67bcfca507a6140e (docs/tools/config/tests/project.godot, không gồm cache/downloads).
+Root: G:/zalo_mini_app/the_seventh_house. Branch main. Commit 5fb6d50defa62f0f66b7811c348853b76c96665d; Git tree f0ee2a3a1f27634e4dd513490b3de6ec33d0d8cc. Current working tree changes below are expected G0 closure artifacts/config/ledger after the candidate snapshot. Do not reset.
 
-## Ledger và task hiện tại
-- T-010101…T-010104 và T-010201…T-010204 DONE qua agentctl, evidence + self-review trong reports/tasks/<ID>/.
-- T-010301 IN_PROGRESS: project.godot Forward+, toolchain lock, bootstrap runner và bounded process helpers đã có.
-- Templates đang tải: process chạy `python tools/fetch_godot.py --templates --resume`, session 86941. Chưa xác nhận hash/version gói; lock templates_verified=false. Kiểm process/file trước retry; không xóa partial.
-- Chưa có main scene, export preset/build script hoặc game systems. Không đánh DONE T-010301 chỉ vì import pass.
+## Progress
+{"DONE": 16, "NOT_STARTED": 576}. All sixteen S01 tasks DONE through agentctl. G0 PASS via reports/gates/G0/evidence.json; G1…G9 NOT_EVALUATED. Project IN_PROGRESS, not full game/release. Next Ready T-020101 (movement), alternative T-020301; re-run selector before claim.
 
-## Facts đã xác minh
-- Godot portable 4.7.2.stable.official.ed1daf0bf, engine hash ed1daf0bf001b61586d9930840f2f1394092c079; editor zip hash khớp API official. Binaries ở .tools/godot/4.7.2-stable/.
-- Python 3.14.0; Git 2.45.1; Git LFS 3.5.1. Blender chưa có trong PATH/known install dirs.
-- Plan validator PASS; static narrative 81 checks PASS (không game tests).
-- Bootstrap lúc chưa templates: 2 cases/16 assertions/1 failure, exit 1 đúng checksum thiếu; đã thêm kiểm templates thật nên cần run lại sau download.
-- Godot import exit 0, CSV planning bị importer xem như localization và có warning; templates folder đã thêm .gdignore. Chưa gọi import-only là game PASS.
-- Native NVIDIA NVS 310 không chạy Forward+; engine fallback Compatibility dù exit 0. Fixture guard sửa để fail exit 1 trên fallback, regression đã chạy.
-- Explicit process-scoped Chrome SwiftShader ICD chạy non-headless Vulkan Forward+, PNG thật 1280x720, exit 0, không stderr. Software CPU render không phải GPU performance. ADR-001 và config/test_environment.json ghi rõ.
-- Ledger test suite: 2 lần fail ở Windows tempfile teardown WinError145; chỉ thêm bounded cleanup retry cho WinError32/145, không sửa assertion/validator. Sau fix 22 tests PASS. Raw logs giữ ở T-010301.
+## Verified facts
+- Godot4.7.2 stable + matching templates actually downloaded/hash verified in .tools/godot/4.7.2-stable. Python3.14.0,Git2.45.1,LFS3.5.1; Blender absent. jsonschema4.25.1 installed and requirements-dev pinned.
+- Four real engine suites: bootstrap21,scene57,utilities6,asset_import29 =113 assertions/11 cases. Unknown/zero/bad args/negative assertion/invalid Callable produce FAIL/nonzero. Separate data6,build5,ledger22 Python tests pass; narrative81 static checks pass.
+- Scope/canon/requirements docs and evidence in docs/, reports/tasks/. Actual runtime data validator PARTIAL1 product file:0/7chapters,0/14puzzles,0/28records,0/3endings. --require-complete intentionally FAIL; no campaign implemented yet.
+- Main scene currently bootstrap floor/reference column, Camera3D/light,11 keyboard/pad actions. No movement/player/WorldController/save yet. JSON reader real utility exists.
+- Godot GLB stool recipe/generator,import/render and identical rebuild proven. Asset BLOCKOUT fixture only; no rig/animation/custom shader/navigation/final art/audio claim.
+- Clean checkout baseline74e110fbf5fd6177364f9ab5629f6df0fa5f6ff2 built with cache absent, no tracked source edits; direct EXE smoke outside editor on Windows passed. Functional rebuild only; PCK bit identity not established (source newline differences documented).
+- Latest G0 candidate build20261019T040053405815Z, source SHA256e2644d93f1c34e2aab3407a3682da39fa787b5d3152ead36206e15e5ad53e1bf, actual current source hash matched. EXE2160d4ed2cc9b3ef9ef2827dafb826b2b34a2ff34387ff0c706e0f255b590497; PCK2cb91f6d3d14534b339f937c8d2b525189fe9ac32eca4335387ea0624a84542e. Full manifest/logs reports/builds/20261019T040053405815Z/. Native copied candidate smoke5assertions/exit0,PNG1280x720,actualForward+/Vulkan/SwiftShader software. G0 report reports/S01/gate_G0.md.
 
-## Files và giới hạn
-Output mới: docs/product_scope.md, docs/requirements.md, docs/decisions/ADR-000/001, docs/story/*; tools/write_requirements.py, probe_capabilities.py, fetch_godot.py, check_narrative_contract.py, verify_bootstrap.py, godot_process.py; config/capabilities/permissions/toolchain/test_environment; project.godot; tests/test_runner.gd và fixtures. Các .gdignore ngăn import planning/tool downloads. Ledger chỉ cập nhật qua agentctl.
+## Blockers/decisions and fixed failures
+Native NVS310 cannot initialize Vulkan/D3D12 Forward+; automatic Compatibility fallback can still exit0 and guard now rejects it. Process-only installed Chrome SwiftShader ICD provides actual software Forward+ (config/test_environment.json,ADR-001). Do not change machine environment or ship browser DLL. CAP-001 open for hardware benchmark; physical keyboard/pad/hotplug and audible mix NOT_TESTED. Software render is not GPU performance.
 
-Physical gamepad, audio listening/capture, hardware Forward+ performance NOT_TESTED/unavailable. Public/paid/external write không có quyền. CAP-001 được ghi, không yêu cầu owner làm asset. Không thay renderer sản phẩm để qua test.
+Actual fixed failures retained: broad export filter removed runtime JSON; old build manifest leaked into pack; main QA misread test-runner args; RefCounted provider died before bound Callable execution and caused timeout. Runner keeps providers and guards invalid Callables, build discovers all suites and inspects actual PCK in empty project. Tests never bypassed. Windows fixture-cleanup transient WinError145 gets bounded cleanup-only retry, not assertion retry. Closed evidence never rewritten; source may evolve under later task evidence.
 
-## Bước tiếp theo
-1. Poll downloader/check partial; sau hash verify, đọc templates/version.txt và hai Windows x64 templates.
-2. Điền observed templates hash/root/verified thật trong config/toolchain.lock.json; `python tools/verify_bootstrap.py` phải PASS default và các expected negative cases.
-3. Separate self-review + evidence T-010301, agentctl review/finish; `python tools/agentctl.py next` chọn T-010302.
-4. Tạo main scene/InputMap, headless assertions và rendered smoke Forward+ bằng software ICD (khai software=true), capture xem thật. T-010303 tạo build/Git/LFS, T-010304 clean export/native smoke khi deps đủ.
+Art/audio production remains agent-owned with Godot procedural/free Blender fallback and real synthesis/mix workflow, not freelancer/owner production. Paidspend0/publicfalse, no remote/push/upload. No public/legal authorization inferred.
 
-Không có game completion/public claim hoặc nền chạy tiếp sau khi phiên kết thúc.
+## Current working tree
+```text
+ M config/agent_capabilities.json
+ M state/task_state.json
+?? reports/S01/gate_G0.md
+?? reports/gates/
+?? reports/tasks/T-010404/build_unit.log
+?? reports/tasks/T-010404/candidate_verification.json
+?? reports/tasks/T-010404/data_unit.log
+?? reports/tasks/T-010404/evidence.json
+?? reports/tasks/T-010404/ledger.log
+?? reports/tasks/T-010404/native.stderr.log
+?? reports/tasks/T-010404/native.stdout.log
+?? reports/tasks/T-010404/native_smoke.json
+?? reports/tasks/T-010404/native_smoke.png
+?? reports/tasks/T-010404/plan.log
+?? reports/tasks/T-010404/plan_validation.log
+?? reports/tasks/T-010404/review.md
+?? reports/tasks/T-010404/runtime_coverage.log
+?? reports/tasks/T-010404/scope_digest.json
+```
+
+## Next commands
+python tools/agentctl.py next
+Read tasks/T-020101.md + stories/ST-0201.md + technical movement contract; inspect current source/deps. Claim with start only when Ready. Verify current Godot API with Context7 and actual pin. Implement task/test/review/evidence, continue Ready. Commit G0 closure and new source coherently; preserve evidence paths. Update this handoff before session ends. No background work promised after the session.
+
+## Latest continuation checkpoint
+Timestamp 2026-10-19T04:26:46.438780+00:00. Actual ledger counts {"DONE": 18, "IN_PROGRESS": 1, "NOT_STARTED": 573}. G0 remains PASS.
+
+T-020101 DONE: CharacterBody3D feet pivot,1.70m/0.28m capsule,gravity Resource.18 physics assertions,feet error0.398mm,idle drift0;131-assertion build and actual software rendered capsule capture in reports/tasks/T-020101/.
+
+T-020102 DONE: real WASD/pad mapped XZ walk/run,2.2/3.4m/s,accel12/decel16. Five-second(300tick) straight10.816701889m/diagonal10.816639900m,error0.000573percent;11 assertions. Build142 assertions. Render replay initially over-held input due waiting render frames between physics ticks; raw failed capture/log retained. Driver now counts physics_frame without process_frame inside loop;final dx2.149999m,feet0,Forward+Vulkan software capture reviewed. New exported S02 build has not had separate native smoke.
+
+T-020103 IN_PROGRESS. Read task/story/contracts already. Test-first2 failures archived. Implemented scripts/player/locomotion_state.gd with Idle/Walk/Run/Locked derived from actual get_real_velocity and local input gate;one transition signal per change. Added visible StaticBody3D bounds around main floor(x±5,z±2) with Shared layer1,matching0.7m fence meshes;no coordinate clamp/teleport. Actual corridor suite2cases/19assertions PASS:all four walls+diagonal corner remain inside x~±4.62,z~±1.62,grounded. Needs full build/affected suites and rendered boundary replay,then separate self-review/evidence/agentctl finish. No claim task103DONE yet.
+
+Current head still5fb6d50defa62f0f66b7811c348853b76c96665d;G0 closure and S02 work are uncommitted,do not reset. Relevant new/changed files: scenes/player/player.tscn,scripts/player/*,config/tuning/player_physics.tres,scenes/main.tscn,tests/unit/test_player_physics.gd,test_locomotion.gd,test_corridor.gd,tests/replays/player_walk.gd,tests/test_runner.gd(async cases),scripts/build_windows.py(tuning in source hash),reports/tasks/T-020101..103/,state ledger/handoff. Engine suites now bootstrap/scene/utilities/asset_import/player_physics/locomotion/corridor. Build discovers all suites automatically.
+
+Next: complete T-020103 rendered long-held input boundary replay + all-suite build before finish;then next selector T-020104. Keep software render limitation/physical input/audio NOT_TESTED and canonical full scope. Update final handoff and commit when coherent. No background promise.
+
+## QA entry checkpoint 2026-10-19T04:33:06.608849+00:00
+T-020103 now DONE:19 corridor assertions,161-assertion all-suite build20261019T042740914462Z,actual300-tick Forward+software boundary replay PASS at(4.619882,0,0),grounded/LOCKED,capture viewed.19 tasks DONE total. Next T-020104 QA:actual30/60/120 FPS equivalence,slopes/corners and failure clip;do not equate headless or requested FPS with observed rendered FPS.

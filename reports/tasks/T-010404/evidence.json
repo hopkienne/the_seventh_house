@@ -1,0 +1,139 @@
+{
+  "task_id": "T-010404",
+  "result": "PASS",
+  "executor_id": "codex-primary",
+  "revision": "artifact-tree-sha256:9b431673acfd74ca86bac7e5a08ae02250a3e3576da6cabf1666517f24be1961",
+  "created_at": "2026-10-19T04:05:54.864036+00:00",
+  "review": {
+    "result": "PASS",
+    "reviewer_id": "codex-primary",
+    "self_review": true,
+    "path": "reports/tasks/T-010404/review.md"
+  },
+  "artifacts": [
+    {
+      "path": "reports/S01/gate_G0.md",
+      "sha256": "c66abbdc03cbab80ec1430654433300e611eaff1aa1beb8299793a11ef45749b"
+    },
+    {
+      "path": "config/agent_capabilities.json",
+      "sha256": "b3155425a09d71d53767669bd31815b2c90bb76b01a18bbd298976523aa0f13b"
+    },
+    {
+      "path": "config/permissions.json",
+      "sha256": "005554a64825f0742e5dfbb6638c49b816821081f1f4a25e433acce576e74c14"
+    },
+    {
+      "path": "config/toolchain.lock.json",
+      "sha256": "cfb1de5b073584b7cbd0b0b6738a532177f3071b78b83dd2aeb0f79f596e0c78"
+    },
+    {
+      "path": "reports/tasks/T-010404/scope_digest.json",
+      "sha256": "e1a7a0bd0fddef2699a652cb29da77b0e67af115efbce7e8c64cfe31fedc86fe"
+    },
+    {
+      "path": "reports/tasks/T-010404/candidate_manifest.json",
+      "sha256": "2ecd42db8bf88a4b11feceb3135ba7ca368d9e9ef1e3209a327a307d0911a56a"
+    },
+    {
+      "path": "reports/tasks/T-010404/candidate_verification.json",
+      "sha256": "f71e9270cc906b9b5fdb53ef8aac3911cc952d252ea6f9f75baa8abe7b1bf66a"
+    },
+    {
+      "path": "reports/tasks/T-010404/native_smoke.json",
+      "sha256": "b7aae2c103dfbfa64c4aabed68131baa2b67175c81c0b0e30a2d0dbf7a1e651b"
+    },
+    {
+      "path": "reports/tasks/T-010404/native_smoke.png",
+      "sha256": "de27712f9053c7ffadc102b8b86aa6a2bed01e94a0c19df4c5b0e91979a1be85"
+    },
+    {
+      "path": "reports/tasks/T-010404/native.stdout.log",
+      "sha256": "d8f969546bf00f9392c0da756319ec64a51bbed68f43ab3aba95ba9ea1921b1a"
+    },
+    {
+      "path": "reports/tasks/T-010404/native.stderr.log",
+      "sha256": "0a88e490be39cefa3335072e19812624e9a85f13defa2cfc5f0ed1e85ea51b28"
+    },
+    {
+      "path": "reports/tasks/T-010404/plan.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    },
+    {
+      "path": "reports/tasks/T-010404/ledger.log",
+      "sha256": "68185b970a2200c3827f8aad49d179dddc6829621e24d827296f53815cc3381a"
+    },
+    {
+      "path": "reports/tasks/T-010404/data_unit.log",
+      "sha256": "9b78560e787084e040e395079204fb3e3a161a51cba250fab5f03556da510daf"
+    },
+    {
+      "path": "reports/tasks/T-010404/build_unit.log",
+      "sha256": "b5ea31c2f90ddee2bcc0084be7e32ef53e36b5b98ed2312b4c6e16a65ffd73f0"
+    },
+    {
+      "path": "reports/tasks/T-010404/runtime_coverage.log",
+      "sha256": "5aaa419b5cde8e93a4fbd6dfa5e22df935acfe6687d91ec6f6da593937c2ba4e"
+    },
+    {
+      "path": "reports/S01/skill_spike.md",
+      "sha256": "078cc9742aa17a4e8db13f943af4725f93ddbc4d01981f30d3b8dc1cb3b85bfd"
+    },
+    {
+      "path": "docs/risks.md",
+      "sha256": "f7b3c487db18e79d811a467ab256642d7a846c35eba997a65e44ea1134c4bf1d"
+    },
+    {
+      "path": "docs/assets_execution.md",
+      "sha256": "842c2505103129851955d053be36b926eb09ac28a123339e9066b29655f6b29a"
+    },
+    {
+      "path": "reports/tasks/T-010404/review.md",
+      "sha256": "73839fee838606ce2b9961c9b999ea8691ea2886677df62ee70dc8aaa5355906"
+    },
+    {
+      "path": "reports/tasks/T-010404/plan_validation.log",
+      "sha256": "79aee4fbfb28a99d2e51c143e6be52713ab924354962cc82d964cd56543bcfd6"
+    }
+  ],
+  "checks": [
+    {
+      "id": "candidate-engine-verification",
+      "kind": "ENGINE_TEST",
+      "expected": "G0 candidate import/test/export using pinned toolchain and real nonzero assertions",
+      "observed": "Candidate source hash matches;4suites11cases113assertions0failed/skipped;EXE/PCK package inspection pass",
+      "result": "PASS",
+      "command": "python scripts/build_windows.py",
+      "log_path": "reports/tasks/T-010404/candidate_manifest.json",
+      "assertions": 113
+    },
+    {
+      "id": "scope-capability-gate-review",
+      "kind": "ARTIFACT_REVIEW",
+      "expected": "Scope digest,actual capability/permission manifest,build hashes and self-review sufficient for G0 only",
+      "observed": "7/14/7/28/3 Must retained;scope/capabilities/hashes/raw logs reviewed;PARTIAL runtime and hardware/input/audio gaps explicit;no public signature",
+      "result": "PASS",
+      "assertions": 0
+    },
+    {
+      "id": "native-candidate-smoke",
+      "kind": "WINDOWS_RUNTIME",
+      "expected": "Candidate exported EXE boots outside editor on actual Windows with frame/correct renderer",
+      "observed": "Windows/Forward+ Vulkan SwiftShader CPU,1280x720,5 assertions,exit0,no stderr;hashes tied to build",
+      "result": "PASS",
+      "command": "Exported TheSeventhHouse.exe -- --qa-profile BOOTSTRAP --qa-report res://reports/g0_smoke.json",
+      "log_path": "reports/tasks/T-010404/native.stdout.log",
+      "capture_paths": [
+        "reports/tasks/T-010404/native_smoke.png"
+      ],
+      "native_os": "Windows",
+      "software": true,
+      "assertions": 5
+    }
+  ],
+  "authorization_ref": null,
+  "limitations": [
+    "G0 bootstrap only;full campaign/puzzles/endings/final art/audio remain not implemented.",
+    "Software CPU Forward+ render;no GPU performance,physical input/hotplug or audible-mix verification."
+  ]
+}
